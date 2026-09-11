@@ -1,0 +1,2182 @@
+/* ========================================
+   블로그 심층 리포트
+   ======================================== */
+
+/* 컨테이너 */
+:is(#issue, #ai-article, #wiki-article, #tech-article, #ranking) .page-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 0 var(--space-block-y) 0;
+  display: block;
+}
+:is(#issue, #ai-article, #wiki-article, #tech-article, #ranking) .page-container > * {
+  margin-bottom: var(--space-block-y);
+}
+:is(#issue, #ai-article, #wiki-article, #tech-article, #ranking) .page-container > *:last-child {
+  margin-bottom: 0;
+}
+
+:is(#issue, #ai-article, #wiki-article, #tech-article, #ranking) .page-container .ad-card {
+  margin-bottom: var(--space-block-gap, 16px);
+}
+
+/* 통합 카드 - 박스 해체: 글이 페이지 위에 바로 놓임 */
+.blog-card {
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* 블로그 카드 내 본문·미디어를 매거진 폭(720px)으로 통일 정렬 */
+.blog-content > .blog-paragraph,
+.blog-content > .blog-heading,
+.blog-content > ul,
+.blog-content > ol,
+.blog-content > blockquote,
+.blog-content > .blog-summary,
+.blog-content > .blog-figure,
+.blog-content > .blog-table-wrapper,
+.blog-content > .ad-card,
+.blog-content > .blog-link-buttons,
+.blog-content > .blog-video,
+.blog-content > .ranking-card,
+.blog-content > .ranking-chart-wrapper,
+.blog-content > .blog-note,
+.blog-content > .blog-charts-grid,
+.blog-content > .ranking-podium,
+.blog-content > .trend-detail-nav {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-content > .blog-heading {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-header {
+  padding: 4px 0 20px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* 히어로 이미지 - 콘텐츠 폭 전체, 에디토리얼 */
+.blog-hero {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  max-height: 440px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.blog-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-hero-image[src=""], .blog-hero-image:not([src]) {
+  display: none;
+}
+
+/* 제목 - 큰 에디토리얼 타이틀 */
+.blog-title {
+  font-size: var(--font-article-title-size);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text);
+  margin-top: 0;
+  margin-bottom: 16px;
+  letter-spacing: -0.025em;
+  text-align: left;
+}
+
+/* 메타 정보 - 깔끔한 한 줄 (작성자 · 날짜) */
+.blog-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.blog-editor {
+  font-size: var(--font-meta-size);
+  color: var(--text-muted);
+  font-weight: 600;
+  text-decoration: none;
+  /* 저자 링크 터치 영역 24px 이상 (WCAG 2.5.8) — 글자 크기는 그대로 */
+  display: inline-block;
+  padding: 2px 0;
+  line-height: 1.55;
+}
+
+a.blog-editor:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* 주제 태그 (요약 아래) — /topic/<id>/ 링크 */
+.blog-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 720px;
+  margin: 0 auto 20px;
+}
+
+.blog-topic-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: var(--font-meta-size);
+  color: var(--text-secondary);
+  text-decoration: none;
+  background: var(--card);
+}
+
+.blog-topic-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.blog-date {
+  font-size: var(--font-meta-size);
+  color: var(--text-muted);
+}
+
+.blog-date::before {
+  content: '·';
+  margin: 0 8px;
+  color: var(--text-tertiary);
+}
+
+/* 리드(요약문) - 강조 박스 안이라 본문과 같은 크기, 회색 톤 */
+.blog-summary {
+  font-size: var(--font-article-body-size);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-weight: 400;
+  padding: 16px 20px;
+  background: color-mix(in srgb, var(--primary) 6%, var(--card));
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--primary);
+  margin: 20px auto;
+  max-width: 720px;
+  text-align: left;
+}
+
+@media (prefers-color-scheme: dark) {
+  .blog-summary {
+    background: color-mix(in srgb, var(--primary) 12%, var(--card));
+    color: var(--text);
+  }
+}
+
+/* 이미지 다음 요약 (제목 → 이미지 → 요약 순서) */
+.blog-figure + .blog-summary {
+  margin-top: 16px;
+}
+
+/* 태그 */
+.blog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.blog-tag {
+  padding: 4px 12px;
+  font-size: var(--font-badge-size);
+  font-weight: var(--font-title-weight);
+  color: var(--primary);
+  background: rgba(9, 105, 218, 0.10);
+  border-radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .blog-tag {
+    background: rgba(33, 139, 255, 0.18);
+    color: #93C5FD;
+  }
+}
+
+/* 본문 섹션 - 카드 내부 */
+.blog-content {
+  padding: 24px 0 40px;
+}
+
+/* 본문 내 링크 - 블로그 스타일: 업더라인 제공 */
+.blog-content a:not(.blog-link-button):not(.blog-related-card):not(.blog-related-issue-card):not(.article-action) {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(9, 105, 218, 0.4);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  font-weight: 500;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+/* 표 내부 링크는 밑줄 제외 (일반 본문 링크 밑줄 규칙 오버라이드) */
+.blog-content .wiki-table a,
+.blog-content .blog-table-wrapper a {
+  text-decoration: none;
+}
+
+.blog-content a:not(.blog-link-button):not(.blog-related-card):not(.blog-related-issue-card):not(.article-action):hover {
+  color: var(--primary-dark);
+  text-decoration-color: var(--primary-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  .blog-content a:not(.blog-link-button):not(.blog-related-card):not(.blog-related-issue-card):not(.article-action) {
+    color: #60a5fa;
+  }
+  .blog-content a:not(.blog-link-button):not(.blog-related-card):not(.blog-related-issue-card):not(.article-action):hover {
+    color: var(--link-hover-accent);
+  }
+}
+
+/* 본문 단락 */
+.blog-paragraph {
+  font-size: var(--font-article-body-size);
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
+  letter-spacing: -0.003em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.blog-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* 섹션 제목 */
+.blog-heading {
+  font-size: var(--font-article-h2-size);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+  margin: 44px 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  scroll-margin-top: 80px;
+  letter-spacing: -0.02em;
+}
+
+.blog-heading:first-child {
+  margin-top: 0;
+}
+
+/* 순위 변동 배지 */
+.heading-rank-badge {
+  font-size: 0.65em;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.heading-rank-new {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--rank-purple);
+}
+
+.heading-rank-up {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--rank-green);
+}
+
+.heading-rank-down {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--rank-red);
+}
+
+.heading-rank-same {
+  background: rgba(156, 163, 175, 0.15);
+  color: var(--text-secondary);
+}
+
+/* 이미지 피규어 */
+.blog-figure {
+  margin: 24px 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+
+/* 상단 대표 이미지 (blog-header 바로 다음) - 콘텐츠 폭 전체 히어로 */
+.blog-header + .blog-figure {
+  margin: 0 auto;
+  max-width: 720px;
+  max-height: 440px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.blog-header + .blog-figure .blog-image {
+  max-height: 440px;
+}
+
+/* AIScroll 대표 이미지: 본문 figure 의 테두리·배경·contain 여백(레터박스 프레임)을 걷어내고 폭을 채운다 */
+.blog-lead-figure {
+  border: none;
+  background: transparent;
+}
+.blog-lead-figure .blog-image {
+  object-fit: cover;
+  background: transparent;
+}
+
+/* 표 figure */
+.blog-figure.blog-table {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  background: transparent;
+  border: none;
+  overflow: visible;
+}
+
+/* 표 가로 스크롤 박스 — 제목과 분리해 표만 좌우 스크롤한다.
+   touch-action:pan-x 로 페이지 스와이프(가로 제스처)보다 표 스크롤을
+   브라우저가 우선 처리하게 해, 표 위에서 미는 동작이 화면 전환으로 새지 않는다. */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+  overscroll-behavior-x: contain;
+}
+
+.blog-figure.blog-table .table-title,
+.blog-figure.blog-table .wiki-table {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .blog-figure.blog-table {
+    width: 100%;
+  }
+  /* 좁은 화면 표준: 가로 스크롤 대신 본문 폭 안에서 줄바꿈한다.
+     4열 이하는 표 형태를 유지하고, 5열 이상은 템플릿이 붙이는 .blog-table--stack으로
+     행 단위 카드형으로 세로 전개한다(아래 "표 모바일 규칙" 참고). */
+  .table-scroll {
+    overflow-x: visible;
+    touch-action: auto;
+  }
+  .blog-figure.blog-table .wiki-table {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.blog-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;  /* CLS 방지용 공간 예약 */
+  max-height: 650px;
+  object-fit: contain;
+  display: block;
+  background: var(--bg-secondary);  /* 로딩 중 placeholder */
+}
+
+.blog-caption {
+  padding: 12px 16px;
+  font-size: var(--font-caption-size);
+  color: var(--text-secondary);
+  text-align: center;
+  background: var(--hover-bg);
+  border-top: 1px solid var(--border);
+}
+
+/* 비디오 임베드 */
+.blog-video .blog-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 비율 */
+  height: 0;
+  overflow: hidden;
+}
+
+.blog-video .blog-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 트위터/X 임베드 */
+.blog-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-tweet .blog-tweet-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 550px;
+}
+
+.blog-tweet .twitter-tweet {
+  margin: 0 !important;
+}
+
+/* 임베드는 본문 폭을 넘지 않는다 (좁은 화면 가로 스크롤 방지) */
+.blog-tweet .twitter-tweet,
+.blog-tweet iframe,
+.blog-video iframe {
+  max-width: 100% !important;
+}
+
+.blog-tweet .blog-caption {
+  width: 100%;
+  text-align: center;
+}
+
+/* 인용문 (중립 톤 + 장식용 따옴표) */
+.blog-quote {
+  position: relative;
+  margin: 24px 0;
+  padding: 12px 16px 12px 44px;
+  background: transparent;
+  border-left: 3px solid var(--border-subtle, var(--border));
+  border-radius: 0 8px 8px 0;
+  font-size: var(--font-article-quote-size);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.blog-quote::before {
+  content: "\201C";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  font-size: 40px;
+  line-height: 1;
+  font-style: normal;
+  color: var(--border);
+  pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .blog-quote {
+    border-left-color: var(--border-subtle, var(--border));
+  }
+  .blog-quote::before {
+    color: var(--border);
+  }
+}
+
+/* 코드블록 */
+.blog-code {
+  margin: 24px 0;
+}
+
+.blog-code pre {
+  margin: 0;
+  padding: 20px 24px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.blog-code code {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: var(--font-article-code-size);
+  line-height: 1.8;
+  color: var(--text);
+  background: transparent;
+  padding: 0;
+}
+
+.blog-code .blog-caption {
+  margin-top: 8px;
+  text-align: left;
+  color: var(--text-tertiary);
+  font-size: var(--font-caption-size);
+}
+
+/* 구문 강조 토큰 - GitHub Light 팔레트 */
+.blog-code .tok-kw { color: #cf222e; }
+.blog-code .tok-str { color: #0a3069; }
+.blog-code .tok-num { color: #0550ae; }
+.blog-code .tok-com { color: #6e7781; }
+.blog-code .tok-fn { color: #8250df; }
+.blog-code .tok-bi { color: #0550ae; }
+.blog-code .tok-op { color: var(--text); }
+.blog-code .tok-punct { color: var(--text-secondary); }
+.blog-code .code-comment { color: #6e7781; }
+
+@media (prefers-color-scheme: dark) {
+  .blog-code pre {
+    background: #161616;
+    border-color: #272727;
+  }
+  .blog-code code {
+    color: var(--text);
+  }
+
+  /* 구문 강조 토큰 - GitHub Dark 팔레트 */
+  .blog-code .tok-kw { color: #ff7b72; }
+  .blog-code .tok-str { color: #a5d6ff; }
+  .blog-code .tok-num { color: #79c0ff; }
+  .blog-code .tok-com { color: #8b949e; }
+  .blog-code .tok-fn { color: #d2a8ff; }
+  .blog-code .tok-bi { color: #79c0ff; }
+  .blog-code .code-comment { color: #8b949e; }
+}
+
+/* 주석/메타 정보 (순위 분석 서문 등) */
+.blog-note {
+  margin: 16px 0 24px;
+  padding: 10px 14px;
+  background: transparent;
+  border-radius: 6px;
+  font-size: var(--font-caption-size);
+  line-height: 1.5;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* 부가 설명 박스 (VS Code란? 등) */
+.blog-aside {
+  margin: 16px 0 24px;
+  padding: 14px 16px;
+  background: color-mix(in srgb, var(--accent) 5%, var(--card));
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  font-size: var(--font-article-small-size);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.blog-aside .aside-title {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: var(--font-article-small-size);
+  font-weight: 700;
+}
+
+.blog-aside .aside-title::before {
+  content: "\1F4A1";
+  margin-right: 6px;
+}
+
+.blog-aside p {
+  margin: 0;
+}
+
+.blog-aside code {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: var(--font-caption-size);
+}
+
+/* aside 다음 코드블록 간격 */
+.blog-aside + .blog-code {
+  margin-top: 32px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .blog-aside {
+    background: color-mix(in srgb, var(--accent) 10%, var(--card));
+  }
+  .blog-aside code {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* 코드 스니펫 */
+.blog-content code {
+  background: var(--hover-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'SF Mono', Consolas, monospace;
+  font-size: 1em;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.blog-content code strong {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  .blog-content code {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* 공통 기사 목차 — 카테고리·인기 카드와 같은 라벨·행·번호 규격
+   (라벨 13px 대문자 / 행 14px / 번호 13px·20px 폭·gap 12px — 인기 리스트의 순위 열과 동일).
+   AIScroll 사이드바 공통 블록(ai-blog/index.js)이 같은 값을 세 카드에 한 번에 적용한다.
+   현재 읽는 절(.is-current)은 번호·본문이 함께 브랜드 블루 — 인기 카드의 순위 강조(번호만)와 구분. */
+#sidebar-toc .home-card-header {
+  display: block;
+  border-bottom: none;
+  padding: 0 0 8px;
+  min-height: 0;
+  height: auto;
+}
+#sidebar-toc .home-card-title {
+  font-size: var(--font-sidebar-label-size);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.article-toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.article-toc-item {
+  display: flex;
+  min-height: 44px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 9px 0;
+  margin: 1px 0;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text);
+  font-size: var(--font-sidebar-item-size);
+  font-weight: 500;
+  line-height: 1.45;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.article-toc-item:hover {
+  background: var(--hover-bg);
+  color: var(--primary);
+}
+.article-toc-item:focus-visible,
+.article-toc-mobile > summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.article-toc-num {
+  flex-shrink: 0;
+  width: 20px;
+  font-size: var(--font-caption-size);
+  font-weight: 700;
+  line-height: 1.55;
+  text-align: center;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.article-toc-text {
+  flex: 1;
+  min-width: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.article-toc-item.is-current {
+  color: var(--primary);
+  font-weight: 600;
+}
+.article-toc-item.is-current .article-toc-num {
+  color: var(--primary);
+}
+.article-toc-mobile {
+  display: none;
+}
+.article-toc-mobile > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--font-sidebar-item-size);
+  font-weight: 700;
+  color: var(--text);
+}
+.article-toc-mobile > summary::-webkit-details-marker {
+  display: none;
+}
+.article-toc-chevron {
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+.article-toc-mobile[open] .article-toc-chevron {
+  transform: rotate(180deg);
+}
+@media (max-width: 768px) {
+  .article-toc-mobile {
+    display: block;
+    padding: 8px 16px;
+    margin: 16px 0 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--hover-bg);
+  }
+  .article-toc-mobile .article-toc {
+    padding: 4px 0 8px;
+  }
+  .article-toc-mobile .article-toc-text {
+    display: block;
+    overflow: visible;
+    overflow-wrap: anywhere;
+  }
+}
+/* 목차 앵커 이동 시 소제목이 상단에 바짝 붙지 않게 */
+.blog-content .blog-heading {
+  scroll-margin-top: 84px;
+}
+
+/* 서브헤딩 (콜론으로 끝나는 굵은 텍스트) */
+.blog-content .subheading {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+  font-size: var(--font-article-h3-size);
+  line-height: 1.4;
+  margin-top: 1.5em;
+  margin-bottom: 0.3em;
+}
+
+/* 첫 번째 문단의 서브헤딩은 상단 마진 제거 */
+.blog-content p:first-of-type > .subheading:first-child {
+  margin-top: 0;
+}
+
+/* 링크 그리드 (2열 레이아웃) */
+.blog-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 16px 0;
+}
+
+@media (max-width: 768px) {
+  .blog-link-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 링크 버튼 (관련 게임 카드와 동일한 스타일) */
+.blog-link-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--hover-bg);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: var(--transition-elevate);
+}
+
+.blog-link-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-hover);
+}
+
+.blog-link-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.blog-link-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.blog-link-text {
+  display: block;
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-tab-weight);
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blog-link-subtext {
+  display: block;
+  font-size: var(--font-meta-size);
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.blog-link-arrow {
+  color: var(--text-muted);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* 표 래퍼 - 반응형 자동 조정 (마크다운 표 파싱용) */
+.blog-table-wrapper {
+  margin: 24px 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+  overscroll-behavior-x: contain;
+}
+
+@media (max-width: 768px) {
+  .blog-table-wrapper {
+    width: 100%;
+  }
+}
+
+/* ===== 표 스타일 (정석) ===== */
+.blog-table-wrapper table,
+.blog-content table,
+.wiki-table {
+  width: auto;
+  min-width: 50%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: var(--font-article-small-size);
+  table-layout: auto;
+  background: var(--card-bg);
+  margin-bottom: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .blog-table-wrapper table,
+  .blog-content table,
+  .wiki-table {
+    width: 100%;
+  }
+}
+
+/* 표 좌우 가득 채우기 (blog 기사 표만) */
+.blog-table-wrapper table {
+  width: 100%;
+  min-width: 100%;
+}
+
+/* 표 캡션을 아래로 */
+.blog-table-wrapper caption {
+  caption-side: bottom;
+  margin-top: 10px;
+  font-size: var(--font-caption-size);
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* 순위 등락 배지 (상승 초록 / 하락 빨강) */
+.blog-table-wrapper .rank-up,
+.blog-table-wrapper .rank-down {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+.blog-table-wrapper .rank-up {
+  background: #d3f9d8;
+  color: #166534;
+}
+.blog-table-wrapper .rank-down {
+  background: #ffe3e3;
+  color: #991b1b;
+}
+
+/* 표 제목 */
+.table-title {
+  padding: 10px 14px;
+  font-size: var(--font-article-body-size);
+  font-weight: var(--font-card-title-weight);
+  color: var(--text);
+  background: var(--hover-bg);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+}
+
+.table-title + .wiki-table,
+.table-title + table {
+  border-radius: 0 0 8px 8px;
+}
+
+/* 헤더 셀 */
+.blog-table-wrapper th,
+.blog-content th,
+.wiki-table th {
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  background: var(--hover-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+/* 데이터 셀 */
+.blog-table-wrapper td,
+.blog-content td,
+.wiki-table td {
+  padding: 8px 12px;
+  text-align: left;
+  color: var(--text-secondary);
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+/* 마지막 행 테두리 제거 */
+.blog-table-wrapper tr:last-child td,
+.blog-content tr:last-child td,
+.wiki-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* 호버 효과 */
+.blog-table-wrapper tbody tr:hover td,
+.blog-content tbody tr:hover td,
+.wiki-table tbody tr:hover td {
+  background: var(--hover-bg);
+}
+
+/* ===== 표 모바일 규칙 (가로 스크롤 없음) ===== */
+@media (max-width: 768px) {
+  .blog-table-wrapper {
+    overflow-x: visible;
+    touch-action: auto;
+  }
+  .blog-table-wrapper table,
+  .blog-content table,
+  .wiki-table {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    table-layout: auto;
+    font-size: var(--font-article-table-size);
+  }
+  /* 4열 이하: 셀 줄바꿈 허용. 한글은 단어 단위(keep-all), 긴 영문·숫자는 anywhere로 끊는다 */
+  .blog-table-wrapper th,
+  .blog-table-wrapper td,
+  .blog-content th,
+  .blog-content td,
+  .wiki-table th,
+  .wiki-table td {
+    padding: 8px 8px;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    vertical-align: top;
+    line-height: 1.45;
+  }
+  .table-title {
+    padding: 8px 12px;
+  }
+  .blog-code pre {
+    overflow-x: visible;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    padding: 14px 16px;
+  }
+
+  /* 5열 이상(.blog-table--stack): 행마다 카드, 각 칸 앞에 열 제목(data-label) */
+  .blog-table--stack table,
+  .blog-table--stack .wiki-table,
+  .blog-table--stack tbody,
+  .blog-table--stack tr {
+    display: block;
+    width: 100%;
+  }
+  .blog-table--stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .blog-table--stack table,
+  .blog-table--stack .wiki-table {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    overflow: visible;
+    margin-bottom: 0;
+  }
+  .blog-table--stack .table-title {
+    border-bottom: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .blog-table--stack tbody tr {
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--card-bg);
+  }
+  .blog-table--stack tbody tr:last-child {
+    margin-bottom: 0;
+  }
+  .blog-table--stack td {
+    display: grid;
+    grid-template-columns: minmax(5.5em, 36%) minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    padding: 7px 12px;
+    text-align: left;
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-subtle, var(--border));
+  }
+  .blog-table--stack tbody tr:last-child td {
+    border-bottom: 1px solid var(--border-subtle, var(--border));
+  }
+  .blog-table--stack td:last-child,
+  .blog-table--stack tbody tr:last-child td:last-child {
+    border-bottom: none;
+  }
+  .blog-table--stack td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: var(--font-caption-size);
+    line-height: 1.45;
+  }
+  /* 첫 열은 카드 제목 역할 */
+  .blog-table--stack td:first-child {
+    display: block;
+    font-weight: 700;
+    color: var(--text);
+    background: var(--hover-bg);
+  }
+  .blog-table--stack td:first-child::before {
+    display: none;
+  }
+  .blog-table--stack td:empty {
+    display: none;
+  }
+  .blog-table--stack tbody tr:hover td {
+    background: var(--card-bg);
+  }
+  .blog-table--stack tbody tr:hover td:first-child {
+    background: var(--hover-bg);
+  }
+}
+
+/* 표 내 링크 */
+.wiki-table a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: var(--font-tab-weight);
+  transition: color 0.2s;
+}
+
+.wiki-table a:hover {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* 광고 영역 */
+.blog-ad {
+  margin: 24px 0;
+}
+
+.blog-in-article-ad {
+  margin: 24px 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .blog-in-article-ad-mobile-late {
+    display: none !important;
+    min-height: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+.blog-in-article-ad > ins.adsbygoogle,
+.blog-in-article-ad > ins.adsbygoogle > div,
+.blog-in-article-ad > ins.adsbygoogle > iframe,
+.blog-in-article-ad > ins.adsbygoogle iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+.blog-in-article-ad.gs-ad-compact {
+  margin-bottom: 16px;
+}
+
+.blog-in-article-ad:has(ins[data-ad-status="unfilled"]),
+.blog-in-article-ad:has(ins[data-gs-ad-empty="1"]),
+.blog-in-article-ad.gs-ad-empty {
+  display: none !important;
+  min-height: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+}
+
+/* 관련 게임 섹션 - 카드 내부 */
+.blog-related-games {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+}
+
+.blog-related-title {
+  font-size: var(--font-title-size);
+  font-weight: var(--font-card-title-weight);
+  color: var(--text);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.blog-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.blog-related-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--hover-bg);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.blog-related-card:hover {
+  background: var(--card-hover);
+  border-color: var(--border);
+}
+
+.blog-related-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.blog-related-name {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-tab-weight);
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 관련 이슈 섹션 */
+.blog-related-issues {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+}
+
+.blog-related-issues-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.blog-related-issue-card {
+  display: block;
+  background: var(--card);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: var(--transition-elevate);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.blog-related-issue-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-hover);
+}
+
+.blog-related-issue-thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-related-issue-title {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-tab-weight);
+  color: var(--text);
+  padding: 12px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: calc(4.2em + 24px);
+}
+
+.blog-related-issue-title-text {
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.2em;
+}
+
+#issue .blog-related-issue-title,
+#wiki-article .blog-related-issue-title,
+#ranking .blog-related-issue-title,
+#tech-article .blog-related-issue-title,
+#ai-article .blog-related-issue-title {
+  font-size: var(--font-desc-size) !important;
+  padding: 12px !important;
+  display: block !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  height: calc(4.2em + 24px) !important;
+  box-sizing: border-box !important;
+}
+
+#issue .blog-related-issue-title-text,
+#wiki-article .blog-related-issue-title-text,
+#ranking .blog-related-issue-title-text,
+#tech-article .blog-related-issue-title-text,
+#ai-article .blog-related-issue-title-text {
+  line-height: 1.4 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-height: 4.2em !important;
+}
+
+/* 정보 출처 섹션 */
+.blog-sources {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+}
+
+.blog-sources-title {
+  font-size: var(--font-title-size);
+  font-weight: var(--font-card-title-weight);
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.blog-sources-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+  gap: 8px;
+}
+
+.blog-sources-list li {
+  font-size: var(--font-caption-size);
+  line-height: 1.6;
+}
+
+.blog-sources-list a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.blog-sources-list a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* 네비게이션 */
+.blog-nav-wrapper {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px 24px;
+  border: 1px solid var(--border);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .blog-article {
+    padding: 12px;
+  }
+
+  .blog-header,
+  .blog-content,
+  .blog-related-games,
+  .blog-related-issues,
+  .blog-sources,
+  .blog-nav-wrapper {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .blog-header {
+    /* 가로 패딩 제거: 부모 컨테이너가 이미 16px 거터를 제공한다.
+       (16px를 남기면 제목이 본문보다 16px 더 들어가는 이중 여백이 된다) */
+    padding: 24px 0 8px;
+  }
+
+  .blog-title {
+    letter-spacing: -0.02em;
+  }
+
+  .blog-hero {
+    margin: 0 0 16px;
+    max-height: 280px;
+    border-radius: var(--radius-lg);
+  }
+
+  .blog-heading {
+    margin: 28px 0 14px;
+  }
+
+  .blog-figure {
+    margin: 16px -16px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .blog-header + .blog-figure {
+    margin: 0 0 16px;
+    max-height: 280px;
+    border-radius: var(--radius-lg);
+  }
+
+  .blog-header + .blog-figure .blog-image {
+    max-height: 280px;
+  }
+
+  .blog-summary {
+    /* 가로 마진 제거: 부모 16px 거터와 겹쳐 본문과 어긋나던 이중 여백 수정 */
+    margin: 12px 0;
+  }
+
+  .blog-related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .blog-related-issues-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 상세 페이지 네비게이션 - 하단 배치 (이전/목록/다음) */
+.trend-detail-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  gap: 12px;
+}
+
+.trend-nav-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-title-weight);
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  background: var(--hover-bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  min-width: 80px;
+  text-align: center;
+}
+
+.trend-nav-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+
+.trend-nav-btn.disabled {
+  /* 대비 저하 없이 활성 버튼과 구분: 배경 제거 + 점선 테두리 (opacity 0.45는 WCAG 대비 미달) */
+  background: transparent;
+  border-style: dashed;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .trend-detail-nav {
+    gap: 8px;
+  }
+
+  .trend-nav-btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px 12px;
+  }
+}
+
+/* ===== Game Ranking List ===== */
+.game-ranking-list {
+  margin: 24px 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.game-ranking-title {
+  padding: 16px 20px;
+  font-size: var(--font-title-size);
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  background: var(--hover-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.game-ranking-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.game-ranking-item:last-child {
+  border-bottom: none;
+}
+
+.game-ranking-item:hover {
+  background: var(--hover-bg);
+}
+
+.game-ranking-rank {
+  display: none;
+}
+
+.game-ranking-thumb {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.game-ranking-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-ranking-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.game-ranking-name {
+  font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.game-ranking-price {
+  font-weight: var(--font-body-weight);
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+.game-ranking-desc {
+  font-size: var(--font-desc-size);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .game-ranking-item {
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .game-ranking-thumb {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+  }
+
+  .game-ranking-name {
+    font-size: var(--font-desc-size);
+  }
+
+  .game-ranking-desc {
+    font-size: var(--font-small-size);
+  }
+}
+
+/* ========================================
+   순위 비교 차트 스타일 (게임 페이지 차트와 통일)
+   ======================================== */
+
+/* 차트 2열 그리드 레이아웃 (PC: 2열, 모바일: 1열) */
+.blog-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.blog-chart-wrapper {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 0; /* 그리드 내에서는 마진 제거 */
+}
+
+/* 그리드 외부에서 사용 시 마진 */
+.blog-content > .blog-chart-wrapper {
+  margin: 24px 0;
+}
+
+/* 그리드 내에서 ranking-chart-wrapper 마진 제거 */
+.blog-charts-grid > .ranking-chart-wrapper {
+  margin: 0;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chart-title {
+  font-size: 1.125rem;
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  margin: 0;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.chart-legend-item::before {
+  content: '';
+  width: 10px;
+  height: 3px;
+  background: var(--color);
+  border-radius: 2px;
+}
+
+.chart-legend-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.chart-container {
+  width: 100%;
+}
+
+/* trend-chart-svg 스타일은 80-game-charts.css에서 상속 */
+
+.chart-period {
+  text-align: center;
+  font-size: var(--font-small-size);
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.chart-error {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-size: var(--font-desc-size);
+}
+
+@media (max-width: 768px) {
+  .blog-charts-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .blog-chart-wrapper {
+    padding: 12px;
+  }
+
+  .blog-content > .blog-chart-wrapper {
+    margin: 16px 0;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .chart-legend {
+    gap: 8px;
+  }
+
+  .chart-legend-item {
+    font-size: 14px;
+  }
+
+  .chart-legend-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ========================================
+   시리즈 네비게이션 블록 (관련 문서 스타일 재사용 + 태그)
+   ======================================== */
+
+.blog-series {
+  margin: 0 0 24px;
+}
+
+.blog-series-card {
+  position: relative;
+  transition: var(--transition-elevate);
+}
+
+.blog-series-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-hover);
+}
+
+.blog-series-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 8px;
+  font-size: var(--font-xs-size);
+  font-weight: var(--font-tab-weight);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+}
+
+/* ========================================
+   아티클 2컬럼 레이아웃 + 사이드바
+   ======================================== */
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--space-block-gap);
+  align-items: start;
+}
+
+.article-main {
+  min-width: 0;
+}
+
+.article-main > * {
+  margin-bottom: var(--space-block-gap);
+}
+
+.article-main > *:last-child {
+  margin-bottom: 0;
+}
+
+.article-sidebar {
+  display: block;
+  align-self: stretch;
+}
+
+.article-sidebar-sticky {
+  position: sticky;
+  top: 70px;
+}
+
+.article-sidebar-sticky:has(> #sidebar-toc) {
+  /* 긴 목차·카테고리가 기사 끝에서 목차 전체를 위로 밀지 않도록 한 곳에서 스크롤한다. */
+  max-height: calc(100vh - 86px);
+  max-height: calc(100dvh - 86px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.article-sidebar-sticky > * {
+  margin-bottom: var(--space-block-gap);
+}
+
+.article-sidebar-sticky > *:last-child {
+  margin-bottom: 0;
+}
+
+/* 모바일: 사이드바 숨김 */
+@media (max-width: 768px) {
+  .article-layout {
+    display: block;
+  }
+
+  .article-sidebar {
+    display: none !important;
+  }
+}
+
+/* 태블릿(769~1024px): 본문 1열, 사이드바는 본문 아래로 (본문 폭 720px 확보) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .article-layout .article-sidebar-sticky {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* ========================================
+   순위 분석 전용 시각화 컴포넌트
+   ======================================== */
+
+/* 공통 차트 래퍼 */
+.ranking-chart-wrapper {
+  margin: 24px 0;
+  padding: 24px;
+  background: var(--card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* ApexCharts 툴팁 - 사이트 테마 통일 */
+.apexcharts-tooltip {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+.apexcharts-tooltip-title {
+  background: var(--hover-bg) !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  font-weight: 600 !important;
+  padding: 8px 12px !important;
+}
+.apexcharts-tooltip-series-group {
+  padding: 6px 12px !important;
+}
+.apexcharts-tooltip-text,
+.apexcharts-tooltip-text-y-label,
+.apexcharts-tooltip-text-y-value,
+.apexcharts-tooltip-text-goals-label,
+.apexcharts-tooltip-text-goals-value {
+  color: var(--text) !important;
+}
+.apexcharts-tooltip-marker {
+  margin-right: 8px !important;
+}
+
+/* ApexCharts 범례 텍스트 색상 */
+.apexcharts-legend-text {
+  color: var(--text-secondary) !important;
+}
+
+/* ApexCharts 축 라벨 색상 */
+.apexcharts-xaxis-label,
+.apexcharts-yaxis-label,
+.apexcharts-xaxis text,
+.apexcharts-yaxis text {
+  fill: var(--text-muted) !important;
+}
+
+/* ApexCharts crosshair 라벨 (날짜 선택 시) */
+.apexcharts-xcrosshairs,
+.apexcharts-ycrosshairs {
+  stroke: var(--border) !important;
+}
+.apexcharts-xaxistooltip {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+.apexcharts-xaxistooltip-text {
+  color: var(--text) !important;
+}
+
+.ranking-chart-wrapper.ranking-chart-small {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ranking-chart-title {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+}
+
+.ranking-chart {
+  width: 100%;
+  min-height: 300px;
+}
+
+/* 포디움 (1/2/3위) */
+.ranking-podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  margin: 32px 0;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.podium-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--text);
+}
+
+.podium-medal {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.podium-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  border: 3px solid var(--border);
+  margin-bottom: 8px;
+  object-fit: cover;
+}
+
+.podium-1st .podium-icon {
+  width: 80px;
+  height: 80px;
+  border-color: #FFD700;
+}
+
+.podium-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.podium-score {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.podium-bar {
+  width: 80px;
+  border-radius: 8px 8px 0 0;
+  background: var(--border);
+}
+
+.podium-bar-1st { height: 120px; background: var(--medal-gold); }
+.podium-bar-2nd { height: 90px; background: var(--medal-silver); }
+.podium-bar-3rd { height: 60px; background: var(--medal-bronze); }
+
+/* 랭킹 카드 */
+.ranking-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  margin: 16px 0;
+  background: var(--card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+
+.ranking-card-highlight {
+  border-color: #FF6B6B;
+  background: rgba(255, 107, 107, 0.05);
+}
+
+.ranking-card-rank {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  min-width: 50px;
+  text-align: center;
+}
+
+.ranking-card-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.ranking-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ranking-card-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.ranking-card-score {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-secondary);
+}
+
+.ranking-card-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.ranking-card-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ranking-card-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--bg);
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.ranking-card-stat .stat-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.ranking-card-stat .stat-value {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* iOS/AOS 색상 구분 (WCAG AA 4.5:1 contrast on white) */
+.ranking-card-stat.stat-ios .stat-label {
+  color: #0050B3;
+}
+.ranking-card-stat.stat-aos .stat-label {
+  color: #166534;
+}
+
+/* 요약 통계 */
+.ranking-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.ranking-summary-item {
+  padding: 20px;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.ranking-summary-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.ranking-summary-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* 다크모드 */
+@media (prefers-color-scheme: dark) {
+  .ranking-chart-wrapper,
+  .ranking-card,
+  .ranking-summary-item {
+    background: var(--card);
+    border-color: var(--border);
+  }
+
+  .ranking-chart .apexcharts-text,
+  .ranking-chart .apexcharts-xaxis-label,
+  .ranking-chart .apexcharts-yaxis-label {
+    fill: var(--text-muted) !important;
+  }
+
+  .ranking-chart .apexcharts-gridline {
+    stroke: var(--border) !important;
+  }
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .ranking-chart-wrapper {
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .ranking-podium {
+    flex-direction: row;
+    padding: 16px;
+    gap: 8px;
+    margin: 16px 0;
+    border-radius: 12px;
+  }
+
+  .podium-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .podium-1st .podium-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .podium-bar {
+    width: 60px;
+  }
+
+  .podium-bar-1st { height: 80px; }
+  .podium-bar-2nd { height: 60px; }
+  .podium-bar-3rd { height: 40px; }
+
+  .podium-name {
+    font-size: 12px;
+    max-width: 70px;
+  }
+
+  .ranking-card {
+    flex-wrap: wrap;
+    padding: 16px;
+    margin: 12px 0;
+    border-radius: 12px;
+  }
+
+  .ranking-card-rank {
+    font-size: 24px;
+    min-width: 40px;
+  }
+
+  .ranking-card-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .ranking-card-stats {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .ranking-summary {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 16px 0;
+    gap: 0;
+    border-radius: 12px;
+  }
+
+  .ranking-summary-item {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .ranking-summary-item:nth-child(2n) {
+    border-right: none;
+  }
+}

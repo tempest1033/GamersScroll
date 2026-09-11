@@ -1,0 +1,111 @@
+/* ========================================================================
+   타이포 스케일 표준화 (2026-09-09) — 모든 번들의 마지막에 import 된다.
+   크기 12단계 · 굵기 4단계. 새 스타일은 아래 토큰에서만 고른다.
+   ------------------------------------------------------------------------
+   크기   11 caption(캡션·태그)   12 meta(보조·라벨)      13 ui(목록 보조·필·주석)
+          14 body-sm(표·목록명)   15 body(설명문·소개)    17 article(기사 본문)
+          18 card-title           20 list-title           24 h2(허브·상세 섹션)
+          26 h2-home/article      32 h1-detail·KPI 숫자   36 h1(허브)
+   굵기   400 본문   500 라벨·목록명   600 제목·강조   700 h1·숫자·볼드
+   ======================================================================== */
+:root {
+  --fs-caption: 11px; --fs-meta: 12px; --fs-ui: 13px; --fs-body-sm: 14px; --fs-body: 15px; --fs-article: 17px;
+  --fs-card-title: 18px; --fs-list-title: 20px; --fs-h2: 24px; --fs-h2-lg: 26px; --fs-h1-detail: 32px; --fs-h1: 36px;
+  --fw-regular: 400; --fw-medium: 500; --fw-semibold: 600; --fw-bold: 700;
+}
+
+/* ---------- 굵기: 550 → 500, 650/750/800 → 600 또는 700 ---------- */
+/* h1 · 기사 제목 */
+body:not(.page-home) .site-container .rk h1,
+.page-home .rk-home .rk-home-heading h1,
+body.page-games .games-hub-intro h1,
+body.page-game #game .game-hero-title,
+body .site-container .blog-title { font-weight: var(--fw-bold); }
+/* 홈 h1: 30 → 32 (스케일 값) */
+.page-home .rk-home .rk-home-heading h1 { font-size: var(--fs-h1-detail); }
+/* 목록·표의 게임명: 550/650 → 500 */
+body .site-container .rk .rk-list .nm > a,
+body .site-container .rk .rk-list .nm > span:first-child,
+body .site-container .rk .rk-hpanel .rk-list .nm > button,
+body .site-container .rk .rk-table .rk-app .t,
+body .site-container .rk .rk-app .t,
+body.page-games .recent-name,
+body.page-games .popular-name { font-weight: var(--fw-medium); }
+/* 순위 숫자·수치·KPI: 650/800/550 → 700 */
+body .site-container .rk .rk-list .rk-rk,
+body .site-container .rk .rk-table td.v,
+body .site-container .rk .rk-wk b,
+body .site-container .rk .rk-preview-kpis b,
+body:not(.page-home) .site-container .rk .rk-stat .v,
+body .site-container #steam .rk-steam-summary .v,
+body.page-game #game .rk-game > .rk-stats .rk-stat .v,
+body .site-container .rk .rk-hcard .big,
+body .site-container .ranking-card-score { font-weight: var(--fw-bold); }
+/* 섹션·카드 제목: 800 → 600 */
+body .site-container .rk .rk-h2,
+body .site-container .rk .rk-card h2,
+body .site-container .rk .rk-colh h2,
+body .site-container .rk .rk-home-sec > h2,
+body .site-container .rk .rk-preview-label span:first-child,
+body .site-container .rk .rk-preview-link { font-weight: var(--fw-semibold); }
+
+/* ---------- 크기: 반 단계 값 제거 ---------- */
+/* 11.5 → 12 */
+body .site-container .rk .rk-podium .s,
+body .site-container .rk .rk-hcard h3 small,
+body .site-container .rk .rk-hcard .one .l,
+body .site-container .rk .rk-chg.new,
+body .site-container .rk .rk-badge,
+body .site-container .rk .rk-streak,
+body .site-container .rk .rk-tagnew,
+body .site-container .rk .rk-disc,
+body .site-container .rk .rk-wk > * { font-size: var(--fs-meta); }
+/* 12.5 → 13 */
+body .site-container .rk .rk-app .d,
+body .site-container .rk .rk-stat .l,
+body .site-container .rk .rk-links span,
+body .site-container .rk .rk-pill,
+body .site-container .rk .rk-legend,
+body .site-container .rk .rk-pills span,
+body .site-container .rk.rk-compact .rk-links-row a,
+body .site-container .rk .rk-hcard .one .rk-chg,
+body .site-container .rk .rk-hero .meta,
+body .site-container .rk .rk-table td.rk-rank,
+.site-footer { font-size: var(--fs-ui); }
+/* 13.5 → 14 · 14.5 → 14/15 */
+body .site-container .rk .rk-note,
+body .site-container .rk .rk-price,
+body .site-container .rk .rk-app .t { font-size: var(--fs-body-sm); }
+body .site-container .rk .rk-faq { font-size: var(--fs-body); }
+/* 기사 안 반 단계 값 */
+body .site-container .blog-table-wrapper .rank-up,
+body .site-container .blog-table-wrapper .rank-down { font-size: var(--fs-ui); }
+body .site-container .blog-related-issue-title-text,
+body .site-container .blog-related-name,
+body .site-container .trend-nav-btn { font-size: var(--fs-body); }
+/* 홈 미리보기 카드: 제목 22 → 20, 순위 숫자 19/22 → 24 */
+.page-home .rk-home .rk-preview-title h2 { font-size: var(--fs-list-title); }
+.page-home .rk-home .rk-preview-kpis b { font-size: var(--fs-h2); }
+/* 카드 안 제목은 한 가지: 18/600 (홈 월간 카드 · 스팀 허브 월간 카드) */
+body .site-container .rk .rk-grid2 .rk-card h2,
+body .site-container .rk-home .rk-hmonth .rk-card h2 { font-size: var(--fs-card-title); font-weight: var(--fw-semibold); }
+/* 홈 주요 변동 카드 제목 17 → 18 */
+body .site-container .rk-home .rk-hmovers .rk-hcard h3 { font-size: var(--fs-card-title); }
+/* KPI 숫자는 32 하나로 (홈 28 · 스팀 허브 36 · 게임 상세 36) */
+body .site-container .rk .rk-hcard .big,
+body .site-container #steam .rk-steam-summary .v,
+body.page-game #game .rk-game > .rk-stats .rk-stat .v { font-size: var(--fs-h1-detail); }
+/* 리포트 허브 피처 제목 30 → 26 */
+body.page-reports .site-container .rk .rk-news-layout .rk-news-lead h2.t { font-size: var(--fs-h2-lg); }
+
+@media (max-width: 768px) {
+  body .site-container .rk .rk-hcard .big,
+  body .site-container #steam .rk-steam-summary .v,
+  body.page-game #game .rk-game > .rk-stats .rk-stat .v,
+  body:not(.page-home) .site-container .rk .rk-stat .v { font-size: var(--fs-h2); }
+  .page-home .rk-home .rk-home-heading h1 { font-size: var(--fs-h2-lg); }
+  .page-home .rk-home .rk-preview-title h2 { font-size: var(--fs-card-title); }
+  .page-home .rk-home .rk-preview-kpis b { font-size: var(--fs-list-title); }
+  body .site-container .rk .rk-grid2 .rk-card h2,
+  body .site-container .rk-home .rk-hmonth .rk-card h2 { font-size: var(--fs-card-title); }
+}

@@ -1,0 +1,462 @@
+﻿    /* 가로 스크롤 방지 - sticky 호환성을 위해 html/body에서 제거, 개별 요소에 적용 */
+    /* html, body의 overflow-x: clip은 stacking context를 생성하여 sticky를 깨뜨림 */
+
+    /* 모바일 터치 하이라이트 제거 */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 접근성: 키보드 포커스 링 */
+    a:focus-visible,
+    button:focus-visible,
+    [tabindex]:focus-visible,
+    input:focus-visible,
+    .nav-item:focus-visible,
+    .tab-btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* 접근성: 모션 최소화 선호 사용자 대응 */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* 글로벌 폰트 스택 - 블로그용 가독성 우선 */
+    html, body {
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", "Malgun Gothic", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      font-feature-settings: "ss06", "ss07";
+      /* 모바일 가로 회전 시 브라우저의 임의 글자 확대 방지 */
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    /* H1 폰트 크기 명시 (브라우저 지원 중단 API 경고 해결) */
+    h1 {
+      font-size: 2em;
+      font-weight: bold;
+      margin: 0.67em 0;
+    }
+    section h1, article h1, aside h1, nav h1 {
+      font-size: 2em;  /* 브라우저 자동 축소 방지 - UserAgent 스타일 오버라이드 */
+    }
+
+    /* 접근성: 시각적으로 숨기지만 스크린리더/SEO에는 노출 */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .is-hidden {
+      display: none !important;
+    }
+
+    /* 이미지 성능 최적화 - content-visibility 제거 (스크롤 시 회색 방지) */
+
+    /* 썸네일/아이콘 폴백 (파비콘 중앙 배치) */
+    .thumb-fallback {
+      background: var(--bg-secondary, #1a1a2e) url('/favicon.svg') center/32px no-repeat !important;
+    }
+    .thumb-fallback img {
+      opacity: 0;
+    }
+    .icon-fallback {
+      background: var(--bg-secondary, #1a1a2e) url('/favicon.svg') center/60% no-repeat !important;
+      border-radius: 6px;
+    }
+
+    /* 모바일 가로 스크롤 방지 + sticky 호환 */
+    @media (max-width: 768px) {
+      body {
+        width: 100%;
+        max-width: 100vw;
+        overscroll-behavior-x: none;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .header, .header-inner, .nav-inner {
+        width: 100%;
+        max-width: 100%;
+      }
+      .nav, .container, .site-container {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    :root {
+      /* === Primary Colors - 심플 모던 블로그 블루 === */
+      --primary: #2563EB;
+      --primary-light: #3B82F6;
+      --primary-dark: #1D4ED8;
+      --accent: #2563EB;
+
+      /* === Background & Surface - 쿨 그레이 페이지 + 순백 카드 (표면 위계) === */
+      --bg: #F5F6F8;
+      --bg-elevated: #FFFFFF;
+      --card: #FFFFFF;
+      --card-hover: #FFFFFF;
+
+      /* === Border - 얇고 은은한 톤 === */
+      --border: #E4E4E7;
+      --border-subtle: #ECECEF;
+      --border-hover: var(--primary); /* 호버 시 보더 색상 */
+
+      /* === Text - 뉴트럴 그레이 톤 === */
+      --text: #18181B;
+      --text-primary: #18181B;
+      --text-secondary: #3F3F46;
+      --text-muted: #6B6B73;
+      --text-tertiary: #A1A1AA;
+
+	      /* === Typography - 본문/제목 통합 관리 (데스크탑 기본) === */
+	      --font-title-size: 18px;
+	      --font-title-weight: 600;
+	      --font-card-title-weight: 700;
+	      --font-item-weight: 500;
+	      --font-logo-weight: 800;
+	      --font-body-size: 18px;
+	      --font-desc-size: 16px;
+	      --font-body-weight: 400;
+	      --font-desc-weight: 400;
+	      --font-body-line-height: 1.8;
+
+      /* === Typography - UI 요소 (탭, 배지, 네비 등) === */
+	      --font-tab-size: 14px;
+	      --font-tab-weight: 500;
+	      --font-badge-size: 12px;
+	      --font-badge-weight: 600;
+	      --font-small-size: 12px;
+	      --font-nav-size: 15px;
+	      --font-nav-weight: 500;
+
+      /* === Typography - 순위 테이블 (스팀, 모바일 등) === */
+      --font-rank-name-size: 15px;
+      --font-rank-name-weight: 500;
+      --font-rank-name-color: var(--text);
+      --font-rank-dev-size: 13px;
+      --font-rank-dev-weight: 500;
+      --font-rank-dev-color: var(--text-muted);
+
+      /* === Typography - 확장 크기 (전체 통합 관리) === */
+      /* 초소형 - 모바일 최소 가독 크기 12px 유지 */
+      --font-micro-size: 12px;
+      --font-tiny-size: 12px;
+
+      /* 소형 (12px) - 배지 내부, 순위 숫자, 보조 정보 */
+      --font-xs-size: 12px;
+      --font-sm-size: 13px; /* 소형 텍스트 */
+      --font-meta-size: 13px;
+      --font-caption-size: 13px;
+
+      /* === Typography - 소스 태그 (언론사, 채널명 등) === */
+      --font-source-size: var(--font-small-size);
+      --font-source-weight: 500;
+      --font-source-color: var(--primary);
+
+      /* 중형 - 섹션 제목 */
+      --font-section-size: 20px;
+      --font-section-weight: 700;
+
+      /* 대형 - 큰 제목 */
+      --font-heading-size: 22px;
+      --font-lg-size: 22px;
+
+      /* 초대형 (22-28px) - 통계 숫자, 큰 값 */
+      --font-xl-size: 22px;
+      --font-2xl-size: 26px;
+      --font-stat-size: 28px;
+
+      /* === Typography - 아티클/홈 역할 스케일 (본문 18px 기준, 단계 비율 ≈1.25) ===
+         두 사이트(GamerScroll·AIScroll)의 기사·홈·사이드바가 같은 사다리를 쓴다.
+         PC 값은 여기, 모바일 값은 아래 768px 미디어쿼리에서만 바꾼다. */
+      --font-article-title-size: 40px;   /* h1 기사 제목 (800) */
+      --font-article-lead-size: 20px;    /* 리드/요약문 (400, 회색) */
+      --font-article-h2-size: 28px;      /* 본문 소제목 (700) */
+      --font-article-h3-size: 22px;      /* 소소제목·콜론 굵은 글 (600) */
+      --font-article-body-size: 18px;    /* 본문 (400, 행간 1.8) */
+      --font-article-quote-size: 20px;   /* 인용 (500) */
+      --font-article-small-size: 15px;   /* 표·보조 박스 */
+      --font-article-table-size: 15px;   /* 표 셀 (모바일 14px — 4열까지 폭 안에 수납) */
+      --font-article-code-size: 14px;    /* 코드(모노) */
+      --font-feature-title-size: 28px;   /* 홈 리드 피처 제목 (h2급) */
+      --font-section-title-size: 22px;   /* 홈 섹션 제목 */
+      --font-card-title-size: 18px;      /* 목록 카드 제목 */
+      --font-card-summary-size: 15px;    /* 목록 카드 요약 */
+      --font-card-meta-size: 13px;       /* 카드 메타(카테고리·날짜) */
+      --font-sidebar-label-size: 13px;   /* 사이드바 라벨 (대문자) */
+      --font-sidebar-item-size: 14px;    /* 사이드바 항목·목차 */
+      --font-overline-size: 12px;        /* 카테고리 라벨 (대문자·자간) */
+
+      /* === Insight/Accent Colors (통합 관리) === */
+      --insight-icon: #0969DA;
+      --metric-color: #0969DA;
+      --gradient-progress: linear-gradient(90deg, #218BFF, #0969DA);
+      --gradient-accent: linear-gradient(135deg, #218BFF 0%, #0550AE 100%);
+
+      /* === 호환성 변수 (별칭) === */
+      --bg-secondary: #F4F4F5;
+      --bg-tertiary: #E4E4E7;
+      --border-color: #E4E4E7;
+      --bg-hover: #F4F4F5;
+      --accent-color: var(--primary); /* 강조 색상 */
+      --card-bg: var(--card); /* 카드 배경 */
+      --font-meta-weight: 500; /* 메타 텍스트 굵기 */
+      --font-desc-line-height: 1.6; /* 설명 텍스트 행간 */
+
+	      /* === Shadows - 레이어드 소프트 섀도 (카드가 떠 보이는 모던 블로그 톤) === */
+	      --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.04);
+	      --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.05), 0 1px 2px rgb(0 0 0 / 0.04);
+	      --shadow: 0 2px 8px rgb(0 0 0 / 0.06), 0 1px 3px rgb(0 0 0 / 0.05);
+	      --shadow-lg: 0 8px 24px rgb(0 0 0 / 0.09), 0 2px 6px rgb(0 0 0 / 0.05);
+	      --shadow-xl: 0 16px 48px rgb(0 0 0 / 0.12);
+
+      /* === Glass Effect === */
+      --glass-bg: rgba(255, 255, 255, 0.7);
+      --glass-bg-solid: rgba(255, 255, 255, 0.9);
+      --glass-border: rgba(255, 255, 255, 0.5);
+
+	      /* === Interactive States === */
+	      --hover-bg: var(--bg-hover);
+	      --active-bg: #eef2ff;
+	      --item-bg: #ffffff;
+
+      /* === Semantic Colors === */
+      --success: #16a34a;
+
+      /* === Modal Colors (Phase C 보존형 토큰화) === */
+      --modal-bg: #1a1a1a;
+      --modal-text: #ddd;
+      --modal-title: #fff;
+      --modal-section-title: #aaa;
+      --modal-close: #888;
+      --modal-close-hover: #fff;
+      --modal-effective-date: #666;
+
+      /* === Stat Colors === */
+      --stat-ios-color: #4fc3f7;
+      --stat-aos-color: #ffb74d;
+      --stat-success: #81c784;
+
+      /* === Badge Colors === */
+      --badge-danger: #f87171;
+      --badge-success: #4ade80;
+      --badge-warning: #fbbf24;
+      --badge-info: #38bdf8;
+
+      /* === Rank Badge Colors === */
+      --rank-purple: #6d28d9;
+      --rank-green: #166534;
+      --rank-red: #991b1b;
+
+      /* === Medal Colors (1-3위 solid 톤 - 그라디언트 대체) === */
+      --medal-gold: #f59e0b;
+      --medal-silver: #94a3b8;
+      --medal-bronze: #b45309;
+
+      /* === Link Hover === */
+      --link-hover-accent: #34d399;
+
+      /* === Layout === */
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+
+      /* === Spacing (Blocks/Layout) === */
+      --space-xxs: 6px;
+      --space-xs: 8px;
+      --space-sm: 12px;
+      --space-md: 16px;
+      --space-lg: 20px;
+      --space-xl: 24px;
+
+      --space-page-x: var(--space-md);
+      --space-block-y: var(--space-md);
+      --space-block-y-lg: var(--space-md);
+      --space-block-y-xl: var(--space-md);
+      --space-block-gap: var(--space-md);
+      --space-block-gap-lg: var(--space-md);
+      --space-header-gap: var(--space-md);
+
+      /* === Animation - 스프링 효과 추가 === */
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --transition-fast: 0.15s var(--ease-in-out);
+      --transition-normal: 0.25s var(--ease-out-expo);
+      --transition-slow: 0.4s var(--ease-out-expo);
+      --transition-elevate: transform 0.2s ease, box-shadow 0.2s ease;
+
+      /* === Report Gradients (중립 그레이) === */
+      --gradient-hot: var(--card-bg);
+      --gradient-industry: var(--card-bg);
+      --gradient-metrics: var(--card-bg);
+      --gradient-rankings: var(--card-bg);
+      --gradient-community: var(--card-bg);
+      --gradient-streaming: var(--card-bg);
+      --gradient-stocks: var(--card-bg);
+      --gradient-primary: var(--card-bg);
+
+      /* === Report Icon Backgrounds (블루 통일) === */
+      --icon-bg-hot: rgba(9, 105, 218, 0.10);
+      --icon-bg-industry: rgba(9, 105, 218, 0.10);
+      --icon-bg-metrics: rgba(9, 105, 218, 0.10);
+      --icon-bg-rankings: rgba(9, 105, 218, 0.10);
+      --icon-bg-community: rgba(9, 105, 218, 0.10);
+      --icon-bg-streaming: rgba(9, 105, 218, 0.10);
+      --icon-bg-stocks: rgba(9, 105, 218, 0.10);
+
+      /* === Report Badge (20% opacity for better readability) === */
+      --badge-bg-up: rgba(34, 197, 94, 0.20);
+      --badge-bg-down: rgba(239, 68, 68, 0.20);
+      --badge-bg-new: rgba(9, 105, 218, 0.20);
+
+      /* === Tag Base Colors (블루 톤) === */
+      --tag-bg: rgba(9, 105, 218, 0.10);
+      --tag-color: #0969DA;
+
+      /* === Section Colors (블루 통일) === */
+      --section-gradient: #ffffff;
+      --section-gradient-strong: #ffffff;
+      --section-icon-bg: rgba(9, 105, 218, 0.10);
+      --section-accent-bg: rgba(9, 105, 218, 0.13);
+      --section-border: rgba(9, 105, 218, 0.20);
+
+      /* === Glow Effects (블루 톤) === */
+      --glow-primary: 0 0 20px rgba(9, 105, 218, 0.18);
+      --glow-accent: 0 0 20px rgba(33, 139, 255, 0.18);
+    }
+
+    /* 모바일 (768px 이하) - 폰트 스케일 통합 */
+    @media (max-width: 768px) {
+      :root {
+        --font-title-size: 18px;
+        --font-body-size: 17px;
+        --font-desc-size: 15px;
+        --font-tab-size: 14px;
+        --font-nav-size: 14px;
+        --font-section-size: 18px;
+        --font-heading-size: 20px;
+        --font-lg-size: 20px;
+        --font-stat-size: 26px;
+        --font-xl-size: 22px;
+        --font-2xl-size: 26px;
+        --font-small-size: 12px;
+        --font-badge-size: 12px;
+        --font-meta-size: 13px;
+        --font-rank-name-size: 15px;
+        --font-rank-dev-size: 13px;
+
+        /* 아티클/홈 역할 스케일 - 모바일 */
+        --font-article-title-size: 30px;
+        --font-article-lead-size: 18px;
+        --font-article-h2-size: 24px;
+        --font-article-h3-size: 20px;
+        --font-article-body-size: 17px;
+        --font-article-quote-size: 18px;
+        --font-article-table-size: 14px;
+        --font-feature-title-size: 24px;
+        --font-section-title-size: 20px;
+        --font-card-title-size: 16px;
+        --font-card-meta-size: 12px;
+      }
+    }
+
+    /* PC: 섹션/피드 간격 위계 강화 */
+    @media (min-width: 769px) {
+      :root {
+        --space-block-y: var(--space-xl);       /* 24px — 섹션 세로 패딩 */
+        --space-block-y-lg: var(--space-xl);
+        --space-block-y-xl: var(--space-xl);
+        --space-block-gap: var(--space-lg);     /* 20px — 카드 간 간격 */
+        --space-block-gap-lg: var(--space-lg);
+        --space-header-gap: var(--space-md);    /* 16px — 헤더 내부 간격 */
+      }
+    }
+
+    /* === Light Mode - 메인메뉴 스타일 (토큰화) === */
+    .nav-item {
+      color: var(--text-secondary);
+    }
+    .nav-item:hover {
+      color: var(--text);
+      background: var(--hover-bg);
+    }
+    /* 스와이프 중 하이라이트 비활성화 */
+    .nav-item.swiping,
+    .nav-item.swiping:hover,
+    .nav-item.swiping:active,
+    .nav-item.swiping:focus {
+      background: transparent !important;
+      color: inherit !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    .nav-item.active {
+      color: var(--primary);
+      background: transparent;
+      font-weight: 600;
+    }
+    .nav-item.active::after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: -8px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 1px;
+    }
+    .nav-item svg {
+      stroke: var(--text-secondary);
+    }
+    .nav-item:hover svg {
+      stroke: var(--text);
+    }
+    .nav-item.active svg {
+      stroke: var(--primary);
+    }
+    /* 서브탭 버튼 */
+    .tab-btn {
+      color: var(--text-secondary);
+      background: var(--item-bg);
+      border: 1px solid var(--border);
+    }
+    .tab-btn:hover {
+      color: var(--text);
+      background: var(--hover-bg);
+    }
+    /* 스와이프 중 탭버튼 하이라이트 비활성화 */
+    .tab-btn.swiping,
+    .tab-btn.swiping:hover,
+    .tab-btn.swiping:active,
+    .tab-btn.swiping:focus {
+      background: var(--item-bg) !important;
+      color: var(--text-secondary) !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    .tab-btn.active {
+      color: #fff;
+      background: var(--primary);
+      border-color: var(--primary);
+    }

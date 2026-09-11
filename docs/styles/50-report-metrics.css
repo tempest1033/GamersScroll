@@ -1,0 +1,269 @@
+﻿/* 주간 지표 (아이콘 강조형) */
+.weekly-section-metrics {
+  background: var(--section-gradient);
+}
+
+.weekly-section-metrics .weekly-section-title-wrap .weekly-icon {
+  background: var(--section-icon-bg);
+  color: var(--insight-icon);
+}
+
+.weekly-section-metrics .weekly-hot-issues,
+.weekly-section-rankings .weekly-hot-issues {
+  height: auto;
+  grid-template-rows: auto;
+}
+
+.weekly-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* 일간 리포트 지표 그리드 (가로로 길게 1열) */
+.weekly-metrics-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.weekly-metrics-grid .weekly-metric-card {
+  min-height: 100px;
+}
+
+.weekly-metrics-grid .metric-thumb {
+  width: 140px;
+  height: 100px;
+}
+
+.weekly-metrics-grid .metric-thumb img {
+  height: 100%;
+}
+
+/* 게임 아이콘 (정사각형) */
+.metric-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--border);
+}
+
+.metric-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 제목 앞 인라인 아이콘 */
+.title-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  vertical-align: middle;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+/* 지표/순위변동 제목 강조 + 밑줄 */
+.weekly-metric-title,
+.ranking-item .weekly-hot-title {
+  font-size: 1rem;
+  font-weight: var(--font-card-title-weight);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* 업계 동향 그리드 */
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.industry-grid .industry-card {
+  height: 100%;
+  min-height: 120px;
+}
+
+.industry-grid .industry-thumb {
+  width: 100px;
+  height: 100%;
+  min-height: 80px;
+}
+
+.industry-card {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.industry-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.industry-thumb {
+  width: 100px;
+  height: 70px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--border);
+}
+
+.industry-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.industry-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.industry-title {
+  font-size: var(--font-section-size);
+  font-weight: var(--font-card-title-weight);
+  color: var(--text);
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.industry-desc {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-desc-weight);
+  color: var(--text-secondary);
+  line-height: var(--font-desc-line-height);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .industry-grid .industry-card,
+  .industry-card {
+    flex-direction: column;
+    padding: 0;
+  }
+  .industry-grid .industry-thumb,
+  .industry-thumb {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 180px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    min-height: auto;
+  }
+  .industry-content {
+    padding: 14px 16px 16px;
+  }
+}
+
+.weekly-metric-card {
+  display: flex;
+  gap: 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* 왼쪽 띠 제거됨 */
+
+.weekly-metric-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.weekly-metric-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--metric-color, #3b82f6) 12%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.weekly-metric-icon svg {
+  width: 26px;
+  height: 26px;
+  color: var(--metric-color, #3b82f6);
+}
+
+/* 지표 썸네일 */
+.metric-thumb {
+  width: 100px;
+  height: 70px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--border);
+}
+
+.metric-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .weekly-metrics-grid .weekly-metric-card,
+  .weekly-metric-card {
+    flex-direction: column;
+    padding: 0;
+  }
+  .weekly-metrics-grid .metric-thumb,
+  .metric-thumb {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 180px;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .weekly-metric-content {
+    padding: 14px 16px 16px;
+  }
+}
+
+.weekly-metric-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.weekly-metric-tag {
+  display: inline-block;
+  font-size: var(--font-meta-size);
+  font-weight: var(--font-badge-weight);
+  color: #818cf8;
+  background: rgba(99, 102, 241, 0.18);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.weekly-metric-title {
+  font-size: 1rem;
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.weekly-metric-desc {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-desc-weight);
+  color: var(--text-secondary);
+  line-height: var(--font-desc-line-height);
+  margin: 0;
+}

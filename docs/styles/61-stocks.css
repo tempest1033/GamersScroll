@@ -1,0 +1,143 @@
+﻿/* ========== Stocks Card (게임주 현황) ========== */
+.stocks-split {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 0;
+}
+
+.stock-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--border);
+}
+
+.stock-item:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.stock-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stock-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-name {
+  font-size: 1rem;
+  font-weight: var(--font-item-weight);
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.stock-date {
+  font-size: var(--font-caption-size);
+  color: var(--text-tertiary);
+}
+
+.stock-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.stock-price-value {
+  font-size: var(--font-xl-size);
+  font-weight: var(--font-badge-weight);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.stock-price-value.up {
+  color: #ef5350;
+}
+
+.stock-price-value.down {
+  color: #42a5f5;
+}
+
+.stock-change-badge {
+  font-size: var(--font-body-size);
+  font-weight: var(--font-meta-weight);
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+}
+
+.stock-change-badge.up {
+  background: rgba(239, 83, 80, 0.15);
+  color: #ef5350;
+}
+
+.stock-change-badge.down {
+  background: rgba(66, 165, 245, 0.15);
+  color: #42a5f5;
+}
+
+.stock-chart {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+}
+
+.stock-comment {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-desc-weight);
+  color: var(--text-secondary);
+  line-height: var(--font-desc-line-height);
+  margin: 12px 0 0 0;
+}
+
+/* 모바일: 한 아이템씩 표시 */
+@media (max-width: 768px) {
+  .stocks-split {
+    grid-template-columns: 1fr;
+  }
+
+  .stock-item {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .stock-name {
+    font-size: 1rem;
+  }
+
+  .stock-price-value {
+    font-size: var(--font-xl-size);
+  }
+
+  .stock-change-badge {
+    font-size: var(--font-body-size);
+  }
+
+  .stock-comment {
+    font-size: var(--font-desc-size);
+  }
+}
+
+/* 누락된 클래스 라이트모드 정의 (다크모드 호환성) */
+.insight-item-desc,
+.stock-desc,
+.stock-item-comment,
+.stock-item-desc {
+  color: var(--text-secondary);
+}
+
+.stock-item-name {
+  color: var(--text);
+}

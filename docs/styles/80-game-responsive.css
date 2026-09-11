@@ -1,0 +1,118 @@
+﻿/* 게임 페이지 모바일 반응형 */
+@media (max-width: 768px) {
+  #game .page-container {
+  min-height: calc(100vh - 250px);
+    padding-bottom: var(--space-block-y);
+  }
+
+  .game-hero-content {
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+
+  .game-hero-icon {
+    width: 88px;
+    height: 88px;
+  }
+
+  .game-hero-title {
+    font-size: var(--font-heading-size);
+  }
+
+  .game-hero-stats {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 16px;
+    justify-content: space-around;
+  }
+
+  .page-container.game-page-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-block-gap);
+  }
+
+  .game-rank-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .game-rank-col + .game-rank-col {
+    border-top: none;
+  }
+
+  /* 요약 뷰 - 아이템 패딩만 조정 */
+  .realtime-content[data-realtime-view="summary"].active .game-rank-col-header {
+    padding: 8px 10px;
+    font-size: var(--font-desc-size);
+  }
+
+  .realtime-content[data-realtime-view="summary"].active .game-rank-country-row {
+    padding: 6px 10px;
+  }
+
+  .realtime-content[data-realtime-view="summary"].active .game-rank-country-flag {
+    font-size: var(--font-section-size);
+    width: 24px;
+  }
+
+  .realtime-content[data-realtime-view="summary"].active .game-rank-country-flag .emoji {
+    width: 18px;
+    height: 18px;
+  }
+
+  .realtime-content[data-realtime-view="summary"].active .game-rank-country-name {
+    font-size: var(--font-desc-size);
+  }
+
+  .realtime-content[data-realtime-view="summary"].active .game-rank-country-value {
+    font-size: var(--font-desc-size);
+  }
+
+  .gm-items-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    min-height: 380px;
+  }
+
+  .trend-tab-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .trend-legend-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #game .page-container .rank-trend-section {
+    min-height: 200px;
+  }
+
+  #game .page-container .trend-charts {
+    min-height: 180px;
+  }
+}
+
+/* 검색창 내부 홈 아이콘 */
+.search-home-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* 게임 페이지 전용 오버라이드 (공통 모바일 헤더/검색 규칙은 70-search.css) */
+
+  /* 검색 박스 확장 + 높이 키움 (게임 페이지 변형) */
+  .search-box {
+    flex: 1;
+    max-width: none;
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+    height: 48px;
+  }
+
+  /* placeholder 폰트 크기 - 네비와 균형 맞춤 */
+  .search-input {
+    font-size: var(--font-body-size);
+  }
+}

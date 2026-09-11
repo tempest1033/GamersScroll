@@ -1,0 +1,43 @@
+/* ========== 스팀 허브 · 스팀 게임 상세 — .rk 범위 ==========
+   동접자 수(실수치) 행, 판매 순위·가격 행, 히어로, 월별 표 */
+.rk .rk-list.steam li { grid-template-columns: 36px 92px minmax(0, 1fr) auto 64px 72px; height: 64px; gap: 12px; }
+.rk .rk-list.steam img { width: 92px; height: 35px; border-radius: 5px; object-fit: cover; box-shadow: none; }
+.rk .rk-list.steam .nm > a, .rk .rk-list.steam .nm > span:first-child { font-size: 15px; }
+.rk .rk-list.steam .num { text-align: right; line-height: 1.15; }
+.rk .rk-list.steam .num b { font-size: 15px; }
+.rk .rk-list.steam .pct { text-align: center; }
+.rk .rk-list.steam.sell li { grid-template-columns: 36px 92px minmax(0, 1fr) auto 56px; }
+.rk .rk-price { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; font-weight: 600; font-size: 13.5px; white-space: nowrap; }
+.rk .rk-disc { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 1px 6px; border-radius: 5px; background: #e6f6ea; color: var(--data-discount, #166534); }
+.rk .rk-app.cap img { width: 64px; height: 24px; border-radius: 4px; object-fit: cover; }
+.rk .rk-list.steam .rk-rk.top { color: var(--rk-accent); }
+
+/* 히어로 (스팀·모바일 게임 상세 공용) */
+.rk .rk-crumb { font-size: 13px; color: var(--rk-muted); display: flex; gap: 8px; margin: 0 0 18px; flex-wrap: wrap; }
+.rk .rk-crumb a:hover { color: var(--rk-text); }
+.rk .rk-hero { display: flex; gap: 22px; align-items: center; padding: 0 0 24px; border-bottom: 1px solid var(--rk-line); }
+.rk .rk-hero > img { width: 184px; height: 70px; border-radius: 8px; object-fit: cover; flex: none; background: var(--rk-bg2); }
+.rk .rk-hero > img.icon { width: 96px; height: 96px; border-radius: 22px; }
+.rk .rk-hero h1 { font-size: 28px; }
+.rk .rk-hero .meta { font-size: 13.5px; color: var(--rk-muted); margin-top: 6px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.rk .rk-hero .meta b { color: var(--rk-text2); font-weight: 600; }
+.rk .rk-pills { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
+.rk .rk-pills span { font-size: 12.5px; font-weight: 600; padding: 5px 10px; border-radius: 8px; background: var(--rk-bg2); color: var(--rk-text2); }
+.rk .rk-pills span.one { background: var(--rk-accent-bg); color: #005bb5; }
+.rk .rk-hero .actions { margin-left: auto; display: flex; gap: 6px; flex: none; }
+.rk .rk-btn { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 9px; background: var(--rk-bg2); font-size: 13px; color: var(--rk-text2); font-weight: 600; white-space: nowrap; }
+.rk .rk-btn.primary { background: var(--rk-text); color: #fff; }
+.rk .rk-stats.four { margin-top: 24px; }
+.rk .rk-stat .v .rk-chg { font-size: 13px; margin-left: 8px; }
+
+@media (max-width: 768px) {
+  .rk .rk-list.steam li { grid-template-columns: 28px 72px minmax(0, 1fr) auto; height: 60px; }
+  .rk .rk-list.steam img { width: 72px; height: 27px; }
+  .rk .rk-list.steam .pct, .rk .rk-list.steam .rk-spark { display: none; }
+  .rk .rk-list.steam.sell li { grid-template-columns: 28px 72px minmax(0, 1fr) auto; }
+  .rk .rk-list.steam.sell .rt { display: none; }
+  .rk .rk-hero { flex-wrap: wrap; gap: 14px; }
+  .rk .rk-hero > img { width: 140px; height: 53px; }
+  .rk .rk-hero h1 { font-size: 22px; }
+  .rk .rk-hero .actions { margin-left: 0; width: 100%; }
+}

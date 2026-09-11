@@ -1,0 +1,462 @@
+﻿/* ===== Ads (AdSense) - PC/모바일 분리 방식 ===== */
+/* ins 태그 스타일은 인라인으로만 관리 (Google 권장 방식) */
+/* CSS는 컨테이너(.ad-card)만 관리 */
+
+/* ===== 광고 컨테이너 크기 ===== */
+
+/* 모바일 상단 광고 (300x250) — 2026-09-09: 320×100 → 300×250. ads.js renderMobileOnlyHomeAd·layout.js normalizeAdVisualSize와 같은 값 */
+.ad-card-mobile-top {
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+  min-height: 250px;
+  max-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.ad-card-mobile-top > ins.adsbygoogle,
+.ad-card-mobile-top > ins.adsbygoogle > div,
+.ad-card-mobile-top > ins.adsbygoogle > iframe,
+.ad-card-mobile-top > ins.adsbygoogle iframe,
+.ad-card-mobile-top iframe {
+  width: 100% !important;
+  max-width: 300px !important;
+  height: 250px !important;
+  min-height: 250px !important;
+  max-height: 250px !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.ad-card-mobile-top > ins.adsbygoogle > div {
+  display: block !important;
+  overflow: hidden !important;
+}
+
+/* 모바일 중간 광고 (300x250) */
+.ad-card-mobile-mid {
+  width: 100%;
+  min-height: 250px;
+}
+
+/* PC 홈 상단 광고 (728x90) */
+.ad-card-pc-home {
+  width: 100%;
+  height: 90px;
+}
+
+/* PC 상단 광고 (970x90) */
+.ad-card-pc {
+  width: 100%;
+  height: 90px;
+}
+
+/* PC 사이드바 - Vertical (300x600) */
+.ad-card-vertical {
+  width: 300px;
+  height: 600px;
+  border-radius: 0;
+}
+
+/* PC 사이드바 - Rectangle (300x250) */
+.ad-card-rectangle {
+  width: 300px;
+  height: 250px;
+  border-radius: 0;
+}
+
+/* 네이티브 In-feed 광고 (fluid) */
+.ad-card-native {
+  width: 100%;
+  min-height: 100px;
+}
+
+/* 모바일 스크롤 In-feed 광고: iframe 도착 전에도 실제 채움 높이를 reserve */
+.ad-card-scroll {
+  width: 100%;
+  min-height: 308px !important;
+}
+
+.ad-card-scroll > ins.adsbygoogle {
+  min-height: 284px !important;
+}
+
+/* 작은 크리에이티브로 채워지면 예약 높이를 실제 높이로 축소 (배너 아래 빈 공간 제거).
+   gs-ad-compact는 광고가 채워져 실제 높이 < 예약치일 때만 붙으므로 로드 전 CLS 방지 reserve는 유지됨.
+   layout.js normalizeAdVisualSize()가 인라인 height를 넣어주므로 min-height reserve만 풀면 정확히 축소됨. */
+.ad-card-scroll.gs-ad-compact,
+.ad-card-scroll.gs-ad-compact > ins.adsbygoogle {
+  min-height: 0 !important;
+}
+
+/* Multiplex 광고 (자동 반응형) */
+.ad-card-multiplex {
+  width: 100%;
+  min-height: 250px;
+}
+
+/* ===== PC/모바일 표시 규칙 ===== */
+/* 인라인 <style> 태그에서 media query로 처리 (Google AdSense 권장 방식) */
+/* ads.js의 각 광고 함수에서 .adslot-* 클래스로 크기/숨김 제어 */
+
+/* ===== 광고 카드 공통 스타일 ===== */
+
+.ad-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+  touch-action: pan-x pan-y;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 네이티브 광고는 원본 프레임을 자르지 않는다. 크기·예약 높이·바깥 간격은 유지한다. */
+.ad-card.ad-card-native,
+.ad-card.ad-card-scroll,
+.ad-card.blog-in-article-ad {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.ad-card > ins.adsbygoogle,
+.ad-card > ins.adsbygoogle > iframe {
+  border-radius: inherit;
+  max-width: 100%;
+}
+
+.ad-card-responsive-home > ins.adsbygoogle,
+.ad-card-responsive-top > ins.adsbygoogle,
+.ad-card-mobile-top > ins.adsbygoogle {
+  display: block !important;
+  position: relative;
+  line-height: 0;
+}
+
+/* Responsive top/home ad cards: center smaller creatives both axes */
+.ad-card-responsive-home,
+.ad-card-responsive-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+
+@media (min-width: 769px) {
+  .ad-card-responsive-home,
+  .ad-card-responsive-top {
+    min-height: 90px;
+  }
+}
+
+/* 모바일 상단 광고는 300x250 슬롯 사이즈 그대로 reserve (.ad-card-mobile-top 250px).
+   in-article BTF 광고는 아래 .blog-in-article-ad 규칙이 더 높은 reserve를 제공함. */
+
+/* AIScroll BTF in-article 광고 reserve (300x250) */
+.blog-in-article-ad {
+  min-height: 250px;
+}
+
+.blog-in-article-ad:not(:has(ins.adsbygoogle[data-ad-status="filled"])) {
+  background: transparent;
+  border-color: transparent;
+}
+
+/* PC 상단 광고: 애드센스 응답 전(status 미확정)에는 빈 테두리 카드를 보이지 않는다.
+   자리(min-height)는 CLS 방지를 위해 유지하고, 채워지면 카드 배경·테두리가 돌아온다.
+   unfilled·차단 시에도 자리는 그대로 유지한다(아래 "Unfilled 광고 처리" 참고). */
+.ad-card-responsive-home:not(:has(ins.adsbygoogle[data-ad-status="filled"])),
+.ad-card-responsive-top:not(:has(ins.adsbygoogle[data-ad-status="filled"])) {
+  background: transparent;
+  border-color: transparent;
+}
+
+/* AdSense iframe child: vertical-align middle for shorter creatives */
+.ad-card-responsive-home > ins.adsbygoogle > iframe,
+.ad-card-responsive-top > ins.adsbygoogle > iframe {
+  vertical-align: middle;
+  width: 100% !important;
+  max-width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.ad-card-responsive-home.gs-ad-compact,
+.ad-card-responsive-top.gs-ad-compact {
+  align-items: center;
+}
+
+/* 크리에이티브가 카드보다 작을 때 상하좌우 중앙 정렬 (layout.js centerTopAdCreative가 부여).
+   AdSense host div(aswift_N_host)가 iframe을 감싸는 케이스도 flex로 중앙 배치. */
+.ad-card-responsive-home > ins.adsbygoogle.gs-ad-center,
+.ad-card-responsive-top > ins.adsbygoogle.gs-ad-center {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-card-responsive-home > ins.adsbygoogle.gs-ad-center > div,
+.ad-card-responsive-top > ins.adsbygoogle.gs-ad-center > div {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 좁은 컬럼(사이드바 레이아웃: 홈/아티클)은 부모 폭 안에서 최대 728 리더보드까지만 허용.
+   카드는 732px = 728 + 테두리 2px + 여유 2px — 728×90 고정 규격 <ins>가 부모 콘텐츠 폭에 눌려
+   줄어들지 않게 (애드센스는 부모보다 넓은 고정 규격을 부모 폭으로 축소 요청함; ads.js narrow 변형 참고). */
+@media (min-width: 769px) {
+  .home-main > .ad-card-responsive-home,
+  .article-main > .ad-card-responsive-home,
+  .home-main > .ad-card-responsive-top,
+  .article-main > .ad-card-responsive-top {
+    width: 100% !important;
+    max-width: 732px !important;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 고정 규격(.gs-ad-fixed) <ins>는 자기 폭을 유지해야 하므로 width:100% 강제에서 제외 */
+  .home-main > .ad-card-responsive-home > ins.adsbygoogle:not(.gs-ad-fixed),
+  .article-main > .ad-card-responsive-home > ins.adsbygoogle:not(.gs-ad-fixed),
+  .home-main > .ad-card-responsive-top > ins.adsbygoogle:not(.gs-ad-fixed),
+  .article-main > .ad-card-responsive-top > ins.adsbygoogle:not(.gs-ad-fixed),
+  .home-main > .ad-card-responsive-home > ins.adsbygoogle > iframe,
+  .article-main > .ad-card-responsive-home > ins.adsbygoogle > iframe,
+  .home-main > .ad-card-responsive-top > ins.adsbygoogle > iframe,
+  .article-main > .ad-card-responsive-top > ins.adsbygoogle > iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.article-main .ad-card-responsive-home,
+.article-main .ad-card-responsive-top {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.article-main .ad-card-responsive-home > ins.adsbygoogle,
+.article-main .ad-card-responsive-top > ins.adsbygoogle,
+.article-main .ad-card-responsive-home > ins.adsbygoogle > iframe,
+.article-main .ad-card-responsive-top > ins.adsbygoogle > iframe {
+  max-width: 100%;
+}
+
+
+/* ===== 광고 여백 ===== */
+/* 부모 컨테이너(home-main, home-sidebar, page-container)가 margin-bottom으로 간격 관리 */
+/* 광고 카드는 margin-top만 제어, margin-bottom은 부모 규칙 따름 */
+
+/* 기본: 상단 마진 (컨테이너 외부 광고) */
+main .ad-card {
+  margin-top: var(--space-block-gap, 16px);
+}
+
+/* page-container 첫 번째 광고 (top): 상단 마진 유지 */
+.page-container > .ad-card:first-child {
+  margin-top: var(--space-block-gap, 16px);
+}
+
+/* ===== 광고 비활성화 시 레이아웃 보정 ===== */
+/* ADS_ENABLED=false일 때 body.ads-disabled 클래스 추가됨 */
+body.ads-disabled main {
+  margin-top: var(--space-block-gap, 16px);
+}
+
+/* 광고 비활성화 시 컨테이너 padding 제거 (main margin으로 대체, 중복 방지) */
+body.ads-disabled .page-container,
+body.ads-disabled .home-container,
+body.ads-disabled .article-layout {
+  padding-top: 0 !important;
+}
+
+/* page-container 중간 광고 (mid): 상단 마진 제거 */
+.page-container > .ad-card:not(:first-child),
+.page-container .ad-card:not(:first-child) {
+  margin-top: 0;
+}
+
+/* ===== 홈 페이지 (PC) ===== */
+
+/* home-container (PC 2컬럼): 상단 마진 제거 */
+.home-main .ad-card,
+.home-sidebar .ad-card {
+  margin-top: 0;
+}
+
+/* 광고를 컨테이너 안으로 이동하면서 소실된 상단 여백 복원 */
+/* !important 필수: 05-ads.css가 10-home-core/shell.css보다 먼저 로드되어 덮어쓰임 */
+/* 모바일: 10-home-core.css의 !important 규칙(specificity 0-2-1)이 padding-top: 0 유지 (정상) */
+
+/* 허브(trends-hub, wiki-hub, tech-hub): .home-container 단독 사용 */
+.home-container {
+  padding-top: var(--space-block-gap, 16px) !important;
+}
+/* 리포트·아티클: .page-container > .article-layout */
+.article-layout {
+  padding-top: var(--space-block-gap, 16px) !important;
+}
+/* 단독 page-container (games-hub, rankings, steam, upcoming 등) */
+/* .home-container나 .article-layout 자식이 있으면 이중 적용 방지 */
+.page-container:not(:has(> .home-container)):not(:has(> .article-layout)) {
+  padding-top: var(--space-block-gap, 16px) !important;
+}
+
+/* 풀폭 상단 광고: 바깥 간격은 페이지에서 한 번만 부여한다. */
+@media (min-width: 769px) {
+  body:not(.page-home) .site-container:has(.ad-card-responsive-home) {
+    padding-top: 12px !important;
+  }
+  body .site-container .ad-card-responsive-home {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* PC/모바일 광고 다음 본문에 중복되던 예약 여백 제거 */
+body .section > .ad-card-responsive-home + .ad-card-mobile-top + .page-container {
+  padding-top: 0 !important;
+  margin-top: 12px;
+}
+body .page-container > .ad-card-responsive-home + .ad-card-mobile-top + .article-layout {
+  padding-top: 12px !important;
+}
+body .page-container > .ad-card-responsive-home + .ad-card-mobile-top + .article-layout .blog-header {
+  padding-top: 0;
+}
+
+/* home-main / article-main 최상단 ResponsiveHome 광고: 하단 마진만 (카드 간격과 동일) */
+.home-main > .ad-card-responsive-home:first-child,
+.home-main > .ad-card-mobile-top:first-child,
+.article-main > .ad-card-responsive-home:first-child,
+.article-main > .ad-card-mobile-top:first-child {
+  margin-top: 0;
+  margin-bottom: var(--space-block-gap, 16px);
+}
+
+@media (max-width: 768px) {
+  .home-main > .ad-card-mobile-top,
+  .article-main > .ad-card-mobile-top {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 250px !important;
+    min-height: 250px !important;
+    max-height: 250px !important;
+    margin-top: 0 !important;
+    margin-bottom: var(--space-block-gap, 16px) !important;
+  }
+
+  .home-main > .ad-card-mobile-top > ins.adsbygoogle,
+  .home-main > .ad-card-mobile-top > ins.adsbygoogle > div,
+  .home-main > .ad-card-mobile-top > ins.adsbygoogle > iframe,
+  .home-main > .ad-card-mobile-top > ins.adsbygoogle iframe,
+  .home-main > .ad-card-mobile-top iframe,
+  .article-main > .ad-card-mobile-top > ins.adsbygoogle,
+  .article-main > .ad-card-mobile-top > ins.adsbygoogle > div,
+  .article-main > .ad-card-mobile-top > ins.adsbygoogle > iframe,
+  .article-main > .ad-card-mobile-top > ins.adsbygoogle iframe,
+  .article-main > .ad-card-mobile-top iframe {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 250px !important;
+    min-height: 250px !important;
+    max-height: 250px !important;
+  }
+}
+
+/* 모바일 홈: 사이드바 숨김 (PC 전용) */
+@media (max-width: 768px) {
+  .home-sidebar {
+    display: none !important;
+  }
+}
+
+/* ===== Unfilled 광고 처리 ===== */
+
+/* PC 상단 광고: 채워지기 전·unfilled·스크립트 차단 어느 경우에도 예약 높이(250px, ads.js 인라인)를 유지한다.
+   예전처럼 카드를 display:none 하면 예약 높이가 사라지며 본문 전체가 위로 튀어 올랐다(CLS).
+   채워질 때까지는 옅은 브랜드 마크만 중앙에 두고, unfilled가 확정되면 애드센스가 남긴 빈 iframe만 감춘다. */
+.ad-card-responsive-home:not(:has(ins[data-ad-status="filled"]))::before,
+.ad-card-responsive-top:not(:has(ins[data-ad-status="filled"]))::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  background: url('/favicon.svg') center/contain no-repeat;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ad-card-responsive-home:has(ins[data-ad-status="unfilled"]) ins.adsbygoogle,
+.ad-card-responsive-top:has(ins[data-ad-status="unfilled"]) ins.adsbygoogle {
+  visibility: hidden;
+}
+
+/* Legacy top ad classes */
+.ad-card-pc:has(ins[data-ad-status="unfilled"]),
+.ad-card-pc-home:has(ins[data-ad-status="unfilled"]),
+.ad-card-mobile-top:has(ins[data-ad-status="unfilled"]) {
+  background: var(--card);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+/* Unfilled 상단 슬롯은 자리(높이)를 유지한 채 브랜드 배너로 전환한다:
+   애드센스가 남긴 빈 iframe을 숨기고 중앙 로고만 또렷하게 보여준다. */
+.ad-card-pc:has(ins[data-ad-status="unfilled"]) ins.adsbygoogle,
+.ad-card-pc-home:has(ins[data-ad-status="unfilled"]) ins.adsbygoogle,
+.ad-card-mobile-top:has(ins[data-ad-status="unfilled"]) ins.adsbygoogle {
+  visibility: hidden;
+}
+
+.ad-card-pc:has(ins[data-ad-status="unfilled"])::before,
+.ad-card-pc-home:has(ins[data-ad-status="unfilled"])::before,
+.ad-card-mobile-top:has(ins[data-ad-status="unfilled"])::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: url('/favicon.svg') center/contain no-repeat;
+  filter: none;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* 중간/사이드바/네이티브 광고: unfilled 시 카드까지 숨김 */
+.ad-card-mobile-mid:has(ins[data-ad-status="unfilled"]),
+.ad-card-scroll:has(ins[data-ad-status="unfilled"]),
+.ad-card-scroll:has(ins[data-gs-ad-empty="1"]),
+.ad-card-scroll.gs-ad-empty,
+.ad-card-vertical:has(ins[data-ad-status="unfilled"]),
+.ad-card-rectangle:has(ins[data-ad-status="unfilled"]),
+.ad-card-native:has(ins[data-ad-status="unfilled"]) {
+  display: none !important;
+  min-height: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+}
+
+/* 빈 광고 컨테이너 숨김 (Grid 레이아웃에서 gap 영향 방지) */
+.mobile-only-ad:empty {
+  display: none;
+}

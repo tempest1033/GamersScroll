@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>게이머스크롤</title>
+    <link>https://gamerscroll.com</link>
+    <description>게임 업계 데이터 크롤링 및 일일 리포트</description>
+    <language>ko</language>
+    <lastBuildDate>Fri, 11 Sep 2026 07:32:59 GMT</lastBuildDate>
+    <atom:link href="https://gamerscroll.com/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title><![CDATA[카쫀쿠 시즌2? 카카오 ChatGPT Plus 2개월 무료 혜택]]></title>
+      <link>https://gamerscroll.com/tech/ai/kakao-chatgpt-plus-free/</link>
+      <description><![CDATA[카카오가 만 19세부터 34세까지 청년을 대상으로 ChatGPT Plus 2개월 무료 혜택을 제공한다. 유료 플랜 이용 이력 조건이 있으며, 결제 정보 등록과 종료 후 자동 결제가 없다.]]></description>
+      <pubDate>Wed, 09 Sep 2026 11:30:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/kakao-chatgpt-plus-free/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[모델 추천 - 뮤즈 스파크 1.3 최고의 가격 대비 성능을 가진 모델]]></title>
+      <link>https://gamerscroll.com/tech/ai/muse-spark-13-contributor/</link>
+      <description><![CDATA[뮤즈 스파크 1.3은 컨트리뷰터 가격에서 구현 담당 워커로 추천할 만하다. 언어 능력과 넓은 맥락 판단의 아쉬움, 데이터 공유 조건, 오픈코드 Go 월 10달러 구독을 함께 살펴봤다.]]></description>
+      <pubDate>Wed, 09 Sep 2026 11:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/muse-spark-13-contributor/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 9월 코딩 에이전트 도구 3종 추천: 파세오·오르카·딥시크 하네스]]></title>
+      <link>https://gamerscroll.com/tech/ai/coding-agent-picks-2026-09/</link>
+      <description><![CDATA[파세오는 원격 접속과 패널, 오르카는 동시 작업의 격리와 원격 환경, 딥시크 하네스는 유연한 플러그인 확장이 강점이다. 9월 눈여겨볼 세 도구가 어떤 사용자에게 맞는지 정리했다.]]></description>
+      <pubDate>Mon, 07 Sep 2026 17:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/coding-agent-picks-2026-09/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[GPT-6 아스트라 출시 반응, 페이블 5.1과 성능·구독 혜택 비교]]></title>
+      <link>https://gamerscroll.com/tech/ai/gpt6-astra-fable-comparison/</link>
+      <description><![CDATA[GPT-6 아스트라가 최고 수준의 벤치마크 성적과 함께 페이블 5.1의 경쟁자로 등장했다. 초기 사용자 후기와 AAII 개편, 작업당 비용과 구독 혜택을 비교한다.]]></description>
+      <pubDate>Mon, 07 Sep 2026 01:30:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/gpt6-astra-fable-comparison/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 8월 서브컬처 게임 매출 순위, 니케 1위·홀로라이브 7위]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/subculture-august-2026-kr/</link>
+      <description><![CDATA[니케가 8월 서브컬처 게임 매출 순위 1위를 지켰으나 명조가 151점 차까지 바짝 추격했다. 젠레스 존 제로는 3위로 올라섰고, 홀로라이브 드림즈는 7위, 리버스: 1999는 10위에 각각 진입했다.]]></description>
+      <pubDate>Fri, 04 Sep 2026 17:30:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/subculture-august-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[뮤즈 스파크 1.3, 딥시크 꺾고 OpenCode 일간 1위]]></title>
+      <link>https://gamerscroll.com/tech/ai/muse-spark-1-3-opencode/</link>
+      <description><![CDATA[메타의 뮤즈 스파크 1.3이 출시 이틀 만에 OpenCode 일간 토큰 사용량 1위에 올랐다. 데이터 학습과 연계한 Contributor 요금제와 대규모 AI 투자가 개발 현장의 실제 점유율로 이어졌다.]]></description>
+      <pubDate>Fri, 04 Sep 2026 16:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/muse-spark-1-3-opencode/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[9월 AI 프론티어 경쟁 개막, 빅테크 5곳 맞대결]]></title>
+      <link>https://gamerscroll.com/tech/ai/september-ai-model-war/</link>
+      <description><![CDATA[클로드 페이블 5.1이 지능 지수 66점으로 선두에 오른 가운데 제미나이 3.8과 뮤즈 스파크 1.3이 추격에 나섰다. 여기에 GPT 아스트라와 그록 4.7 출시가 맞물리며 9월 AI 시장은 빅테크 5곳이 맞붙는 프론티어 각축전으로 확대됐다.]]></description>
+      <pubDate>Thu, 03 Sep 2026 02:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/september-ai-model-war/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[중국 AI 모델의 궐기, 프론티어급 오픈웨이트가 쏟아진다]]></title>
+      <link>https://gamerscroll.com/tech/ai/china-frontier-model-surge/</link>
+      <description><![CDATA[GLM-5.3-Flash, Qwen3.8-Flash-Next, Kimi K3가 잇달아 출시됐다. AAII 점수는 56~57점으로 미국 최고 모델과 4~7점 차이다.]]></description>
+      <pubDate>Mon, 31 Aug 2026 02:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/china-frontier-model-surge/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[제미나이 3.5 사실상 포기? 4로 선회한 구글의 최대 위기]]></title>
+      <link>https://gamerscroll.com/tech/ai/gemini-35-pro-crisis/</link>
+      <description><![CDATA[6월 출시가 무산된 제미나이 3.5 프로 대신 구글이 제미나이 4 사전훈련에 돌입했다. 가성비 중심의 3.7 플래시로 버티는 사이 핵심 설계 인력 이탈까지 겹쳤다.]]></description>
+      <pubDate>Wed, 26 Aug 2026 11:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/gemini-35-pro-crisis/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 7월 서브컬쳐 게임 순위, 니케 1위·젠레스 4위]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/subculture-july-2026-kr/</link>
+      <description><![CDATA[2026년 7월 서브컬쳐 게임 순위에서 니케가 11,669점으로 1위를 탈환했고 명조는 2위로 물러났다. 젠레스 존 제로는 4위로 7계단 급등한 반면 블루 아카이브는 21위로 밀려났다.]]></description>
+      <pubDate>Mon, 17 Aug 2026 12:30:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/subculture-july-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[그록 4.6 출시 임박: xAI, 프론티어 3강 구도 조준]]></title>
+      <link>https://gamerscroll.com/tech/ai/grok-46-launch-frontier-push/</link>
+      <description><![CDATA[일론 머스크가 그록 4.6의 8월 7일 출시를 발표했다. 커서와 공동 학습한 그록 4.5가 한 달간 긍정적인 평가를 쌓은 가운데, xAI는 GPT-5.6과 오푸스 5, 파블 5가 주도하는 프론티어 AI 시장에 본격적으로 도전장을 내민다.]]></description>
+      <pubDate>Wed, 05 Aug 2026 09:30:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/grok-46-launch-frontier-push/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 7월 모바일 게임 매출 순위]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/mobile-july-2026-kr/</link>
+      <description><![CDATA['화이트아웃 서바이벌'이 두 달 연속 1위를 수성하고 '킹샷'이 2위에 오르며 센추리게임즈가 최상위권을 독점했다. 넷마블 신작 '솔: 인챈트(SOL: enchant)'는 9위로 첫 진입했고, '승리의 여신: 니케'는 여름 업데이트에 힘입어 10위권에 복귀했다.]]></description>
+      <pubDate>Wed, 05 Aug 2026 09:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/mobile-july-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[오픈AI GPT-5.6 토큰 가격 최대 80% 인하…딥시크 V4 플래시 맞불]]></title>
+      <link>https://gamerscroll.com/tech/ai/openai-price-cut-deepseek-flash/</link>
+      <description><![CDATA[오픈AI가 7월 30일 GPT-5.6 루나 가격을 80% 인하했다. 하루 뒤 딥시크가 V4 플래시 정식 버전을 출시하며 가격 인하 흐름에 가세했다. 이에 따라 고가 정책을 고수해 온 앤트로픽은 양사 사이에서 어려운 처지에 놓이게 됐다.]]></description>
+      <pubDate>Sat, 01 Aug 2026 05:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/openai-price-cut-deepseek-flash/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 6월 모바일 게임 매출 순위]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/mobile-june-2026-kr/</link>
+      <description><![CDATA[‘화이트아웃 서바이벌’이 ‘메이플 키우기’를 제치고 다시 1위를 차지했다. ‘씨사이드 익스케이프’와 ‘명조’가 10위권에 진입한 반면, ‘승리의 여신: 니케’와 ‘브롤스타즈’는 순위권 밖으로 밀려났다.]]></description>
+      <pubDate>Tue, 28 Jul 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/mobile-june-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[클로드 오퍼스 5 초기 리뷰 총정리 — 토큰 효율로 왕좌 되찾은 앤트로픽]]></title>
+      <link>https://gamerscroll.com/tech/ai/claude-opus-5-early-reviews/</link>
+      <description><![CDATA[앤트로픽의 클로드 오퍼스 5가 출시 직후 지능 지수 1위에 올랐다. 실사용자들은 뛰어난 토큰 효율성과 비용 절감 효과를 긍정적으로 평가하고 있다. 다만 지식 판단이나 오케스트레이션 등 범용 작업에서는 여전히 페이블 5가 우위를 점하고 있다는 분석이다.]]></description>
+      <pubDate>Tue, 28 Jul 2026 07:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/claude-opus-5-early-reviews/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 6월 서브컬쳐 게임 매출 순위]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/subculture-june-2026-kr/</link>
+      <description><![CDATA[명조가 11,116점으로 1위를 탈환했다. 니케는 10,868점을 얻어 2위로 내려왔다. 블루 아카이브는 9위로 복귀했다. 우마무스메는 10위에 이름을 올렸다.]]></description>
+      <pubDate>Wed, 15 Jul 2026 03:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/subculture-june-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[GPT-5.6, 뛰어난 성능과 가격 경쟁력으로 초기 호평]]></title>
+      <link>https://gamerscroll.com/tech/ai/gpt-56-codex-comeback/</link>
+      <description><![CDATA[GPT-5.6이 성능과 비용 효율로 초기 호평을 받고 있다. 오픈AI의 사용량 혜택 확대와 비슷한 시기에 앤트로픽도 한도와 모델 접근 혜택을 늘리며 대응에 나섰다.]]></description>
+      <pubDate>Tue, 14 Jul 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/gpt-56-codex-comeback/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[GPT-5.6 출시, 클로드 가격 경쟁력 잃나]]></title>
+      <link>https://gamerscroll.com/tech/ai/anthropic-pricing-crisis/</link>
+      <description><![CDATA[GPT-5.6이 성능 격차를 좁히고 챗GPT의 번들 경쟁력을 강화한 가운데, 클로드 구독 요금제에서 핵심 모델인 페이블 5가 제외되면서 이용자 유인책이 약화되고 있다.]]></description>
+      <pubDate>Sun, 12 Jul 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/anthropic-pricing-crisis/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[미토스가 촉발한 소버린 AI 확산과 파라미터 전쟁, 메모리 공급 부족 심화]]></title>
+      <link>https://gamerscroll.com/tech/ai/mythos-sovereign-ai-memory/</link>
+      <description><![CDATA[미토스는 프런티어 AI를 국가안보 자산으로 끌어올렸다. 더 큰 사전학습 경쟁과 소버린 AI·데이터센터 확산은 HBM·DRAM 수요를 밀어 올릴 전망이다.]]></description>
+      <pubDate>Sun, 12 Jul 2026 11:30:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/tech/ai/mythos-sovereign-ai-memory/</guid>
+      <category><![CDATA[테크]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 5월 서브컬쳐 게임 매출 순위]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/subculture-may-2026-kr/</link>
+      <description><![CDATA[2026년 5월 서브컬쳐 시장은 상위권 판도가 요동쳤다. 신작 몬길: STAR DIVE와 이환이 4·5위로 데뷔해 TOP 5 절반을 갈아치웠고, 엔드필드·페그오·에픽세븐은 동반 이탈했다. 니케가 3개월 연속 1위, 명조는 2주년 호재로 2위에 올랐다.]]></description>
+      <pubDate>Mon, 01 Jun 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/subculture-may-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 4월 서브컬쳐 게임 매출 순위]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/subculture-april-2026-kr/</link>
+      <description><![CDATA[2026년 4월 서브컬쳐 시장은 상위권이 굳어졌다. 니케가 두 달 연속 1위, 그놈은 드래곤이 세 달 연속 2위를 지킨 가운데 명조는 3.2 버전과 2주년 사전 분위기로 6위에서 3위로 ▲3 반등했다. 페이트/그랜드 오더와 에픽세븐은 봄 시즌 대형 업데이트로 두 자릿수 약진하며 TOP 10에 동반 복귀했다.]]></description>
+      <pubDate>Fri, 15 May 2026 17:30:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/subculture-april-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 4월 스팀 매출 순위 (한국 스토어)]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/steam-april-2026/</link>
+      <description><![CDATA[2026년 4월 스팀 한국 스토어 매출 순위에서 크래프톤의 배틀그라운드가 30일 중 22일간 1위를 지켰다. 펄어비스 붉은사막이 2위, 캡콤 신작 프라그마타가 3월 154위에서 7위로 급등하며 상위권에 진입했다.]]></description>
+      <pubDate>Fri, 01 May 2026 13:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/steam-april-2026/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 2월 서브컬쳐 게임 매출 순위]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/subculture-february-2026-kr/</link>
+      <description><![CDATA[2026년 2월, 명조:워더링 웨이브가 3.1 버전 에이메스와 컴포즈커피 콜라보로 1위에 등극했다. 그놈은 드래곤이 신규 진입으로 2위를 차지했고, 붕괴: 스타레일이 4.0 버전으로 TOP 10에 복귀했다.]]></description>
+      <pubDate>Sun, 01 Mar 2026 14:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/subculture-february-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 2월 스팀 동시접속자 순위]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/steam-february-2026/</link>
+      <description><![CDATA[2026년 2월 스팀 동시접속자 순위에서 CS2가 135만 평균 CCU로 1위를 지켰지만, 1월 대비 11만 감소했다. 테라리아가 1.4.5 업데이트 효과로 8위에 신규 진입했고, 러스트는 Naval Update로 최고 19.7만을 찍었다. 스타듀 밸리가 TOP 10에서 탈락하고 테라리아가 그 자리를 꿰찼다.]]></description>
+      <pubDate>Sun, 01 Mar 2026 13:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/steam-february-2026/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 2월 모바일 게임 매출 순위]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/mobile-february-2026-kr/</link>
+      <description><![CDATA[전액 환불 논란에도 메이플 키우기가 2월 연속 1위를 지켰다. 명조: 워더링 웨이브가 3.1 업데이트로 TOP 10에 새롭게 진입했고, 1월과 TOP 8이 동일한 가운데 서바이벌 장르의 강세가 이어졌다.]]></description>
+      <pubDate>Sun, 01 Mar 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/mobile-february-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 설 연휴 모바일 게임 순위 분석]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/lunar-new-year-2026-kr/</link>
+      <description><![CDATA[2026년 설 연휴, 메이플 키우기 확률 조작 전액환불 사태로 1위 공백이 발생한 틈을 타 라스트 워가 정상을 탈환했다. TOP 5 중 4개를 해외 게임이 차지한 배경에는 중국 4X 전략 게임의 공세와 원·달러 환율 이슈가 겹쳐 있다.]]></description>
+      <pubDate>Sat, 21 Feb 2026 17:30:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/lunar-new-year-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 1월 스팀 동시접속자 순위 - 아크 레이더스의 화려한 데뷔]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/steam-january-2026/</link>
+      <description><![CDATA[2026년 1월 스팀 동시접속자 순위에서 CS2가 146만 평균 CCU로 부동의 1위를 지켰다. 신작 아크 레이더스가 4위로 화려하게 데뷔했고, 무료 인디게임 봉고캣이 6위에 오르며 이변을 일으켰다.]]></description>
+      <pubDate>Mon, 02 Feb 2026 02:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/steam-january-2026/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 1월 모바일 게임 매출 순위 - 메이플 키우기의 독주]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/mobile-january-2026-kr/</link>
+      <description><![CDATA[2026년 새해, 방치형 RPG '메이플 키우기'가 iOS와 Android 양대 마켓에서 1위를 차지하며 정상을 지켰다. 서바이벌 장르의 강세가 이어진 가운데, 리니지M이 4위로 MMORPG의 저력을 보여줬다.]]></description>
+      <pubDate>Mon, 02 Feb 2026 01:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/mobile-january-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[2026년 1월 서브컬쳐 게임 매출 순위]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/subculture-january-2026-kr/</link>
+      <description><![CDATA[2026년 새해, 서브컬쳐 게임들이 신년 이벤트로 격돌했다. 니케가 스노우 화이트: 헤비암즈로 정상을 지켰고, 엔드필드가 출시 10일 만에 TOP 10에 진입했다.]]></description>
+      <pubDate>Sun, 01 Feb 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/subculture-january-2026-kr/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+    <item>
+      <title><![CDATA[엔드필드 vs 드래곤소드, 새해 첫번째 오픈월드 결전 승자는?]]></title>
+      <link>https://gamerscroll.com/magazine/ranking/endfield-vs-dragonsword-new-year-2026/</link>
+      <description><![CDATA[2026년 새해 벽두부터 명일방주: 엔드필드와 드래곤소드가 맞붙었다. 글로벌 IP를 등에 업은 엔드필드와 한국 개발사의 자존심 드래곤소드, 출시 1주일간의 순위 데이터로 승자를 가려본다.]]></description>
+      <pubDate>Wed, 28 Jan 2026 21:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://gamerscroll.com/magazine/ranking/endfield-vs-dragonsword-new-year-2026/</guid>
+      <category><![CDATA[순위 분석]]></category>
+    </item>
+  </channel>
+</rss>

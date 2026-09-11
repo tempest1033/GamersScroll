@@ -1,0 +1,348 @@
+﻿/* 주간 리포트 반응형 */
+@media (max-width: 768px) {
+  .weekly-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .weekly-hot-issues {
+    grid-template-columns: 1fr;
+  }
+
+  .weekly-rankings-grid,
+  .weekly-metrics-row,
+  .weekly-metrics-grid,
+  .weekly-highlight-grid,
+  .weekly-stocks-tables,
+  .weekly-community-grid,
+  .weekly-streaming-grid,
+  .weekly-global-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .weekly-hot-card.featured {
+    grid-column: 1;
+  }
+
+  /* 모바일 이미지 스타일 */
+  .weekly-hot-thumb {
+    aspect-ratio: 16 / 9;
+    max-height: 200px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .weekly-header-card.has-hero-image {
+    flex-direction: column;
+  }
+
+  .weekly-header-image {
+    width: 100%;
+    height: 220px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .weekly-header-text {
+    padding: 16px;
+  }
+
+  .weekly-section {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .weekly-stat-value {
+    font-size: var(--font-stat-size);
+  }
+
+  .weekly-intro {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .weekly-intro-text {
+    font-size: var(--font-desc-size);
+  }
+
+  /* MVP 섹션 */
+  .weekly-mvp-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .weekly-mvp-badge {
+    width: 50px;
+    height: 50px;
+    font-size: var(--font-body-size);
+  }
+
+  .weekly-mvp-name {
+    font-size: var(--font-heading-size);
+  }
+
+  .weekly-mvp-highlights {
+    flex-wrap: wrap;
+  }
+
+  /* 릴리즈 캘린더 - 모바일에서 1열 */
+  .weekly-releases-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .weekly-release-item {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .weekly-release-date {
+    min-width: 50px;
+    font-size: var(--font-body-size);
+  }
+
+  /* 글로벌 트렌드 */
+  .weekly-global-card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .weekly-global-title {
+    font-size: var(--font-title-size);
+  }
+
+  .weekly-global-desc {
+    font-size: var(--font-desc-size);
+  }
+
+  /* 피드 카드 패딩 통일 - 768px */
+  .weekly-hot-card,
+  .weekly-rank-card,
+  .weekly-community-card,
+  .weekly-streaming-card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  /* 이미지형 카드 라운드/패딩 통일 - 768px */
+  .industry-card,
+  .weekly-metric-card,
+  .global-card,
+  .weekly-stocks-table {
+    border-radius: 12px;
+  }
+
+  .industry-thumb,
+  .metric-thumb,
+  .global-thumb {
+    border-radius: 12px 12px 0 0;
+  }
+
+  .weekly-hot-card.has-thumb .weekly-hot-content,
+  .industry-content,
+  .weekly-metric-content,
+  .global-content {
+    padding: 14px;
+  }
+
+  .weekly-timeline-item {
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .weekly-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .weekly-stat-card {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .weekly-stat-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .weekly-stat-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .weekly-stat-value {
+    font-size: var(--font-xl-size);
+  }
+
+  .weekly-stat-label {
+    font-size: var(--font-meta-size);
+  }
+
+  .weekly-section {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .weekly-section-title {
+    font-size: var(--font-section-size);
+  }
+
+  .weekly-header-title {
+    font-size: var(--font-heading-size);
+  }
+
+  .weekly-intro-label {
+    font-size: var(--font-section-size);
+  }
+
+  .weekly-stocks-table-header {
+    font-size: var(--font-section-size);
+  }
+
+  .weekly-stock-comment {
+    font-size: calc(var(--font-desc-size) + 1px);
+  }
+
+  .weekly-header-desc,
+  .weekly-section-desc,
+  .weekly-hot-desc,
+  .weekly-metric-desc,
+  .weekly-timeline-desc,
+  .weekly-community-desc,
+  .weekly-streaming-desc,
+  .weekly-highlight-desc,
+  .weekly-global-desc,
+  .weekly-ranking-desc,
+  .weekly-rank-reason {
+    font-size: calc(var(--font-desc-size) + 1px);
+  }
+
+  .weekly-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .weekly-rank-game {
+    font-size: var(--font-body-size);
+  }
+
+  /* MVP 섹션 */
+  .weekly-mvp-badge {
+    width: 44px;
+    height: 44px;
+    font-size: var(--font-badge-size);
+  }
+
+  .weekly-mvp-name {
+    font-size: var(--font-section-size);
+  }
+
+  .weekly-mvp-desc {
+    font-size: calc(var(--font-desc-size) + 1px);
+  }
+
+  .weekly-mvp-highlight {
+    font-size: var(--font-meta-size);
+    padding: 4px 8px;
+  }
+
+  /* 릴리즈 캘린더 */
+  .weekly-release-item {
+    padding: 12px;
+    border-radius: 10px;
+    gap: 10px;
+  }
+
+  .weekly-release-date {
+    min-width: 45px;
+    font-size: var(--font-small-size);
+  }
+
+  .weekly-release-badges {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .weekly-release-badge {
+    font-size: var(--font-xs-size);
+    padding: 2px 6px;
+  }
+
+  /* 글로벌 트렌드 */
+  .weekly-global-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .weekly-global-region {
+    font-size: var(--font-meta-size);
+    padding: 3px 8px;
+  }
+
+  .weekly-global-title {
+    font-size: var(--font-body-size);
+  }
+
+  .weekly-global-desc {
+    font-size: calc(var(--font-desc-size) + 1px);
+  }
+
+  /* 피드 카드 패딩 통일 - 모바일 */
+  .weekly-hot-card,
+  .weekly-rank-card,
+  .weekly-community-card,
+  .weekly-streaming-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  /* 이미지형 카드 라운드/패딩 통일 - 모바일 */
+  .weekly-hot-thumb,
+  .industry-thumb,
+  .metric-thumb,
+  .global-thumb {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .industry-card,
+  .weekly-metric-card,
+  .global-card,
+  .weekly-stocks-table {
+    border-radius: 10px;
+  }
+
+  .weekly-hot-card.has-thumb .weekly-hot-content,
+  .industry-content,
+  .weekly-metric-content,
+  .global-content {
+    padding: 12px;
+  }
+
+  .weekly-timeline-item {
+    padding: 10px 0;
+  }
+}
+.weekly-coming-soon {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+
+.weekly-coming-soon h3 {
+  font-size: var(--font-heading-size);
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+#insight .page-container {
+  padding: var(--space-block-y) 0;
+  display: block;
+}
+/* 정기 페이지(일간/주간)만 상단 패딩 제거 */
+#insight .page-container:not(.issue-container) {
+  padding-top: 0;
+}
+#insight .page-container > * {
+  margin-bottom: var(--space-block-y);
+}
+#insight .page-container > *:last-child {
+  margin-bottom: 0;
+}

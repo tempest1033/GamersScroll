@@ -1,0 +1,105 @@
+/* 게임 상세: 흰 배경 기준으로 정보·차트·조작부를 통일한다. */
+.page-game .site-container #game .game-page-grid {
+  min-height: 0 !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  padding-bottom: 40px;
+}
+.page-game #game .game-page-grid > .home-card { min-width: 0; }
+.page-game #game .game-page-grid > .game-hero { padding-bottom: 0; }
+/* 상세 헤더는 스팀 게임 상세와 같은 구조: 브레드크럼 → 아이콘·이름·개발사·칩 (2026-09-09, 뒤로가기 원형 버튼 제거) */
+.page-game #game .game-crumb { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 18px; font-size: 13px; color: var(--text-muted); }
+.page-game #game .game-crumb a { color: inherit; text-decoration: none; }
+.page-game #game .game-crumb a:hover { color: var(--text); }
+.page-game #game .game-hero-content { padding: 0 0 24px; gap: 20px; border-bottom: 1px solid var(--line); }
+.page-game #game .game-hero-title { font-size: 32px; line-height: 1.3; overflow-wrap: anywhere; } /* 스팀 상세 h1과 동일 (2026-09-09) */
+.page-game #game .game-hero-icon { width: 72px; height: 72px; border-radius: 16px; }
+.page-game #game .game-hero-stat-value { color: var(--text); font-variant-numeric: tabular-nums; }
+.page-game #game .game-hero-stat-label { color: var(--text-muted); white-space: nowrap; }
+.page-game #game .game-back-btn { order: 3; }
+.page-game .site-container #game .home-card-header { padding: 0 !important; margin-bottom: 16px; }
+.page-game #game .home-card-title { font-size: 24px; line-height: 1.4; } /* 섹션 h2 24px 통일 (2026-09-09) */
+.page-game #game .page-container .trend-tab-row { padding: 0 0 12px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.page-game #game .page-container .tab-btn,
+.page-game #game .page-container .market-toggle-btn {
+  min-height: 36px;
+  padding: 7px 14px;
+  color: var(--text-secondary) !important;
+  background: var(--bg-secondary);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 20px;
+}
+.page-game #game .page-container .tab-btn.active,
+.page-game #game .page-container .market-toggle-btn.active { color: var(--text) !important; background: var(--chip-bg); font-weight: 600; }
+.page-game #game .page-container .tab-btn:hover,
+.page-game #game .page-container .market-toggle-btn:hover { background: var(--chip-bg); }
+.page-game #game .page-container button:focus-visible { outline: 2px solid var(--text-secondary); outline-offset: 3px; }
+.page-game #game .page-container button:disabled { opacity: .45; cursor: default; }
+.page-game #game .page-container .rank-trend-section { min-height: 0; }
+.page-game #game .page-container .trend-charts { min-height: 0; padding: 20px 0 0; }
+.page-game #game .page-container .trend-charts svg { max-height: 280px; }
+.page-game #game svg text { fill: var(--text-muted) !important; }
+.page-game #game svg .chart-grid { stroke: var(--line); }
+.page-game #game svg .chart-xlabel,
+.page-game #game svg .chart-ylabel { font-size: 10px; fill: var(--text-muted) !important; }
+/* 모바일: 1040px viewBox 차트가 화면 폭으로 축소되면 축 글자가 5px가 된다.
+   가로 스크롤을 허용해 최소 720px로 그리고, viewBox 단위 글자를 키워 실제 11px 안팎으로 맞춘다 (2026-09-09) */
+@media (max-width: 768px) {
+  .page-game #game .rk-interactive-chart { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .page-game #game .rk-interactive-chart svg.game-chart-svg { min-width: 720px; }
+  .page-game #game svg .chart-ylabel, .page-game #game svg .chart-xlabel { font-size: 15px !important; }
+  .page-game #game svg .chart-rank-label { font-size: 15px; }
+}
+.page-game #game .game-chart-note { margin: 12px 0 0; font-size: 12px; line-height: 1.6; color: var(--text-muted); }
+.page-game #game .game-empty { padding: 32px 16px; color: var(--text-muted); }
+.page-game #game .game-rank-grid { gap: 16px; }
+.page-game #game .game-platform-badge { background: var(--bg-secondary); border: 0; color: var(--text-secondary); }
+.page-game #game .rk .rk-ticker { margin-top: 0; }
+.page-game #game .rk .rk-card { margin-top: 32px; }
+.page-game #game .rk-interactive-chart { position: relative; min-width: 0; }
+.page-game #game .rk-interactive-chart > svg { cursor: crosshair; touch-action: pan-y; }
+.page-game #game .rk-interactive-chart > svg:focus { outline: none; }
+.page-game #game .rk-interactive-chart > svg.rk-chart-keyboard:focus { outline: 2px solid #86868b; outline-offset: 4px; }
+.page-game #game .rk-chart-tooltip { position: absolute; left: 0; top: 0; max-width: calc(100% - 16px); padding: 10px 14px; border: 1px solid var(--border); border-radius: 10px; background: #fff; color: var(--text); box-shadow: 0 4px 16px #00000010; font-size: 13px; pointer-events: none; z-index: 2; }
+.page-game #game .rk-chart-tooltip strong,
+.page-game #game .rk-chart-tooltip span { display: block; white-space: nowrap; line-height: 1.7; }
+.page-game #game .rk-chart-tooltip i,
+.page-game #game .rk-chart-legend i { display: inline-block; width: 16px; height: 3px; vertical-align: middle; margin-right: 6px; }
+.page-game #game .rk-chart-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 12px; }
+.page-game #game .rk-chart-legend button { border: 0; border-radius: 6px; background: transparent; padding: 6px 4px; color: var(--text-secondary); font: inherit; font-size: 12px; cursor: pointer; }
+.page-game #game .rk-chart-legend button[aria-pressed="false"] { opacity: .45; text-decoration: line-through; }
+.page-game #game .rk-chart-tooltip[hidden] { display: none; }
+.page-game #game .rk-game > .rk-stats .rk-stat { display: flex; flex-direction: column; gap: 10px; padding: 24px; min-width: 0; }
+.page-game #game .rk-game > .rk-stats .rk-stat .l { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--text-secondary); }
+.page-game #game .rk-game > .rk-stats .rk-stat .v { margin: 0; font-size: 36px; font-weight: 600; line-height: 1.2; color: var(--text); }
+.page-game #game .rk-game > .rk-stats .rk-stat .v small { font-size: 16px; font-weight: 400; margin-left: 4px; }
+.page-game #game .rk-game > .rk-stats .rk-stat .s { margin: auto 0 0; font-size: 13px; line-height: 1.7; color: var(--text-muted); overflow-wrap: anywhere; }
+.page-game #game .rk-hour-scroll { overflow-x: auto; }
+.page-game #game .rk-hour-chart { display: block; width: 100%; min-width: 600px; }
+.page-game #game .rk-game-records td:first-child { white-space: nowrap; width: 108px; color: var(--text-muted); }
+.page-game #game .rk-game-records td:last-child { white-space: normal; overflow-wrap: anywhere; line-height: 1.6; padding-top: 12px; padding-bottom: 12px; }
+.page-game #game .game-steam-summary .game-hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; width: 100%; margin: 0; padding: 0; border: 0; }
+.page-game #game .game-steam-summary .game-hero-stat { align-items: flex-start; text-align: left; background: var(--bg-secondary); border-radius: 18px; padding: 22px; gap: 8px; }
+.page-game #game .game-steam-summary .game-hero-stat-value { font-size: 30px; line-height: 1.2; }
+.page-game #game .game-steam-chart .trend-charts { padding: 20px 12px; margin-top: 16px; background: var(--bg-secondary); border-radius: 18px; }
+@media (max-width: 768px) {
+  .page-game .site-container #game .game-page-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .page-game #game .game-hero-content { gap: 12px; flex-wrap: wrap; padding: 0 0 20px; }
+  .page-game #game .game-hero-title { font-size: 24px; }
+  .page-game #game .game-hero-icon { width: 56px; height: 56px; border-radius: 12px; }
+  .page-game #game .game-back-btn { order: 0; }
+  .page-game #game .game-hero-stats { gap: 12px; margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--border-subtle); }
+  .page-game #game .game-hero-stat { flex: 1; min-width: 0; }
+  .page-game #game .game-hero-stat-label { font-size: 11px; }
+  .page-game #game .home-card-title { font-size: 20px; }
+  .page-game #game .game-steam-summary .game-hero-stats { gap: 8px; }
+  .page-game #game .game-steam-summary .game-hero-stat { padding: 16px 10px; border-radius: 12px; }
+  .page-game #game .game-steam-summary .game-hero-stat-value { font-size: 23px; }
+  .page-game #game .game-steam-summary .game-hero-stat-label { white-space: normal; }
+  .page-game #game .rk-game > .rk-stats .rk-stat { padding: 18px 16px; gap: 8px; }
+  .page-game #game .rk-game > .rk-stats .rk-stat .l { font-size: 13px; }
+  .page-game #game .rk-game > .rk-stats .rk-stat .v { font-size: 30px; }
+  .page-game #game .rk-game > .rk-stats .rk-stat .s { font-size: 12px; }
+}

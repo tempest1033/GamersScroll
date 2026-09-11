@@ -1,0 +1,126 @@
+/* 전 페이지 공통 화이트 테마. 시스템 다크 설정과 관계없이 밝게 유지한다. */
+:root {
+  --site-max-width: 1240px;
+  --site-gutter: 40px;
+  color-scheme: light;
+  --bg: #fff;
+  --bg-elevated: #ffffff;
+  --card: #ffffff;
+  --card-bg: #ffffff;
+  --card-hover: #f5f5f7;
+  --bg-secondary: #f5f5f7;
+  --bg-tertiary: #f5f5f7;
+  --border: #dedee3;
+  --border-subtle: #eeeef0;
+  --text: #1d1d1f;
+  --text-primary: #1d1d1f;
+  --text-secondary: #515154;
+  --text-muted: #6e6e73;
+  --text-tertiary: #6e6e73; /* 2026-09-09 글자색 정책: muted와 통합 (회색은 secondary·muted 2단만) */
+  --primary: #0071e3;
+  --accent: #0071e3;
+  /* ---- 글자색 정책 (2026-09-09) ----
+     글자 3색  --text 제목·본문·수치 / --text-secondary 링크·본문 보조 / --text-muted 라벨·메타·하락·보합
+     데이터 4색 --data-up 상승(빨강, 상승에만 색) / --data-new 신규·연속 1위(앰버) / --data-discount 할인(초록)
+               --accent 파랑은 활성 배경·차트 선·필에만 쓰고 글자 링크에는 쓰지 않는다 (68-neutral-text) */
+  --data-up: #d43e42;
+  --data-new: #b45309;
+  --data-new-bg: #fff4e0;
+  --data-discount: #166534;
+  /* 오버라이드 CSS(65~71)가 공유하는 선·칩 색 (2026-09-09 토큰화) */
+  --line: #e5e5e9;
+  --chip-bg: #e8e8ed;
+  --gs-header-bg: rgba(255,255,255,.92);
+  --glass-bg: rgba(255,255,255,.92);
+  --glass-bg-solid: #fff;
+}
+body { background: var(--bg); color: var(--text); }
+
+/* 본문 폭 */
+.site-container { max-width: var(--site-max-width); margin: 0 auto; padding: 40px var(--site-gutter) 80px; }
+.page-container.rk { border: 0; padding: 0; background: transparent; border-radius: 0; }
+
+/* 데스크톱: 상단 바의 내비만 사용 */
+@media (min-width: 769px) {
+  .nav { display: none !important; }
+  body > .search-container { display: none !important; }
+}
+
+/* 푸터 */
+.site-footer {
+  max-width: 1280px;
+  margin: 40px auto 0;
+  padding: 22px 24px;
+  border-top: 1px solid var(--border);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: center;
+  /* AI스크롤 푸터와 같은 가운데 정렬 (© · 소개 · X · 개인정보처리방침) */
+  justify-content: center;
+  text-align: center;
+  background: transparent;
+}
+.site-footer > span:first-child { padding: 0 6px; }
+.site-footer a { color: inherit; text-decoration: none; }
+.site-footer a:hover { color: var(--primary); }
+
+/* 모바일 메뉴 패널 */
+.gs-menu { padding: 4px 0; }
+.gs-menu-group { padding: 10px 0; border-bottom: 1px solid var(--border-subtle); }
+.gs-menu-group:last-child { border-bottom: 0; }
+.gs-menu-title { font-size: 12px; font-weight: 700; color: var(--text-muted); letter-spacing: .02em; padding: 4px 16px; }
+.gs-menu a { display: block; padding: 10px 16px; font-size: 15px; font-weight: 600; color: var(--text); text-decoration: none; }
+.gs-menu a:hover { background: var(--bg); }
+
+/* 게임 검색은 허브의 주 작업으로 노출한다. */
+.games-hub-intro { display: flex; gap: 24px; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+.games-hub-intro h1 { font-size: 28px; letter-spacing: -.04em; margin: 0 0 8px; }
+.games-hub-intro p { margin: 0; font-size: 14px; color: var(--text-muted); }
+#games .page-container { background: transparent; border: 0; padding: 0; }
+.games-hub-popular-card { background: var(--card); border-color: var(--border); }
+.games-hub-popular-card:hover { background: var(--card-hover); box-shadow: none; }
+.popular-rank { background: var(--bg-secondary); color: var(--primary); }
+.games-hub-group { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-top: 18px; }
+.games-hub-index { background: var(--card); border-color: var(--border); }
+.games-hub-group .game-item:hover { background: var(--card-hover); }
+.page-magazine .site-container { max-width: var(--site-max-width); }
+
+/* 고정 메뉴와 검색도 본문과 같은 밝은 표면을 사용한다. */
+.gs-header .gs-header-inner { max-width: var(--site-max-width); height: 64px; }
+.gs-header .gs-logo .logo-svg { width: 208px; height: 26px; transform: none; transition: none; }
+.gs-header .gs-nav { height: 100%; align-items: stretch; }
+.gs-header .gs-nav a { display: flex; align-items: center; padding: 0; font-size: 13px; font-weight: 500; }
+.gs-header .gs-nav a.active::after { bottom: 0; background: var(--text); height: 2px; }
+@media (min-width: 769px) and (max-width: 1000px) {
+  .gs-header .gs-logo .logo-svg { width: 180px; height: 23px; }
+  .gs-header .gs-header-inner { gap: 20px; }
+  .gs-header .gs-nav { gap: 16px; }
+}
+.gs-header .gs-search .search-box { background: var(--bg-secondary); border-radius: 9px; height: 34px; }
+.gs-header .gs-search .search-input { font-size: 12px; }
+.gs-header .gs-status { display: none; }
+body > .search-container .search-box { background: var(--bg-secondary) !important; border: 0; }
+body > .search-container .search-input { color: var(--text); }
+body > .search-container .search-btn { background: transparent; color: var(--text-muted); }
+body .nav { background: #fff !important; }
+.site-footer { border: 0; background: var(--bg-secondary); max-width: none; padding: 24px max(var(--site-gutter),calc((100% - var(--site-max-width))/2 + var(--site-gutter))); font-size: 11px; }
+
+@media (max-width: 768px) {
+  .site-container { padding: 16px 14px 60px; }
+  .site-footer { flex-wrap: wrap; gap: 0; padding: 18px 14px; justify-content: center; }
+  .games-hub-intro { align-items: stretch; flex-direction: column; gap: 16px; }
+  .games-hub-intro h1 { font-size: 24px; }
+  body > .search-container .search-input { font-size: 16px !important; }
+  body > .search-container .search-home-icon { display: flex; align-items: center; justify-content: center; flex: 0 0 44px; width: 44px; height: 44px; color: var(--text); }
+  /* 모바일 상단 바: 홈 아이콘 대신 워드마크 (2026-09-09) */
+  body > .search-container .search-home-icon.search-logo { flex: 0 0 auto; width: auto; padding: 0 6px 0 12px; }
+  body > .search-container .search-home-icon .logo-svg { display: block; width: 124px; height: 16px; }
+}
+
+/* 기사 사이드바 인기·최신 탭: 다른 곳의 회색 필 탭과 같은 모양 (2026-09-09) */
+body .article-sidebar .tab-btn { background: var(--bg-secondary); color: var(--text-secondary); border: 0; border-radius: 999px; padding: 8px 14px; font-size: 13px; }
+body .article-sidebar .tab-btn.active { background: var(--chip-bg); color: var(--text); font-weight: 600; }
+body .article-sidebar .tab-btn:hover { background: var(--chip-bg); }

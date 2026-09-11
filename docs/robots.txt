@@ -1,0 +1,6 @@
+# GamerScroll robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://gamerscroll.com/sitemap.xml

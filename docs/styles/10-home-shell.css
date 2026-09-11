@@ -1,0 +1,341 @@
+    /* Header - 순백 표면 + 여유 있는 상하 패딩 */
+    .header {
+      background: var(--bg-elevated);
+      border-bottom: none;
+      padding: 20px 0;
+      box-shadow: none;
+    }
+
+    /* 상세페이지에서 헤더 숨기기 (모바일만) */
+    @media (max-width: 768px) {
+      body.detail-page .header {
+        display: none;
+      }
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-sm);
+      position: relative;
+    }
+
+    .header-date {
+      position: absolute;
+      right: 24px;
+      font-size: var(--font-meta-size);
+      font-weight: var(--font-meta-weight);
+      color: var(--text-secondary);
+      background: var(--glass-bg);
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .header-title {
+      font-size: 2.2rem;
+      font-weight: var(--font-logo-weight);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
+
+    .header-title a {
+      display: flex;
+      align-items: center;
+      color: inherit;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
+
+    .header-title a:hover,
+    .header-title a:visited,
+    .header-title a:active,
+    .header-title a:focus:not(:focus-visible) {
+      color: inherit;
+      text-decoration: none;
+      outline: none;
+    }
+
+    .logo-svg {
+      height: 48px;
+      width: auto;
+      max-width: 100%;
+      color: var(--text);
+      transition: transform var(--transition-normal), color var(--transition-normal);
+    }
+
+    .logo-svg:hover {
+        transform: scale(1.02);
+    }
+
+    .header-title a:active .logo-svg {
+        color: var(--text);
+    }
+
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      background: var(--gradient-accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-tab-size);
+      font-weight: var(--font-logo-weight);
+      color: #fff;
+      letter-spacing: -1px;
+    }
+
+    .logo-text {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-title .logo-game {
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-title .logo-crawler {
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-subtitle {
+      display: none;
+    }
+
+    /* Navigation - 스티키 글래스 블러 (스크롤 시 콘텐츠가 비쳐 보이는 모던 톤) */
+    .nav {
+      background: var(--glass-bg);
+      -webkit-backdrop-filter: blur(14px) saturate(1.5);
+      backdrop-filter: blur(14px) saturate(1.5);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-xs);
+      transition: background var(--transition-normal);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 var(--space-page-x);
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      transition: transform 0.3s ease;
+      contain: layout style;
+    }
+    .nav-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-item {
+      padding: 8px 14px;
+      font-size: var(--font-nav-size);
+      font-weight: var(--font-nav-weight);
+      letter-spacing: 0.01em;
+      color: var(--text-secondary);
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      transition: color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      border-radius: var(--radius-sm);
+      margin: 2px 0;
+      border-bottom: none;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
+
+    .nav-item:hover {
+      color: var(--text);
+      background: var(--hover-bg);
+      border-radius: var(--radius-sm);
+    }
+
+    /* ===== PC 전용 스타일 (769px 이상) ===== */
+    @media (min-width: 769px) {
+      /* 메인 메뉴 가운데 정렬 */
+      .nav-inner {
+        justify-content: center !important;
+        padding: 0 32px;
+      }
+
+    }
+
+    /* 모바일 캐러셀 네비게이션 - 5개 표시 */
+    @media (max-width: 768px) {
+      /* nav는 9555라인 이후 미디어쿼리에서 fixed로 처리 */
+      .nav-inner {
+        justify-content: flex-start;
+        padding: 0;
+        gap: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        visibility: hidden;
+      }
+      .nav-inner::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-item {
+        min-width: 20%;
+        flex: 0 0 20%;
+        justify-content: center;
+        text-align: center;
+        padding: 8px 4px 6px;
+        margin: 0;
+        font-size: var(--font-nav-size) !important;
+        font-weight: var(--font-nav-weight) !important;
+        gap: 5px;
+        flex-direction: column;
+        border-radius: var(--radius-sm);
+      }
+      .nav-item.active {
+        font-weight: var(--font-nav-weight);
+        position: relative;
+      }
+      .nav-item.active::after {
+        bottom: 2px;
+        left: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        height: 2px;
+      }
+      .nav-item svg {
+        width: 22px;
+        height: 22px;
+      }
+      .nav-item.active svg {
+        opacity: 1;
+      }
+    }
+
+    /* 데스크톱에서만 hover */
+    @media (hover: hover) {
+      .nav-item:hover svg {
+        opacity: 1;
+      }
+    }
+
+    /* 스와이프 중에만 모든 hover/active 효과 비활성화 (탭은 정상 동작) */
+    body.is-swiping .nav-item:hover,
+    body.is-swiping .nav-item:active,
+    body.is-swiping .tab-btn:hover,
+    body.is-swiping .tab-btn:active,
+    body.is-swiping .nav-item.swiping,
+    body.is-swiping .tab-btn.swiping {
+      background: transparent !important;
+      color: inherit !important;
+      opacity: inherit !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    .nav-item.active {
+      color: var(--text);
+      background: transparent;
+      border-bottom: none;
+      border-radius: 0;
+      font-weight: var(--font-card-title-weight);
+      position: relative;
+    }
+
+    /* 활성 탭 하단 인디케이터 바 - 버튼 너비만큼 */
+    .nav-item.active::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 1px;
+    }
+
+    .nav-item svg {
+      display: none;
+    }
+
+	    .nav-item.active svg {
+	      display: none;
+	    }
+
+	    /* Common Page Containers - 세로 스택 레이아웃 */
+	    .page-container {
+	      display: block;
+	    }
+	    .page-container > * {
+	      margin-bottom: var(--space-block-gap);
+	    }
+	    .page-container > *:last-child {
+	      margin-bottom: 0;
+	    }
+
+	    /* Page Container - footer 하단 고정 */
+	    /* header(~70px) + search(~50px) + nav(~52px) = ~172px, 여유분 포함 180px 제외 */
+	    .page-container {
+	      min-height: calc(100vh - 180px) !important;
+	    }
+
+    /* Site Container (PC: 1180px, 거터 32px) */
+    :is(.site-container, .container) {
+      max-width: 1180px;
+      flex: 1 0 auto !important;
+      margin: 0 auto;
+      padding: 0 32px 60px;
+      box-sizing: border-box;
+    }
+
+
+    /* 모바일: page-container 높이 조정 */
+    @media (max-width: 768px) {
+      .page-container {
+        min-height: calc(100vh - 120px) !important;
+      }
+    }
+
+    /* Sections */
+    .section {
+      padding-top: 0;
+    }
+
+    .section:not(.active) {
+      display: none;
+    }
+
+	    /* 페이지 컨테이너 - 광고 패딩만 사용 */
+	    .page-container {
+	      padding-top: 0;
+	    }

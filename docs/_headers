@@ -1,0 +1,45 @@
+/styles-core.e144d411.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/styles-catalog.e144d411.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/styles-report.e144d411.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/styles-game.e144d411.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/styles-article.e144d411.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/images/*
+  Cache-Control: public, max-age=604800
+
+/magazine/issue/*
+  X-Robots-Tag: noindex, follow
+
+/magazine/hotpick/*
+  X-Robots-Tag: noindex, follow
+
+/icon-*.png
+  Cache-Control: public, max-age=2592000
+
+/favicon*
+  Cache-Control: public, max-age=2592000
+
+/assets/layout-core.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/layout-runtime.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/feed/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/apexcharts-*.min.js
+  Cache-Control: public, max-age=31536000, immutable
+

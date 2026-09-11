@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[미리보기] 슬레이 더 스파이어 2 얼리 액세스, 970만 카피 덱빌딩 로그라이크의 왕이 돌아온다</title>
+  <style>
+    :root {
+      --bg: #0a0a0b;
+      --bg-secondary: #18181b;
+      --card: #18181b;
+      --card-hover: #27272a;
+      --border: #3f3f46;
+      --text: #fafafa;
+      --text-secondary: #d4d4d8;
+      --text-muted: #a1a1aa;
+      --primary: #f59e0b;
+      --hover-bg: #27272a;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #60a5fa; text-decoration: none; }
+    a:hover { color: #34d399; }
+
+    .preview-banner {
+      background: linear-gradient(90deg, #f59e0b, #d97706);
+      color: #fff;
+      padding: 12px 20px;
+      text-align: center;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .preview-banner a { color: #fff; margin-left: 16px; text-decoration: underline; }
+
+    .preview-container { max-width: 1190px; margin: 0 auto; padding: 20px; }
+
+    .preview-meta {
+      background: var(--hover-bg);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      font-size: 0.875rem;
+      border: 1px solid var(--border);
+    }
+    .preview-meta dt { color: var(--text-muted); font-weight: 500; margin-top: 8px; }
+    .preview-meta dt:first-child { margin-top: 0; }
+    .preview-meta dd { margin: 4px 0 0 0; color: var(--text-secondary); }
+    .preview-meta code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; }
+
+    .blog-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .blog-hero { width: 100%; max-height: 280px; overflow: hidden; background: var(--bg-secondary); }
+    .blog-hero-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .blog-header { padding: 24px 24px 8px; }
+    .blog-title { font-size: 1.75rem; font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 16px; }
+    .blog-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .blog-date { font-size: 0.8125rem; color: var(--text-muted); }
+    .blog-summary { font-size: 0.9375rem; line-height: 1.7; color: var(--text-secondary); padding: 16px; background: var(--hover-bg); border-radius: 8px; margin-bottom: 16px; }
+
+    .blog-content { padding: 24px; }
+    .blog-paragraph { font-size: 0.9375rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 20px; }
+    .blog-paragraph:last-child { margin-bottom: 0; }
+
+    .blog-heading { font-size: 1.25rem; font-weight: 600; color: var(--text); margin: 32px 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .blog-heading:first-child { margin-top: 0; }
+
+    .blog-figure { margin: 24px 0; border-radius: 8px; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--border); }
+    .blog-figure.blog-table { width: fit-content; max-width: 100%; }
+    .blog-image { width: 100%; height: auto; max-height: 800px; object-fit: contain; display: block; }
+    .blog-caption { padding: 12px 16px; font-size: 0.8125rem; color: var(--text-muted); text-align: center; background: var(--hover-bg); border-top: 1px solid var(--border); }
+
+    .blog-quote { margin: 24px 0; padding: 16px 20px; background: rgba(245, 158, 11, 0.08); border-left: 3px solid var(--primary); border-radius: 0 8px 8px 0; font-size: 0.9375rem; line-height: 1.7; color: var(--text-secondary); font-style: italic; }
+
+    .blog-video .blog-video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .blog-video .blog-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+    .table-title { padding: 12px 16px; font-size: 1rem; font-weight: 600; color: var(--text); background: var(--hover-bg); border-bottom: 1px solid var(--border); }
+    .blog-table-wrapper, .wiki-table-wrapper { margin: 0; width: fit-content; max-width: 100%; overflow-x: auto; }
+    .wiki-table { width: auto; min-width: 50%; border-collapse: collapse; font-size: 0.9375rem; }
+    .wiki-table th, .wiki-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+    .wiki-table th { background: var(--hover-bg); font-weight: 600; color: var(--text); }
+    .wiki-table td { color: var(--text-secondary); }
+    .wiki-table tbody tr:hover { background: var(--hover-bg); }
+    .wiki-table tbody tr:last-child td { border-bottom: none; }
+    .wiki-table a { color: #60a5fa; font-weight: 500; }
+    .wiki-table a:hover { color: #34d399; }
+
+    .blog-sources { padding: 24px; border-top: 1px solid var(--border); }
+    .blog-sources-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+    .blog-sources-list { list-style: disc; padding-left: 20px; margin: 0; }
+    .blog-sources-list li { font-size: 0.75rem; line-height: 1.5; margin-bottom: 4px; }
+    .blog-sources-list a { color: var(--text-secondary); }
+    .blog-sources-list a:hover { color: var(--primary); text-decoration: underline; }
+
+    .blog-related-games { padding: 24px; border-top: 1px solid var(--border); }
+    .blog-related-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 16px; }
+    .blog-related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .blog-related-card { display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--hover-bg); border-radius: 8px; text-decoration: none; border: 1px solid transparent; transition: all 0.2s; }
+    .blog-related-card:hover { background: var(--card-hover); border-color: var(--border); }
+    .blog-related-icon { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
+    .blog-related-name { font-size: 0.875rem; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .blog-list { margin: 16px 0; padding-left: 24px; }
+    .blog-list li { margin-bottom: 8px; color: var(--text-secondary); }
+
+    .preview-ad-placeholder { background: rgba(255,255,255,0.05); border: 2px dashed rgba(255,255,255,0.2); padding: 40px; text-align: center; color: rgba(255,255,255,0.4); margin: 24px 0; border-radius: 8px; }
+
+    .game-ranking-list { margin: 24px 0; }
+    .game-ranking-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+    .game-ranking-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--hover-bg); border-radius: 8px; margin-bottom: 8px; }
+    .game-ranking-rank { font-size: 1.25rem; font-weight: 700; color: var(--primary); width: 32px; text-align: center; }
+    .game-ranking-thumb { width: 48px; height: 48px; border-radius: 8px; overflow: hidden; }
+    .game-ranking-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .game-ranking-info { flex: 1; }
+    .game-ranking-name { font-weight: 500; color: var(--text); }
+    .game-ranking-price { color: var(--text-muted); font-size: 0.875rem; }
+    .game-ranking-desc { font-size: 0.8125rem; color: var(--text-muted); margin-top: 4px; }
+
+    .blog-link-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0; }
+    .blog-link-button { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: var(--hover-bg); border-radius: 12px; border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; }
+    .blog-link-button:hover { background: var(--card-hover); border-color: var(--primary); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+    .blog-link-icon { width: 64px; height: 64px; border-radius: 14px; object-fit: cover; flex-shrink: 0; }
+    .blog-link-content { flex: 1; min-width: 0; }
+    .blog-link-text { display: block; font-weight: 600; color: var(--text); font-size: 1rem; }
+    .blog-link-subtext { display: block; font-size: 0.8125rem; color: var(--text-muted); margin-top: 3px; }
+    .blog-link-arrow { font-size: 1.25rem; color: var(--text-muted); flex-shrink: 0; }
+
+    .preview-chart-placeholder { background: var(--hover-bg); border: 2px dashed var(--border); border-radius: 12px; padding: 32px; margin: 24px 0; text-align: center; }
+    .chart-placeholder-icon { font-size: 3rem; margin-bottom: 12px; }
+    .chart-placeholder-title { font-size: 1.125rem; font-weight: 600; color: var(--text); margin-bottom: 16px; }
+    .chart-placeholder-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 0.875rem; color: var(--text-muted); margin-bottom: 12px; }
+    .chart-placeholder-note { font-size: 0.75rem; color: var(--text-muted); opacity: 0.7; }
+
+    @media (max-width: 768px) {
+      .blog-link-grid { grid-template-columns: 1fr; }
+      .blog-header, .blog-content, .blog-related-games, .blog-sources { padding: 16px; }
+      .blog-title { font-size: 1.5rem; }
+      .blog-heading { font-size: 1rem; }
+      .blog-figure { margin: 16px -16px; border-radius: 0; border-left: none; border-right: none; }
+      .blog-related-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-figure.blog-table { width: 100%; margin: 16px 0; }
+      .wiki-table { width: 100%; min-width: 400px; }
+      .wiki-table th, .wiki-table td { padding: 10px 12px; font-size: 0.875rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">
+    🔥 핫픽 미리보기 - 실제 사이트 스타일 적용
+    <a href="javascript:location.reload()">새로고침</a>
+  </div>
+
+  <div class="preview-container">
+    <dl class="preview-meta">
+      <dt>상태</dt>
+      <dd><strong>draft</strong></dd>
+      
+      <dt>Slug</dt>
+      <dd><code>slay-the-spire-2-early-access</code></dd>
+      <dt>키워드</dt>
+      <dd>슬레이 더 스파이어 2, Slay the Spire 2, 덱빌딩 로그라이크, 메가 크릿 게임즈, Mega Crit Games, 얼리 액세스 2026, 고도 엔진, Godot, 4인 코옵, 네크로바인더, 리전트, 슬더스 후속작, 인디 게임 명작, 카드게임 로그라이크, 스팀 덱빌더 추천</dd>
+    </dl>
+
+    <article class="blog-card">
+      
+
+      <header class="blog-header">
+        <h1 class="blog-title">슬레이 더 스파이어 2 얼리 액세스, 970만 카피 덱빌딩 로그라이크의 왕이 돌아온다</h1>
+        <div class="blog-meta">
+          <time class="blog-date"></time>
+        </div>
+        <p class="blog-summary">970만 카피를 판매하며 덱빌딩 로그라이크라는 장르를 정의한 슬레이 더 스파이어의 후속작이 2026년 3월 5일 스팀 얼리 액세스로 출시된다. 고도 엔진으로의 전환, 5명의 플레이어블 캐릭터, 그리고 시리즈 최초의 4인 온라인 코옵까지. 덱빌딩의 왕이 모든 것을 걸고 돌아온다.</p>
+      </header>
+
+      <div class="blog-content">
+        <p class="blog-paragraph">덱빌딩 로그라이크라는 장르를 혼자서 정의해버린 게임이 있다. 슬레이 더 스파이어(Slay the Spire). 스팀에서만 약 970만 카피를 판매하고, 몬스터 트레인부터 밸러트로까지 수백 개의 후속 장르 게임을 탄생시킨 바로 그 게임의 후속작이 온다. 슬레이 더 스파이어 2, 2026년 3월 5일 스팀 얼리 액세스 출시.</p>
+<p class="blog-paragraph">단순한 후속작이 아니다. 엔진을 고도(Godot)로 완전히 갈아탔고, 얼리 액세스 시작부터 5명의 캐릭터 전원이 플레이 가능하며, 시리즈 최초로 4인 온라인 코옵 모드까지 탑재했다. 출시 전부터 스팀에서 100명 이상의 큐레이터가 이미 리뷰를 등록할 만큼 기대감이 폭발적이다. 3월 5일, 탑 등반이 다시 시작된다.</p>
+<h2 class="blog-heading">1. 슬레이 더 스파이어, 970만 카피의 장르 정의자</h2>
+<p class="blog-paragraph">슬레이 더 스파이어 2를 이야기하기 전에 전작의 위상부터 짚어야 한다. 2017년 얼리 액세스로 시작해 2019년 정식 출시된 슬레이 더 스파이어는 카드 게임과 로그라이크를 결합한 최초의 게임은 아니었지만, 이 조합을 완벽에 가깝게 구현한 게임이었다. 런마다 카드 덱을 새로 구축하고, 무작위 적과 이벤트에 대응하며, 전략적 선택의 연속으로 탑을 올라가는 구조. 이 공식이 하나의 장르를 만들었다.</p>
+<p class="blog-paragraph">파급력은 엄청났다. 몬스터 트레인, 인스크립션, 로그북, 밸러트로 등 수백 개의 덱빌더가 뒤를 이었고, '슬레이 더 스파이어 같은 게임'이라는 말 자체가 장르 설명이 되어버렸다. 메가 크릿 게임즈(Mega Crit Games)라는 소규모 인디 팀이 만든 이 게임은 스팀에서만 약 970만 카피라는 경이로운 수치를 기록했다. 모바일과 콘솔 판매까지 합치면 그 이상이다.</p>
+<h2 class="blog-heading">2. 고도 엔진 전환, 유니티 사태가 만든 결정적 선택</h2>
+<p class="blog-paragraph">슬레이 더 스파이어 2에서 기술적으로 가장 주목할 변화는 엔진이다. 전작은 자바 기반의 LibGDX 프레임워크로 만들어졌는데, 후속작 개발 초기에는 유니티(Unity)로의 전환이 진행되고 있었다. 그런데 2023년, 유니티가 설치당 과금 정책(Runtime Fee)을 발표하면서 인디 게임 업계 전체에 충격파가 퍼졌다.</p>
+<p class="blog-paragraph">메가 크릿은 이 사태를 계기로 유니티를 버리고 오픈소스 엔진 고도(Godot)로 전환하는 결단을 내렸다. 단순한 엔진 교체가 아니라, 인디 개발자로서의 철학적 선택이기도 했다. 고도는 완전 무료이면서 MIT 라이선스로 제한이 없고, 인디 커뮤니티의 지지가 두터운 엔진이다. 이 전환 덕분에 시각적 품질이 대폭 향상됐으며, 향후 모딩 지원의 기반도 마련됐다.</p>
+<h2 class="blog-heading">3. 캐릭터 5명 전원 출격, 네크로바인더와 리전트의 등장</h2>
+<p class="blog-paragraph">전작의 얼리 액세스가 아이언클래드, 사일런트 2명으로 시작해 디펙트와 워쳐를 순차 추가했다면, 슬레이 더 스파이어 2는 처음부터 5명 전원이 플레이 가능하다. 복귀 캐릭터 3명과 신규 캐릭터 2명이라는 파격적인 구성이다.</p>
+<p class="blog-paragraph">복귀 캐릭터는 아이언클래드, 사일런트, 디펙트. 단순 복귀가 아니라 2편에 맞게 전면 리워크됐다. 기존 팬들에게는 익숙하면서도 새로운 경험을 제공한다.</p>
+<p class="blog-paragraph">완전히 새로운 캐릭터 2명이 눈길을 끈다. 네크로바인더(Necrobinder)는 강령술사 컨셉으로, 동반자 '오스티(Osty)'와 함께 싸운다. '둠(Doom)' 메커니즘을 핵심으로 사용하며, 죽음과 부활을 오가는 독특한 전투 스타일을 구현한다. 리전트(Regent)는 '별의 왕자'라는 테마를 가진 캐릭터로, 고유 자원 '스타즈(Stars)'를 관리하고 카드를 미니언으로 변환하는 독창적인 메커니즘이 특징이다. 두 캐릭터 모두 전작에서는 볼 수 없었던 완전히 새로운 플레이 패턴을 제시한다.</p>
+<div class="preview-ad-placeholder">[광고 영역]</div>
+<h2 class="blog-heading">4. 4인 온라인 코옵, 슬레이 더 스파이어 2 최대의 서프라이즈</h2>
+<p class="blog-paragraph">가장 큰 서프라이즈는 단연 4인 온라인 코옵 모드다. 슬레이 더 스파이어는 태생적으로 1인용 게임이었다. 혼자서 탑을 오르고, 혼자서 전략을 짜고, 혼자서 죽는 게임. 그 공식을 후속작이 정면으로 뒤집었다.</p>
+<p class="blog-paragraph">최대 4명이 함께 탑을 등반하는 멀티플레이어 모드가 얼리 액세스부터 제공된다. 단순히 솔로 플레이를 여러 명이 동시에 하는 것이 아니다. 멀티플레이어 전용 카드와 팀 시너지 시스템이 별도로 설계되어 있어, 코옵에서만 가능한 전략적 깊이가 존재한다. 친구와 카드 조합을 논의하며 보스를 공략하는 경험은 솔로 플레이와는 차원이 다른 재미를 약속한다.</p>
+<p class="blog-paragraph">물론 솔로 플레이도 여전히 핵심이다. 코옵은 추가된 선택지이지, 필수가 아니다. 하지만 덱빌딩 로그라이크에 코옵이라는 새로운 차원을 더한 것은 장르 전체에 영향을 줄 수 있는 큰 결정이다.</p>
+<h2 class="blog-heading">5. 대체 액트와 새로운 시스템, 두 배로 커진 탑</h2>
+<p class="blog-paragraph">콘텐츠 규모도 야심차다. 대체 액트(Alternate Acts) 시스템이 도입되면서 각 액트가 2개의 존으로 분기된다. 예를 들어 액트 1은 오버그로스(Overgrowth)와 언더독스(Underdocks)로 나뉘어, 같은 액트라도 완전히 다른 적과 환경을 경험하게 된다. 이론적으로 게임 규모가 2배로 확장되는 셈이다.</p>
+<p class="blog-paragraph">새로운 시스템도 다수 추가됐다. 인챈트먼트(Enchantment)는 카드를 업그레이드하되 약간의 페널티를 수반하는 시스템으로, 리스크와 리워드 사이의 긴장감을 더한다. 퀘스트 시스템은 퀘스트 카드를 통해 동반 생물을 획득할 수 있게 해준다. 어플릭션(Affliction) 시스템은 적이 플레이어의 카드에 부정적 효과를 부여하는 메커니즘으로, 기존의 디버프 개념을 카드 레벨로 확장한 것이다.</p>
+<p class="blog-paragraph">이 모든 시스템이 5명의 캐릭터, 코옵 모드, 대체 액트와 결합되면서 조합의 폭이 전작과는 비교할 수 없을 정도로 넓어졌다.</p>
+<h2 class="blog-heading">6. ARG 이벤트와 출시일 발표, 커뮤니티를 들끓게 한 2월</h2>
+<p class="blog-paragraph">출시일 발표 과정 자체도 화제였다. 2026년 2월, 메가 크릿은 'Neowsletter'를 통해 대체 현실 게임(ARG) 이벤트를 개최했다. 커뮤니티가 단서를 추적해 시애틀에 있는 메가 크릿 본사까지 찾아가는 과정을 거쳤고, 그 끝에서 얼리 액세스 트레일러와 3월 5일이라는 출시일이 공개됐다.</p>
+<p class="blog-paragraph">미출시 상태임에도 기대감은 이미 역대급이다. 스팀에서 100명 이상의 큐레이터가 사전 리뷰를 등록했고, 커뮤니티 허브는 연일 토론으로 뜨겁다. 14개 언어를 지원하며 한국어도 포함되어 있어, 한국 유저들도 출시 직후부터 바로 즐길 수 있다. 가격은 아직 공개되지 않았지만, 얼리 액세스 이후 가격 인상이 예정되어 있으며 마이크로트랜잭션은 없다고 확인됐다.</p>
+<h2 class="blog-heading">마치며: 3월 5일, 탑 등반 개시</h2>
+<p class="blog-paragraph">슬레이 더 스파이어가 장르를 만들었다면, 슬레이 더 스파이어 2는 그 장르의 한계를 시험하려 한다. 고도 엔진으로의 전환, 5명의 캐릭터, 4인 코옵, 대체 액트, 인챈트먼트, 퀘스트, 어플릭션. 얼리 액세스 시작부터 이 정도 규모를 갖춘 덱빌딩 로그라이크는 전례가 없다.</p>
+<p class="blog-paragraph">전작에 수백, 수천 시간을 바친 팬이라면 당연히 첫날 구매 목록에 올려야 할 게임이다. 덱빌딩 로그라이크를 한 번도 해본 적 없다면, 이보다 좋은 입문 타이밍도 없다. 2026년 3월 5일, 슬레이 더 스파이어 2의 탑이 열린다.</p>
+      </div>
+
+      
+    <div class="blog-sources">
+      <h3 class="blog-sources-title">정보 출처</h3>
+      <ul class="blog-sources-list">
+        
+          <li><a href="https://store.steampowered.com/app/2868840/Slay_the_Spire_2/" target="_blank" rel="nofollow noopener">Steam - Slay the Spire 2 on Steam</a></li>
+        
+          <li><a href="https://www.megacrit.com/" target="_blank" rel="nofollow noopener">Mega Crit Games - Slay the Spire 2 Official Site</a></li>
+        
+          <li><a href="https://www.pcgamesn.com/slay-the-spire-2/guide" target="_blank" rel="nofollow noopener">PCGamesN - Slay the Spire 2 guide</a></li>
+        
+          <li><a href="https://www.pcgamer.com/games/card-games/surprise-slay-the-spire-2-is-bringing-4-player-co-op-when-it-hits-early-access-on-march-6/" target="_blank" rel="nofollow noopener">PC Gamer - Slay the Spire 2 is bringing 4-player co-op</a></li>
+        
+          <li><a href="https://www.engadget.com/gaming/slay-the-spire-2-will-enter-early-access-on-march-5-210338514.html" target="_blank" rel="nofollow noopener">Engadget - Slay the Spire 2 will enter Early Access on March 5</a></li>
+        
+      </ul>
+    </div>
+  
+      
+      
+    </article>
+  </div>
+</body>
+</html>

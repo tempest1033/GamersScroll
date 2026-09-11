@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	  <meta name="robots" content="noindex, follow">
+	  <!-- preconnect: AdSense / 광고 서빙 / 폰트 CDN — preload·async script보다 먼저 연결 핸드셰이크 시작 -->
+	  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+	  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+	  <link rel="preconnect" href="https://tpc.googlesyndication.com" crossorigin>
+	  <link rel="preconnect" href="https://wsrv.nl">
+	  <!-- Critical CSS: 레이아웃 선적용 (CLS 방지) -->
+	  <style>
+	    :root { --space-page-x: 16px; --space-block-gap: 20px; --space-block-y: 24px; }
+	    body { margin: 0; }
+	    .home-trend-card-image { background: transparent !important; }
+	    :is(.site-container, .container) {
+	      max-width: 1180px;
+	      margin: 0 auto;
+	      padding-left: var(--space-page-x);
+	      padding-right: var(--space-page-x);
+	      box-sizing: border-box;
+	    }
+	    .header-inner {
+	      max-width: 1180px;
+	      margin: 0 auto;
+	      padding: 0 32px;
+	      box-sizing: border-box;
+	    }
+	    .nav-inner {
+	      max-width: 1180px;
+	      margin: 0 auto;
+	      padding: 0 var(--space-page-x);
+	      box-sizing: border-box;
+	    }
+	    .home-container {
+	      display: grid;
+	      grid-template-columns: 1fr 300px;
+	      gap: var(--space-block-gap);
+	      padding: 0 0 var(--space-block-y) 0;
+	    }
+	    .home-main > * { margin-bottom: var(--space-block-gap); }
+	    .home-card { margin-bottom: var(--space-block-gap); }
+	    @media (max-width: 768px) {
+	      body { width: 100%; max-width: 100vw; overscroll-behavior-x: none; }
+	      .header, .header-inner, .nav-inner { width: 100%; max-width: 100%; }
+	      .nav, .container, .site-container { width: 100%; max-width: 100%; }
+	      .home-container { display: block; padding: 0; }
+	      .home-main > *, .home-card { margin-bottom: 0; }
+	    }
+	  </style>
+	  <!-- AdSense: preload + static async (preload scanner picks it up at first byte) -->
+	  <link rel="preload" as="script" crossorigin="anonymous" fetchpriority="high" href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9477874183990825">
+	  <script async crossorigin="anonymous" fetchpriority="high" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9477874183990825"></script>
+	  <!-- LCP 이미지 preload: 광고 스크립트 다음 순서 (광고 우선), 본문 <img>와 동일 URL로 dedupe -->
+		  <title>Victoria 3 스팀 순위 추이 — 동접·판매 기록 | 게이머스크롤</title>
+  <!-- SEO -->
+  <meta name="description" content="Victoria 3의 스팀 동접자·판매 순위 추이와 역대 순위 기록.">
+  <meta name="keywords" content="Victoria 3, Victoria 3 순위, Victoria 3 스팀 순위, Victoria 3 동접자, Victoria 3 판매 순위, 스팀 게임 순위">
+  <meta name="application-name" content="게이머스크롤">
+  <meta name="apple-mobile-web-app-title" content="게이머스크롤">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="게이머스크롤 RSS" href="https://gamerscroll.com/rss.xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": "https://gamerscroll.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "게임 DB",
+        "item": "https://gamerscroll.com/games/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Victoria 3",
+        "item": "https://gamerscroll.com/games/victoria-3/"
+      }
+    ]
+  }
+  </script>
+  <!-- Open Graph / SNS 공유 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Victoria 3 스팀 순위 추이 — 동접·판매 기록">
+  <meta property="og:description" content="Victoria 3의 스팀 동접자·판매 순위 추이와 역대 순위 기록.">
+  <meta property="og:image" content="https://gamerscroll.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Victoria 3 스팀 순위 추이 — 동접·판매 기록">
+  <meta property="og:url" content="https://gamerscroll.com/games/victoria-3/">
+  <meta property="og:site_name" content="게이머스크롤">
+  <meta property="og:locale" content="ko_KR">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Victoria 3 스팀 순위 추이 — 동접·판매 기록">
+  <meta name="twitter:description" content="Victoria 3의 스팀 동접자·판매 순위 추이와 역대 순위 기록.">
+  <meta name="twitter:image" content="https://gamerscroll.com/og-image.png">
+  <meta name="twitter:image:alt" content="Victoria 3 스팀 순위 추이 — 동접·판매 기록">
+  <meta name="twitter:site" content="@gamerscroll">
+  <meta name="twitter:creator" content="@gamerscroll">
+  <!-- Theme & Favicon -->
+  <meta name="theme-color" content="#ffffff">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+  <link rel="manifest" href="/manifest.json">
+  <!-- dns-prefetch: preconnect 안 한 도메인용 (광고 도메인 preconnect는 <head> 최상단으로 이동) -->
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <link rel="dns-prefetch" href="https://www.gstatic.com">
+  <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+  <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+  <link rel="dns-prefetch" href="https://play-lh.googleusercontent.com">
+  <link rel="dns-prefetch" href="https://is1-ssl.mzstatic.com">
+  <link rel="dns-prefetch" href="https://cdn.cloudflare.steamstatic.com">
+	  <script>
+    (function() {
+      var root = document.documentElement;
+      if (!root || !root.classList) return;
+      root.classList.add('deferred-css-pending');
+    })();
+  </script>
+	  <style>
+    .deferred-css-pending *,.deferred-css-pending *::before,.deferred-css-pending *::after{
+      transition:none !important;
+      animation:none !important;
+    }
+  </style>
+	  <!-- 폰트 CSS: Pretendard Variable dynamic subset 셀프호스팅 (서드파티 CDN 핸드셰이크 제거, SW 캐시 가능) -->
+	  <link rel="preload" href="/assets/fonts/pretendard-1.3.9/pretendardvariable-dynamic-subset.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	  <noscript><link rel="stylesheet" href="/assets/fonts/pretendard-1.3.9/pretendardvariable-dynamic-subset.css"></noscript>
+	  <!-- 메인 CSS -->
+<style data-layout-css="/styles-core.e144d411.css">*{-webkit-tap-highlight-color:transparent;}a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,.nav-item:focus-visible{outline:2px solid var(--primary);outline-offset:2px;}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}}html,body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans KR","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-feature-settings:"ss06","ss07";-webkit-text-size-adjust:100%;text-size-adjust:100%;}h1{font-size:2em;font-weight:bold;margin:0.67em 0;}section h1,nav h1{font-size:2em;}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}.is-hidden{display:none !important;}.thumb-fallback{background:var(--bg-secondary,#1a1a2e) url('/favicon.svg') center/32px no-repeat !important;}.thumb-fallback img{opacity:0;}@media (max-width:768px){body{width:100%;max-width:100vw;overscroll-behavior-x:none;}img{max-width:100%;height:auto;}.header,.header-inner,.nav-inner{width:100%;max-width:100%;}.nav,.site-container{width:100%;max-width:100%;}}:root{--primary:#2563EB;--accent:#2563EB;--bg:#F5F6F8;--bg-elevated:#FFFFFF;--card:#FFFFFF;--card-hover:#FFFFFF;--border:#E4E4E7;--border-subtle:#ECECEF;--border-hover:var(--primary);--text:#18181B;--text-primary:#18181B;--text-secondary:#3F3F46;--text-muted:#6B6B73;--text-tertiary:#A1A1AA;--font-title-size:18px;--font-title-weight:600;--font-card-title-weight:700;--font-item-weight:500;--font-logo-weight:800;--font-body-size:18px;--font-desc-size:16px;--font-body-weight:400;--font-desc-weight:400;--font-body-line-height:1.8;--font-tab-size:14px;--font-tab-weight:500;--font-badge-size:12px;--font-badge-weight:600;--font-small-size:12px;--font-nav-size:15px;--font-nav-weight:500;--font-rank-name-size:15px;--font-rank-name-weight:500;--font-rank-name-color:var(--text);--font-rank-dev-size:13px;--font-rank-dev-weight:500;--font-rank-dev-color:var(--text-muted);--font-micro-size:12px;--font-tiny-size:12px;--font-xs-size:12px;--font-sm-size:13px;--font-meta-size:13px;--font-caption-size:13px;--font-source-size:var(--font-small-size);--font-source-weight:500;--font-source-color:var(--primary);--font-section-size:20px;--font-section-weight:700;--font-heading-size:22px;--font-lg-size:22px;--font-xl-size:22px;--font-2xl-size:26px;--font-stat-size:28px;--font-article-title-size:40px;--font-article-lead-size:20px;--font-article-h2-size:28px;--font-article-h3-size:22px;--font-article-body-size:18px;--font-article-quote-size:20px;--font-article-small-size:15px;--font-article-table-size:15px;--font-article-code-size:14px;--font-feature-title-size:28px;--font-section-title-size:22px;--font-card-title-size:18px;--font-card-summary-size:15px;--font-card-meta-size:13px;--font-sidebar-label-size:13px;--font-sidebar-item-size:14px;--font-overline-size:12px;--bg-secondary:#F4F4F5;--bg-tertiary:#E4E4E7;--border-color:#E4E4E7;--bg-hover:#F4F4F5;--card-bg:var(--card);--font-meta-weight:500;--font-desc-line-height:1.6;--shadow-xs:0 1px 2px rgb(0 0 0 / 0.04);--shadow-sm:0 1px 3px rgb(0 0 0 / 0.05),0 1px 2px rgb(0 0 0 / 0.04);--glass-bg:rgba(255,255,255,0.7);--glass-bg-solid:rgba(255,255,255,0.9);--hover-bg:var(--bg-hover);--item-bg:#ffffff;--modal-bg:#1a1a1a;--modal-text:#ddd;--modal-title:#fff;--modal-section-title:#aaa;--modal-close:#888;--modal-close-hover:#fff;--modal-effective-date:#666;--radius:12px;--radius-sm:8px;--radius-lg:16px;--space-sm:12px;--space-md:16px;--space-lg:20px;--space-xl:24px;--space-page-x:var(--space-md);--space-block-y:var(--space-md);--space-block-y-xl:var(--space-md);--space-block-gap:var(--space-md);--ease-out-expo:cubic-bezier(0.16,1,0.3,1);--ease-in-out:cubic-bezier(0.4,0,0.2,1);--transition-fast:0.15s var(--ease-in-out);--transition-normal:0.25s var(--ease-out-expo);}@media (max-width:768px){:root{--font-title-size:18px;--font-body-size:17px;--font-desc-size:15px;--font-tab-size:14px;--font-nav-size:14px;--font-section-size:18px;--font-heading-size:20px;--font-lg-size:20px;--font-stat-size:26px;--font-xl-size:22px;--font-2xl-size:26px;--font-small-size:12px;--font-badge-size:12px;--font-meta-size:13px;--font-rank-name-size:15px;--font-rank-dev-size:13px;--font-article-title-size:30px;--font-article-lead-size:18px;--font-article-h2-size:24px;--font-article-h3-size:20px;--font-article-body-size:17px;--font-article-quote-size:18px;--font-article-table-size:14px;--font-feature-title-size:24px;--font-section-title-size:20px;--font-card-title-size:16px;--font-card-meta-size:12px;}}@media (min-width:769px){:root{--space-block-y:var(--space-xl);--space-block-y-xl:var(--space-xl);--space-block-gap:var(--space-lg);}}.nav-item{color:var(--text-secondary);}@media (hover:hover){.nav-item:hover{color:var(--text);background:var(--hover-bg);}}.nav-item.active{color:var(--primary);background:transparent;font-weight:600;}.nav-item.active::after{content:'';position:absolute;left:14px;right:14px;bottom:-8px;height:2px;background:var(--primary);border-radius:1px;}.nav-item svg{stroke:var(--text-secondary);}@media (hover:hover){.nav-item:hover svg{stroke:var(--text);}}.nav-item.active svg{stroke:var(--primary);}.ad-card-mobile-top{width:100%;max-width:300px;height:250px;min-height:250px;max-height:250px;display:flex;align-items:center;justify-content:center;margin-left:auto;margin-right:auto;overflow:hidden;}.ad-card-mobile-top>ins.adsbygoogle,.ad-card-mobile-top>ins.adsbygoogle>div{width:100% !important;max-width:300px !important;height:250px !important;min-height:250px !important;max-height:250px !important;left:0 !important;right:0 !important;}.ad-card-mobile-top>ins.adsbygoogle>div{display:block !important;overflow:hidden !important;}.ad-card-scroll{width:100%;min-height:308px !important;}.ad-card-scroll>ins.adsbygoogle{min-height:284px !important;}.ad-card-scroll.gs-ad-compact,.ad-card-scroll.gs-ad-compact>ins.adsbygoogle{min-height:0 !important;}.ad-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);box-sizing:border-box;touch-action:pan-x pan-y;position:relative;overflow:hidden;}.ad-card.ad-card-scroll{border:0;border-radius:0;background:transparent;overflow:visible;}.ad-card>ins.adsbygoogle{border-radius:inherit;max-width:100%;}.ad-card-responsive-home>ins.adsbygoogle,.ad-card-mobile-top>ins.adsbygoogle{display:block !important;position:relative;line-height:0;}.ad-card-responsive-home{display:flex;align-items:center;justify-content:center;min-height:100px;}@media (min-width:769px){.ad-card-responsive-home{min-height:90px;}}.ad-card-responsive-home:not(:has(ins.adsbygoogle[data-ad-status="filled"])){background:transparent;border-color:transparent;}.ad-card-responsive-home.gs-ad-compact{align-items:center;}.ad-card-responsive-home>ins.adsbygoogle.gs-ad-center{display:flex !important;align-items:center;justify-content:center;}.ad-card-responsive-home>ins.adsbygoogle.gs-ad-center>div{display:flex !important;align-items:center;justify-content:center;margin-left:auto !important;margin-right:auto !important;}main .ad-card{margin-top:var(--space-block-gap,16px);}.page-container>.ad-card:first-child{margin-top:var(--space-block-gap,16px);}body.ads-disabled main{margin-top:var(--space-block-gap,16px);}body.ads-disabled .page-container{padding-top:0 !important;}.page-container>.ad-card:not(:first-child),.page-container .ad-card:not(:first-child){margin-top:0;}.page-container:not(:has(>.home-container)):not(:has(>.article-layout)){padding-top:var(--space-block-gap,16px) !important;}@media (min-width:769px){body:not(.page-home) .site-container:has(.ad-card-responsive-home){padding-top:12px !important;}body .site-container .ad-card-responsive-home{margin-top:0 !important;margin-bottom:0 !important;}}body .section>.ad-card-responsive-home + .ad-card-mobile-top + .page-container{padding-top:0 !important;margin-top:12px;}.ad-card-responsive-home:not(:has(ins[data-ad-status="filled"]))::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:28px;height:28px;background:url('/favicon.svg') center/contain no-repeat;opacity:0.28;pointer-events:none;z-index:1;}.ad-card-responsive-home:has(ins[data-ad-status="unfilled"]) ins.adsbygoogle{visibility:hidden;}.ad-card-mobile-top:has(ins[data-ad-status="unfilled"]){background:var(--card);box-shadow:inset 0 0 0 1px var(--border);}.ad-card-mobile-top:has(ins[data-ad-status="unfilled"]) ins.adsbygoogle{visibility:hidden;}.ad-card-mobile-top:has(ins[data-ad-status="unfilled"])::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:url('/favicon.svg') center/contain no-repeat;filter:none;opacity:1;z-index:1;}.ad-card-scroll:has(ins[data-ad-status="unfilled"]),.ad-card-scroll:has(ins[data-gs-ad-empty="1"]),.ad-card-scroll.gs-ad-empty{display:none !important;min-height:0 !important;height:0 !important;margin:0 !important;}:root{--tab-group-gap:4px;--tab-group-justify:flex-start;--tab-btn-flex:1 1 0;--tab-btn-min-width:0;--tab-btn-min-height:44px;--tab-btn-padding:12px 8px;--tab-btn-gap:6px;--tab-btn-overflow:hidden;}@media (min-width:769px){:root{--tab-group-gap:8px;--tab-group-justify:center;--tab-btn-flex:0 0 auto;--tab-btn-min-width:auto;--tab-btn-min-height:38px;--tab-btn-padding:9px 20px;--tab-btn-gap:6px;--tab-btn-overflow:visible;}}@media (max-width:768px){:root{--tab-btn-padding:10px 8px;--tab-btn-min-height:40px;--tab-btn-gap:4px;}}.home-card{background:transparent;border-radius:0;box-shadow:none;border:none;overflow:visible;}@media (max-width:768px){.home-card{width:100%;max-width:100%;overflow-x:clip;}body:not(.search-hidden) .page-container{padding-top:0 !important;}}::-webkit-scrollbar{width:8px;height:8px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:4px;}@media (hover:hover){::-webkit-scrollbar-thumb:hover{background:var(--text-secondary);}}*{scrollbar-width:thin;scrollbar-color:var(--text-muted) transparent;}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}}*{margin:0;padding:0;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR","Malgun Gothic",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;opacity:1;}@media (min-width:769px){html,body{overflow-x:visible;}.site-container{overflow-x:clip;}}.header{background:var(--bg-elevated);border-bottom:none;padding:20px 0;box-shadow:none;}.header-inner{max-width:1180px;margin:0 auto;padding:0 32px;display:flex;justify-content:center;align-items:center;gap:var(--space-sm);position:relative;}.header-title{font-size:2.2rem;font-weight:var(--font-logo-weight);margin:0;display:flex;align-items:center;justify-content:center;gap:10px;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;user-select:none;}.header-title a{display:flex;align-items:center;color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;user-select:none;}.header-title a:visited,.header-title a:active,.header-title a:focus:not(:focus-visible){color:inherit;text-decoration:none;outline:none;}@media (hover:hover){.header-title a:hover{color:inherit;text-decoration:none;outline:none;}}.logo-svg{height:48px;width:auto;max-width:100%;color:var(--text);transition:transform var(--transition-normal),color var(--transition-normal);}@media (hover:hover){.logo-svg:hover{transform:scale(1.02);}}.header-title a:active .logo-svg{color:var(--text);}.nav{background:var(--glass-bg);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);border-bottom:1px solid var(--border-subtle);position:sticky;top:0;z-index:100;box-shadow:var(--shadow-xs);transition:background var(--transition-normal);}.nav-inner{max-width:1180px;margin:0 auto;padding:0 var(--space-page-x);display:flex;justify-content:center;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;transition:transform 0.3s ease;contain:layout style;}.nav-inner::-webkit-scrollbar{display:none;}.nav-item{padding:8px 14px;font-size:var(--font-nav-size);font-weight:var(--font-nav-weight);letter-spacing:0.01em;color:var(--text-secondary);text-decoration:none;cursor:pointer;position:relative;transition:color var(--transition-fast),background var(--transition-fast),transform var(--transition-fast),box-shadow var(--transition-fast);display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0;border-radius:var(--radius-sm);margin:2px 0;border-bottom:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;user-select:none;}@media (hover:hover){.nav-item:hover{color:var(--text);background:var(--hover-bg);border-radius:var(--radius-sm);}}@media (min-width:769px){.nav-inner{justify-content:center !important;padding:0 32px;}}@media (max-width:768px){.nav-inner{justify-content:flex-start;padding:0;gap:0;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;visibility:hidden;}.nav-inner::-webkit-scrollbar{display:none;}.nav-item{min-width:20%;flex:0 0 20%;justify-content:center;text-align:center;padding:8px 4px 6px;margin:0;font-size:var(--font-nav-size) !important;font-weight:var(--font-nav-weight) !important;gap:5px;flex-direction:column;border-radius:var(--radius-sm);}.nav-item.active{font-weight:var(--font-nav-weight);position:relative;}.nav-item.active::after{bottom:2px;left:0;right:0;transform:none;width:100%;height:2px;}.nav-item svg{width:22px;height:22px;}.nav-item.active svg{opacity:1;}}@media (hover:hover){.nav-item:hover svg{opacity:1;}}body.is-swiping .nav-item:active{background:transparent !important;color:inherit !important;opacity:inherit !important;transform:none !important;box-shadow:none !important;}@media (hover:hover){body.is-swiping .nav-item:hover{background:transparent !important;color:inherit !important;opacity:inherit !important;transform:none !important;box-shadow:none !important;}}.nav-item.active{color:var(--text);background:transparent;border-bottom:none;border-radius:0;font-weight:var(--font-card-title-weight);position:relative;}.nav-item.active::after{content:'';display:block;position:absolute;bottom:0;left:0;right:0;width:100%;height:2px;background:var(--primary);border-radius:1px;}.nav-item svg{display:none;}.nav-item.active svg{display:none;}.page-container{display:block;}.page-container>*{margin-bottom:var(--space-block-gap);}.page-container>*:last-child{margin-bottom:0;}.page-container{min-height:calc(100vh - 180px) !important;}:is(.site-container,.container){max-width:1180px;flex:1 0 auto !important;margin:0 auto;padding:0 32px 60px;box-sizing:border-box;}@media (max-width:768px){.page-container{min-height:calc(100vh - 120px) !important;}}.section{padding-top:0;}.section:not(.active){display:none;}.page-container{padding-top:0;}@media print{.nav{display:none;}body{background:white;}.header{background:#1e3a8a !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}@media (max-width:768px){.nav-item{padding:10px 14px;}.nav-item svg{width:15px;height:15px;}}@media (max-width:768px){.nav-item{padding:10px 12px;gap:4px;}.nav-item svg{width:14px;height:14px;}.logo-svg{height:36px;}}@media (max-width:768px){:root{--space-page-x:8px;}:is(.site-container,.container){padding:0 var(--space-page-x) calc(40px + env(safe-area-inset-bottom,0px));}.nav-inner{padding:0;}.nav-item{padding:12px 8px;gap:4px;font-size:var(--font-nav-size) !important;font-weight:var(--font-nav-weight) !important;}.nav-item svg{width:20px;height:20px;}.logo-svg{height:32px;}}.site-footer{text-align:center;padding:var(--space-xl) var(--space-md);margin-top:var(--space-xl);border-top:1px solid var(--border);color:var(--text-muted);font-size:var(--font-meta-size);}.site-footer a{color:var(--text-secondary);text-decoration:none;display:inline-block;padding:14px 6px;min-width:24px;box-sizing:border-box;text-align:center;line-height:1.3;}@media (hover:hover){.site-footer a:hover{color:var(--text);}}.footer-divider{margin:0 8px;}@media (prefers-color-scheme:dark){.nav-item.active::after{background:currentColor;}}.search-container{max-width:100%;margin:0 auto;padding:8px 20px 16px;position:relative;z-index:200;background:var(--glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}.search-box{width:100%;max-width:300px;margin:0 auto;display:flex;align-items:center;background:var(--card-bg);border:1px solid var(--border-color);border-radius:20px;padding:0 5px 0 24px;height:40px;transition:border-color 0.2s,box-shadow 0.2s;}.search-box:focus-within{border-color:var(--border-color);box-shadow:none;}.search-input{flex:1;background:transparent;border:none;outline:none;color:var(--text-primary);font-size:14px;padding:0 8px;min-width:0;height:100%;min-height:24px;text-align:center;}.search-input::placeholder{color:var(--text-secondary);opacity:0.8;transition:opacity 0.15s;}.search-input:focus::placeholder{opacity:0;}.search-btn{display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:var(--hover-bg);border:none;border-radius:50%;cursor:pointer;color:var(--text-secondary);transition:color 0.2s,background 0.2s;flex-shrink:0;}@media (hover:hover){.search-btn:hover{color:var(--text-primary);background:var(--hover-bg);}}.search-btn:active{transform:scale(0.95);}.search-btn svg{width:16px;height:16px;}.search-home-icon{display:none;}.search-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:100%;max-width:300px;background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.15);max-height:320px;overflow-y:auto;z-index:1000;display:none;margin-top:6px;}.search-dropdown.active{display:block;}@media (max-width:768px){.header{display:none !important;}.search-container{position:fixed !important;top:0 !important;left:0 !important;right:0 !important;z-index:200 !important;transition:transform 0.2s cubic-bezier(0.4,0,0.2,1);max-width:100%;padding:8px 16px !important;margin-bottom:0 !important;border-bottom:1px solid var(--border) !important;background:var(--bg) !important;}.nav{position:fixed !important;top:64px !important;left:0 !important;right:0 !important;z-index:199 !important;transition:transform 0.2s cubic-bezier(0.4,0,0.2,1);padding:4px 0 !important;margin-top:0 !important;background:var(--glass-bg-solid) !important;}:is(.site-container,.container){padding-top:120px !important;transition:padding-top 0.2s cubic-bezier(0.4,0,0.2,1);}body.search-hidden .search-container{transform:translateY(-100%) !important;pointer-events:none !important;}body.search-hidden .nav{transform:translateY(-64px) !important;}body.search-hidden:is(.site-container,.container){padding-top:56px !important;}:root{--games-hub-sticky-top:116px;}body.search-hidden{--games-hub-sticky-top:52px;}.nav-item svg{display:none !important;}.nav-item.active{color:var(--nav-active-color,#1e293b) !important;background:transparent !important;font-weight:var(--font-nav-weight) !important;border-bottom:none !important;border-radius:0 !important;position:relative !important;}.nav-item.active::after{content:'' !important;display:block !important;position:absolute !important;bottom:0 !important;left:0 !important;right:0 !important;transform:none !important;width:100% !important;height:2px !important;background:var(--nav-active-color,#1e293b) !important;border-radius:1px !important;}@media (prefers-color-scheme:dark){.nav-item.active{color:#fff !important;}.nav-item.active::after{background:#fff !important;}}.search-home-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:40px;height:100%;}.search-home-icon img{width:32px;height:32px;}.search-box{flex:1;max-width:none;height:48px;border-radius:20px;padding:0 4px 0 8px;}.search-input{font-size:16px;}.search-btn{width:36px;height:36px;}.search-btn svg{width:20px;height:20px;}.search-dropdown{left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:500px;border-radius:12px;}}@keyframes spin{to{transform:rotate(360deg);}}@media (min-width:481px) and (max-width:768px){:is(.site-container,.container){padding-left:24px !important;padding-right:24px !important;}}@media (max-width:480px){:is(.site-container,.container){padding-left:16px !important;padding-right:16px !important;}}@media (max-width:768px){.home-card,.ad-card{border-radius:0 !important;border-left:none !important;border-right:none !important;}.ad-card{border:none !important;box-shadow:none !important;}}@media (max-width:768px){.home-card{margin-bottom:0 !important;}}:root{--site-max-width:1240px;--site-gutter:40px;color-scheme:light;--bg:#fff;--bg-elevated:#ffffff;--card:#ffffff;--card-bg:#ffffff;--card-hover:#f5f5f7;--bg-secondary:#f5f5f7;--bg-tertiary:#f5f5f7;--border:#dedee3;--border-subtle:#eeeef0;--text:#1d1d1f;--text-primary:#1d1d1f;--text-secondary:#515154;--text-muted:#6e6e73;--text-tertiary:#6e6e73;--primary:#0071e3;--accent:#0071e3;--data-up:#d43e42;--data-new:#b45309;--data-new-bg:#fff4e0;--data-discount:#166534;--line:#e5e5e9;--chip-bg:#e8e8ed;--glass-bg:rgba(255,255,255,.92);--glass-bg-solid:#fff;}body{background:var(--bg);color:var(--text);}.site-container{max-width:var(--site-max-width);margin:0 auto;padding:40px var(--site-gutter) 80px;}.page-container.rk{border:0;padding:0;background:transparent;border-radius:0;}@media (min-width:769px){.nav{display:none !important;}body>.search-container{display:none !important;}}.site-footer{max-width:1280px;margin:40px auto 0;padding:22px 24px;border-top:1px solid var(--border);font-size:12.5px;color:var(--text-muted);display:flex;flex-wrap:wrap;gap:0;align-items:center;justify-content:center;text-align:center;background:transparent;}.site-footer>span:first-child{padding:0 6px;}.site-footer a{color:inherit;text-decoration:none;}@media (hover:hover){.site-footer a:hover{color:var(--primary);}}.gs-header .gs-header-inner{max-width:var(--site-max-width);height:64px;}.gs-header .gs-logo .logo-svg{width:208px;height:26px;transform:none;transition:none;}.gs-header .gs-nav{height:100%;align-items:stretch;}.gs-header .gs-nav a{display:flex;align-items:center;padding:0;font-size:13px;font-weight:500;}.gs-header .gs-nav a.active::after{bottom:0;background:var(--text);height:2px;}@media (min-width:769px) and (max-width:1000px){.gs-header .gs-logo .logo-svg{width:180px;height:23px;}.gs-header .gs-header-inner{gap:20px;}.gs-header .gs-nav{gap:16px;}}.gs-header .gs-search .search-box{background:var(--bg-secondary);border-radius:9px;height:34px;}.gs-header .gs-search .search-input{font-size:12px;}body>.search-container .search-box{background:var(--bg-secondary) !important;border:0;}body>.search-container .search-input{color:var(--text);}body>.search-container .search-btn{background:transparent;color:var(--text-muted);}body .nav{background:#fff !important;}.site-footer{border:0;background:var(--bg-secondary);max-width:none;padding:24px max(var(--site-gutter),calc((100% - var(--site-max-width))/2 + var(--site-gutter)));font-size:11px;}@media (max-width:768px){.site-container{padding:16px 14px 60px;}.site-footer{flex-wrap:wrap;gap:0;padding:18px 14px;justify-content:center;}body>.search-container .search-input{font-size:16px !important;}body>.search-container .search-home-icon{display:flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;height:44px;color:var(--text);}body>.search-container .search-home-icon.search-logo{flex:0 0 auto;width:auto;padding:0 6px 0 12px;}body>.search-container .search-home-icon .logo-svg{display:block;width:124px;height:16px;}}:root{--layout-gap:32px;--layout-card-gap:16px;--layout-section-gap:48px;--layout-heading-gap:20px;}@media (max-width:768px){body .nav .nav-inner{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;max-width:none;padding:0 16px;gap:0;overflow:visible;box-sizing:border-box;}body .nav .nav-inner .nav-item{display:flex;align-items:center;justify-content:center;min-width:0;width:auto;margin:0;padding:0 4px;height:48px;flex:none;text-align:center;}body .nav .nav-inner .nav-item::after{left:50%;right:auto;bottom:0;width:32px;transform:translateX(-50%);background:var(--text);}}.page-game .site-container #game .game-page-grid{gap:var(--layout-section-gap);}@media (min-width:769px) and (max-width:1100px){:root{--layout-gap:24px;}}@media (max-width:768px){:root{--layout-gap:24px;--layout-section-gap:36px;--layout-heading-gap:16px;}}body a:not(.rk-preview-link):not(.rk-btn),body a:not(.rk-preview-link):not(.rk-btn):visited{color:var(--text-secondary) !important;}@media (hover:hover){body a:not(.rk-preview-link):not(.rk-btn):hover{color:var(--text-secondary) !important;}}body .gs-header .gs-nav a.active{color:var(--text) !important;}@media (hover:hover){body .gs-header .gs-nav a:hover{color:var(--text) !important;}}body .nav .nav-item.active{color:var(--text) !important;}:root{--fs-caption:11px;--fs-meta:12px;--fs-ui:13px;--fs-body-sm:14px;--fs-body:15px;--fs-article:17px;--fs-card-title:18px;--fs-list-title:20px;--fs-h2:24px;--fs-h2-lg:26px;--fs-h1-detail:32px;--fs-h1:36px;--fw-regular:400;--fw-medium:500;--fw-semibold:600;--fw-bold:700;}body:not(.page-home) .site-container .rk h1,body.page-game #game .game-hero-title{font-weight:var(--fw-bold);}.site-footer{font-size:var(--fs-ui);}</style>
+  <link rel="preload" href="/styles-core.e144d411.css" as="style" onload="this.onload=null;this.rel='stylesheet'" data-deferred-css="1"><noscript><link rel="stylesheet" href="/styles-core.e144d411.css"></noscript>
+  <style data-layout-css="/styles-game.e144d411.css">#game .page-container{min-height:calc(100vh - 250px);padding-top:var(--space-block-gap,16px) !important;padding-bottom:var(--space-block-y-xl);}.game-hero-content{display:flex;align-items:center;gap:20px;padding:20px 0;}.game-hero-icon{width:96px;height:96px;border-radius:16px;object-fit:cover;flex-shrink:0;}.game-hero-info{flex:1;min-width:0;}.game-hero-title{font-size:var(--font-xl-size);font-weight:var(--font-card-title-weight);color:var(--text);margin:0 0 6px 0;}.game-hero-developer{font-size:var(--font-meta-size);color:var(--text-secondary);margin-bottom:6px;}.game-hero-platforms{display:flex;align-items:center;gap:6px;}.game-platform-badge{display:inline-flex;align-items:center;padding:4px 10px;font-size:var(--font-badge-size);font-weight:var(--font-tab-weight);color:var(--text);background:var(--bg-tertiary);border:1px solid var(--border);border-radius:6px;}.page-container.game-page-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-block-gap);align-content:start;}.page-container.game-page-grid .home-card{margin-bottom:0;}.game-page-grid .grid-full,.game-page-grid .ad-card,.game-page-grid .visually-hidden{grid-column:1 / -1;}@media (max-width:768px){#game .page-container{min-height:calc(100vh - 250px);padding-bottom:var(--space-block-y);}.game-hero-content{flex-wrap:wrap;padding:16px;}.game-hero-icon{width:88px;height:88px;}.game-hero-title{font-size:var(--font-heading-size);}.page-container.game-page-grid{grid-template-columns:1fr;gap:var(--space-block-gap);}}.search-home-icon{display:none;}@media (max-width:768px){.search-box{flex:1;max-width:none;padding-left:8px;display:flex;align-items:center;height:48px;}.search-input{font-size:var(--font-body-size);}}.rk{--rk-bg:var(--card,#fff);--rk-bg2:var(--bg,#f4f4f5);--rk-line:var(--border-subtle,#ededee);--rk-line2:var(--border,#dcdcdf);--rk-text:var(--text,#111113);--rk-text2:var(--text-secondary,#3a3a3f);--rk-muted:var(--text-muted,#6f6f76);--rk-dim:var(--text-tertiary,#9c9ca3);--rk-accent:var(--primary,#2563eb);--rk-accent-bg:rgba(37,99,235,.1);--rk-up:#e5484d;--rk-down:#2f6fdc;--rk-new:#b45309;--rk-new-bg:rgba(245,158,11,.16);--rk-gold:#d97706;--rk-sub:#6d5ce7;--rk-sub-bg:rgba(109,92,231,.12);--rk-ios:#0a7cff;--rk-and:#00a56d;color:var(--rk-text);font-size:14px;line-height:1.5;letter-spacing:-.01em;font-feature-settings:"tnum" 1;}.page-container.rk{display:block;background:transparent;border:0;border-radius:0;padding:0;min-width:0;}.page-container.rk>*{margin:0;}.rk *{box-sizing:border-box;}.rk a{color:inherit;text-decoration:none;}.rk img{display:block;}.rk h1{font-size:28px;font-weight:800;letter-spacing:-.03em;margin:0;line-height:1.2;color:var(--rk-text);}#game .page-container.game-page-grid>.home-card{min-width:0;}@media (max-width:768px){.page-container.rk{padding:16px 14px 24px;border-radius:10px;}.rk h1{font-size:22px;}}.rk{--rk-accent:var(--primary);--rk-bg2:var(--bg-tertiary);--rk-dim:var(--text-tertiary);}.page-container.rk{padding:0;}.rk h1{font-size:28px;font-weight:750;letter-spacing:-.045em;line-height:1.35;}#game .page-container.game-page-grid{background:transparent;border:0;gap:20px;padding:0;}#game .game-page-grid>.home-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px 24px;box-shadow:none;}#game .game-page-grid>.game-hero{padding:6px 24px;}#game .game-hero-title{font-size:28px;font-weight:750;line-height:1.3;letter-spacing:-.04em;}@media (max-width:768px){.rk h1{font-size:24px;}#game .game-page-grid>.home-card{padding:16px;border-radius:16px !important;border:1px solid var(--border) !important;}#game .game-hero-title{font-size:24px;}#game .game-hero-icon{width:64px;height:64px;}}html:has(body.page-home){color-scheme:light;}body:not(.page-home) .rk{--rk-accent-bg:#f0f6ff;--rk-line:var(--line);--rk-up:var(--data-up);--rk-down:var(--accent);--rk-new:var(--data-new);}body:not(.page-home) .rk h1{font-size:36px;line-height:1.25;font-weight:650;letter-spacing:-.045em;}.page-game #game .game-page-grid>.home-card{border:0;border-radius:0;padding:0;background:transparent;}.page-game #game .game-page-grid>.game-hero{padding:0 0 24px;}.page-game #game .game-hero-title{font-size:32px;font-weight:650;}.page-game #game .game-hero-icon{width:80px;height:80px;border-radius:20px;}@media (max-width:768px){body:not(.page-home) .rk h1{font-size:26px;}.page-game #game .game-page-grid>.home-card{border:0 !important;border-radius:0 !important;padding:0;}.page-game #game .game-hero-title{font-size:26px;}.page-game #game .game-hero-icon{width:64px;height:64px;border-radius:16px;}}:root{--layout-gap:32px;--layout-card-gap:16px;--layout-section-gap:48px;--layout-heading-gap:20px;}@media (max-width:768px){body .nav .nav-inner{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;max-width:none;padding:0 16px;gap:0;overflow:visible;box-sizing:border-box;}body .nav .nav-inner .nav-item{display:flex;align-items:center;justify-content:center;min-width:0;width:auto;margin:0;padding:0 4px;height:48px;flex:none;text-align:center;}body .nav .nav-inner .nav-item::after{left:50%;right:auto;bottom:0;width:32px;transform:translateX(-50%);background:var(--text);}}.page-game .site-container #game .game-page-grid{gap:var(--layout-section-gap);}@media (min-width:769px) and (max-width:1100px){:root{--layout-gap:24px;}}@media (max-width:768px){:root{--layout-gap:24px;--layout-section-gap:36px;--layout-heading-gap:16px;}}body a:not(.rk-preview-link):not(.rk-btn),body a:not(.rk-preview-link):not(.rk-btn):visited{color:var(--text-secondary) !important;}@media (hover:hover){body a:not(.rk-preview-link):not(.rk-btn):hover{color:var(--text-secondary) !important;}}body .gs-header .gs-nav a.active{color:var(--text) !important;}@media (hover:hover){body .gs-header .gs-nav a:hover{color:var(--text) !important;}}body .nav .nav-item.active{color:var(--text) !important;}.page-game .site-container #game .game-page-grid{min-height:0 !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;padding-bottom:40px;}.page-game #game .game-page-grid>.home-card{min-width:0;}.page-game #game .game-page-grid>.game-hero{padding-bottom:0;}.page-game #game .game-crumb{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px;font-size:13px;color:var(--text-muted);}.page-game #game .game-crumb a{color:inherit;text-decoration:none;}@media (hover:hover){.page-game #game .game-crumb a:hover{color:var(--text);}}.page-game #game .game-hero-content{padding:0 0 24px;gap:20px;border-bottom:1px solid var(--line);}.page-game #game .game-hero-title{font-size:32px;line-height:1.3;overflow-wrap:anywhere;}.page-game #game .game-hero-icon{width:72px;height:72px;border-radius:16px;}.page-game #game .page-container button:focus-visible{outline:2px solid var(--text-secondary);outline-offset:3px;}.page-game #game .page-container button:disabled{opacity:.45;cursor:default;}.page-game #game .game-platform-badge{background:var(--bg-secondary);border:0;color:var(--text-secondary);}@media (max-width:768px){.page-game .site-container #game .game-page-grid{grid-template-columns:minmax(0,1fr);gap:28px;}.page-game #game .game-hero-content{gap:12px;flex-wrap:wrap;padding:0 0 20px;}.page-game #game .game-hero-title{font-size:24px;}.page-game #game .game-hero-icon{width:56px;height:56px;border-radius:12px;}}:root{--fs-caption:11px;--fs-meta:12px;--fs-ui:13px;--fs-body-sm:14px;--fs-body:15px;--fs-article:17px;--fs-card-title:18px;--fs-list-title:20px;--fs-h2:24px;--fs-h2-lg:26px;--fs-h1-detail:32px;--fs-h1:36px;--fw-regular:400;--fw-medium:500;--fw-semibold:600;--fw-bold:700;}body:not(.page-home) .site-container .rk h1,body.page-game #game .game-hero-title{font-weight:var(--fw-bold);}.site-footer{font-size:var(--fs-ui);}</style>
+  <link rel="preload" href="/styles-game.e144d411.css" as="style" onload="this.onload=null;this.rel='stylesheet'" data-deferred-css="1"><noscript><link rel="stylesheet" href="/styles-game.e144d411.css"></noscript>
+	  <script>
+    (function() {
+      var root = document.documentElement;
+      if (!root || !root.classList || !root.classList.contains('deferred-css-pending')) return;
+      var links = document.querySelectorAll('link[data-deferred-css="1"]');
+      var pending = links.length;
+      if (!pending) {
+        root.classList.remove('deferred-css-pending');
+        return;
+      }
+      var done = false;
+      function completeOne() {
+        if (done) return;
+        pending -= 1;
+        if (pending <= 0) {
+          done = true;
+          root.classList.remove('deferred-css-pending');
+        }
+      }
+      links.forEach(function(link) {
+        link.addEventListener('load', completeOne, { once: true });
+        link.addEventListener('error', completeOne, { once: true });
+      });
+      setTimeout(function() {
+        if (done) return;
+        done = true;
+        links.forEach(function(link) {
+          if (link.rel === 'preload') link.rel = 'stylesheet';
+        });
+        root.classList.remove('deferred-css-pending');
+      }, 3200);
+    })();
+  </script>
+	  <!-- Firebase Analytics (프로덕션만) -->
+	  <script>
+	    // 페이지뷰 큐 (Firebase 로드 전 이벤트 저장) - 일반 스크립트로 즉시 실행
+	    (function() {
+	      var host = window.location.hostname;
+	      if (host !== 'gamerscroll.com') return;
+	      window.__gcPageViewQueue = [];
+	      window.__gcLogPageView = function(path) {
+	        window.__gcPageViewQueue.push(path);
+	      };
+	    })();
+	  </script>
+	  <script type="module">
+	    (function() {
+	      var host = window.location.hostname;
+	      if (host !== 'gamerscroll.com') return;
+
+	      // 페이지 로드 완료 후 Firebase 초기화 (LCP 영향 제거)
+	      function initFirebase() {
+	        (async function() {
+	          try {
+	            const [{ initializeApp }, { getAnalytics, logEvent }] = await Promise.all([
+	              import('https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js'),
+	              import('https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js')
+	            ]);
+	          const firebaseConfig = {
+	            apiKey: "AIzaSyBn7HyeG6RhNZcWYOTg6_GfRHxuMZOgSTI",
+	            authDomain: "gamerscroll-958b4.firebaseapp.com",
+	            projectId: "gamerscroll-958b4",
+	            storageBucket: "gamerscroll-958b4.firebasestorage.app",
+	            messagingSenderId: "529297035305",
+	            appId: "1:529297035305:web:a0df9b47d2189ed5d50c38",
+	            measurementId: "G-W6SPVQ67NJ"
+	          };
+	          const app = initializeApp(firebaseConfig);
+	          const analytics = getAnalytics(app);
+
+	          // 큐에 쌓인 페이지뷰 처리
+	          if (window.__gcPageViewQueue) {
+	            window.__gcPageViewQueue.forEach(function(path) {
+	              logEvent(analytics, 'page_view', {
+	                page_path: path,
+	                page_location: window.location.origin + path
+	              });
+	            });
+	          }
+
+	          // 실제 로깅 함수로 교체 (SPA 페이지 전환용, 현재 미사용)
+	          window.__gcLogPageView = function(path) {
+	            logEvent(analytics, 'page_view', {
+	              page_path: path,
+	              page_location: window.location.origin + path
+	            });
+	          };
+
+	          // Firebase 자동 page_view 추적 사용 (getAnalytics 호출 시 자동 전송)
+	          } catch (e) {}
+	        })();
+	      }
+	      // 페이지 로드 완료 후 실행
+	      if (document.readyState === 'complete') {
+	        setTimeout(initFirebase, 0);
+	      } else {
+	        window.addEventListener('load', initFirebase);
+	      }
+	    })();
+	  </script>
+</head>
+<body class="page-game">
+  <script>try{if(sessionStorage.getItem('gs-search-hidden')==='1'){document.body.classList.add('search-hidden');sessionStorage.removeItem('gs-search-hidden');}}catch(e){}</script>
+  
+  <style>
+    .gs-header { padding: 0 !important; position: sticky; top: 0; z-index: 100000; background: var(--gs-header-bg); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .gs-header-inner {
+      display: flex !important;
+      align-items: center;
+      justify-content: flex-start !important;
+      max-width: var(--site-max-width, 1240px);
+      height: 68px;
+      margin: 0 auto;
+      padding: 0 var(--site-gutter, 40px) !important;
+      gap: 32px;
+    }
+    .gs-logo { flex-shrink: 0; color: var(--text); }
+    .gs-logo .logo-svg { height: 18px; width: 165px; display: block; }
+    .gs-nav { display: flex; gap: 26px; }
+    .gs-nav a { font-size: 15px; font-weight: 600; color: var(--text-muted); text-decoration: none; white-space: nowrap; padding: 4px 0; position: relative; }
+    .gs-nav a:hover, .gs-nav a.active { color: var(--primary); }
+    .gs-nav a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -23px; height: 3px; border-radius: 3px 3px 0 0; background: var(--primary); }
+    .gs-status { margin-left: 0; font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+    @media (max-width: 1120px) { .gs-status { display: none; } .gs-header-inner { gap: 22px; } .gs-nav { gap: 18px; } }
+    .gs-search { position: relative; flex-shrink: 0; width: 240px; margin-left: auto; }
+    .gs-search .search-box {
+      display: flex;
+      align-items: center;
+      height: 36px;
+      background: var(--bg);
+      border: 1px solid transparent;
+      border-radius: 10px;
+      padding: 0 12px;
+      transition: border-color 0.15s;
+    }
+    .gs-search .search-box:focus-within { border-color: var(--primary); background: var(--card); }
+    .gs-search .search-input {
+      flex: 1;
+      min-width: 0;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 14px;
+    }
+    .gs-search .search-input::placeholder { color: var(--text-muted); }
+    .gs-search .search-btn {
+      background: transparent;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+    }
+    .gs-search .search-btn svg { width: 18px; height: 18px; }
+    .gs-search .search-dropdown {
+      position: absolute !important;
+      top: calc(100% + 4px) !important;
+      left: 0 !important;
+      right: 0 !important;
+      transform: none !important;
+      width: 100% !important;
+      max-width: none !important;
+      background: var(--card) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 12px !important;
+      display: none;
+      z-index: 99999 !important;
+      max-height: 400px !important;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg) !important;
+      margin-top: 0 !important;
+    }
+    .gs-search .search-dropdown.active { display: block; }
+    /* PC에서 별도 search-container 숨김 (헤더 내장으로 대체) */
+    @media (min-width: 769px) {
+      body:not(.detail-page) > .search-container { display: none !important; }
+    }
+    @media (max-width: 768px) {
+      .gs-header { display: none !important; }
+    }
+  </style>
+  <header class="header gs-header">
+    <div class="header-inner gs-header-inner">
+      <div class="header-title gs-logo">
+        <a href="/">
+          <span class="visually-hidden">게이머스크롤</span>
+          <svg class="logo-svg" width="208" height="26" viewBox="0 0 560 62" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="currentColor"><rect x="0" y="22" width="6" height="18" rx="2"/><rect x="10" y="12" width="6" height="38" rx="2"/><rect x="20" y="4" width="6" height="54" rx="2"/><rect x="30" y="14" width="6" height="34" rx="2"/><path d="M72.66377604007721 16.832518935203552Q69.83711016178131 16.832518935203552 67.80020833015442 18.19562065601349Q65.76330649852753 19.558722376823425 64.6769984960556 22.1716445684433Q63.59069049358368 24.78456676006317 63.59069049358368 28.442657828330994Q63.59069049358368 32.15418481826782 64.6235625743866 34.767107009887695Q65.65643465518951 37.38002920150757 67.6714255809784 38.76984888315201Q69.68641650676727 40.15966856479645 72.57613241672516 40.15966856479645Q75.12600457668304 40.15966856479645 76.90642124414444 39.38007694482803Q78.68683791160583 38.60048532485962 79.57169902324677 37.16099274158478Q80.4565601348877 35.72150015830994 80.4565601348877 33.75301373004913L82.35990846157074 33.98278093338013H72.79732954502106V26.195144414901733H90.83796322345734V31.84213936328888Q90.83796322345734 37.30743765830994 88.49859374761581 41.31610321998596Q86.15922427177429 45.32476878166199 82.01696890592575 47.445587515830994Q77.87471354007721 49.56640625 72.52269649505615 49.56640625Q66.6042732000351 49.56640625 62.06873816251755 47.0159757733345Q57.533203125 44.465545296669006 55.025514125823975 39.707732796669006Q52.51782512664795 34.949920296669006 52.51782512664795 28.549529671669006Q52.51782512664795 21.988831281661987 55.15910392999649 17.204300820827484Q57.80038273334503 12.419770359992981 62.30599510669708 9.92277580499649Q66.81160748004913 7.42578125 72.39659643173218 7.42578125Q77.18220722675323 7.42578125 81.12461805343628 9.230269491672516Q85.06702888011932 11.034757733345032 87.49776870012283 14.22533893585205Q89.92850852012634 17.41592013835907 90.39765703678131 21.487635731697083H79.46587121486664Q79.0971851348877 20.001116633415222 78.17599195241928 18.957028090953827Q77.25479876995087 17.91293954849243 75.86926412582397 17.372729241847992Q74.48372948169708 16.832518935203552 72.66377604007721 16.832518935203552Z"/><path d="M91.42733585834503 49.0 105.04776751995087 7.9921875H119.67304134368896L133.2934730052948 49.0H121.66061079502106L112.52872395515442 19.00088620185852H112.18888020515442L103.05699336528778 49.0ZM123.5351893901825 32.81039535999298V40.91864740848541H101.02531170845032V32.81039535999298Z"/><path d="M148.72753274440765 7.9921875 158.54015111923218 31.81091856956482H158.99648082256317L168.7556632757187 7.9921875H182.19357204437256V49.0H171.66147530078888V24.857376098632812H171.31842684745789L161.9941852092743 48.67938446998596H155.53924202919006L146.21500039100647 24.7505042552948H145.87515664100647V49.0H135.3430598974228V7.9921875Z"/><path d="M185.7356380224228 7.9921875H215.03605389595032V16.691439390182495H196.49750196933746V24.146467804908752H213.5195758342743V32.842514991760254H196.49750196933746V40.300748109817505H214.94520556926727V49.0H185.7356380224228Z"/><path d="M218.6829036474228 7.9921875H236.1432682275772Q240.7375682592392 7.9921875 244.14830255508423 9.65827888250351Q247.55903685092926 11.324370265007019 249.4340648651123 14.45190143585205Q251.30909287929535 17.579432606697083 251.30909287929535 21.852073073387146Q251.30909287929535 26.121508836746216 249.4073469042778 29.165681421756744Q247.50560092926025 32.20985400676727 243.9879947900772 33.76907354593277Q240.47038865089417 35.32829308509827 235.77242147922516 35.32829308509827H225.14537286758423V26.889811396598816H233.67560172080994Q235.7819629907608 26.889811396598816 237.17819207906723 26.356010496616364Q238.57442116737366 25.82220959663391 239.32196575403214 24.709183633327484Q240.0695103406906 23.596157670021057 240.0695103406906 21.852073073387146Q240.0695103406906 20.051347851753235 239.32196575403214 18.906796872615814Q238.57442116737366 17.762245893478394 237.14987176656723 17.20012468099594Q235.7253223657608 16.63800346851349 233.67239701747894 16.63800346851349H229.44476759433746V49.0H218.6829036474228ZM252.68128669261932 49.0H240.90950560569763L230.94396030902863 30.217745423316956H242.4389476776123Z"/><path d="M281.19457149505615 16.285340905189514Q279.49430871009827 16.285340905189514 278.33693891763687 16.707462906837463Q277.1795691251755 17.129584908485413 276.60783380270004 17.88406091928482Q276.0360984802246 18.63853693008423 276.0360984802246 19.605676293373108Q275.9826625585556 21.155245423316956 277.3430815935135 22.09514480829239Q278.7035006284714 23.035044193267822 281.66804134845734 23.724345803260803L285.10493528842926 24.429670929908752Q291.62613320350647 25.832867741584778 294.70555752515793 28.969491004943848Q297.7849818468094 32.10611426830292 297.8384177684784 36.93338620662689Q297.8384177684784 40.91641414165497 295.84209674596786 43.71531802415848Q293.84577572345734 46.51422190666199 290.1550430059433 47.99168521165848Q286.46431028842926 49.46914851665497 281.2854198217392 49.46914851665497Q275.9088091850281 49.46914851665497 271.9840242266655 47.866107165813446Q268.0592392683029 46.263065814971924 265.9245213866234 42.99125039577484Q263.78980350494385 39.71943497657776 263.72354876995087 34.771355748176575H274.01089882850647Q274.13058948516846 36.65972459316254 275.0074388384819 37.973675429821014Q275.88428819179535 39.28762626647949 277.4456321001053 39.94540286064148Q279.0069760084152 40.60317945480347 281.1251120567322 40.60317945480347Q282.94186079502106 40.60317945480347 284.21892124414444 40.12441682815552Q285.4959816932678 39.64565420150757 286.15588265657425 38.82812815904617Q286.8157836198807 38.01060211658478 286.8157836198807 36.926976799964905Q286.8157836198807 35.912810921669006 286.1954194307327 35.17275607585907Q285.5750552415848 34.43270123004913 284.1948496699333 33.85347616672516Q282.81464409828186 33.274251103401184 280.5329955816269 32.805102586746216L276.400390625 31.873214960098267Q270.77157986164093 30.6677383184433 267.7872526049614 27.848525881767273Q264.80292534828186 25.029313445091248 264.80292534828186 20.36659801006317Q264.80292534828186 16.54067313671112 266.8858096599579 13.614588856697083Q268.9686939716339 10.688504576683044 272.703248500824 9.057142913341522Q276.43780303001404 7.42578125 281.20418560504913 7.42578125Q286.07423532009125 7.42578125 289.6971109509468 9.055540561676025Q293.31998658180237 10.68529987335205 295.2927943468094 13.683526277542114Q297.2656021118164 16.681752681732178 297.2720115184784 20.65196180343628H286.94404435157776Q286.82435369491577 19.25733506679535 286.16925978660583 18.267204463481903Q285.5141658782959 17.277073860168457 284.279846906662 16.781207382678986Q283.0455279350281 16.285340905189514 281.19457149505615 16.285340905189514Z"/><path d="M319.99452769756317 16.832518935203552Q317.1646571159363 16.832518935203552 315.1779865026474 18.222338616847992Q313.1913158893585 19.61215829849243 312.1317258477211 22.225080490112305Q311.0721358060837 24.838002681732178 311.0721358060837 28.49609375Q311.0721358060837 32.31449258327484 312.1317258477211 34.90069681406021Q313.1913158893585 37.48690104484558 315.1779865026474 38.823284804821014Q317.1646571159363 40.15966856479645 319.88765585422516 40.15966856479645Q321.9651747941971 40.15966856479645 323.5158242583275 39.43403488397598Q325.0664737224579 38.70840120315552 326.0175895690918 37.395530700683594Q326.9687054157257 36.08266019821167 327.2679320573807 34.27232086658478L338.2435396909714 34.37919270992279Q337.9346989393234 38.083266258239746 335.69258719682693 41.5693473815918Q333.45047545433044 45.05542850494385 329.35256391763687 47.310917377471924Q325.2546523809433 49.56640625 319.67391216754913 49.56640625Q314.0322825908661 49.56640625 309.55178582668304 47.09612965583801Q305.0712890625 44.625853061676025 302.535279750824 39.86643821001053Q299.99927043914795 35.10702335834503 299.99927043914795 28.49609375Q299.99927043914795 21.82852351665497 302.588715672493 17.07071101665497Q305.178160905838 12.312898516654968 309.63193970918655 9.869339883327484Q314.0857185125351 7.42578125 319.67391216754913 7.42578125Q324.82396030426025 7.42578125 328.8433203101158 9.280500710010529Q332.8626803159714 11.135220170021057 335.3185357451439 14.69985282421112Q337.7743911743164 18.264485478401184 338.2435396909714 23.203994631767273H327.2679320573807Q327.1290131807327 21.283578753471375 326.2329356074333 19.837118446826935Q325.3368580341339 18.390658140182495 323.731170296669 17.611588537693024Q322.1254825592041 16.832518935203552 319.99452769756317 16.832518935203552Z"/><path d="M341.4094661474228 7.9921875H358.8698307275772Q363.4641307592392 7.9921875 366.87486505508423 9.65827888250351Q370.28559935092926 11.324370265007019 372.1606273651123 14.45190143585205Q374.03565537929535 17.579432606697083 374.03565537929535 21.852073073387146Q374.03565537929535 26.121508836746216 372.1339094042778 29.165681421756744Q370.23216342926025 32.20985400676727 366.7145572900772 33.76907354593277Q363.19695115089417 35.32829308509827 358.49898397922516 35.32829308509827H347.87193536758423V26.889811396598816H356.40216422080994Q358.5085254907608 26.889811396598816 359.90475457906723 26.356010496616364Q361.30098366737366 25.82220959663391 362.04852825403214 24.709183633327484Q362.7960728406906 23.596157670021057 362.7960728406906 21.852073073387146Q362.7960728406906 20.051347851753235 362.04852825403214 18.906796872615814Q361.30098366737366 17.762245893478394 359.87643426656723 17.20012468099594Q358.4518848657608 16.63800346851349 356.39895951747894 16.63800346851349H352.17133009433746V49.0H341.4094661474228ZM375.4078491926193 49.0H363.63606810569763L353.6705228090286 30.217745423316956H365.1655101776123Z"/><path d="M396.51879024505615 49.56640625Q390.8771606683731 49.56640625 386.36994594335556 47.09612965583801Q381.862731218338 44.625853061676025 379.273285984993 39.839720249176025Q376.68384075164795 35.053587436676025 376.68384075164795 28.49609375Q376.68384075164795 21.82852351665497 379.273285984993 17.07071101665497Q381.862731218338 12.312898516654968 386.36994594335556 9.869339883327484Q390.8771606683731 7.42578125 396.51879024505615 7.42578125Q402.1604198217392 7.42578125 406.66763454675674 9.869339883327484Q411.1748492717743 12.312898516654968 413.7642945051193 17.07071101665497Q416.35373973846436 21.82852351665497 416.35373973846436 28.49609375Q416.35373973846436 35.10702335834503 413.7642945051193 39.86643821001053Q411.1748492717743 44.625853061676025 406.66763454675674 47.09612965583801Q402.1604198217392 49.56640625 396.51879024505615 49.56640625ZM396.51879024505615 16.832518935203552Q393.68891966342926 16.832518935203552 391.7289670109749 18.168902695178986Q389.7690143585205 19.50528645515442 388.7628602385521 22.118208646774292Q387.7567061185837 24.731130838394165 387.7567061185837 28.49609375Q387.7567061185837 32.261056661605835 388.7628602385521 34.87397885322571Q389.7690143585205 37.48690104484558 391.7289670109749 38.823284804821014Q393.68891966342926 40.15966856479645 396.51879024505615 40.15966856479645Q399.35186553001404 40.15966856479645 401.3102158308029 38.823284804821014Q403.2685661315918 37.48690104484558 404.2747202515602 34.87397885322571Q405.2808743715286 32.261056661605835 405.2808743715286 28.49609375Q405.2808743715286 24.731130838394165 404.2747202515602 22.118208646774292Q403.2685661315918 19.50528645515442 401.3102158308029 18.168902695178986Q399.35186553001404 16.832518935203552 396.51879024505615 16.832518935203552Z"/><path d="M419.6516536474228 7.9921875H430.41351759433746V40.300748109817505H447.1470229625702V49.0H419.6516536474228Z"/><path d="M449.7952083349228 7.9921875H460.55707228183746V40.300748109817505H477.2905776500702V49.0H449.7952083349228Z"/></g></svg>
+        </a>
+      </div>
+      <nav class="gs-nav" aria-label="주 메뉴"><a class="" href="/rankings/">모바일</a><a class="" href="/steam/">스팀</a><a class="" href="/reports/">리포트</a><a class="active" href="/games/">게임 DB</a></nav>
+      <div class="gs-search">
+        <div class="search-box">
+          <input type="text" class="search-input" aria-label="게임 검색" placeholder="게임 검색" autocomplete="off">
+          <button class="search-btn" type="button" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+          </button>
+        </div>
+        <div class="search-dropdown"></div>
+      </div>
+      
+    </div>
+  </header>
+  
+  <div class="search-container">
+    <div class="search-box">
+      <a href="/" class="search-home-icon search-logo" aria-label="게이머스크롤 홈">
+        <svg class="logo-svg" width="208" height="26" viewBox="0 0 560 62" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="currentColor"><rect x="0" y="22" width="6" height="18" rx="2"/><rect x="10" y="12" width="6" height="38" rx="2"/><rect x="20" y="4" width="6" height="54" rx="2"/><rect x="30" y="14" width="6" height="34" rx="2"/><path d="M72.66377604007721 16.832518935203552Q69.83711016178131 16.832518935203552 67.80020833015442 18.19562065601349Q65.76330649852753 19.558722376823425 64.6769984960556 22.1716445684433Q63.59069049358368 24.78456676006317 63.59069049358368 28.442657828330994Q63.59069049358368 32.15418481826782 64.6235625743866 34.767107009887695Q65.65643465518951 37.38002920150757 67.6714255809784 38.76984888315201Q69.68641650676727 40.15966856479645 72.57613241672516 40.15966856479645Q75.12600457668304 40.15966856479645 76.90642124414444 39.38007694482803Q78.68683791160583 38.60048532485962 79.57169902324677 37.16099274158478Q80.4565601348877 35.72150015830994 80.4565601348877 33.75301373004913L82.35990846157074 33.98278093338013H72.79732954502106V26.195144414901733H90.83796322345734V31.84213936328888Q90.83796322345734 37.30743765830994 88.49859374761581 41.31610321998596Q86.15922427177429 45.32476878166199 82.01696890592575 47.445587515830994Q77.87471354007721 49.56640625 72.52269649505615 49.56640625Q66.6042732000351 49.56640625 62.06873816251755 47.0159757733345Q57.533203125 44.465545296669006 55.025514125823975 39.707732796669006Q52.51782512664795 34.949920296669006 52.51782512664795 28.549529671669006Q52.51782512664795 21.988831281661987 55.15910392999649 17.204300820827484Q57.80038273334503 12.419770359992981 62.30599510669708 9.92277580499649Q66.81160748004913 7.42578125 72.39659643173218 7.42578125Q77.18220722675323 7.42578125 81.12461805343628 9.230269491672516Q85.06702888011932 11.034757733345032 87.49776870012283 14.22533893585205Q89.92850852012634 17.41592013835907 90.39765703678131 21.487635731697083H79.46587121486664Q79.0971851348877 20.001116633415222 78.17599195241928 18.957028090953827Q77.25479876995087 17.91293954849243 75.86926412582397 17.372729241847992Q74.48372948169708 16.832518935203552 72.66377604007721 16.832518935203552Z"/><path d="M91.42733585834503 49.0 105.04776751995087 7.9921875H119.67304134368896L133.2934730052948 49.0H121.66061079502106L112.52872395515442 19.00088620185852H112.18888020515442L103.05699336528778 49.0ZM123.5351893901825 32.81039535999298V40.91864740848541H101.02531170845032V32.81039535999298Z"/><path d="M148.72753274440765 7.9921875 158.54015111923218 31.81091856956482H158.99648082256317L168.7556632757187 7.9921875H182.19357204437256V49.0H171.66147530078888V24.857376098632812H171.31842684745789L161.9941852092743 48.67938446998596H155.53924202919006L146.21500039100647 24.7505042552948H145.87515664100647V49.0H135.3430598974228V7.9921875Z"/><path d="M185.7356380224228 7.9921875H215.03605389595032V16.691439390182495H196.49750196933746V24.146467804908752H213.5195758342743V32.842514991760254H196.49750196933746V40.300748109817505H214.94520556926727V49.0H185.7356380224228Z"/><path d="M218.6829036474228 7.9921875H236.1432682275772Q240.7375682592392 7.9921875 244.14830255508423 9.65827888250351Q247.55903685092926 11.324370265007019 249.4340648651123 14.45190143585205Q251.30909287929535 17.579432606697083 251.30909287929535 21.852073073387146Q251.30909287929535 26.121508836746216 249.4073469042778 29.165681421756744Q247.50560092926025 32.20985400676727 243.9879947900772 33.76907354593277Q240.47038865089417 35.32829308509827 235.77242147922516 35.32829308509827H225.14537286758423V26.889811396598816H233.67560172080994Q235.7819629907608 26.889811396598816 237.17819207906723 26.356010496616364Q238.57442116737366 25.82220959663391 239.32196575403214 24.709183633327484Q240.0695103406906 23.596157670021057 240.0695103406906 21.852073073387146Q240.0695103406906 20.051347851753235 239.32196575403214 18.906796872615814Q238.57442116737366 17.762245893478394 237.14987176656723 17.20012468099594Q235.7253223657608 16.63800346851349 233.67239701747894 16.63800346851349H229.44476759433746V49.0H218.6829036474228ZM252.68128669261932 49.0H240.90950560569763L230.94396030902863 30.217745423316956H242.4389476776123Z"/><path d="M281.19457149505615 16.285340905189514Q279.49430871009827 16.285340905189514 278.33693891763687 16.707462906837463Q277.1795691251755 17.129584908485413 276.60783380270004 17.88406091928482Q276.0360984802246 18.63853693008423 276.0360984802246 19.605676293373108Q275.9826625585556 21.155245423316956 277.3430815935135 22.09514480829239Q278.7035006284714 23.035044193267822 281.66804134845734 23.724345803260803L285.10493528842926 24.429670929908752Q291.62613320350647 25.832867741584778 294.70555752515793 28.969491004943848Q297.7849818468094 32.10611426830292 297.8384177684784 36.93338620662689Q297.8384177684784 40.91641414165497 295.84209674596786 43.71531802415848Q293.84577572345734 46.51422190666199 290.1550430059433 47.99168521165848Q286.46431028842926 49.46914851665497 281.2854198217392 49.46914851665497Q275.9088091850281 49.46914851665497 271.9840242266655 47.866107165813446Q268.0592392683029 46.263065814971924 265.9245213866234 42.99125039577484Q263.78980350494385 39.71943497657776 263.72354876995087 34.771355748176575H274.01089882850647Q274.13058948516846 36.65972459316254 275.0074388384819 37.973675429821014Q275.88428819179535 39.28762626647949 277.4456321001053 39.94540286064148Q279.0069760084152 40.60317945480347 281.1251120567322 40.60317945480347Q282.94186079502106 40.60317945480347 284.21892124414444 40.12441682815552Q285.4959816932678 39.64565420150757 286.15588265657425 38.82812815904617Q286.8157836198807 38.01060211658478 286.8157836198807 36.926976799964905Q286.8157836198807 35.912810921669006 286.1954194307327 35.17275607585907Q285.5750552415848 34.43270123004913 284.1948496699333 33.85347616672516Q282.81464409828186 33.274251103401184 280.5329955816269 32.805102586746216L276.400390625 31.873214960098267Q270.77157986164093 30.6677383184433 267.7872526049614 27.848525881767273Q264.80292534828186 25.029313445091248 264.80292534828186 20.36659801006317Q264.80292534828186 16.54067313671112 266.8858096599579 13.614588856697083Q268.9686939716339 10.688504576683044 272.703248500824 9.057142913341522Q276.43780303001404 7.42578125 281.20418560504913 7.42578125Q286.07423532009125 7.42578125 289.6971109509468 9.055540561676025Q293.31998658180237 10.68529987335205 295.2927943468094 13.683526277542114Q297.2656021118164 16.681752681732178 297.2720115184784 20.65196180343628H286.94404435157776Q286.82435369491577 19.25733506679535 286.16925978660583 18.267204463481903Q285.5141658782959 17.277073860168457 284.279846906662 16.781207382678986Q283.0455279350281 16.285340905189514 281.19457149505615 16.285340905189514Z"/><path d="M319.99452769756317 16.832518935203552Q317.1646571159363 16.832518935203552 315.1779865026474 18.222338616847992Q313.1913158893585 19.61215829849243 312.1317258477211 22.225080490112305Q311.0721358060837 24.838002681732178 311.0721358060837 28.49609375Q311.0721358060837 32.31449258327484 312.1317258477211 34.90069681406021Q313.1913158893585 37.48690104484558 315.1779865026474 38.823284804821014Q317.1646571159363 40.15966856479645 319.88765585422516 40.15966856479645Q321.9651747941971 40.15966856479645 323.5158242583275 39.43403488397598Q325.0664737224579 38.70840120315552 326.0175895690918 37.395530700683594Q326.9687054157257 36.08266019821167 327.2679320573807 34.27232086658478L338.2435396909714 34.37919270992279Q337.9346989393234 38.083266258239746 335.69258719682693 41.5693473815918Q333.45047545433044 45.05542850494385 329.35256391763687 47.310917377471924Q325.2546523809433 49.56640625 319.67391216754913 49.56640625Q314.0322825908661 49.56640625 309.55178582668304 47.09612965583801Q305.0712890625 44.625853061676025 302.535279750824 39.86643821001053Q299.99927043914795 35.10702335834503 299.99927043914795 28.49609375Q299.99927043914795 21.82852351665497 302.588715672493 17.07071101665497Q305.178160905838 12.312898516654968 309.63193970918655 9.869339883327484Q314.0857185125351 7.42578125 319.67391216754913 7.42578125Q324.82396030426025 7.42578125 328.8433203101158 9.280500710010529Q332.8626803159714 11.135220170021057 335.3185357451439 14.69985282421112Q337.7743911743164 18.264485478401184 338.2435396909714 23.203994631767273H327.2679320573807Q327.1290131807327 21.283578753471375 326.2329356074333 19.837118446826935Q325.3368580341339 18.390658140182495 323.731170296669 17.611588537693024Q322.1254825592041 16.832518935203552 319.99452769756317 16.832518935203552Z"/><path d="M341.4094661474228 7.9921875H358.8698307275772Q363.4641307592392 7.9921875 366.87486505508423 9.65827888250351Q370.28559935092926 11.324370265007019 372.1606273651123 14.45190143585205Q374.03565537929535 17.579432606697083 374.03565537929535 21.852073073387146Q374.03565537929535 26.121508836746216 372.1339094042778 29.165681421756744Q370.23216342926025 32.20985400676727 366.7145572900772 33.76907354593277Q363.19695115089417 35.32829308509827 358.49898397922516 35.32829308509827H347.87193536758423V26.889811396598816H356.40216422080994Q358.5085254907608 26.889811396598816 359.90475457906723 26.356010496616364Q361.30098366737366 25.82220959663391 362.04852825403214 24.709183633327484Q362.7960728406906 23.596157670021057 362.7960728406906 21.852073073387146Q362.7960728406906 20.051347851753235 362.04852825403214 18.906796872615814Q361.30098366737366 17.762245893478394 359.87643426656723 17.20012468099594Q358.4518848657608 16.63800346851349 356.39895951747894 16.63800346851349H352.17133009433746V49.0H341.4094661474228ZM375.4078491926193 49.0H363.63606810569763L353.6705228090286 30.217745423316956H365.1655101776123Z"/><path d="M396.51879024505615 49.56640625Q390.8771606683731 49.56640625 386.36994594335556 47.09612965583801Q381.862731218338 44.625853061676025 379.273285984993 39.839720249176025Q376.68384075164795 35.053587436676025 376.68384075164795 28.49609375Q376.68384075164795 21.82852351665497 379.273285984993 17.07071101665497Q381.862731218338 12.312898516654968 386.36994594335556 9.869339883327484Q390.8771606683731 7.42578125 396.51879024505615 7.42578125Q402.1604198217392 7.42578125 406.66763454675674 9.869339883327484Q411.1748492717743 12.312898516654968 413.7642945051193 17.07071101665497Q416.35373973846436 21.82852351665497 416.35373973846436 28.49609375Q416.35373973846436 35.10702335834503 413.7642945051193 39.86643821001053Q411.1748492717743 44.625853061676025 406.66763454675674 47.09612965583801Q402.1604198217392 49.56640625 396.51879024505615 49.56640625ZM396.51879024505615 16.832518935203552Q393.68891966342926 16.832518935203552 391.7289670109749 18.168902695178986Q389.7690143585205 19.50528645515442 388.7628602385521 22.118208646774292Q387.7567061185837 24.731130838394165 387.7567061185837 28.49609375Q387.7567061185837 32.261056661605835 388.7628602385521 34.87397885322571Q389.7690143585205 37.48690104484558 391.7289670109749 38.823284804821014Q393.68891966342926 40.15966856479645 396.51879024505615 40.15966856479645Q399.35186553001404 40.15966856479645 401.3102158308029 38.823284804821014Q403.2685661315918 37.48690104484558 404.2747202515602 34.87397885322571Q405.2808743715286 32.261056661605835 405.2808743715286 28.49609375Q405.2808743715286 24.731130838394165 404.2747202515602 22.118208646774292Q403.2685661315918 19.50528645515442 401.3102158308029 18.168902695178986Q399.35186553001404 16.832518935203552 396.51879024505615 16.832518935203552Z"/><path d="M419.6516536474228 7.9921875H430.41351759433746V40.300748109817505H447.1470229625702V49.0H419.6516536474228Z"/><path d="M449.7952083349228 7.9921875H460.55707228183746V40.300748109817505H477.2905776500702V49.0H449.7952083349228Z"/></g></svg>
+      </a>
+      <input type="text" class="search-input" placeholder="게임 순위 검색" autocomplete="off">
+      <button class="search-btn" type="button" aria-label="검색">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+    </div>
+    <div class="search-dropdown"></div>
+  </div>
+  
+  <nav class="nav">
+    <div class="nav-inner">
+      
+      <a class="nav-item" href="/rankings/">모바일</a>
+      <a class="nav-item" href="/steam/">스팀</a>
+      <a class="nav-item" href="/reports/">리포트</a>
+      <a class="nav-item active" href="/games/">게임 DB</a>
+    </div>
+  </nav>
+  <script>
+  (function(){
+    if(window.innerWidth>768)return;
+    var n=document.querySelector('.nav-inner');
+    if(!n)return;
+    // 스와이프로 온 경우 저장된 scrollLeft 즉시 복원
+    try{
+      var saved=sessionStorage.getItem('gs-nav-scroll');
+      if(saved!==null){
+        n.scrollLeft=parseInt(saved,10);
+        sessionStorage.removeItem('gs-nav-scroll');
+        n.classList.add('nav-ready');
+        return;
+      }
+    }catch(e){}
+    function init(r){
+      // 측정을 한 번에 모아서
+      var cw=n.clientWidth,sw=n.scrollWidth;
+      if(cw<=0){if(!r)requestAnimationFrame(function(){init(1);});return;}
+      if(sw<=cw+1){n.classList.add('nav-ready');return;}
+      var idx=3;
+      var items=n.querySelectorAll('.nav-item');
+      var t=idx<0?items[0]:items[idx];
+      if(t){
+        var left=t.offsetLeft,tw=t.offsetWidth;
+        n.scrollLeft=Math.max(0,left+tw/2-cw/2);
+      }
+      n.classList.add('nav-ready');
+    }
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+    else init();
+  })();
+  </script>
+  <main class="site-container">
+    
+  <script>
+    (function() {
+      if (typeof window.__gsOnReady !== 'function') {
+        var readyQueue = [];
+        window.__gsOnReady = function(fn) {
+          if (typeof fn !== 'function') return;
+          if (window.GSUtils && window.GSUtils.__ready === true) {
+            try { fn(); } catch (e) {}
+            return;
+          }
+          readyQueue.push(fn);
+        };
+        window.__gsFlushReadyQueue = function() {
+          if (!window.GSUtils || window.GSUtils.__ready !== true) return;
+          var queue = readyQueue.slice();
+          readyQueue.length = 0;
+          queue.forEach(function(fn) {
+            try { fn(); } catch (e) {}
+          });
+        };
+      }
+    })();
+  </script>
+    <script defer src="/assets/layout-core.js?v=v1"></script>
+    
+    <section class="section active" id="game">
+      <div class="ad-card ad-card-responsive-home gs-ad-fixed ad-home-pc-3053-card">
+  <style>
+    .ad-home-pc-3053-card, .ad-home-pc-3053 { display:none !important; }
+    @media (min-width: 769px) {
+      .ad-home-pc-3053-card { display:flex !important; width:100%; max-width:970px; height:250px; min-height:250px; max-height:250px; margin:0 auto; border:0; border-radius:0; background:transparent; overflow:visible; align-items:center; justify-content:center; }
+      .ad-home-pc-3053 { display:block !important; width:970px; max-width:100%; height:250px; min-height:250px; margin:0 auto; }
+    }
+  </style>
+  <ins class="adsbygoogle gs-ad-fixed ad-home-pc-3053"
+       style="display:inline-block"
+       data-ad-client="ca-pub-9477874183990825"
+       data-ad-slot="6527917656"></ins>
+</div>
+<div class="ad-card ad-card-mobile-top ad-home-mo-3054-card">
+  <style>
+    .ad-home-mo-3054-card { display:flex !important; width:100% !important; max-width:300px !important; height:250px !important; min-height:250px !important; max-height:250px !important; align-items:center; justify-content:center; margin-left:auto !important; margin-right:auto !important; overflow:hidden; }
+    .ad-home-mo-3054, .ad-home-mo-3054-card > .ad-home-mo-3054, .ad-home-mo-3054-card > .ad-home-mo-3054 > div, .ad-home-mo-3054-card > .ad-home-mo-3054 iframe { display:block !important; width:100% !important; max-width:300px !important; height:250px !important; min-height:250px !important; max-height:250px !important; margin:0 auto; }
+    .ad-home-mo-3054-card > .ad-home-mo-3054 > div { overflow:hidden !important; }
+    @media (min-width: 769px) {
+      .ad-home-mo-3054-card, .ad-home-mo-3054, .ad-home-mo-3054-card > .ad-home-mo-3054 > div, .ad-home-mo-3054-card > .ad-home-mo-3054 iframe { display:none !important; width:0 !important; max-width:0 !important; height:0 !important; min-height:0 !important; max-height:0 !important; margin:0 !important; }
+    }
+  </style>
+  <ins class="adsbygoogle ad-home-mo-3054"
+       style="display:block;width:100%;max-width:300px;height:250px"
+       data-ad-client="ca-pub-9477874183990825"
+       data-ad-slot="5825162341"></ins>
+</div>
+<script>
+
+(function() {
+  if (window.__gsAdRequests) return;
+  function isHidden(ad) {
+    if (!ad) return true;
+    var node = ad;
+    while (node && node !== document.body) {
+      if (node.offsetParent === null) return true;
+      var cs = window.getComputedStyle ? getComputedStyle(node) : null;
+      if (cs && cs.display === 'none') return true;
+      node = node.parentElement;
+    }
+    return false;
+  }
+  function visibleAds(ads) {
+    var visible = [];
+    for (var i = 0; i < ads.length; i++) {
+      var ad = ads[i];
+      if (isHidden(ad)) {
+        // AdSense consumes the first unprocessed ins in DOM order, even if hidden.
+        if (!ad.getAttribute('data-gs-ad-pushed') &&
+            !ad.getAttribute('data-adsbygoogle-status') && ad.parentNode) {
+          ad.parentNode.removeChild(ad);
+        }
+      } else {
+        visible.push(ad);
+      }
+    }
+    return visible;
+  }
+  function push(ad) {
+    if (!ad || document.body.classList.contains('ads-disabled')) return false;
+    if (ad.getAttribute('data-gs-ad-pushed') === '1') return true;
+    if (ad.getAttribute('data-adsbygoogle-status') || ad.getAttribute('data-ad-status')) {
+      ad.setAttribute('data-gs-ad-pushed', '1');
+      return true;
+    }
+    if (isHidden(ad)) return false;
+    var rect = ad.getBoundingClientRect();
+    if (rect.width <= 0) return false;
+    ad.setAttribute('data-gs-ad-pushed', '1');
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      return true;
+    } catch (e) {
+      ad.removeAttribute('data-gs-ad-pushed');
+      return false;
+    }
+  }
+  window.__gsAdRequests = { isHidden: isHidden, visibleAds: visibleAds, push: push };
+})();
+(function() {
+  if (window.__gsEarlyTopAdRequested || document.body.classList.contains('ads-disabled')) return;
+  var ads = window.__gsAdRequests.visibleAds(document.querySelectorAll('.adsbygoogle'));
+  var ad = ads[0];
+  if (!ad || !ad.closest('.ad-card-responsive-home, .ad-card-mobile-top')) return;
+  if (window.__gsAdRequests.push(ad)) {
+    window.__gsEarlyTopAdRequested = true;
+    if (window.performance && performance.mark) performance.mark('gs-top-ad-request');
+  }
+})();
+</script>
+      <div class="page-container game-page-grid">
+        <!-- 게임 히어로 -->
+        <div class="home-card game-hero grid-full">
+          <div class="game-crumb"><a href="/games/">게임 DB</a><span>›</span><span>Victoria 3</span></div>
+          <div class="game-hero-content">
+            <img class="game-hero-icon" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/529340/header.jpg?t=1765474155" alt="Victoria 3" loading="lazy" data-img-fallback="hide">
+            <div class="game-hero-info">
+              <h1 class="game-hero-title">Victoria 3</h1>
+              <div class="game-hero-developer">Paradox Development Studio</div>
+              <div class="game-hero-platforms"><span class="game-platform-badge">steam</span></div>
+            </div>
+          </div>
+        </div>
+            
+
+        
+
+        
+
+      </div>
+    </section>
+  
+    <script>
+    // 최근 본 게임 저장
+    (function() {
+      const RECENT_KEY = 'gamerscroll_recent_searches';
+      const MAX_RECENT = 8;
+      const gameInfo = { name: 'Victoria 3', slug: 'victoria-3', icon: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/529340/header.jpg?t=1765474155' };
+      try {
+        let recent = JSON.parse(localStorage.getItem(RECENT_KEY)) || [];
+        recent = recent.filter(g => g.slug !== gameInfo.slug);
+        recent.unshift(gameInfo);
+        recent = recent.slice(0, MAX_RECENT);
+        localStorage.setItem(RECENT_KEY, JSON.stringify(recent));
+      } catch (e) {}
+    })();
+
+    // 실시간 모바일 순위 탭 전환
+    (function() {
+      const section = document.querySelector('.realtime-rank-section');
+      if (!section) return;
+
+      let activeCat = 'grossing';
+      let activeView = 'summary';
+      let activeMarket = 'ios';
+      const activeRegions = new Set(['kr', 'jp', 'us', 'cn', 'tw']);
+
+      const legendRow = section.querySelector('.realtime-legend-row');
+
+	      function updateContent() {
+	        section.querySelectorAll('.realtime-content').forEach(c => {
+	          const isCat = c.dataset.realtimeCat === activeCat;
+	          const isView = c.dataset.realtimeView === activeView;
+	          c.classList.toggle('active', isCat && isView);
+	        });
+	        // 실시간 뷰일 때만 범례 표시
+	        if (legendRow) {
+	          legendRow.classList.toggle('is-hidden', activeView !== 'realtime');
+	        }
+	      }
+
+      function updateMarket() {
+        section.querySelectorAll('.chart-market-svg').forEach(el => {
+          el.classList.toggle('active', el.dataset.market === activeMarket);
+        });
+      }
+
+      function updateRegions() {
+        section.querySelectorAll('[data-region]').forEach(el => {
+          const visible = activeRegions.has(el.dataset.region);
+          el.style.opacity = visible ? '1' : '0';
+          el.style.pointerEvents = visible ? 'auto' : 'none';
+        });
+      }
+
+      // 카테고리 탭 (매출/인기)
+      section.querySelectorAll('[data-realtime-cat]').forEach(tab => {
+        if (tab.tagName === 'BUTTON') {
+          tab.addEventListener('click', () => {
+            activeCat = tab.dataset.realtimeCat;
+            section.querySelectorAll('[data-realtime-cat]').forEach(t => {
+              if (t.tagName === 'BUTTON') t.classList.toggle('active', t.dataset.realtimeCat === activeCat);
+            });
+            updateContent();
+          });
+        }
+      });
+
+      // 뷰 탭 (요약/실시간)
+      section.querySelectorAll('[data-realtime-view]').forEach(tab => {
+        if (tab.tagName === 'BUTTON' && !tab.disabled) {
+          tab.addEventListener('click', () => {
+            activeView = tab.dataset.realtimeView;
+            section.querySelectorAll('[data-realtime-view]').forEach(t => {
+              if (t.tagName === 'BUTTON') t.classList.toggle('active', t.dataset.realtimeView === activeView);
+            });
+            updateContent();
+          });
+        }
+      });
+
+      // 마켓 토글 (iOS/Android)
+      section.querySelectorAll('[data-market-toggle]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeMarket = btn.dataset.marketToggle;
+          section.querySelectorAll('[data-market-toggle]').forEach(b => {
+            b.classList.toggle('active', b.dataset.marketToggle === activeMarket);
+          });
+          updateMarket();
+        });
+      });
+
+      // 범례 클릭 (국가 토글)
+      section.querySelectorAll('.trend-legend-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const region = item.dataset.legend;
+          if (activeRegions.has(region)) {
+            if (activeRegions.size > 1) {
+              activeRegions.delete(region);
+              item.classList.remove('active');
+            }
+          } else {
+            activeRegions.add(region);
+            item.classList.add('active');
+          }
+          updateRegions();
+        });
+      });
+
+      updateContent();
+      updateMarket();
+      updateRegions();
+    })();
+
+    // 관련 콘텐츠 페이지네이션
+    (function() {
+      const container = document.querySelector('.game-related-container');
+      if (!container) return;
+
+      const items = container.querySelectorAll('.game-related-item');
+      const perPage = parseInt(container.dataset.perPage) || 3;
+      const total = parseInt(container.dataset.total) || items.length;
+      const totalPages = Math.ceil(total / perPage);
+      let currentPage = 0;
+
+      const prevBtn = container.querySelector('.home-page-prev');
+      const nextBtn = container.querySelector('.home-page-next');
+      const pageInfo = container.querySelector('.home-page-info');
+
+      function updateDisplay() {
+        const start = currentPage * perPage;
+        const end = start + perPage;
+        items.forEach((item, i) => {
+          item.style.display = (i >= start && i < end) ? '' : 'none';
+        });
+        if (pageInfo) pageInfo.textContent = (currentPage + 1) + ' / ' + totalPages;
+        if (prevBtn) prevBtn.disabled = currentPage === 0;
+        if (nextBtn) nextBtn.disabled = currentPage >= totalPages - 1;
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          if (currentPage > 0) { currentPage--; updateDisplay(); }
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          if (currentPage < totalPages - 1) { currentPage++; updateDisplay(); }
+        });
+      }
+
+      updateDisplay();
+    })();
+  </script>
+  </main>
+  
+  
+	  <!-- Footer -->
+	  <footer class="site-footer">
+	    <span>© 2026 게이머스크롤</span>
+	    <span class="footer-divider">|</span>
+	    <a href="/about/" class="footer-about-link">소개</a>
+	    <span class="footer-divider">|</span>
+	    <a href="https://x.com/gamerscroll" class="footer-x-link" rel="me noopener" target="_blank">X</a>
+	    <span class="footer-divider">|</span>
+	    <a href="/privacy/" class="footer-privacy-link">개인정보처리방침</a>
+	  </footer>
+
+  <script defer src="/assets/layout-runtime.js?v=v1"></script>
+  
+  
+  <script>
+    (function() {
+      if (!('serviceWorker' in navigator)) return;
+      if (location.protocol !== 'https:') return;
+      var host = location.hostname;
+      if (host !== 'gamerscroll.com' && host !== 'www.gamerscroll.com') return;
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js').catch(function() {});
+      });
+    })();
+  </script>
+  <script>(function(){if(document.body.classList.contains('search-hidden'))window.scrollTo(0,64);var n=window.innerWidth<=768?document.querySelector('.nav-inner'):null;if(n){n.style.transition='none';n.offsetHeight;n.style.visibility='visible';n.classList.add('nav-ready');}if(n)setTimeout(function(){n.style.transition='';},50);})();</script>
+  <script>(function(){document.addEventListener('click',function(e){var a=e.target.closest('a[href]');if(!a||a.target==='_blank')return;try{if(document.body.classList.contains('search-hidden'))sessionStorage.setItem('gs-search-hidden','1');else sessionStorage.removeItem('gs-search-hidden');}catch(ex){}},true);})();</script>
+</body>
+</html>

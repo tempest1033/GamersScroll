@@ -1,0 +1,153 @@
+/* ========== 게임 위키 페이지 ========== */
+
+/* ===== 허브 페이지 (목록) ===== */
+
+/* 카테고리 섹션 최소 높이 (아이템 1개 기준) */
+#wiki-hub .home-card-body {
+  min-height: 200px;
+}
+
+@media (max-width: 768px) {
+  #wiki-hub .home-card-body {
+    min-height: 120px;
+  }
+}
+
+.wiki-feed-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 16px;
+}
+
+.wiki-feed-card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.wiki-feed-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.wiki-feed-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: rgba(0,0,0,0.05);
+}
+
+.wiki-feed-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wiki-feed-card-image img[src=""],
+.wiki-feed-card-image img:not([src]) {
+  display: none;
+}
+
+.wiki-feed-card-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  font-size: var(--font-small-size);
+  font-weight: var(--font-tab-weight);
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+}
+
+.wiki-feed-card-title {
+  font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  margin: 0;
+  padding: 12px;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+/* 페이지네이션 */
+.wiki-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wiki-page-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: var(--font-title-size);
+  font-weight: var(--font-card-title-weight);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wiki-page-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.wiki-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.wiki-page-index {
+  font-size: var(--font-body-size);
+  color: var(--text-secondary);
+  min-width: 45px;
+  text-align: center;
+}
+
+.wiki-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+/* 다크모드 */
+@media (prefers-color-scheme: dark) {
+  .wiki-feed-card {
+    background: var(--card-bg);
+    border-color: var(--border);
+  }
+
+  .wiki-feed-card-tag {
+    background: rgba(0, 0, 0, 0.65);
+  }
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .wiki-feed-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .wiki-feed-card-title {
+    padding: 12px 12px 14px;
+  }
+
+  .wiki-feed-card-tag {
+    font-size: var(--font-xs-size);
+    padding: 3px 8px;
+  }
+}

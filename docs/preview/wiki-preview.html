@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[미리보기] 한국 e스포츠의 역사: PC방에서 세계 무대까지</title>
+  <style>
+    /* CSS 변수 정의 - 다크모드 */
+    :root {
+      --bg: #0a0a0b;
+      --bg-secondary: #18181b;
+      --card: #18181b;
+      --card-hover: #27272a;
+      --border: #3f3f46;
+      --text: #fafafa;
+      --text-secondary: #d4d4d8;
+      --text-muted: #a1a1aa;
+      --primary: #f97316;
+      --hover-bg: #27272a;
+      --radius: 12px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+      --font-2xl-size: 1.75rem;
+      --font-xl-size: 1.5rem;
+      --font-lg-size: 1.25rem;
+      --font-title-size: 1rem;
+      --font-body-size: 0.9375rem;
+      --font-desc-size: 0.875rem;
+      --font-meta-size: 0.8125rem;
+      --font-small-size: 0.75rem;
+      --font-badge-size: 0.6875rem;
+    }
+
+    /* 기본 스타일 */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #60a5fa; text-decoration: none; }
+    a:hover { color: #34d399; }
+
+    /* 프리뷰 배너 */
+    .preview-banner {
+      background: linear-gradient(90deg, #f97316, #ea580c);
+      color: #fff;
+      padding: 12px 20px;
+      text-align: center;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .preview-banner a { color: #fff; margin-left: 16px; text-decoration: underline; }
+
+    .preview-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .preview-meta {
+      background: var(--hover-bg);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      font-size: var(--font-desc-size);
+      border: 1px solid var(--border);
+    }
+    .preview-meta dt { color: var(--text-muted); font-weight: 500; margin-top: 8px; }
+    .preview-meta dt:first-child { margin-top: 0; }
+    .preview-meta dd { margin: 4px 0 0 0; color: var(--text-secondary); }
+    .preview-meta code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: var(--font-small-size); }
+
+    /* 블로그 카드 */
+    .blog-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    /* 히어로 이미지 */
+    .blog-hero {
+      width: 100%;
+      max-height: 280px;
+      overflow: hidden;
+      background: var(--bg-secondary);
+    }
+    .blog-hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 헤더 */
+    .blog-header {
+      padding: 24px 24px 8px;
+    }
+    .blog-title {
+      font-size: var(--font-2xl-size);
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .blog-date {
+      font-size: var(--font-meta-size);
+      color: var(--text-muted);
+    }
+    .blog-summary {
+      font-size: var(--font-body-size);
+      line-height: 1.7;
+      color: var(--text-secondary);
+      padding: 16px;
+      background: var(--hover-bg);
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    /* 본문 */
+    .blog-content {
+      padding: 24px;
+    }
+    .blog-paragraph {
+      font-size: var(--font-body-size);
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .blog-paragraph:last-child { margin-bottom: 0; }
+
+    .blog-heading {
+      font-size: var(--font-lg-size);
+      font-weight: 600;
+      color: var(--text);
+      margin: 32px 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .blog-heading:first-child { margin-top: 0; }
+
+    /* 이미지 */
+    .blog-figure {
+      margin: 24px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+    }
+    .blog-figure.blog-table {
+      width: fit-content;
+      max-width: 100%;
+    }
+    .blog-image {
+      width: 100%;
+      height: auto;
+      max-height: 800px;
+      object-fit: contain;
+      display: block;
+    }
+    .blog-caption {
+      padding: 12px 16px;
+      font-size: var(--font-meta-size);
+      color: var(--text-muted);
+      text-align: center;
+      background: var(--hover-bg);
+      border-top: 1px solid var(--border);
+    }
+
+    /* 인용문 */
+    .blog-quote {
+      margin: 24px 0;
+      padding: 16px 20px;
+      background: rgba(249, 115, 22, 0.08);
+      border-left: 3px solid #f97316;
+      border-radius: 0 8px 8px 0;
+      font-size: var(--font-body-size);
+      line-height: 1.7;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* 비디오 */
+    .blog-video .blog-video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+    .blog-video .blog-video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* 표 */
+    .table-title {
+      padding: 12px 16px;
+      font-size: var(--font-title-size);
+      font-weight: 600;
+      color: var(--text);
+      background: var(--hover-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .blog-table-wrapper {
+      margin: 0;
+      width: fit-content;
+      max-width: 100%;
+    }
+    .wiki-table {
+      width: auto;
+      min-width: 50%;
+      border-collapse: collapse;
+      font-size: var(--font-body-size);
+    }
+    .wiki-table th, .wiki-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .wiki-table th {
+      background: var(--hover-bg);
+      font-weight: 600;
+      color: var(--text);
+    }
+    .wiki-table td {
+      color: var(--text-secondary);
+    }
+    .wiki-table tbody tr:hover {
+      background: var(--hover-bg);
+    }
+    .wiki-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .wiki-table a {
+      color: #60a5fa;
+      font-weight: 500;
+    }
+    .wiki-table a:hover {
+      color: #34d399;
+    }
+
+    /* 출처 */
+    .blog-sources {
+      padding: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .blog-sources-title {
+      font-size: var(--font-title-size);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .blog-sources-list {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+    .blog-sources-list li {
+      font-size: var(--font-small-size);
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .blog-sources-list a {
+      color: var(--text-secondary);
+    }
+    .blog-sources-list a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* 관련 게임/문서 */
+    .blog-related-games {
+      padding: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .blog-related-title {
+      font-size: var(--font-title-size);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .blog-related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+    .blog-related-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      background: var(--hover-bg);
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+    .blog-related-card:hover {
+      background: var(--card-hover);
+      border-color: var(--border);
+    }
+    .blog-related-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .blog-related-name {
+      font-size: var(--font-desc-size);
+      font-weight: 500;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 모바일 반응형 */
+    @media (max-width: 768px) {
+      .blog-header, .blog-content, .blog-related-games, .blog-sources {
+        padding: 16px;
+      }
+      .blog-title { font-size: var(--font-xl-size); }
+      .blog-heading { font-size: var(--font-title-size); }
+      .blog-figure { margin: 16px -16px; border-radius: 0; border-left: none; border-right: none; }
+      .blog-related-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-figure.blog-table { width: 100%; margin: 16px 0; }
+      .wiki-table { width: 100%; min-width: 400px; }
+      .wiki-table th, .wiki-table td { padding: 10px 12px; font-size: var(--font-desc-size); }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">
+    📚 위키 미리보기 - 실제 사이트 스타일 적용
+    <a href="javascript:location.reload()">새로고침</a>
+  </div>
+
+  <div class="preview-container">
+    <dl class="preview-meta">
+      <dt>상태</dt>
+      <dd><strong>draft</strong></dd>
+      <dt>카테고리</dt>
+      <dd><code>history</code></dd>
+      <dt>Slug</dt>
+      <dd><code>korean-esports-history</code></dd>
+      <dt>키워드</dt>
+      <dd>e스포츠, 한국 e스포츠, 온게임넷, OGN, MBC게임, 스타크래프트, 프로게이머, 임요환, 홍진호, KeSPA, LCK, 리그오브레전드, PC방, 승부조작</dd>
+    </dl>
+
+    <article class="blog-card">
+      
+    <div class="blog-hero">
+      <img class="blog-hero-image" src="https://wsrv.nl/?url=https%3A%2F%2Fcdn.fortunekorea.co.kr%2Fnews%2Fphoto%2F201806%2F10354_1109_3045.jpg&w=960&output=webp" alt="한국 e스포츠의 역사: PC방에서 세계 무대까지 대표 이미지">
+    </div>
+  
+
+      <header class="blog-header">
+        <h1 class="blog-title">한국 e스포츠의 역사: PC방에서 세계 무대까지</h1>
+        <div class="blog-meta">
+          <time class="blog-date">2026년 1월 28일</time>
+        </div>
+        <p class="blog-summary">1999년 스타크래프트 열풍과 함께 시작된 한국 e스포츠는 27년간 세계를 선도해왔다. 경인방송의 게임 프로그램부터 온게임넷, MBC게임의 양대 리그 시대, 승부조작 스캔들, 그리고 LoL 시대까지. 한국 e스포츠의 영광과 아픔을 돌아본다.</p>
+      </header>
+
+      <div class="blog-content">
+        <p class="blog-paragraph">2026년 현재, 한국은 명실상부한 e스포츠 종주국이다. 리그오브레전드 월드 챔피언십에서 한국 팀은 압도적인 성적을 거두고 있고, '페이커' 이상혁은 전 세계가 인정하는 e스포츠의 아이콘이 되었다. 하지만 이 모든 것은 하루아침에 이루어진 것이 아니다.</p>
+<p class="blog-paragraph">1999년, IMF 외환위기의 여파 속에서 전국에 PC방이 우후죽순 생겨났고, 스타크래프트라는 게임이 대한민국을 뒤흔들었다. 그때부터 시작된 한국 e스포츠의 27년 역사는 영광과 좌절, 혁신과 위기가 뒤섞인 드라마 그 자체다.</p>
+<h2 class="blog-heading">1. PC방의 탄생</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fcdn.ilovepcbang.com%2Fnews%2Fphoto%2F202406%2F105901_226376_3243.jpg&w=960&output=webp" alt="1990년대 후반 한국 PC방 내부 모습" loading="lazy">
+            <figcaption class="blog-caption">1990년대 후반 PC방 풍경</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">1997년 IMF 외환위기는 역설적으로 한국 e스포츠의 씨앗을 뿌렸다. 실직자들이 소자본 창업 아이템으로 PC방을 선택했고, 1998년부터 전국에 PC방이 폭발적으로 증가했다. 당시 가정용 PC 보급률이 낮았던 상황에서, PC방은 청소년들의 놀이터가 되었다.</p>
+<p class="blog-paragraph">1998년 3월 출시된 블리자드의 스타크래프트는 PC방 문화와 완벽하게 맞아떨어졌다. 배틀넷을 통한 온라인 대전은 친구들과 함께 PC방에서 즐기기에 최적이었고, 한국은 전 세계 스타크래프트 판매량의 절반 가까이를 차지하는 이변을 낳았다. 게임은 더 이상 혼자 하는 취미가 아닌, 함께 즐기고 경쟁하는 문화로 변모했다.</p>
+<h2 class="blog-heading">2. 경인방송의 시작</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FdEsu2NMm7BE%2Fmaxresdefault.jpg&w=960&output=webp" alt="1990년대 후반 게임 방송 프로그램 화면" loading="lazy">
+            <figcaption class="blog-caption">투니버스 게임플러스 (1998)</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">한국 e스포츠 방송의 역사는 1999년으로 거슬러 올라간다. 경인방송(iTV)의 '게임 플러스'는 게임을 본격적으로 다룬 초기 프로그램 중 하나였다. 당시 투니버스의 '게임왕'도 인기를 끌며 게임 방송의 가능성을 보여주었다.</p>
+<p class="blog-paragraph">이 시기의 게임 방송은 아직 프로게이머 경기 중계보다는 게임 소개와 공략 위주였다. 하지만 스타크래프트의 인기가 폭발하면서, 게임 대회를 TV로 중계하면 어떨까 하는 아이디어가 싹트기 시작했다. 온게임넷은 스스로 '게임 플러스'를 모태로 인정하고 있다.</p>
+<h2 class="blog-heading">3. 온게임넷(OGN) 개국</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fpimg.mk.co.kr%2Fmeet%2Fneds%2F2020%2F09%2Fimage_readtop_2020_939615_15997848714352142.jpg&w=960&output=webp" alt="온게임넷 e스포츠 경기장과 관중" loading="lazy">
+            <figcaption class="blog-caption">온게임넷 e스포츠 경기장</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">2000년, 온미디어는 세계 최초의 게임 전문 케이블 채널 '온게임넷'을 개국했다. 이는 e스포츠 역사에서 혁명적인 사건이었다. 게임 경기를 24시간 방송하는 전문 채널이 생긴 것이다.</p>
+<p class="blog-paragraph">온게임넷은 스타크래프트 프로리그와 개인 리그 '스타리그'를 런칭했다. 특히 2000년 시작된 온게임넷 스타리그(OSL)는 프로게이머라는 직업을 대중에게 각인시켰다. 프로게이머들은 더 이상 게임 잘하는 학생이 아닌, TV에 나오는 스타가 되었다.</p>
+<h2 class="blog-heading">4. MBC게임 개국</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fimg.etnews.com%2Fphotonews%2F0911%2F091119043503_526872159_b.jpg&w=960&output=webp" alt="MBC게임 MSL 경기 장면" loading="lazy">
+            <figcaption class="blog-caption">MBC게임 스타리그 경기</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">2001년 5월 1일, MBC 계열의 MBC게임이 개국하면서 한국 e스포츠는 양대 방송사 체제로 돌입했다. MBC게임은 일간스포츠와 손잡고 'MBC게임 스타리그(MSL)'를 출범시켰다.</p>
+<p class="blog-paragraph">온게임넷의 스타리그(OSL)와 MBC게임의 MSL은 서로 경쟁하며 한국 e스포츠를 황금기로 이끌었다. 양대 리그 체제는 선수들에게 더 많은 기회를, 팬들에게는 더 많은 볼거리를 제공했다. 이 시기 한국은 e스포츠의 메카로 전 세계의 주목을 받았다.</p>
+<h2 class="blog-heading">5. 프로게이머의 시대</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fsports.hankooki.com%2Fnews%2Fphoto%2F201708%2Fimg_6204062_0.jpg&w=960&output=webp" alt="스타크래프트 프로게이머 임요환" loading="lazy">
+            <figcaption class="blog-caption">황제 임요환</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">2000년대 초반, 한국에서 프로게이머는 연예인 못지않은 인기를 누렸다. 그 중심에는 '임진록(임요환 vs 홍진호)'이라 불린 전설적인 라이벌 구도가 있었다.</p>
+<p class="blog-paragraph">'황제' 임요환은 테란의 신으로 불리며 수많은 우승 트로피를 들어올렸다. 반면 '영원한 2인자' 홍진호는 결승에서 번번이 임요환에게 패하며 '콩'이라는 별명을 얻었다. 이 둘의 대결은 스타크래프트를 넘어 대중문화 현상이 되었다.</p>
+<p class="blog-paragraph">이윤열, 박정석, 최연성, 이제동 등 수많은 스타 프로게이머들이 탄생했고, 삼성전자, SK텔레콤, KT 등 대기업들이 프로게임단을 운영했다. 프로게이머의 연봉은 수억 원에 달했고, 팬클럽 회원 수가 수십만 명에 이르는 선수도 있었다.</p>
+<h2 class="blog-heading">6. KeSPA와 제도화</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fnews.nateimg.co.kr%2ForgImg%2Fck%2F2024%2F12%2F13%2Fkuk20241213000065.800x.0.jpg&w=960&output=webp" alt="KeSPA 한국e스포츠협회 대회" loading="lazy">
+            <figcaption class="blog-caption">한국e스포츠협회 케스파컵</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">1999년, 문화체육관광부 산하에 한국e스포츠협회(KeSPA)가 설립되었다. 이는 정부가 e스포츠를 공식적인 스포츠 산업으로 인정했다는 의미였다. KeSPA는 프로게이머 등록, 대회 공인, 분쟁 조정 등의 역할을 맡았다.</p>
+<p class="blog-paragraph">2004년에는 e스포츠 병역특례 제도가 도입되었다. 공군에 e스포츠 특기병 제도가 생기면서, 임요환을 비롯한 정상급 프로게이머들이 복무 중에도 대회에 출전할 수 있었다. 이는 e스포츠가 국가적으로 인정받는 분야가 되었음을 상징했다.</p>
+<h2 class="blog-heading">7. 스타크래프트 황금기</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fdimg.donga.com%2Fwps%2FNEWS%2FIMAGE%2F2006%2F01%2F23%2F6962897.1.jpg&w=960&output=webp" alt="2000년대 중반 스타크래프트 프로리그 결승전 경기장" loading="lazy">
+            <figcaption class="blog-caption">스타크래프트 프로리그 결승전</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">2004년부터 2010년까지는 한국 스타크래프트 e스포츠의 황금기였다. 온게임넷 스타리그(OSL)와 MBC게임 스타리그(MSL) 양대 개인리그, 그리고 기업 프로게임단들이 맞붙는 프로리그가 삼각 체제를 이루었다.</p>
+<p class="blog-paragraph">경기장은 매번 팬들로 가득 찼고, TV 시청률도 높았다. 해외에서 한국 프로리그를 보기 위해 새벽에 일어나는 팬들이 생겨났다. 한국은 e스포츠의 본고장으로서 위상을 확립했다.</p>
+<p class="blog-paragraph">하지만 이 황금기의 이면에는 어두운 그림자가 드리워지고 있었다.</p>
+<h2 class="blog-heading">8. 승부조작 스캔들</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fthumb.mt.co.kr%2Fcdn-cgi%2Fimage%2Ff%3Davif%2F06%2F2010%2F10%2F2010102214004569027_1.jpg&w=960&output=webp" alt="2010년 스타크래프트 승부조작 사건 뉴스 화면" loading="lazy">
+            <figcaption class="blog-caption">2010년 승부조작 사건 뉴스 보도</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">2010년 4월, 한국 e스포츠 역사상 가장 충격적인 사건이 터졌다. 스타크래프트 프로게이머들의 승부조작 혐의가 수면 위로 드러난 것이다. 불법 도박 사이트와 연계된 조직적인 승부조작이었다.</p>
+<p class="blog-paragraph">'마에스트로'로 불리며 많은 팬들의 사랑을 받았던 마재윤이 승부조작에 가담한 사실이 밝혀지며 충격은 배가되었다. 결국 마재윤을 포함한 11명의 프로게이머가 KeSPA로부터 영구 제명당했고, 일부는 형사 처벌까지 받았다.</p>
+<p class="blog-paragraph">이 사건은 한국 e스포츠의 신뢰를 크게 훼손했다. 팬들은 배신감을 느꼈고, 스폰서들은 발을 빼기 시작했다. 2012년 MBC게임의 폐국, 스타크래프트 리그의 쇠퇴와 맞물리며 한 시대의 종말을 알렸다.</p>
+<h2 class="blog-heading">9. 리그오브레전드로의 전환</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F5zBuPUxTzPI%2Fmaxresdefault.jpg&w=960&output=webp" alt="리그오브레전드 챔피언스 코리아 LCK 결승전" loading="lazy">
+            <figcaption class="blog-caption">LCK 결승전</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">2012년, 한국 e스포츠는 새로운 전환점을 맞이했다. 라이엇 게임즈의 리그오브레전드(LoL)가 급부상하며 스타크래프트의 자리를 대체하기 시작한 것이다. 같은 해 'Azubu The Champions'라는 이름으로 한국 LoL 리그가 시작되었고, 이것이 현재 LCK의 전신이다.</p>
+<p class="blog-paragraph">한국 LoL 팀들은 세계 무대에서 압도적인 실력을 보여주었다. SK텔레콤 T1(현 T1)은 '페이커' 이상혁을 앞세워 롤드컵을 세 차례 제패했다. 삼성 갤럭시, KT 롤스터 등 기존 스타크래프트 명문 구단들도 LoL 팀을 운영하며 세대교체에 성공했다.</p>
+<h2 class="blog-heading">10. 글로벌 e스포츠 강국</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fcdn.sisain.co.kr%2Fnews%2Fphoto%2F202312%2F51736_96184_1701362196.jpg&w=960&output=webp" alt="T1 소속 페이커 이상혁 선수 우승" loading="lazy">
+            <figcaption class="blog-caption">월드챔피언십 우승 페이커</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">2020년대 한국은 여전히 e스포츠 강국의 위상을 유지하고 있다. LCK는 세계 4대 LoL 리그 중 가장 높은 경쟁력을 자랑하며, 월드 챔피언십에서 꾸준히 좋은 성적을 거두고 있다.</p>
+<p class="blog-paragraph">T1, Gen.G, DRX, 한화생명e스포츠 등 한국 팀들은 글로벌 e스포츠 시장에서 막강한 영향력을 행사하고 있다. 특히 페이커는 e스포츠 역사상 가장 위대한 선수로 평가받으며, 그의 연봉과 영향력은 전통 스포츠 스타에 버금간다.</p>
+<p class="blog-paragraph">2022년 항저우 아시안게임에서 e스포츠가 정식 종목으로 채택되며, 한국 선수들은 금메달을 획득했다. e스포츠는 이제 명실상부한 스포츠로 인정받고 있다.</p>
+<h2 class="blog-heading">11. 남은 과제들</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fasiaexchange.org%2Fwp-content%2Fuploads%2F2020%2F04%2FKorea-The-e-Sports-Capital-of-the-World-1.jpg&w=960&output=webp" alt="e스포츠 대회장과 관중석" loading="lazy">
+            <figcaption class="blog-caption">e스포츠 경기장과 관중</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">27년간 눈부신 성장을 이룬 한국 e스포츠지만, 여전히 해결해야 할 과제들이 남아있다. 가장 큰 문제는 특정 게임에 대한 과도한 의존이다. 현재 한국 e스포츠 시장은 리그오브레전드에 지나치게 편중되어 있다. LoL 외의 종목들은 관심과 투자를 받지 못하고 있다.</p>
+<p class="blog-paragraph">수익성 문제도 심각하다. 화려한 무대와 높은 인기에도 불구하고, 대부분의 e스포츠 구단은 적자 운영 중이다. 중계권료, 스폰서십, 티켓 판매만으로는 선수 연봉과 운영비를 감당하기 어렵다. 모기업의 마케팅 비용으로 버티는 구조가 지속되고 있다.</p>
+<p class="blog-paragraph">게임의 흥망성쇠에 따라 리그 전체가 흔들리는 불안정성도 문제다. 스타크래프트 리그의 몰락처럼, 언제든 LoL의 인기가 식으면 같은 상황이 반복될 수 있다. 다양한 게임 생태계 육성과 지속가능한 비즈니스 모델 구축이 시급하다.</p>
+<h2 class="blog-heading">마치며</h2>
+<p class="blog-paragraph">1999년 PC방의 스타크래프트 열풍으로 시작된 한국 e스포츠는 27년간 전 세계를 선도해왔다. 세계 최초의 게임 전문 방송, 프로게이머라는 직업의 탄생, 기업 프로게임단 시스템, 정부 차원의 제도화까지. 한국은 e스포츠의 표준을 만들어왔다.</p>
+<p class="blog-paragraph">물론 승부조작 스캔들이라는 아픈 역사도 있었고, 특정 게임 편중과 수익성 문제라는 현재진행형 과제도 있다. 하지만 위기 때마다 새로운 게임, 새로운 세대가 등장해 한국 e스포츠를 이끌어왔다.</p>
+<p class="blog-paragraph">임요환에서 페이커로, 스타크래프트에서 리그오브레전드로. 변화하는 것과 변하지 않는 것 사이에서, 한국 e스포츠의 다음 27년은 어떤 모습일까. 새로운 게임, 새로운 스타의 등장을 기대해본다.</p>
+      </div>
+
+      
+    <div class="blog-sources">
+      <h3 class="blog-sources-title">정보 출처</h3>
+      <ul class="blog-sources-list">
+        
+          <li><a href="https://www.gametoc.co.kr/news/articleView.html?idxno=66282" target="_blank" rel="nofollow noopener">게임톡 - 세계최초 게임방송 'OGN' 팔렸다...새 주인은 OP.GG</a></li>
+        
+          <li><a href="https://www.bizhankook.com/bk/article/13853" target="_blank" rel="nofollow noopener">비즈한국 - 가슴에 묻은 'MBC 게임'의 추억</a></li>
+        
+          <li><a href="https://www.yna.co.kr/view/AKR20100515060100004" target="_blank" rel="nofollow noopener">연합뉴스 - 소문 무성하던 스타크래프트 승부조작설 사실로</a></li>
+        
+          <li><a href="https://www.hani.co.kr/arti/politics/assembly/1229410.html" target="_blank" rel="nofollow noopener">한겨레 - 지스타에서 '스타 승부조작' 마재윤 언급</a></li>
+        
+          <li><a href="https://bbs.ruliweb.com/news/read/42650" target="_blank" rel="nofollow noopener">루리웹 - 리그 오브 레전드, Champions Spring 2012 결승전 실시</a></li>
+        
+      </ul>
+    </div>
+  
+      
+      
+    <div class="blog-related-games">
+      <h3 class="blog-related-title">관련 문서</h3>
+      <div class="blog-related-grid">
+        
+          <a href="/wiki/history/rts-genre-rise-and-fall/" class="blog-related-card">
+            <span class="blog-related-name">RTS 장르의 흥망성쇠, 90년대 황금기부터 역사 속으로 사라진 이유까지</span>
+          </a>
+        
+      </div>
+    </div>
+  
+    </article>
+  </div>
+</body>
+</html>

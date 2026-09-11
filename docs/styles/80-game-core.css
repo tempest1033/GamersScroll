@@ -1,0 +1,338 @@
+﻿/* ========== Game Page ========== */
+#game .page-container {
+  min-height: calc(100vh - 250px);
+  padding-top: var(--space-block-gap, 16px) !important;
+  padding-bottom: var(--space-block-y-xl);
+}
+
+#game .page-container .home-card-body {
+  padding: 0;
+}
+
+#game .page-container .home-card-header {
+  padding: 12px 0;
+}
+
+#game .page-container .home-card-title svg {
+  width: 24px;
+  height: 24px;
+}
+
+#game .page-container .rank-trend-section {
+  padding: 0;
+  min-height: 280px;
+}
+
+#game .page-container .trend-charts {
+  padding: 12px 4px;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+}
+
+#game .page-container .trend-charts .trend-content {
+  flex: 1;
+  display: none;
+}
+
+#game .page-container .trend-charts .trend-content.active {
+  display: flex;
+  flex-direction: column;
+}
+
+#game .page-container .trend-charts .game-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game .page-container .trend-charts svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#game .page-container .trend-chart-svg,
+#game .page-container .game-chart-svg {
+  width: 100%;
+  max-height: 260px;
+}
+
+/* 게임 히어로 섹션 */
+.game-hero {
+  /* grid gap이 간격 담당 */
+}
+
+.game-hero-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.game-hero-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.game-hero-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.game-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-tab-weight);
+  color: #c2410c;
+  background: rgba(194, 65, 12, 0.15);
+  border: 1px solid #c2410c;
+  border-radius: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.game-back-btn:hover {
+  color: white;
+  background: #c2410c;
+  border-color: #c2410c;
+}
+
+.game-hero-title {
+  font-size: var(--font-xl-size);
+  font-weight: var(--font-card-title-weight);
+  color: var(--text);
+  margin: 0 0 6px 0;
+}
+
+.game-hero-developer {
+  font-size: var(--font-meta-size);
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.game-hero-platforms {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.game-platform-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: var(--font-badge-size);
+  font-weight: var(--font-tab-weight);
+  color: var(--text);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.game-hero-stats {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.game-hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.game-hero-stat-label {
+  font-size: var(--font-meta-size);
+  color: var(--text-tertiary);
+  margin-bottom: 4px;
+}
+
+.game-hero-stat-value {
+  font-size: var(--font-lg-size);
+  font-weight: var(--font-card-title-weight);
+  color: var(--text);
+}
+
+/* Steam 스탯 색상 */
+.stat-ccu .game-hero-stat-value {
+  color: var(--stat-ios-color);
+}
+
+.stat-sales .game-hero-stat-value {
+  color: var(--stat-aos-color);
+}
+
+.stat-players .game-hero-stat-value {
+  color: var(--stat-success);
+}
+
+/* 게임 페이지 그리드 (PC 2컬럼, 모바일 1컬럼) */
+.page-container.game-page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-block-gap);
+  align-content: start;
+}
+
+/* 그리드 간격과 카드 마진 중복 방지 */
+.page-container.game-page-grid .home-card {
+  margin-bottom: 0;
+}
+
+/* 풀 너비 아이템 */
+.game-page-grid .grid-full,
+.game-page-grid .ad-card,
+.game-page-grid .visually-hidden {
+  grid-column: 1 / -1;
+}
+
+/* 게임 순위 섹션 */
+.game-rank-mobile {
+  padding: 8px;
+}
+
+.game-rank-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.game-rank-col {
+  padding: 0;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.game-rank-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 12px;
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+}
+
+.game-rank-col-header img {
+  width: 20px;
+  height: 20px;
+}
+
+.game-rank-rows {
+  padding: 0;
+}
+
+.game-rank-country-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  gap: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.game-rank-country-row:last-child {
+  border-bottom: none;
+}
+
+.game-rank-country-flag {
+  font-size: var(--font-lg-size);
+  width: 28px;
+}
+
+.game-rank-country-flag .emoji {
+  width: 22px;
+  height: 22px;
+}
+
+.game-rank-country-name {
+  flex: 1;
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+  .game-rank-country-name {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.game-rank-country-value {
+  font-size: var(--font-section-size);
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  min-width: 36px;
+  text-align: right;
+}
+
+.game-rank-change {
+  font-size: var(--font-meta-size);
+  font-weight: var(--font-tab-weight);
+  margin-left: 6px;
+}
+
+.game-rank-change.up {
+  color: var(--rank-green);
+}
+
+.game-rank-change.down {
+  color: var(--rank-red);
+}
+
+/* 실시간 순위 - 비활성 버튼 스타일 */
+.realtime-rank-section .tab-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.realtime-content {
+  display: none;
+}
+
+.realtime-content.active {
+  display: block;
+  padding: 0;
+}
+
+.realtime-rank-section .game-rank-grid {
+  padding: 12px 16px;
+}
+
+/* 요약 뷰: trend-charts와 동일한 패딩 */
+.realtime-content[data-realtime-view="summary"].active .game-rank-grid {
+  padding: 4px 8px;
+}
+
+.realtime-content[data-realtime-view="realtime"].active {
+  padding: 4px 8px;
+}
+
+.realtime-content svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.realtime-legend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+}

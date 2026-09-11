@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      width: 1200px;
+      height: 628px;
+      background: #111111;
+      padding: 36px 40px;
+      overflow: hidden;
+    }
+    .card {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .top-row {
+      margin-bottom: 28px;
+    }
+    .title {
+      font-size: 38px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .issues {
+      display: flex;
+      gap: 20px;
+      flex: 1;
+      min-height: 0;
+    }
+    .issue {
+      flex: 1;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: #1e1e1e;
+      border: 1px solid #2a2a2a;
+    }
+    .issue-media {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #222222;
+    }
+    .issue-media-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.5) 100%);
+      z-index: 2;
+    }
+    .issue-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    .issue-num {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1;
+      color: #ffffff;
+      z-index: 3;
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .issue-tag {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      display: inline-flex;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      color: #cccccc;
+      z-index: 3;
+      background: rgba(255,255,255,0.12);
+    }
+    .issue-body {
+      padding: 14px 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .issue-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.35;
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .issue-desc {
+      font-size: 16px;
+      font-weight: 400;
+      color: #888888;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .footer {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #1e1e1e;
+    }
+    .footer-date {
+      flex: 1;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 500;
+      color: #666666;
+    }
+    .footer-brand {
+      flex: 1;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      color: #444444;
+    }
+    .footer-url {
+      flex: 1;
+      text-align: right;
+      font-size: 13px;
+      font-weight: 500;
+      color: #444444;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-row">
+      <h1 class="title">오늘의 핫이슈 TOP 3</h1>
+    </div>
+
+    <div class="issues">
+      
+      <div class="issue">
+        <div class="issue-media">
+          <img class="issue-thumb" src="https://static.inven.co.kr/column/2026/03/01/news/i1569148816.jpg" alt="젠지, BFX 3:0 완파 LCK컵 전승 우승 달성" loading="lazy" onerror="this.style.display='none'">
+          <div class="issue-media-overlay"></div>
+          <span class="issue-num" style="background: rgba(255, 180, 50, 0.85);">1</span>
+          <span class="issue-tag">e스포츠</span>
+        </div>
+        <div class="issue-body">
+          <h3 class="issue-title">젠지, BFX 3:0 완파 LCK컵 전승 우승 달성</h3>
+          <p class="issue-desc">젠지가 3월 1일 홍콩 카이탁 아레나에서 BNK 피어엑스를 3:0으로 압도하며 2026 LCK컵 전승 우승을 달성했어요. 정글러 캐니언이 결승 MVP에 선정됐고, 젠지와 BFX는 3월 16일 브라질 퍼스트 스탠드에 한국 대표로 출전해요.</p>
+        </div>
+      </div>
+    
+      <div class="issue">
+        <div class="issue-media">
+          <img class="issue-thumb" src="https://static.inven.co.kr/column/2026/03/01/news/i1085047947.jpg" alt="LCK 첫 해외 결승, 홍콩서 일일 관중 1만 명 운집" loading="lazy" onerror="this.style.display='none'">
+          <div class="issue-media-overlay"></div>
+          <span class="issue-num" style="background: rgba(160, 170, 190, 0.85);">2</span>
+          <span class="issue-tag">행사</span>
+        </div>
+        <div class="issue-body">
+          <h3 class="issue-title">LCK 첫 해외 결승, 홍콩서 일일 관중 1만 명 운집</h3>
+          <p class="issue-desc">2026 LCK컵 결승전이 홍콩 카이탁 아레나에서 열리며 LCK 14년 역사상 첫 해외 결승을 기록했어요. 하루 1만 명의 관중이 운집해 '구름 관중'이라는 수식어가 붙었고, 한국 e스포츠의 글로벌 확장 가능성을 입증하는 성공적인 행사로 평가받고 있어요.</p>
+        </div>
+      </div>
+    
+      <div class="issue">
+        <div class="issue-media">
+          <img class="issue-thumb" src="https://channeln.gcdn.netmarble.com/channeln/Upload/716f5ac2-8501-442c-84af-8f460f90759c.jpg" alt="넷마블 칠대죄: 오리진, 3월 17일 PC·콘솔 선출시 확정" loading="lazy" onerror="this.style.display='none'">
+          <div class="issue-media-overlay"></div>
+          <span class="issue-num" style="background: rgba(180, 120, 80, 0.85);">3</span>
+          <span class="issue-tag">신작</span>
+        </div>
+        <div class="issue-body">
+          <h3 class="issue-title">넷마블 칠대죄: 오리진, 3월 17일 PC·콘솔 선출시 확정</h3>
+          <p class="issue-desc">넷마블의 오픈월드 RPG 일곱 개의 대죄: 오리진이 3월 17일 PS5·스팀에서 선출시되고 24일 모바일 포함 전 플랫폼 그랜드 론칭이 확정됐어요. 멜리오다스·트리스탄 등 원작 캐릭터의 태그 전투 시스템이 핵심이며, 론칭 PV가 공개돼 기대감이 높아지고 있어요.</p>
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="footer">
+      <span class="footer-date">2026년 3월 2일</span>
+      <span class="footer-brand">게이머스크롤</span>
+      <span class="footer-url">gamerscroll.com</span>
+    </div>
+  </div>
+</body>
+</html>

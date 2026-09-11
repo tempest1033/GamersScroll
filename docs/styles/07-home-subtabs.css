@@ -1,0 +1,86 @@
+﻿/* ===== Home Sub Tabs (뉴스/커뮤니티/영상) ===== */
+
+.home-news-tabs,
+.home-community-tabs,
+.home-video-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.home-news-tabs::-webkit-scrollbar,
+.home-community-tabs::-webkit-scrollbar,
+.home-video-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.home-news-tab,
+.home-community-tab,
+.home-video-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: var(--font-tab-size);
+  font-weight: var(--font-tab-weight);
+  color: #1e293b;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.home-news-tab img,
+.home-community-tab img,
+.home-video-tab img {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.home-news-tab:hover,
+.home-community-tab:hover,
+.home-video-tab:hover {
+  color: #0f172a;
+  background: var(--hover-bg);
+}
+
+.home-news-tab.active,
+.home-community-tab.active,
+.home-video-tab.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.home-news-tab.active img {
+  filter: brightness(1.2);
+}
+
+.home-news-panel,
+.home-community-panel,
+.home-video-panel {
+  display: none;
+}
+
+.home-news-panel.active,
+.home-community-panel.active,
+.home-video-panel.active {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .home-news-tabs,
+  .home-community-tabs,
+  .home-video-tabs {
+    display: none !important;
+  }
+}
+

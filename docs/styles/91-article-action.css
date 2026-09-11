@@ -1,0 +1,76 @@
+/* 공식 브랜드 아이콘을 사용하는 기사 내 설치 링크 */
+.article-action-row {
+  max-width: 720px;
+  margin: 28px auto 36px;
+  text-align: center;
+}
+
+.article-action-row .article-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-sizing: border-box;
+  min-height: 60px;
+  max-width: 100%;
+  padding: 10px 22px 10px 14px;
+  border: 1px solid #475569;
+  border-radius: 12px;
+  background: #172033;
+  color: #f8fafc;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.article-action-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #101827;
+}
+
+.article-action-brand img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.article-action-label {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.article-action-external {
+  flex: 0 0 18px;
+  margin-left: 4px;
+  color: #cbd5e1;
+}
+
+.article-action-row .article-action:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .article-action-row .article-action:hover {
+    background: #23314a;
+    border-color: #93c5fd;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-action-row .article-action {
+    display: flex;
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <meta name="robots" content="max-image-preview:large">
+	  <!-- preconnect: AdSense / 광고 서빙 / 폰트 CDN — preload·async script보다 먼저 연결 핸드셰이크 시작 -->
+	  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+	  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
+	  <link rel="preconnect" href="https://tpc.googlesyndication.com" crossorigin>
+	  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+	  <!-- Critical CSS: 레이아웃 선적용 (CLS 방지) -->
+	  <style>
+	    :root { --space-page-x: 16px; --space-block-gap: 20px; --space-block-y: 24px; }
+	    body { margin: 0; }
+	    .home-trend-card-image { background: transparent !important; }
+	    :is(.site-container, .container) {
+	      max-width: 1076px;
+	      margin: 0 auto;
+	      padding-left: var(--space-page-x);
+	      padding-right: var(--space-page-x);
+	      box-sizing: border-box;
+	    }
+	    .header-inner {
+	      max-width: 1076px;
+	      margin: 0 auto;
+	      padding: 0 16px;
+	      box-sizing: border-box;
+	    }
+	    .nav-inner {
+	      max-width: 1076px;
+	      margin: 0 auto;
+	      padding: 0 var(--space-page-x);
+	      box-sizing: border-box;
+	    }
+	    .home-container {
+	      display: grid;
+	      grid-template-columns: 1fr 300px;
+	      gap: var(--space-block-gap);
+	      padding: 0 0 var(--space-block-y) 0;
+	    }
+	    .home-main > * { margin-bottom: var(--space-block-gap); }
+	    .home-card { margin-bottom: var(--space-block-gap); }
+	    @media (max-width: 768px) {
+	      body { width: 100%; max-width: 100vw; overscroll-behavior-x: none; }
+	      .header, .header-inner, .nav-inner { width: 100%; max-width: 100%; }
+	      .nav, .container, .site-container { width: 100%; max-width: 100%; }
+	      .home-container { display: block; padding: 0; }
+	      .home-main > *, .home-card { margin-bottom: 0; }
+	    }
+	  </style>
+	  <!-- AdSense: preload + static async (preload scanner picks it up at first byte) -->
+	  <link rel="preload" as="script" crossorigin="anonymous" fetchpriority="high" href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9477874183990825">
+	  <script async crossorigin="anonymous" fetchpriority="high" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9477874183990825"></script>
+		  <title>AI - 테크 | 게이머스크롤</title>
+  <!-- SEO -->
+  <meta name="description" content="테크 AI 관련 심층 정보를 제공합니다.">
+  <meta name="keywords" content="테크, AI, 기술">
+  <meta name="application-name" content="게이머스크롤">
+  <meta name="apple-mobile-web-app-title" content="게이머스크롤">
+  <link rel="canonical" href="https://gamerscroll.com/tech/ai/">
+  
+  <link rel="alternate" type="application/rss+xml" title="게이머스크롤 RSS" href="https://gamerscroll.com/rss.xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": "https://gamerscroll.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "테크",
+        "item": "https://gamerscroll.com/tech/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AI",
+        "item": "https://gamerscroll.com/tech/ai/"
+      }
+    ]
+  }
+  </script>
+  <!-- Open Graph / SNS 공유 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI - 테크">
+  <meta property="og:description" content="테크 AI 관련 심층 정보를 제공합니다.">
+  <meta property="og:image" content="https://gamerscroll.com/og-image.png">
+  <meta property="og:image:alt" content="AI - 테크">
+  <meta property="og:url" content="https://gamerscroll.com/tech/ai/">
+  <meta property="og:site_name" content="게이머스크롤">
+  <meta property="og:locale" content="ko_KR">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI - 테크">
+  <meta name="twitter:description" content="테크 AI 관련 심층 정보를 제공합니다.">
+  <meta name="twitter:image" content="https://gamerscroll.com/og-image.png">
+  <meta name="twitter:image:alt" content="AI - 테크">
+  <meta name="twitter:site" content="@gamerscroll">
+  <meta name="twitter:creator" content="@gamerscroll">
+  <!-- Theme & Favicon -->
+  <meta name="theme-color" content="#f5f7fa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+  <link rel="manifest" href="/manifest.json">
+  <!-- dns-prefetch: preconnect 안 한 도메인용 (광고 도메인 preconnect는 <head> 최상단으로 이동) -->
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://www.gstatic.com">
+  <link rel="dns-prefetch" href="https://wsrv.nl">
+  <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+  <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+  <link rel="dns-prefetch" href="https://play-lh.googleusercontent.com">
+  <link rel="dns-prefetch" href="https://is1-ssl.mzstatic.com">
+  <link rel="dns-prefetch" href="https://cdn.cloudflare.steamstatic.com">
+	  <script>
+    (function() {
+      var root = document.documentElement;
+      if (!root || !root.classList) return;
+      root.classList.add('deferred-css-pending');
+    })();
+  </script>
+	  <style>
+    .deferred-css-pending *,.deferred-css-pending *::before,.deferred-css-pending *::after{
+      transition:none !important;
+      animation:none !important;
+    }
+  </style>
+	  <!-- 폰트 CSS: Pretendard Variable (단일 woff2) -->
+	  <link rel="preload" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/pretendardvariable.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/pretendardvariable.css"></noscript>
+	  <!-- 메인 CSS -->
+<style data-layout-css="/styles-core.e144d411.css">*{-webkit-tap-highlight-color:transparent;}a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,.nav-item:focus-visible,.tab-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px;}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}}html,body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans KR","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-feature-settings:"ss06","ss07";-webkit-text-size-adjust:100%;text-size-adjust:100%;}h1{font-size:2em;font-weight:bold;margin:0.67em 0;}section h1,aside h1,nav h1{font-size:2em;}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}.is-hidden{display:none !important;}.thumb-fallback{background:var(--bg-secondary,#1a1a2e) url('/favicon.svg') center/32px no-repeat !important;}.thumb-fallback img{opacity:0;}@media (max-width:768px){body{width:100%;max-width:100vw;overscroll-behavior-x:none;}img{max-width:100%;height:auto;}.header,.header-inner,.nav-inner{width:100%;max-width:100%;}.nav,.site-container{width:100%;max-width:100%;}}:root{--primary:#2563EB;--accent:#2563EB;--bg:#F5F6F8;--bg-elevated:#FFFFFF;--card:#FFFFFF;--card-hover:#FFFFFF;--border:#E4E4E7;--border-subtle:#ECECEF;--border-hover:var(--primary);--text:#18181B;--text-primary:#18181B;--text-secondary:#3F3F46;--text-muted:#6B6B73;--text-tertiary:#A1A1AA;--font-title-size:18px;--font-title-weight:600;--font-card-title-weight:700;--font-item-weight:500;--font-logo-weight:800;--font-body-size:18px;--font-desc-size:16px;--font-body-weight:400;--font-desc-weight:400;--font-body-line-height:1.8;--font-tab-size:14px;--font-tab-weight:500;--font-badge-size:12px;--font-badge-weight:600;--font-small-size:12px;--font-nav-size:15px;--font-nav-weight:500;--font-rank-name-size:15px;--font-rank-name-weight:500;--font-rank-name-color:var(--text);--font-rank-dev-size:13px;--font-rank-dev-weight:500;--font-rank-dev-color:var(--text-muted);--font-micro-size:12px;--font-tiny-size:12px;--font-xs-size:12px;--font-sm-size:13px;--font-meta-size:13px;--font-caption-size:13px;--font-source-size:var(--font-small-size);--font-source-weight:500;--font-source-color:var(--primary);--font-section-size:20px;--font-section-weight:700;--font-heading-size:22px;--font-lg-size:22px;--font-xl-size:22px;--font-2xl-size:26px;--font-stat-size:28px;--font-article-title-size:40px;--font-article-lead-size:20px;--font-article-h2-size:28px;--font-article-h3-size:22px;--font-article-body-size:18px;--font-article-quote-size:20px;--font-article-small-size:15px;--font-article-table-size:15px;--font-article-code-size:14px;--font-feature-title-size:28px;--font-section-title-size:22px;--font-card-title-size:18px;--font-card-summary-size:15px;--font-card-meta-size:13px;--font-sidebar-label-size:13px;--font-sidebar-item-size:14px;--font-overline-size:12px;--bg-secondary:#F4F4F5;--bg-tertiary:#E4E4E7;--border-color:#E4E4E7;--bg-hover:#F4F4F5;--card-bg:var(--card);--font-meta-weight:500;--font-desc-line-height:1.6;--shadow-xs:0 1px 2px rgb(0 0 0 / 0.04);--shadow-sm:0 1px 3px rgb(0 0 0 / 0.05),0 1px 2px rgb(0 0 0 / 0.04);--glass-bg:rgba(255,255,255,0.7);--glass-bg-solid:rgba(255,255,255,0.9);--hover-bg:var(--bg-hover);--item-bg:#ffffff;--modal-bg:#1a1a1a;--modal-text:#ddd;--modal-title:#fff;--modal-section-title:#aaa;--modal-close:#888;--modal-close-hover:#fff;--modal-effective-date:#666;--radius:12px;--radius-sm:8px;--radius-lg:16px;--space-sm:12px;--space-md:16px;--space-lg:20px;--space-xl:24px;--space-page-x:var(--space-md);--space-block-y:var(--space-md);--space-block-y-xl:var(--space-md);--space-block-gap:var(--space-md);--ease-out-expo:cubic-bezier(0.16,1,0.3,1);--ease-in-out:cubic-bezier(0.4,0,0.2,1);--transition-fast:0.15s var(--ease-in-out);--transition-normal:0.25s var(--ease-out-expo);}@media (max-width:768px){:root{--font-title-size:18px;--font-body-size:17px;--font-desc-size:15px;--font-tab-size:14px;--font-nav-size:14px;--font-section-size:18px;--font-heading-size:20px;--font-lg-size:20px;--font-stat-size:26px;--font-xl-size:22px;--font-2xl-size:26px;--font-small-size:12px;--font-badge-size:12px;--font-meta-size:13px;--font-rank-name-size:15px;--font-rank-dev-size:13px;--font-article-title-size:30px;--font-article-lead-size:18px;--font-article-h2-size:24px;--font-article-h3-size:20px;--font-article-body-size:17px;--font-article-quote-size:18px;--font-article-table-size:14px;--font-feature-title-size:24px;--font-section-title-size:20px;--font-card-title-size:16px;--font-card-meta-size:12px;}}@media (min-width:769px){:root{--space-block-y:var(--space-xl);--space-block-y-xl:var(--space-xl);--space-block-gap:var(--space-lg);}}.nav-item{color:var(--text-secondary);}@media (hover:hover){.nav-item:hover{color:var(--text);background:var(--hover-bg);}}.nav-item.active{color:var(--primary);background:transparent;font-weight:600;}.nav-item.active::after{content:'';position:absolute;left:14px;right:14px;bottom:-8px;height:2px;background:var(--primary);border-radius:1px;}.nav-item svg{stroke:var(--text-secondary);}@media (hover:hover){.nav-item:hover svg{stroke:var(--text);}}.nav-item.active svg{stroke:var(--primary);}.tab-btn{color:var(--text-secondary);background:var(--item-bg);border:1px solid var(--border);}@media (hover:hover){.tab-btn:hover{color:var(--text);background:var(--hover-bg);}}.tab-btn.active{color:#fff;background:var(--primary);border-color:var(--primary);}.ad-card-mobile-top{width:100%;max-width:300px;height:250px;min-height:250px;max-height:250px;display:flex;align-items:center;justify-content:center;margin-left:auto;margin-right:auto;overflow:hidden;}.ad-card-mobile-top>ins.adsbygoogle,.ad-card-mobile-top>ins.adsbygoogle>div{width:100% !important;max-width:300px !important;height:250px !important;min-height:250px !important;max-height:250px !important;left:0 !important;right:0 !important;}.ad-card-mobile-top>ins.adsbygoogle>div{display:block !important;overflow:hidden !important;}.ad-card-scroll{width:100%;min-height:308px !important;}.ad-card-scroll>ins.adsbygoogle{min-height:284px !important;}.ad-card-scroll.gs-ad-compact,.ad-card-scroll.gs-ad-compact>ins.adsbygoogle{min-height:0 !important;}.ad-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);box-sizing:border-box;touch-action:pan-x pan-y;position:relative;overflow:hidden;}.ad-card.ad-card-scroll{border:0;border-radius:0;background:transparent;overflow:visible;}.ad-card>ins.adsbygoogle{border-radius:inherit;max-width:100%;}.ad-card-responsive-home>ins.adsbygoogle,.ad-card-mobile-top>ins.adsbygoogle{display:block !important;position:relative;line-height:0;}.ad-card-responsive-home{display:flex;align-items:center;justify-content:center;min-height:100px;}@media (min-width:769px){.ad-card-responsive-home{min-height:90px;}}.ad-card-responsive-home:not(:has(ins.adsbygoogle[data-ad-status="filled"])){background:transparent;border-color:transparent;}.ad-card-responsive-home.gs-ad-compact{align-items:center;}.ad-card-responsive-home>ins.adsbygoogle.gs-ad-center{display:flex !important;align-items:center;justify-content:center;}.ad-card-responsive-home>ins.adsbygoogle.gs-ad-center>div{display:flex !important;align-items:center;justify-content:center;margin-left:auto !important;margin-right:auto !important;}@media (min-width:769px){.home-main>.ad-card-responsive-home{width:100% !important;max-width:732px !important;margin-left:auto;margin-right:auto;min-height:90px;display:flex;align-items:center;justify-content:center;}.home-main>.ad-card-responsive-home>ins.adsbygoogle:not(.gs-ad-fixed){width:100% !important;max-width:100% !important;}}main .ad-card{margin-top:var(--space-block-gap,16px);}body.ads-disabled main{margin-top:var(--space-block-gap,16px);}body.ads-disabled .home-container{padding-top:0 !important;}.home-main .ad-card,.home-sidebar .ad-card{margin-top:0;}.home-container{padding-top:var(--space-block-gap,16px) !important;}@media (min-width:769px){body:not(.page-home) .site-container:has(.ad-card-responsive-home){padding-top:12px !important;}body .site-container .ad-card-responsive-home{margin-top:0 !important;margin-bottom:0 !important;}}.home-main>.ad-card-responsive-home:first-child,.home-main>.ad-card-mobile-top:first-child{margin-top:0;margin-bottom:var(--space-block-gap,16px);}@media (max-width:768px){.home-main>.ad-card-mobile-top{width:100% !important;max-width:300px !important;height:250px !important;min-height:250px !important;max-height:250px !important;margin-top:0 !important;margin-bottom:var(--space-block-gap,16px) !important;}.home-main>.ad-card-mobile-top>ins.adsbygoogle,.home-main>.ad-card-mobile-top>ins.adsbygoogle>div{width:100% !important;max-width:300px !important;height:250px !important;min-height:250px !important;max-height:250px !important;}}@media (max-width:768px){.home-sidebar{display:none !important;}}.ad-card-responsive-home:not(:has(ins[data-ad-status="filled"]))::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:28px;height:28px;background:url('/favicon.svg') center/contain no-repeat;opacity:0.28;pointer-events:none;z-index:1;}.ad-card-responsive-home:has(ins[data-ad-status="unfilled"]) ins.adsbygoogle{visibility:hidden;}.ad-card-mobile-top:has(ins[data-ad-status="unfilled"]){background:var(--card);box-shadow:inset 0 0 0 1px var(--border);}.ad-card-mobile-top:has(ins[data-ad-status="unfilled"]) ins.adsbygoogle{visibility:hidden;}.ad-card-mobile-top:has(ins[data-ad-status="unfilled"])::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:url('/favicon.svg') center/contain no-repeat;filter:none;opacity:1;z-index:1;}.ad-card-scroll:has(ins[data-ad-status="unfilled"]),.ad-card-scroll:has(ins[data-gs-ad-empty="1"]),.ad-card-scroll.gs-ad-empty{display:none !important;min-height:0 !important;height:0 !important;margin:0 !important;}:root{--tab-group-gap:4px;--tab-group-justify:flex-start;--tab-btn-flex:1 1 0;--tab-btn-min-width:0;--tab-btn-min-height:44px;--tab-btn-padding:12px 8px;--tab-btn-gap:6px;--tab-btn-overflow:hidden;}@media (min-width:769px){:root{--tab-group-gap:8px;--tab-group-justify:center;--tab-btn-flex:0 0 auto;--tab-btn-min-width:auto;--tab-btn-min-height:38px;--tab-btn-padding:9px 20px;--tab-btn-gap:6px;--tab-btn-overflow:visible;}}@media (max-width:768px){:root{--tab-btn-padding:10px 8px;--tab-btn-min-height:40px;--tab-btn-gap:4px;}}:is(.tab-btn,.insight-tab){font-size:var(--font-tab-size);font-weight:var(--font-tab-weight);color:var(--text-secondary);background:transparent;border:none;border-radius:999px;cursor:pointer;transition:all var(--transition-normal);white-space:nowrap;text-align:center;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;user-select:none;}:is(.tab-btn,.insight-tab).active{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:var(--shadow-sm);font-weight:var(--font-badge-weight);}.home-container{display:grid;grid-template-columns:1fr 300px;gap:28px;padding:0 0 var(--space-block-y) 0;align-items:start;}.home-main{display:block;min-width:0;overflow-x:clip;}.home-main>*{margin-bottom:var(--space-block-gap);}.home-main>*:last-child{margin-bottom:0;}.home-sidebar{display:block;align-self:stretch;}.home-sidebar>*{margin-bottom:var(--space-block-gap);}.home-sidebar>*:last-child{margin-bottom:0;}.home-sidebar-sticky{position:sticky;top:70px;}.home-sidebar-sticky>*{margin-bottom:var(--space-block-gap);}.home-sidebar-sticky>*:last-child{margin-bottom:0;}.sidebar-full-toggle{display:flex;width:100%;}.sidebar-full-toggle .tab-btn{flex:1;}.sidebar-category-group{padding-bottom:2px;}#sidebar-categories .home-card-header{display:block;border-bottom:none;padding:0;height:auto;}#sidebar-categories .home-card-title{font-size:var(--font-sidebar-label-size);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);}#sidebar-categories .sidebar-category-group + .sidebar-category-group{margin-top:4px;}.sidebar-category-list{display:flex;flex-direction:column;}.sidebar-category-item{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-radius:var(--radius-sm);margin:1px 0;text-decoration:none;color:var(--text);background:transparent;border:none;cursor:pointer;text-align:left;box-sizing:border-box;transition:background var(--transition-fast);}@media (hover:hover){.sidebar-category-item:hover{background:var(--hover-bg);color:var(--primary);}}.sidebar-category-item.active{background:var(--hover-bg);}.sidebar-category-name{font-size:var(--font-sidebar-item-size);font-weight:500;line-height:1.45;}.sidebar-article-list{display:none;}.sidebar-article-list.active{display:block;}.sidebar-article-item{display:flex;align-items:center;gap:12px;padding:9px 0;text-decoration:none;border-bottom:1px solid var(--border);transition:background var(--transition-fast);}.sidebar-article-item:last-child{border-bottom:none;}@media (hover:hover){.sidebar-article-item:hover{background:var(--bg-hover);}}.sidebar-article-rank{flex-shrink:0;width:20px;font-size:var(--font-caption-size);font-weight:700;color:var(--text-muted);text-align:center;font-variant-numeric:tabular-nums;}.sidebar-article-item:nth-child(-n+3) .sidebar-article-rank{color:var(--accent);}.sidebar-article-title{flex:1;font-size:var(--font-sidebar-item-size);font-weight:500;color:var(--text);line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.home-card{background:transparent;border-radius:0;box-shadow:none;border:none;overflow:visible;}.home-card-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;padding:4px 0 16px;min-height:44px;box-sizing:border-box;border-bottom:none;background:transparent;}.home-card-title{font-size:var(--font-section-title-size);font-weight:800;letter-spacing:-0.02em;color:var(--text);display:flex;align-items:center;gap:8px;}#sidebar-categories .home-card-title-link{display:block;width:100%;padding:14px 0;text-decoration:none;color:inherit;transition:background var(--transition-fast);}@media (hover:hover){#sidebar-categories .home-card-title-link:hover{background:var(--hover-bg);}}#sidebar-categories .home-card-title-link .home-card-title{margin:0;}.home-card-title svg{width:24px;height:24px;stroke:var(--primary);}.home-container .home-sidebar .home-card-header .home-chart-toggle{padding:0;}.home-chart-toggle{display:flex;align-items:center;gap:3px;background:transparent;padding:3px;border-radius:5px;}.home-chart-toggle .tab-btn.small{font-size:var(--font-tab-size) !important;font-weight:var(--font-tab-weight) !important;padding:5px 12px !important;border-radius:4px;min-width:auto !important;min-height:auto !important;line-height:1.3;display:flex;align-items:center;justify-content:center;}.home-card-body{padding:0;}.home-trend-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:12px 0 16px;}.category-detail .home-trend-grid{grid-template-columns:repeat(3,1fr);}.home-trend-card{display:block;background:transparent;border:none;border-radius:0;text-decoration:none;overflow:visible;transition:none;}@media (hover:hover){.home-trend-card:hover .home-trend-card-title{color:var(--primary);}}.home-trend-card-image{position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:var(--radius);background:rgba(0,0,0,0.05);transition:background 0.2s ease;}.home-trend-card-image:has(img.loaded){background:transparent;}.home-trend-card-image img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.2s ease,transform 0.3s ease;}.home-trend-card-image img.loaded{opacity:1;}@media (hover:hover){.home-trend-card:hover .home-trend-card-image img.loaded{transform:scale(1.03);}}.home-trend-card-image img:not([src]){display:none;}.home-trend-card-title{font-size:var(--font-card-title-size);font-weight:700;color:var(--text);margin:0;padding:12px 2px 0;line-height:1.4;box-sizing:border-box;transition:color 0.15s ease;min-height:calc(4.2em + 12px);}@media (max-width:768px){.home-trend-grid{grid-template-columns:1fr;gap:12px;padding:0;}.category-detail .home-trend-grid{grid-template-columns:1fr;}.home-trend-card-title{padding:12px 14px 14px;min-height:0;}}.home-trend-card{background:transparent;border:none;border-radius:0;overflow:visible;box-shadow:none;transition:transform 0.2s ease;}@media (hover:hover){.home-trend-card:hover{transform:translateY(-2px);}}.home-trend-card-image{border-radius:var(--radius);}.home-trend-card-title{padding:12px 2px 0;}.home-latest-item{display:block;}.home-pagination{display:flex;align-items:center;justify-content:center;gap:16px;padding:16px 20px;border-top:1px solid var(--border);}.home-page-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--border);border-radius:6px;font-size:18px;color:var(--text);cursor:pointer;transition:background 0.15s ease,border-color 0.15s ease;}@media (hover:hover){.home-page-btn:hover:not(:disabled){background:var(--bg-hover);border-color:var(--border-hover);}}.home-page-btn:disabled{opacity:0.4;cursor:not-allowed;}.home-page-info{font-size:var(--font-sm-size);color:var(--text-muted);min-width:60px;text-align:center;}@media (max-width:1024px){.home-container{grid-template-columns:1fr 300px;gap:var(--space-block-gap);padding:0 0 var(--space-block-y) 0;}}@media (max-width:768px){.home-container{display:block !important;padding:0 0 var(--space-block-y) 0;}.home-container>*{margin-bottom:var(--space-block-gap);}.home-container>*:last-child{margin-bottom:0;}.home-sidebar{display:none !important;}.home-card{width:100%;max-width:100%;overflow-x:clip;}.home-card-body{width:100%;max-width:100%;}}@media (max-width:768px){.home-container{gap:var(--space-block-gap);}}::-webkit-scrollbar{width:8px;height:8px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:4px;}@media (hover:hover){::-webkit-scrollbar-thumb:hover{background:var(--text-secondary);}}*{scrollbar-width:thin;scrollbar-color:var(--text-muted) transparent;}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}}*{margin:0;padding:0;box-sizing:border-box;}html{overflow-y:scroll;overflow-x:hidden;}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR","Malgun Gothic",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;opacity:1;}@media (min-width:769px){html,body{overflow-x:visible;}.site-container{overflow-x:clip;}}.mobile-fab{display:none;}.mobile-side-panel{display:none;}.mobile-side-overlay{display:none;}@media (max-width:768px){.mobile-fab{display:flex;align-items:center;justify-content:center;position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:calc(16px + env(safe-area-inset-left,0px));width:47px;height:47px;min-width:47px;min-height:47px;padding:0;margin:0;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;z-index:10001;transition:background 0.2s,box-shadow 0.2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;overflow:visible;}.mobile-fab:active{background:var(--card-hover);}.mobile-fab svg{width:22px;height:22px;pointer-events:none;flex-shrink:0;stroke:var(--text);}.mobile-side-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:transparent;z-index:9998;}.mobile-side-overlay.open{display:block;}.mobile-side-panel{display:block;position:fixed;top:0;left:0;width:300px;max-width:85vw;height:100%;background:var(--bg);box-shadow:4px 0 20px rgba(0,0,0,0.3);z-index:10000;transform:translateX(-100%);transition:transform 0.3s ease;overflow-y:auto;overscroll-behavior:contain;}.mobile-side-panel.open{transform:translateX(0);}.mobile-side-panel-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:1;}.mobile-side-panel-title{font-size:18px;font-weight:600;color:var(--text);}.mobile-side-panel-close{display:flex;align-items:center;justify-content:center;width:36px;height:36px;background:transparent;border:none;color:var(--text-secondary);cursor:pointer;border-radius:50%;transition:background 0.15s;}@media (hover:hover){.mobile-side-panel-close:hover{background:var(--bg-hover);}}.mobile-side-panel-body{padding:0;}.mobile-side-panel-body .home-card{margin-bottom:0;background:transparent;border-radius:0;border:none;box-shadow:none;}.mobile-side-panel-body .home-card-header{padding:12px 16px;border-bottom:none;}.mobile-side-panel-body .sidebar-category-list,.mobile-side-panel-body .sidebar-article-list,.mobile-side-panel-body .home-card-body{padding:0;}.mobile-side-panel-body .sidebar-category-item,.mobile-side-panel-body .sidebar-article-item{padding:10px 16px;}}.header{background:var(--bg-elevated);border-bottom:none;padding:20px 0;box-shadow:none;}.header-inner{max-width:1180px;margin:0 auto;padding:0 32px;display:flex;justify-content:center;align-items:center;gap:var(--space-sm);position:relative;}.header-title{font-size:2.2rem;font-weight:var(--font-logo-weight);margin:0;display:flex;align-items:center;justify-content:center;gap:10px;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;user-select:none;}.header-title a{display:flex;align-items:center;color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;user-select:none;}.header-title a:visited,.header-title a:active,.header-title a:focus:not(:focus-visible){color:inherit;text-decoration:none;outline:none;}@media (hover:hover){.header-title a:hover{color:inherit;text-decoration:none;outline:none;}}.logo-svg{height:48px;width:auto;max-width:100%;color:var(--text);transition:transform var(--transition-normal),color var(--transition-normal);}@media (hover:hover){.logo-svg:hover{transform:scale(1.02);}}.header-title a:active .logo-svg{color:var(--text);}.nav{background:var(--glass-bg);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);border-bottom:1px solid var(--border-subtle);position:sticky;top:0;z-index:100;box-shadow:var(--shadow-xs);transition:background var(--transition-normal);}.nav-inner{max-width:1180px;margin:0 auto;padding:0 var(--space-page-x);display:flex;justify-content:center;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;transition:transform 0.3s ease;contain:layout style;}.nav-inner::-webkit-scrollbar{display:none;}.nav-item{padding:8px 14px;font-size:var(--font-nav-size);font-weight:var(--font-nav-weight);letter-spacing:0.01em;color:var(--text-secondary);text-decoration:none;cursor:pointer;position:relative;transition:color var(--transition-fast),background var(--transition-fast),transform var(--transition-fast),box-shadow var(--transition-fast);display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0;border-radius:var(--radius-sm);margin:2px 0;border-bottom:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;user-select:none;}@media (hover:hover){.nav-item:hover{color:var(--text);background:var(--hover-bg);border-radius:var(--radius-sm);}}@media (min-width:769px){.nav-inner{justify-content:center !important;padding:0 32px;}}@media (max-width:768px){.nav-inner{justify-content:flex-start;padding:0;gap:0;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;visibility:hidden;}.nav-inner::-webkit-scrollbar{display:none;}.nav-item{min-width:20%;flex:0 0 20%;justify-content:center;text-align:center;padding:8px 4px 6px;margin:0;font-size:var(--font-nav-size) !important;font-weight:var(--font-nav-weight) !important;gap:5px;flex-direction:column;border-radius:var(--radius-sm);}.nav-item.active{font-weight:var(--font-nav-weight);position:relative;}.nav-item.active::after{bottom:2px;left:0;right:0;transform:none;width:100%;height:2px;}.nav-item svg{width:22px;height:22px;}.nav-item.active svg{opacity:1;}}@media (hover:hover){.nav-item:hover svg{opacity:1;}}body.is-swiping .nav-item:active,body.is-swiping .tab-btn:active{background:transparent !important;color:inherit !important;opacity:inherit !important;transform:none !important;box-shadow:none !important;}@media (hover:hover){body.is-swiping .nav-item:hover,body.is-swiping .tab-btn:hover{background:transparent !important;color:inherit !important;opacity:inherit !important;transform:none !important;box-shadow:none !important;}}.nav-item.active{color:var(--text);background:transparent;border-bottom:none;border-radius:0;font-weight:var(--font-card-title-weight);position:relative;}.nav-item.active::after{content:'';display:block;position:absolute;bottom:0;left:0;right:0;width:100%;height:2px;background:var(--primary);border-radius:1px;}.nav-item svg{display:none;}.nav-item.active svg{display:none;}:is(.site-container,.container){max-width:1180px;flex:1 0 auto !important;margin:0 auto;padding:0 32px 60px;box-sizing:border-box;}.section{padding-top:0;}.section:not(.active){display:none;}@media print{.nav{display:none;}body{background:white;}.header{background:#1e3a8a !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}@media (max-width:768px){.nav-item{padding:10px 14px;}.nav-item svg{width:15px;height:15px;}}@media (max-width:768px){.nav-item{padding:10px 12px;gap:4px;}.nav-item svg{width:14px;height:14px;}.logo-svg{height:36px;}}@media (max-width:768px){:root{--space-page-x:8px;}:is(.site-container,.container){padding:0 var(--space-page-x) calc(40px + env(safe-area-inset-bottom,0px));}.nav-inner{padding:0;}.nav-item{padding:12px 8px;gap:4px;font-size:var(--font-nav-size) !important;font-weight:var(--font-nav-weight) !important;}.nav-item svg{width:20px;height:20px;}.logo-svg{height:32px;}}.site-footer{text-align:center;padding:var(--space-xl) var(--space-md);margin-top:var(--space-xl);border-top:1px solid var(--border);color:var(--text-muted);font-size:var(--font-meta-size);}.site-footer a{color:var(--text-secondary);text-decoration:none;display:inline-block;padding:14px 6px;min-width:24px;box-sizing:border-box;text-align:center;line-height:1.3;}@media (hover:hover){.site-footer a:hover{color:var(--text);}}.footer-divider{margin:0 8px;}.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:10002;}.modal-overlay.is-open{display:flex;}.modal-content{background:var(--modal-bg);padding:30px;border-radius:12px;max-width:500px;max-height:80vh;overflow-y:auto;position:relative;color:var(--modal-text);}.modal-close{position:absolute;top:10px;right:15px;background:none;border:none;color:var(--modal-close);font-size:var(--font-xl-size);cursor:pointer;}@media (hover:hover){.modal-close:hover{color:var(--modal-close-hover);}}@media (max-width:768px){.home-container{padding:var(--space-block-gap,16px) 0 var(--space-block-y) 0 !important;}.home-card-header{padding:8px !important;}.home-card-body{padding:6px 0 !important;}.home-trend-grid .home-trend-card:not(:last-child){border-bottom:1px solid var(--border);padding-bottom:16px !important;margin-bottom:16px !important;}}@media (prefers-color-scheme:dark){.nav-item.active::after{background:currentColor;}.home-trend-card{background:var(--card-bg);border-color:var(--border);}}@media (min-width:769px) and (max-width:1024px){.home-container{grid-template-columns:1fr;}.home-sidebar-sticky{position:static;}.category-detail .home-trend-grid{grid-template-columns:repeat(2,1fr);}}.search-container{max-width:100%;margin:0 auto;padding:8px 20px 16px;position:relative;z-index:200;background:var(--glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}.search-box{width:100%;max-width:300px;margin:0 auto;display:flex;align-items:center;background:var(--card-bg);border:1px solid var(--border-color);border-radius:20px;padding:0 5px 0 24px;height:40px;transition:border-color 0.2s,box-shadow 0.2s;}.search-box:focus-within{border-color:var(--border-color);box-shadow:none;}.search-input{flex:1;background:transparent;border:none;outline:none;color:var(--text-primary);font-size:14px;padding:0 8px;min-width:0;height:100%;min-height:24px;text-align:center;}.search-input::placeholder{color:var(--text-secondary);opacity:0.8;transition:opacity 0.15s;}.search-input:focus::placeholder{opacity:0;}.search-btn{display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:var(--hover-bg);border:none;border-radius:50%;cursor:pointer;color:var(--text-secondary);transition:color 0.2s,background 0.2s;flex-shrink:0;}@media (hover:hover){.search-btn:hover{color:var(--text-primary);background:var(--hover-bg);}}.search-btn:active{transform:scale(0.95);}.search-btn svg{width:16px;height:16px;}.search-home-icon{display:none;}.search-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:100%;max-width:300px;background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.15);max-height:320px;overflow-y:auto;z-index:1000;display:none;margin-top:6px;}.search-dropdown.active{display:block;}@media (max-width:768px){.header{display:none !important;}.search-container{position:fixed !important;top:0 !important;left:0 !important;right:0 !important;z-index:200 !important;transition:transform 0.2s cubic-bezier(0.4,0,0.2,1);max-width:100%;padding:8px 16px !important;margin-bottom:0 !important;border-bottom:1px solid var(--border) !important;background:var(--bg) !important;}.nav{position:fixed !important;top:64px !important;left:0 !important;right:0 !important;z-index:199 !important;transition:transform 0.2s cubic-bezier(0.4,0,0.2,1);padding:4px 0 !important;margin-top:0 !important;background:var(--glass-bg-solid) !important;}:is(.site-container,.container){padding-top:120px !important;transition:padding-top 0.2s cubic-bezier(0.4,0,0.2,1);}body.search-hidden .search-container{transform:translateY(-100%) !important;pointer-events:none !important;}body.search-hidden .nav{transform:translateY(-64px) !important;}body.search-hidden:is(.site-container,.container){padding-top:56px !important;}:root{--games-hub-sticky-top:116px;}body.search-hidden{--games-hub-sticky-top:52px;}.nav-item svg{display:none !important;}.nav-item.active{color:var(--nav-active-color,#1e293b) !important;background:transparent !important;font-weight:var(--font-nav-weight) !important;border-bottom:none !important;border-radius:0 !important;position:relative !important;}.nav-item.active::after{content:'' !important;display:block !important;position:absolute !important;bottom:0 !important;left:0 !important;right:0 !important;transform:none !important;width:100% !important;height:2px !important;background:var(--nav-active-color,#1e293b) !important;border-radius:1px !important;}@media (prefers-color-scheme:dark){.nav-item.active{color:#fff !important;}.nav-item.active::after{background:#fff !important;}}.search-home-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:40px;height:100%;}.search-home-icon img{width:32px;height:32px;}.search-box{flex:1;max-width:none;height:48px;border-radius:20px;padding:0 4px 0 8px;}.search-input{font-size:16px;}.search-btn{width:36px;height:36px;}.search-btn svg{width:20px;height:20px;}.search-dropdown{left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:500px;border-radius:12px;}}@keyframes spin{to{transform:rotate(360deg);}}@media (min-width:481px) and (max-width:768px){:is(.site-container,.container){padding-left:24px !important;padding-right:24px !important;}}@media (max-width:480px){:is(.site-container,.container){padding-left:16px !important;padding-right:16px !important;}}@media (max-width:768px){.home-card,.ad-card{border-radius:0 !important;border-left:none !important;border-right:none !important;}.ad-card{border:none !important;box-shadow:none !important;}}@media (max-width:768px){.home-trend-grid{padding:0 !important;gap:0 !important;margin-bottom:16px !important;}.home-trend-card{border-radius:0 !important;border:none !important;margin:0 !important;}.home-trend-grid .home-trend-card:not(:last-child){border-bottom:3px solid rgba(255,255,255,0.1) !important;margin-bottom:0 !important;}.home-trend-card-image{margin:0 !important;}.home-card{margin-bottom:0 !important;}.home-card-body{padding-top:0 !important;padding-bottom:0 !important;}.home-main:has(#homeLatestGrid)>.ad-card-mobile-top{background:transparent !important;}.home-pagination{padding:12px 8px !important;border-top:1px solid var(--border);}}:root{--site-max-width:1240px;--site-gutter:40px;color-scheme:light;--bg:#fff;--bg-elevated:#ffffff;--card:#ffffff;--card-bg:#ffffff;--card-hover:#f5f5f7;--bg-secondary:#f5f5f7;--bg-tertiary:#f5f5f7;--border:#dedee3;--border-subtle:#eeeef0;--text:#1d1d1f;--text-primary:#1d1d1f;--text-secondary:#515154;--text-muted:#6e6e73;--text-tertiary:#6e6e73;--primary:#0071e3;--accent:#0071e3;--data-up:#d43e42;--data-new:#b45309;--data-new-bg:#fff4e0;--data-discount:#166534;--line:#e5e5e9;--chip-bg:#e8e8ed;--glass-bg:rgba(255,255,255,.92);--glass-bg-solid:#fff;}body{background:var(--bg);color:var(--text);}.site-container{max-width:var(--site-max-width);margin:0 auto;padding:40px var(--site-gutter) 80px;}@media (min-width:769px){.nav{display:none !important;}body>.search-container{display:none !important;}}.site-footer{max-width:1280px;margin:40px auto 0;padding:22px 24px;border-top:1px solid var(--border);font-size:12.5px;color:var(--text-muted);display:flex;flex-wrap:wrap;gap:0;align-items:center;justify-content:center;text-align:center;background:transparent;}.site-footer>span:first-child{padding:0 6px;}.site-footer a{color:inherit;text-decoration:none;}@media (hover:hover){.site-footer a:hover{color:var(--primary);}}body>.search-container .search-box{background:var(--bg-secondary) !important;border:0;}body>.search-container .search-input{color:var(--text);}body>.search-container .search-btn{background:transparent;color:var(--text-muted);}body .nav{background:#fff !important;}.site-footer{border:0;background:var(--bg-secondary);max-width:none;padding:24px max(var(--site-gutter),calc((100% - var(--site-max-width))/2 + var(--site-gutter)));font-size:11px;}@media (max-width:768px){.site-container{padding:16px 14px 60px;}.site-footer{flex-wrap:wrap;gap:0;padding:18px 14px;justify-content:center;}body>.search-container .search-input{font-size:16px !important;}body>.search-container .search-home-icon{display:flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;height:44px;color:var(--text);}body>.search-container .search-home-icon .logo-svg{display:block;width:124px;height:16px;}}:root{--layout-gap:32px;--layout-card-gap:16px;--layout-section-gap:48px;--layout-heading-gap:20px;}@media (max-width:768px){body .nav .nav-inner{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;max-width:none;padding:0 16px;gap:0;overflow:visible;box-sizing:border-box;}body .nav .nav-inner .nav-item{display:flex;align-items:center;justify-content:center;min-width:0;width:auto;margin:0;padding:0 4px;height:48px;flex:none;text-align:center;}body .nav .nav-inner .nav-item::after{left:50%;right:auto;bottom:0;width:32px;transform:translateX(-50%);background:var(--text);}}@media (min-width:769px) and (max-width:1100px){:root{--layout-gap:24px;}}@media (max-width:768px){:root{--layout-gap:24px;--layout-section-gap:36px;--layout-heading-gap:16px;}}body a:not(.rk-preview-link):not(.rk-btn),body a:not(.rk-preview-link):not(.rk-btn):visited{color:var(--text-secondary) !important;}@media (hover:hover){body a:not(.rk-preview-link):not(.rk-btn):hover{color:var(--text-secondary) !important;}}body .site-container .sidebar-article-rank{color:var(--text-secondary) !important;}body .site-container .tab-btn,body .site-container .tab-btn.active,body .nav .nav-item.active{color:var(--text) !important;}:root{--fs-caption:11px;--fs-meta:12px;--fs-ui:13px;--fs-body-sm:14px;--fs-body:15px;--fs-article:17px;--fs-card-title:18px;--fs-list-title:20px;--fs-h2:24px;--fs-h2-lg:26px;--fs-h1-detail:32px;--fs-h1:36px;--fw-regular:400;--fw-medium:500;--fw-semibold:600;--fw-bold:700;}body:not(.page-home) .site-container .rk h1{font-weight:var(--fw-bold);}.site-footer{font-size:var(--fs-ui);}</style>
+  <link rel="preload" href="/styles-core.e144d411.css" as="style" onload="this.onload=null;this.rel='stylesheet'" data-deferred-css="1"><noscript><link rel="stylesheet" href="/styles-core.e144d411.css"></noscript>
+<script>
+    (function() {
+      var root = document.documentElement;
+      if (!root || !root.classList || !root.classList.contains('deferred-css-pending')) return;
+      var links = document.querySelectorAll('link[data-deferred-css="1"]');
+      var pending = links.length;
+      if (!pending) {
+        root.classList.remove('deferred-css-pending');
+        return;
+      }
+      var done = false;
+      function completeOne() {
+        if (done) return;
+        pending -= 1;
+        if (pending <= 0) {
+          done = true;
+          root.classList.remove('deferred-css-pending');
+        }
+      }
+      links.forEach(function(link) {
+        link.addEventListener('load', completeOne, { once: true });
+        link.addEventListener('error', completeOne, { once: true });
+      });
+      setTimeout(function() {
+        if (done) return;
+        done = true;
+        links.forEach(function(link) {
+          if (link.rel === 'preload') link.rel = 'stylesheet';
+        });
+        root.classList.remove('deferred-css-pending');
+      }, 3200);
+    })();
+  </script>
+	  <!-- Firebase Analytics (프로덕션만) -->
+	  <script>
+	    // 페이지뷰 큐 (Firebase 로드 전 이벤트 저장) - 일반 스크립트로 즉시 실행
+	    (function() {
+	      var host = window.location.hostname;
+	      if (host !== 'gamerscroll.com') return;
+	      window.__gcPageViewQueue = [];
+	      window.__gcLogPageView = function(path) {
+	        window.__gcPageViewQueue.push(path);
+	      };
+	    })();
+	  </script>
+	  <script type="module">
+	    (function() {
+	      var host = window.location.hostname;
+	      if (host !== 'gamerscroll.com') return;
+
+	      // 페이지 로드 완료 후 Firebase 초기화 (LCP 영향 제거)
+	      function initFirebase() {
+	        (async function() {
+	          try {
+	            const [{ initializeApp }, { getAnalytics, logEvent }] = await Promise.all([
+	              import('https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js'),
+	              import('https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js')
+	            ]);
+	          const firebaseConfig = {
+	            apiKey: "AIzaSyBn7HyeG6RhNZcWYOTg6_GfRHxuMZOgSTI",
+	            authDomain: "gamerscroll-958b4.firebaseapp.com",
+	            projectId: "gamerscroll-958b4",
+	            storageBucket: "gamerscroll-958b4.firebasestorage.app",
+	            messagingSenderId: "529297035305",
+	            appId: "1:529297035305:web:a0df9b47d2189ed5d50c38",
+	            measurementId: "G-W6SPVQ67NJ"
+	          };
+	          const app = initializeApp(firebaseConfig);
+	          const analytics = getAnalytics(app);
+
+	          // 큐에 쌓인 페이지뷰 처리
+	          if (window.__gcPageViewQueue) {
+	            window.__gcPageViewQueue.forEach(function(path) {
+	              logEvent(analytics, 'page_view', {
+	                page_path: path,
+	                page_location: window.location.origin + path
+	              });
+	            });
+	          }
+
+	          // 실제 로깅 함수로 교체 (SPA 페이지 전환용, 현재 미사용)
+	          window.__gcLogPageView = function(path) {
+	            logEvent(analytics, 'page_view', {
+	              page_path: path,
+	              page_location: window.location.origin + path
+	            });
+	          };
+
+	          // Firebase 자동 page_view 추적 사용 (getAnalytics 호출 시 자동 전송)
+	          } catch (e) {}
+	        })();
+	      }
+	      // 페이지 로드 완료 후 실행
+	      if (document.readyState === 'complete') {
+	        setTimeout(initFirebase, 0);
+	      } else {
+	        window.addEventListener('load', initFirebase);
+	      }
+	    })();
+	  </script>
+</head>
+<body class="page-tech category-detail">
+  <script>try{if(sessionStorage.getItem('gs-search-hidden')==='1'){document.body.classList.add('search-hidden');sessionStorage.removeItem('gs-search-hidden');}}catch(e){}</script>
+  
+  <header class="header">
+	    <div class="header-inner">
+	      <div class="header-title">
+	        <a href="/">
+	          <span class="visually-hidden">게이머스크롤</span>
+	          <svg class="logo-svg" viewBox="0 0 660 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	            <defs>
+	              <linearGradient id="techGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+	                <stop offset="0%" stop-color="#4f46e5" />
+	                <stop offset="100%" stop-color="#06b6d4" />
+	              </linearGradient>
+	            </defs>
+            <text class="logo-text-svg" x="50%" y="50%" dy="2" font-family="'Pretendard', -apple-system, sans-serif" font-size="62" font-weight="900" fill="currentColor" text-anchor="middle" dominant-baseline="middle" letter-spacing="-0.5">GAMER SCROLL</text>
+            <!-- 왼쪽 안테나 -->
+            <rect x="8" y="24" width="10" height="24" rx="5" fill="url(#techGrad)" opacity="0.4"/>
+            <rect x="26" y="15" width="10" height="42" rx="5" fill="url(#techGrad)" opacity="0.7"/>
+            <rect x="44" y="6" width="10" height="60" rx="5" fill="url(#techGrad)"/>
+            <!-- 오른쪽 안테나 -->
+            <rect x="606" y="6" width="10" height="60" rx="5" fill="url(#techGrad)"/>
+            <rect x="624" y="15" width="10" height="42" rx="5" fill="url(#techGrad)" opacity="0.7"/>
+            <rect x="642" y="24" width="10" height="24" rx="5" fill="url(#techGrad)" opacity="0.4"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+  
+  <div class="search-container">
+    <div class="search-box">
+      <a href="/" class="search-home-icon" aria-label="홈으로 이동">
+        <img src="/favicon.svg" alt="" width="20" height="20">
+      </a>
+      <input type="text" class="search-input" placeholder="게임 순위 검색" autocomplete="off">
+      <button class="search-btn" type="button" aria-label="검색">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+    </div>
+    <div class="search-dropdown"></div>
+  </div>
+  
+  <nav class="nav">
+    <div class="nav-inner">
+      
+      <a class="nav-item" href="/magazine/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        매거진
+      </a>
+      <a class="nav-item" href="/wiki/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        게임 위키
+      </a>
+      <a class="nav-item active" href="/tech/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        테크
+      </a>
+      <a class="nav-item" href="/games/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        게임 DB
+      </a>
+      <a class="nav-item" href="/rankings/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+        모바일 순위
+      </a>
+      <a class="nav-item" href="/steam/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12h.01M18 12h.01"/><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6v12"/></svg>
+        스팀 순위
+      </a>
+      <a class="nav-item" href="/upcoming/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        출시 게임
+      </a>
+    </div>
+  </nav>
+  <script>
+  (function(){
+    if(window.innerWidth>768)return;
+    var n=document.querySelector('.nav-inner');
+    if(!n)return;
+    // 스와이프로 온 경우 저장된 scrollLeft 즉시 복원
+    try{
+      var saved=sessionStorage.getItem('gs-nav-scroll');
+      if(saved!==null){
+        n.scrollLeft=parseInt(saved,10);
+        sessionStorage.removeItem('gs-nav-scroll');
+        n.classList.add('nav-ready');
+        return;
+      }
+    }catch(e){}
+    function init(r){
+      // 측정을 한 번에 모아서
+      var cw=n.clientWidth,sw=n.scrollWidth;
+      if(cw<=0){if(!r)requestAnimationFrame(function(){init(1);});return;}
+      if(sw<=cw+1){n.classList.add('nav-ready');return;}
+      var idx=2;
+      var items=n.querySelectorAll('.nav-item');
+      var t=idx<0?items[0]:items[idx];
+      if(t){
+        var left=t.offsetLeft,tw=t.offsetWidth;
+        n.scrollLeft=Math.max(0,left+tw/2-cw/2);
+      }
+      n.classList.add('nav-ready');
+    }
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+    else init();
+  })();
+  </script>
+  <main class="site-container">
+    
+  <script>
+    (function() {
+      if (typeof window.__gsOnReady !== 'function') {
+        var readyQueue = [];
+        window.__gsOnReady = function(fn) {
+          if (typeof fn !== 'function') return;
+          if (window.GSUtils && window.GSUtils.__ready === true) {
+            try { fn(); } catch (e) {}
+            return;
+          }
+          readyQueue.push(fn);
+        };
+        window.__gsFlushReadyQueue = function() {
+          if (!window.GSUtils || window.GSUtils.__ready !== true) return;
+          var queue = readyQueue.slice();
+          readyQueue.length = 0;
+          queue.forEach(function(fn) {
+            try { fn(); } catch (e) {}
+          });
+        };
+      }
+    })();
+  </script>
+    <script defer src="/assets/layout-core.js?v=1c887d57"></script>
+    
+    <section class="section active" id="tech-category-page">
+      <h1 class="visually-hidden">테크 - AI</h1>
+      <div class="home-container">
+        <div class="home-main">
+          <div class="ad-card ad-card-responsive-home ad-home-pc-7-card">
+  <style>
+    .ad-home-pc-7-card, .ad-home-pc-7 { display:none !important; }
+    @media (min-width: 769px) {
+      .ad-home-pc-7-card { display:flex !important; width:100%; max-width:100%; min-height:90px; overflow:hidden; align-items:center; justify-content:center; }
+      .ad-home-pc-7 { display:block !important; width:100%; min-height:90px; margin:0 auto; }
+    }
+  </style>
+  <ins class="adsbygoogle ad-home-pc-7"
+       data-ad-client="ca-pub-9477874183990825"
+       data-ad-slot="6527917656"
+       data-ad-format="horizontal"
+       data-full-width-responsive="false"></ins>
+  <script>(function(){var s=document.currentScript;var i=s&&s.previousElementSibling;if(!i||!i.classList||!i.classList.contains('adsbygoogle'))return;if(window.getComputedStyle&&getComputedStyle(i).display==='none')return;if(i.getAttribute('data-gs-ad-pushed')==='1')return;i.setAttribute('data-gs-ad-pushed','1');try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){i.removeAttribute('data-gs-ad-pushed');}})();</script>
+</div>
+<div class="ad-card ad-card-mobile-top ad-home-mo-8-card">
+  <style>
+    .ad-home-mo-8-card { display:flex !important; width:320px !important; min-width:320px !important; max-width:320px !important; height:100px !important; min-height:100px !important; max-height:100px !important; align-items:center; justify-content:center; margin-left:auto !important; margin-right:auto !important; overflow:hidden; }
+    .ad-home-mo-8, .ad-home-mo-8-card > .ad-home-mo-8, .ad-home-mo-8-card > .ad-home-mo-8 > div, .ad-home-mo-8-card > .ad-home-mo-8 iframe { display:block !important; width:320px !important; min-width:320px !important; max-width:320px !important; height:100px !important; min-height:100px !important; max-height:100px !important; margin:0 auto; }
+    .ad-home-mo-8-card > .ad-home-mo-8 > div { overflow:hidden !important; }
+    @media (min-width: 769px) {
+      .ad-home-mo-8-card, .ad-home-mo-8, .ad-home-mo-8-card > .ad-home-mo-8 > div, .ad-home-mo-8-card > .ad-home-mo-8 iframe { display:none !important; width:0 !important; min-width:0 !important; max-width:0 !important; height:0 !important; min-height:0 !important; max-height:0 !important; margin:0 !important; }
+    }
+  </style>
+  <ins class="adsbygoogle ad-home-mo-8"
+       data-ad-client="ca-pub-9477874183990825"
+       data-ad-slot="5825162341"></ins>
+  <script>(function(){var s=document.currentScript;var i=s&&s.previousElementSibling;if(!i||!i.classList||!i.classList.contains('adsbygoogle'))return;if(window.getComputedStyle&&getComputedStyle(i).display==='none')return;if(i.getAttribute('data-gs-ad-pushed')==='1')return;i.setAttribute('data-gs-ad-pushed','1');try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){i.removeAttribute('data-gs-ad-pushed');}})();</script>
+</div>
+          
+      <div class="home-card" id="tech-category">
+        <div class="home-card-header">
+          <h2 class="home-card-title">AI</h2>
+        </div>
+        <div class="home-trend-grid" id="techGrid">
+        <a href="/tech/ai/gemini-pricing-overhaul-compute-limits-backlash/" class="home-trend-card home-latest-item" data-index="0">
+          <div class="home-trend-card-image">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fstorage.googleapis.com%2Fgweb-uniblog-publish-prod%2Fimages%2FI_O_Subs_social_share_image_1.width-1300.png&amp;w=480&amp;output=webp" srcset="https://wsrv.nl/?url=https%3A%2F%2Fstorage.googleapis.com%2Fgweb-uniblog-publish-prod%2Fimages%2FI_O_Subs_social_share_image_1.width-1300.png&amp;w=200&amp;output=webp 200w, https://wsrv.nl/?url=https%3A%2F%2Fstorage.googleapis.com%2Fgweb-uniblog-publish-prod%2Fimages%2FI_O_Subs_social_share_image_1.width-1300.png&amp;w=480&amp;output=webp 480w" sizes="(max-width: 768px) 133px, 253px" alt="제미나이 요금제 개편: 겉만 할인, 실제로는 사용 한도 축소" loading="eager" fetchpriority="high" width="1600" height="900" decoding="async" data-img-fallback="hide">
+            <span class="home-trend-card-tag tech">AI</span>
+          </div>
+          <h3 class="home-trend-card-title">제미나이 요금제 개편: 겉만 할인, 실제로는 사용 한도 축소</h3>
+        </a>
+        <a href="/tech/ai/google-io-2026-agentic-gemini/" class="home-trend-card home-latest-item" data-index="1">
+          <div class="home-trend-card-image">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fstorage.googleapis.com%2Fgweb-uniblog-publish-prod%2Fimages%2FGeminiapp_Bento_hero.width-1600.format-webp.webp&amp;w=480&amp;output=webp" srcset="https://wsrv.nl/?url=https%3A%2F%2Fstorage.googleapis.com%2Fgweb-uniblog-publish-prod%2Fimages%2FGeminiapp_Bento_hero.width-1600.format-webp.webp&amp;w=200&amp;output=webp 200w, https://wsrv.nl/?url=https%3A%2F%2Fstorage.googleapis.com%2Fgweb-uniblog-publish-prod%2Fimages%2FGeminiapp_Bento_hero.width-1600.format-webp.webp&amp;w=480&amp;output=webp 480w" sizes="(max-width: 768px) 133px, 253px" alt="구글 I/O 2026, &#39;에이전트 제미나이&#39;로 다시 그린 검색·앱·데스크톱" loading="lazy" fetchpriority="auto" width="1600" height="900" decoding="async" data-img-fallback="hide">
+            <span class="home-trend-card-tag tech">2026년 5월 20일</span>
+          </div>
+          <h3 class="home-trend-card-title">구글 I/O 2026, '에이전트 제미나이'로 다시 그린 검색·앱·데스크톱</h3>
+        </a>
+        <a href="/tech/ai/musk-openai-jury-verdict-dismissed/" class="home-trend-card home-latest-item" data-index="2">
+          <div class="home-trend-card-image">
+            <img src="/assets/images/tech/ai/musk-openai-jury-verdict-dismissed/thumbnail-sm.webp" srcset="/assets/images/tech/ai/musk-openai-jury-verdict-dismissed/thumbnail-xs.webp 200w, /assets/images/tech/ai/musk-openai-jury-verdict-dismissed/thumbnail-sm.webp 480w" sizes="(max-width: 768px) 133px, 253px" alt="머스크 OpenAI 소송 만장일치 기각 — 공소시효 만료로 1,500억 달러 청구 무산" loading="lazy" fetchpriority="auto" width="1600" height="900" decoding="async" data-img-fallback="hide">
+            <span class="home-trend-card-tag tech">2026년 5월 19일</span>
+          </div>
+          <h3 class="home-trend-card-title">머스크 OpenAI 소송 만장일치 기각 — 공소시효 만료로 1,500억 달러 청구 무산</h3>
+        </a>
+        <a href="/tech/ai/nvidia-q1-fy27-ai-rally-test/" class="home-trend-card home-latest-item" data-index="3">
+          <div class="home-trend-card-image">
+            <img src="/assets/images/tech/ai/nvidia-q1-fy27-ai-rally-test/thumbnail-sm.webp" srcset="/assets/images/tech/ai/nvidia-q1-fy27-ai-rally-test/thumbnail-xs.webp 200w, /assets/images/tech/ai/nvidia-q1-fy27-ai-rally-test/thumbnail-sm.webp 480w" sizes="(max-width: 768px) 133px, 253px" alt="엔비디아 20일 1분기 실적 발표…AI 랠리 분수령" loading="lazy" fetchpriority="auto" width="1600" height="900" decoding="async" data-img-fallback="hide">
+            <span class="home-trend-card-tag tech">2026년 5월 18일</span>
+          </div>
+          <h3 class="home-trend-card-title">엔비디아 20일 1분기 실적 발표…AI 랠리 분수령</h3>
+        </a>
+        <a href="/tech/ai/gemini-io-2026-rumor-roundup-d2/" class="home-trend-card home-latest-item" data-index="4">
+          <div class="home-trend-card-image">
+            <img src="/assets/images/tech/ai/gemini-io-2026-rumor-roundup-d2/thumbnail-sm.webp" srcset="/assets/images/tech/ai/gemini-io-2026-rumor-roundup-d2/thumbnail-xs.webp 200w, /assets/images/tech/ai/gemini-io-2026-rumor-roundup-d2/thumbnail-sm.webp 480w" sizes="(max-width: 768px) 133px, 253px" alt="공개 D-2, 구글 I/O 제미나이 루머 총정리 — Spark·Omni·Cappuccino" loading="lazy" fetchpriority="auto" width="1600" height="900" decoding="async" data-img-fallback="hide">
+            <span class="home-trend-card-tag tech">2026년 5월 17일</span>
+          </div>
+          <h3 class="home-trend-card-title">공개 D-2, 구글 I/O 제미나이 루머 총정리 — Spark·Omni·Cappuccino</h3>
+        </a>
+        <a href="/tech/ai/gpt55-opus47-degradation-admission/" class="home-trend-card home-latest-item" data-index="5">
+          <div class="home-trend-card-image">
+            <img src="/assets/images/tech/ai/gpt55-opus47-degradation-admission/thumbnail-sm.webp" srcset="/assets/images/tech/ai/gpt55-opus47-degradation-admission/thumbnail-xs.webp 200w, /assets/images/tech/ai/gpt55-opus47-degradation-admission/thumbnail-sm.webp 480w" sizes="(max-width: 768px) 133px, 253px" alt="GPT-5.5·오퍼스 4.7 성능 저하, OpenAI·앤트로픽 양사 결국 시인" loading="lazy" fetchpriority="auto" width="1600" height="900" decoding="async" data-img-fallback="hide">
+            <span class="home-trend-card-tag tech">2026년 5월 16일</span>
+          </div>
+          <h3 class="home-trend-card-title">GPT-5.5·오퍼스 4.7 성능 저하, OpenAI·앤트로픽 양사 결국 시인</h3>
+        </a>
+        <a href="/tech/ai/google-gemini-3-2-3-5-imminent/" class="home-trend-card home-latest-item" data-index="6">
+          <div class="home-trend-card-image">
+            <img src="/assets/images/tech/ai/google-gemini-3-2-3-5-imminent/thumbnail-sm.webp" srcset="/assets/images/tech/ai/google-gemini-3-2-3-5-imminent/thumbnail-xs.webp 200w, /assets/images/tech/ai/google-gemini-3-2-3-5-imminent/thumbnail-sm.webp 480w" sizes="(max-width: 768px) 133px, 253px" alt="구글 제미나이 차기 모델 임박 — 3.2일까 3.5일까, 반등의 분기점" loading="lazy" fetchpriority="auto" width="1600" height="900" decoding="async" data-img-fallback="hide">
+            <span class="home-trend-card-tag tech">2026년 5월 15일</span>
+          </div>
+          <h3 class="home-trend-card-title">구글 제미나이 차기 모델 임박 — 3.2일까 3.5일까, 반등의 분기점</h3>
+        </a>
+        <a href="/tech/ai/altman-musk-openai-trial-mudslinging/" class="home-trend-card home-latest-item" data-index="7">
+          <div class="home-trend-card-image">
+            <img src="/assets/images/tech/ai/altman-musk-openai-trial-mudslinging/thumbnail-sm.webp" srcset="/assets/images/tech/ai/altman-musk-openai-trial-mudslinging/thumbnail-xs.webp 200w, /assets/images/tech/ai/altman-musk-openai-trial-mudslinging/thumbnail-sm.webp 480w" sizes="(max-width: 768px) 133px, 253px" alt="알트만 vs 머스크, OpenAI 법정이 진흙탕 폭로전으로" loading="lazy" fetchpriority="auto" width="1600" height="900" decoding="async" data-img-fallback="hide">
+            <span class="home-trend-card-tag tech">2026년 5월 14일</span>
+          </div>
+          <h3 class="home-trend-card-title">알트만 vs 머스크, OpenAI 법정이 진흙탕 폭로전으로</h3>
+        </a>
+        <a href="/tech/ai/openai-8000-anthropic-rivalry/" class="home-trend-card home-latest-item" data-index="8">
+          <div class="home-trend-card-image">
+            <img src="/assets/images/tech/ai/openai-8000-anthropic-rivalry/thumbnail-sm.webp" srcset="/assets/images/tech/ai/openai-8000-anthropic-rivalry/thumbnail-xs.webp 200w, /assets/images/tech/ai/openai-8000-anthropic-rivalry/thumbnail-sm.webp 480w" sizes="(max-width: 768px) 133px, 253px" alt="오픈AI, 연말까지 직원 8천 명으로 두 배 확대: 앤트로픽 급부상에 전면전" loading="lazy" fetchpriority="auto" width="1600" height="900" decoding="async" data-img-fallback="hide">
+            <span class="home-trend-card-tag tech">2026년 3월 23일</span>
+          </div>
+          <h3 class="home-trend-card-title">오픈AI, 연말까지 직원 8천 명으로 두 배 확대: 앤트로픽 급부상에 전면전</h3>
+        </a></div>
+        <script type="application/json" id="techCategoryGridDeferredData" data-src="/assets/feed/tech-ai-index-techCategoryGridDeferredData-8dad21ae3277.json"></script><div class="visually-hidden">
+      <a href="/tech/ai/supermicro-ai-chip-china-smuggling/">슈퍼마이크로 공동창업자, 25억 달러 규모 엔비디아 AI 칩 중국 밀반출로 기소</a>
+    
+      <a href="/tech/ai/microsoft-copilot-windows-ai-fatigue/">&amp;quot;AI 피로감에 굴복&amp;quot; 마이크로소프트, 윈도우 11 코파일럿 통합 대폭 축소</a>
+    
+      <a href="/tech/ai/apple-blocks-vibe-coding-apps/">애플, 레플릿과 바이브코드 등 바이브 코딩 앱 업데이트 차단하며 앱스토어 규칙 강화</a>
+    
+      <a href="/tech/ai/crimson-desert-ai-art-controversy/">붉은사막 출시 하루 만에 AI 생성 아트 논란 폭발, 펄어비스 침묵 속 비판 거세져</a>
+    
+      <a href="/tech/ai/openai-astral-acquisition/">오픈AI, 파이썬 도구 스타트업 아스트랄 인수로 코딩 전쟁 가속</a>
+    
+      <a href="/tech/ai/cursor-composer-2-coding-model/">커서, 자체 프론티어 코딩 모델 Composer 2 공개 - Claude Opus 4.6 넘고 가격은 10분의 1</a>
+    
+      <a href="/tech/ai/anthropic-81k-interview/">앤트로픽이 81,000명에게 물었다, AI에게 뭘 바라나요?</a>
+    
+      <a href="/tech/ai/openai-side-quests-pivot-coding-enterprise/">오픈AI, &amp;#39;사이드 프로젝트&amp;#39; 접고 코딩과 기업 시장에 올인 선언</a>
+    
+      <a href="/tech/ai/claude-dispatch-cowork-remote-control/">오픈클로가 불붙인 에이전트 시대, 앤트로픽 디스패치로 원격 AI 본격화</a>
+    
+      <a href="/tech/ai/gpt-54-mini-nano-small-model-launch/">GPT-5.4 미니와 나노 등장, 가격 인상은 아쉬움으로</a>
+    
+      <a href="/tech/ai/nvidia-feynman-architecture-2028/">무어의 법칙을 넘어선 황의 법칙 — 파인만 아키텍처가 여는 빛의 시대</a>
+    
+      <a href="/tech/ai/nvidia-nemoclaw-agentic-ai-platform/">엔비디아, 에이전틱 AI의 리눅스 NemoClaw 발표</a>
+    
+      <a href="/tech/ai/nvidia-groq3-lpu-inference-revolution/">엔비디아, 200억 달러짜리 추론 칩 Groq 3 LPU 공개하다</a>
+    
+      <a href="/tech/ai/mistral-small4-unified-moe/">추론, 시각, 코드를 한 몸에 담다: 미스트랄 Small 4의 119B 통합 실험</a>
+    
+      <a href="/tech/ai/seedance-2-global-launch-suspended/">할리우드가 멈춰 세운 AI 영상 혁명, 시댄스 2.0 글로벌 출시 잠정 중단</a>
+    
+      <a href="/tech/ai/lecun-ami-labs-llm-debate/">10억 달러를 들고 LLM에 반기를 든 남자, 얀 르쿤의 AMI 랩스</a>
+    
+      <a href="/tech/ai/coding-agent-market-share-war-anthropic-openai/">앤트로픽과 오픈AI가 동시에 &amp;#39;2배&amp;#39;를 외친 이유</a>
+    
+      <a href="/tech/ai/karpathy-ai-job-exposure-score/">안드레 카파시, 342개 직업 AI 대체 점수 발표</a>
+    
+      <a href="/tech/ai/antigravity-usage-rollback-gemini-partial-revert/">안티그래비티, 유저 반발에 사용량 제한 정책 일부 롤백: 제미나이만 복원, 클로드는 제외</a>
+    
+      <a href="/tech/ai/claude-interactive-visuals-1m-context-ga/">클로드, 대화 속 인터랙티브 시각화 자동 생성 기능 출시: 100만 토큰 컨텍스트도 기본 제공</a>
+    
+      <a href="/tech/ai/xai-exodus-grok-crisis/">xAI 공동 창립자 12명 중 7명 퇴사, 내부 폭로와 벤치마크 논란으로 드러난 그록의 위기</a>
+    
+      <a href="/tech/ai/meta-avocado-delay/">메타 차세대 AI 모델 아보카도, 성능 테스트 난항으로 출시 5월 이후로 연기</a>
+    
+      <a href="/tech/ai/google-ai-pro-antigravity-rate-limit-crisis/">구글 AI 프로 구독자 대규모 불만 폭발: &amp;quot;월 $20 내고 무료 체험판 수준 할당량&amp;quot;</a>
+    
+      <a href="/tech/ai/gpt-54-one-week-review/">GPT-5.4 출시 일주일, 업계 평가는?</a>
+    
+      <a href="/tech/ai/ai-model-intentional-performance-degradation/">&amp;quot;출시 때만 똑똑하다?&amp;quot; AI 모델 의도적 성능 저하 의혹</a>
+    
+      <a href="/tech/ai/openai-omni-model-rumor-march-2026/">GPT-5o?: OpenAI, 차세대 멀티모달 옴니 모델 개발 루머</a>
+    
+      <a href="/tech/ai/apple-siri-gemini-partnership/">애플, 제미나이 기반 새 시리 출시 임박: 연 15억 달러 파트너십의 전모</a>
+    
+      <a href="/tech/ai/softbank-40b-openai-loan/">소프트뱅크, 오픈AI 지분 확대 위해 역대 최대 400억 달러 대출 추진</a>
+    
+      <a href="/tech/ai/amodei-apology-claude-app-store-surge/">아모데이, 유출 메모 사과하며 법적 대응 선언: Claude는 20개국 앱스토어 1위</a>
+    
+      <a href="/tech/ai/gpt-5-4-mixed-reactions-benchmark-controversy/">GPT-5.4 출시, 엇갈리는 반응: 컴퓨터 사용은 1등, 코딩은 뒤처졌다</a>
+    
+      <a href="/tech/ai/anthropic-revenue-19b-openai-gap/">엔트로픽 ARR $19B 돌파: OpenAI와의 격차가 $1B로 좁혀졌다</a>
+    
+      <a href="/tech/ai/anthropic-internal-memo-pentagon-openai/">엔트로픽 CEO 내부 메모 유출: OpenAI를 향한 &amp;#39;독재자식 찬사&amp;#39;와 &amp;#39;안전 극장&amp;#39; 비판</a>
+    
+      <a href="/tech/ai/gemini-death-lawsuit-gavalas/">구글 제미나이 첫 부당사망 소송: &amp;quot;당신은 죽는 게 아니라 도착하는 겁니다&amp;quot;</a>
+    
+      <a href="/tech/ai/openai-pentagon-deal-altman-admits/">샘 알트만, 펜타곤 계약 시인: &amp;#39;기회주의적이고 엉성했다&amp;#39;</a>
+    
+      <a href="/tech/ai/claude-outage-demand-surge-pentagon/">클로드 접속 장애: 성공의 역설이 만든 전 세계 서비스 마비</a>
+    
+      <a href="/tech/ai/claude-surpasses-grok-web-traffic/">클로드 웹 트래픽, Grok과 DeepSeek 첫 추월: AI 챗봇 시장 다극화 본격화</a>
+    
+      <a href="/tech/ai/gemini-31-flash-lite-cost-efficiency/">제미나이 3.1 플래시 라이트, 최저가 AI의 애매한 포지션</a>
+    
+      <a href="/tech/ai/gemini-reliability-crisis-trust/">제미나이 신뢰성 위기: 엉뚱한 답변, 무단 문자 발송, 채팅 기록 소실까지</a>
+    
+      <a href="/tech/ai/gpt-53-instant-less-cringe/">GPT-5.3 Instant: OpenAI가 잔소리 줄인 ChatGPT를 내놓다</a>
+    
+      <a href="/tech/ai/gpt-5-4-leak-silent-update/">OpenAI 차기 모델 GPT 5.4 출시 임박, 이미 몰래 적용 중?</a>
+    
+      <a href="/tech/ai/claude-app-store-number-one/">클로드 앱스토어 1위: 국방부 거부가 만든 역사적 순간</a>
+    
+      <a href="/tech/ai/claude-military-venezuela-iran/">클로드 AI, 베네수엘라 마두로 체포부터 이란 공습까지: 전쟁터의 AI</a>
+    
+      <a href="/tech/ai/openai-110b-record-funding-turning-point/">OpenAI 1,100억 달러 투자 유치, 재정 위기 극복의 전환점이 될까</a>
+    
+      <a href="/tech/ai/openai-pentagon-hypocrisy-red-lines/">OpenAI 펜타곤 협력으로 여론 역풍: &amp;#39;같은 레드라인&amp;#39;이라더니</a>
+    
+      <a href="/tech/ai/anthropic-government-conflict-weapons-surveillance/">엔트로픽 vs 트럼프 행정부, 자율 무기와 감시 거부가 부른 전면전</a>
+    
+      <a href="/tech/ai/silicon-valley-ai-ethics-government-clash/">AI 윤리 갈등, 실리콘밸리 전체가 정부에 맞서다</a>
+    
+      <a href="/tech/ai/anthropic-safety-pledge-pentagon-pressure/">앤트로픽 안전서약 철회, 국방부 압박이 바꾼 AI 윤리의 마지노선</a>
+    
+      <a href="/tech/ai/nano-banana-2-gemini-flash-image/">나노 바나나 2 출시, 플래시 기반으로 프로급 성능을 절반 가격에</a>
+    
+      <a href="/tech/ai/ai-bubble-myth-industry-shock-2026/">AI 패러다임의 시프트: AI 버블은 터지지 않았다, 대신 현실이 됐다</a>
+    
+      <a href="/tech/ai/anthropic-pentagon-ultimatum-rsp-v3/">미국 국방부의 최후 통첩: 아모데이는 자신의 철학을 지킬 수 있을까</a>
+    
+      <a href="/tech/ai/china-ai-distillation-controversy/">AI 증류 논란: 중국은 정말 미국 AI를 &amp;#39;훔쳤&amp;#39;나</a>
+    
+      <a href="/tech/ai/google-ai-voluntary-exit/">구글 자발적 퇴사 패키지: 사상 최고 매출 뒤의 AI 구조조정</a>
+    
+      <a href="/tech/ai/gpt-54-leak-model-war/">GPT 5.4 유출: OpenAI 직원 실수로 드러난 차기 모델의 존재</a>
+    
+      <a href="/tech/ai/xbox-sunset-ai-pivot/">Xbox 단계적 폐기 논란, 공동 창업자가 말하는 마이크로소프트의 AI 집착</a>
+    
+      <a href="/tech/ai/bytedance-seedance-copyright-delay/">시댄스 2.0 저작권 폭탄: 바이트댄스, 글로벌 출시 무기한 연기</a>
+    
+      <a href="/tech/ai/meta-avocado-ai-model-performance/">메타 차기 AI모델 아보카도, 내부 테스트 평가 루머</a>
+    
+      <a href="/tech/ai/chatgpt-pro-lite-plan-leak/">ChatGPT Pro Lite 요금제, 코드에서 발견</a>
+    
+      <a href="/tech/ai/openai-compute-investment-600b-cut/">OpenAI 데이터센터 투자 목표 57% 축소, AI 과열 투자 조정의 신호탄</a>
+    
+      <a href="/tech/ai/openai-crisis-competition-direction-2026/">OpenAI, 창사 이래 최대 위기 — 경쟁 심화 속 방향성을 잃다</a>
+    
+      <a href="/tech/ai/gemini-31-pro-release/">제미나이 3.1 프로 출시, 추론과 멀티모달 모두 SOTA급 도약</a>
+    
+      <a href="/tech/ai/dario-sam-india-summit-handshake/">AGI보다 어려운 악수 — 다리오와 샘, 인도 AI 서밋 단체사진에서 악수 거부</a>
+    
+      <a href="/tech/ai/claude-sonnet-46-release/">클로드 소넷 4.6 출시, 오퍼스급 성능을 소넷 가격에</a>
+    
+      <a href="/tech/ai/grok-420-multi-agent-release/">그록 4.20 출시, 멀티에이전트는 신선하지만 성능 점프는 없다</a>
+    
+      <a href="/tech/ai/anthropic-pentagon-ai-safety-standoff/">앤트로픽 vs 펜타곤: AI 안전과 국가안보의 역사적 충돌</a>
+    
+      <a href="/tech/ai/openclaw-steinberger-openai/">오픈클로 창시자 피터 스테인버거, OpenAI 합류 — 멀티 에이전트 AI의 미래를 이끈다</a>
+    
+      <a href="/tech/ai/claude-code-agent-teams-paradigm/">AI 에이전트 팀: 코딩 AI가 팀을 짜서 협업하는 시대</a>
+    
+      <a href="/tech/ai/claude-cowork-windows-launch/">클로드 코워크 윈도우 상륙, AI 데스크톱 에이전트가 70% 시장을 노린다</a>
+    
+      <a href="/tech/ai/gpt-4o-retirement-openai-next-step/">GPT-4o 종료, OpenAI 전성기를 이끈 역사적 모델의 퇴장</a>
+    
+      <a href="/tech/ai/gemini-deep-think-hallucination-backlash/">제미나이 3 딥씽크, 벤치마크 1위 석권에도 냉랭한 유저들</a>
+    
+      <a href="/tech/ai/gemini-free-tier-cutback-backlash/">제미나이 사용량 축소 논란</a>
+    
+      <a href="/tech/ai/nvidia-ai-chip-monopoly-cracking/">엔비디아 AI 칩 독점에 균열? 빅테크 탈 엔비디아 러시</a>
+    
+      <a href="/tech/ai/deepmind-update-aletheia-gemini/">딥마인드 신무기 연속 공개: 알레테이아부터 제미나이 3.1 프리뷰까지</a>
+    
+      <a href="/tech/ai/applovin-ai-ad-gaming-revenue/">앱러빈 AXON 엔진, AI 광고가 모바일 게임 수익모델을 바꾸는 법</a>
+    
+      <a href="/tech/ai/nvidia-gpu-launch-halt-ai-priority/">엔비디아 그래픽카드 신제품 출시 전면 중단, AI가 게이밍을 삼켰다</a>
+    
+      <a href="/tech/ai/xai-talent-exodus-grok-crisis/">xAI 공동창업자 5명 이탈, 머스크 AI 제국의 인재 탈출 러시</a>
+    
+      <a href="/tech/ai/openai-chatgpt-growth-100b-funding/">OpenAI 2월 12일 신규 모델 출시 유력</a>
+    
+      <a href="/tech/ai/china-ai-video-kling3-seedance2/">이제는 중국 영상 모델이 최고? : 클링 3.0, 시댄스 2.0 동시 출시</a>
+    
+      <a href="/tech/ai/claude-opus-46-pricing-controversy/">&amp;quot;$200 내고도 차별&amp;quot;: 클로드의 끝나지 않는 가격 논란</a>
+    
+      <a href="/tech/ai/gpt-53-codex-community-reaction/">완전 자율 코딩의 시작? GPT-5.3 코덱스 출시 후 커뮤니티 반응 총정리</a>
+    
+      <a href="/tech/ai/claude-cowork-saaspocalypse/">사무직 종말의 시작인가? 클로드 코워크가 촉발한 SW 주가 대폭락</a>
+    
+      <a href="/tech/ai/musk-openai-lawsuit-escalation/">머스크의 끝나지 않는 복수전, OpenAI 소송전 점입가경</a>
+    
+      <a href="/tech/ai/ai-big4-ipo-spacex-xai-merger/">스페이스X, AI 기업으로 진화...xAI 품고 1.25조 달러 IPO 추진</a>
+    
+      <a href="/tech/ai/anthropic-b2b-strategy-success/">앤트로픽의 광폭 행보: 최고의 엔터프라이즈 AI를 향해</a>
+    
+      <a href="/tech/ai/big3-ipo-2026-openai-anthropic-spacex/">2026년 IPO 빅3: 오픈AI·앤트로픽·스페이스X 상장 임박</a>
+    
+      <a href="/tech/ai/alphagenome-first-impressions-2026/">알파폴드 후속작 알파게놈 출시 1주일, 연구자들의 솔직한 평가</a>
+    
+      <a href="/tech/ai/claude-fennec-release-imminent/">클로드 차기 모델 코드명 &amp;quot;페넥&amp;quot;, 일주일 내 출시? - 추가 루머 정리</a>
+    
+      <a href="/tech/ai/nvidia-openai-investment-retreat/">NVIDIA-OpenAI 1000억 달러 투자, 철회설에서 재확인까지</a>
+    
+      <a href="/tech/ai/stargate-ai-crisis-2026/">730조 스타게이트, 제2의 네옴시티가 될 것인가</a>
+    
+      <a href="/tech/ai/dead-internet-theory/">죽은 인터넷 이론: 인터넷은 이미 봇들이 점령했다?</a>
+    
+      <a href="/tech/ai/moltbook-ai-social-network/">AI들이 만든 자신들만의 레딧, 몰트북(Moltbook)에서 벌어지는 일들</a>
+    
+      <a href="/tech/ai/claude-sonnet-47-fennec-release-rumor/">클로드 소넷 4.7 &amp;quot;페넥&amp;quot; 출시 임박? 앤트로픽의 다음 수는</a>
+    
+      <a href="/tech/ai/gpt-4o-shutdown-controversy/">GPT-4o 종료 논란, 왜 유저들은 &amp;#39;친구를 잃었다&amp;#39;고 말하는가</a>
+    
+      <a href="/tech/ai/claude-code-vs-codex-coding-agent/">코딩 에이전트 양대산맥: 클로드 코드와 코덱스의 장단점 비교</a>
+    
+      <a href="/tech/ai/moltbot-clawdbot-ai-assistant/">Clawdbot, 자율성을 가진 AI 비서의 등장과 72시간의 혼란</a>
+    
+      <a href="/tech/ai/chatgpt-desktop-app/">챗GPT 데스크톱 앱, 브라우저 없이 AI 쓰는 법</a>
+    </div>
+        <div class="home-pagination" id="techPagination" data-total="104" data-per-page="15">
+          <button class="home-page-btn home-page-prev" disabled>‹</button>
+          <span class="home-page-info">1 / 7</span>
+          <button class="home-page-btn home-page-next">›</button>
+        </div>
+      </div>
+    
+        </div>
+        <aside class="home-sidebar">
+          <div class="home-sidebar-sticky">
+            
+      <div class="home-card" id="sidebar-categories">
+        <div class="sidebar-category-group">
+          <div class="home-card-header"><a href="/magazine/issue/" class="home-card-title-link"><h2 class="home-card-title">리포트</h2></a></div>
+          <div class="sidebar-category-list">
+      <a href="/magazine/issue/" class="sidebar-category-item">
+        <span class="sidebar-category-name">이슈 (103)</span>
+      </a>
+    
+      <a href="/magazine/insight/" class="sidebar-category-item">
+        <span class="sidebar-category-name">인사이트 (2)</span>
+      </a>
+    
+      <a href="/magazine/hotpick/" class="sidebar-category-item">
+        <span class="sidebar-category-name">핫픽 (8)</span>
+      </a>
+    
+      <a href="/magazine/ranking/" class="sidebar-category-item">
+        <span class="sidebar-category-name">순위 분석 (9)</span>
+      </a>
+    </div>
+        </div>
+        <div class="sidebar-category-group">
+          <div class="home-card-header"><a href="/wiki/" class="home-card-title-link"><h2 class="home-card-title">위키</h2></a></div>
+          <div class="sidebar-category-list">
+      <a href="/wiki/history/" class="sidebar-category-item">
+        <span class="sidebar-category-name">히스토리 (12)</span>
+      </a>
+    
+      <a href="/wiki/knowledge/" class="sidebar-category-item">
+        <span class="sidebar-category-name">지식 (13)</span>
+      </a>
+    
+      <a href="/wiki/business/" class="sidebar-category-item">
+        <span class="sidebar-category-name">비즈니스 (10)</span>
+      </a>
+    </div>
+        </div>
+        <div class="sidebar-category-group">
+          <div class="home-card-header"><a href="/tech/" class="home-card-title-link"><h2 class="home-card-title">테크</h2></a></div>
+          <div class="sidebar-category-list">
+      <a href="/tech/normal/" class="sidebar-category-item">
+        <span class="sidebar-category-name">일반 (12)</span>
+      </a>
+    
+      <a href="/tech/ai/" class="sidebar-category-item">
+        <span class="sidebar-category-name">AI (104)</span>
+      </a>
+    
+      <a href="/tech/vibecoding/" class="sidebar-category-item">
+        <span class="sidebar-category-name">바이브코딩 (12)</span>
+      </a>
+    </div>
+        </div>
+      </div>
+
+      <div class="home-card" id="sidebar-articles">
+        <div class="home-card-header">
+          <div class="home-chart-toggle sidebar-full-toggle" id="sidebarArticleTab">
+            <button class="tab-btn small active" data-sidebar-tab="popular">인기</button>
+            <button class="tab-btn small" data-sidebar-tab="latest">최신</button>
+          </div>
+        </div>
+        <div class="home-card-body">
+          <div class="sidebar-article-list active" id="sidebar-popular">
+      <a href="/tech/ai/claude-code-vs-codex-coding-agent/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">1</span>
+        <span class="sidebar-article-title">코딩 에이전트 양대산맥: 클로드 코드와 코덱스의 장단점 비교</span>
+      </a>
+    
+      <a href="/tech/ai/musk-openai-jury-verdict-dismissed/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">2</span>
+        <span class="sidebar-article-title">머스크 OpenAI 소송 만장일치 기각 — 공소시효 만료로 1,500억 달러 청구 무산</span>
+      </a>
+    
+      <a href="/tech/ai/google-gemini-3-2-3-5-imminent/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">3</span>
+        <span class="sidebar-article-title">구글 제미나이 차기 모델 임박 — 3.2일까 3.5일까, 반등의 분기점</span>
+      </a>
+    
+      <a href="/tech/ai/china-ai-video-kling3-seedance2/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">4</span>
+        <span class="sidebar-article-title">이제는 중국 영상 모델이 최고? : 클링 3.0, 시댄스 2.0 동시 출시</span>
+      </a>
+    
+      <a href="/tech/ai/antigravity-usage-rollback-gemini-partial-revert/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">5</span>
+        <span class="sidebar-article-title">안티그래비티, 유저 반발에 사용량 제한 정책 일부 롤백: 제미나이만 복원, 클로드는 제외</span>
+      </a>
+    
+      <a href="/tech/ai/nvidia-q1-fy27-ai-rally-test/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">6</span>
+        <span class="sidebar-article-title">엔비디아 20일 1분기 실적 발표…AI 랠리 분수령</span>
+      </a>
+    
+      <a href="/tech/ai/applovin-ai-ad-gaming-revenue/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">7</span>
+        <span class="sidebar-article-title">앱러빈 AXON 엔진, AI 광고가 모바일 게임 수익모델을 바꾸는 법</span>
+      </a>
+    
+      <a href="/tech/ai/gpt55-opus47-degradation-admission/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">8</span>
+        <span class="sidebar-article-title">GPT-5.5·오퍼스 4.7 성능 저하, OpenAI·앤트로픽 양사 결국 시인</span>
+      </a>
+    
+      <a href="/tech/ai/nvidia-ai-chip-monopoly-cracking/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">9</span>
+        <span class="sidebar-article-title">엔비디아 AI 칩 독점에 균열? 빅테크 탈 엔비디아 러시</span>
+      </a>
+    
+      <a href="/tech/ai/claude-sonnet-46-release/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">10</span>
+        <span class="sidebar-article-title">클로드 소넷 4.6 출시, 오퍼스급 성능을 소넷 가격에</span>
+      </a>
+    </div>
+          <div class="sidebar-article-list" id="sidebar-latest">
+      <a href="/tech/ai/gemini-pricing-overhaul-compute-limits-backlash/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">1</span>
+        <span class="sidebar-article-title">제미나이 요금제 개편: 겉만 할인, 실제로는 사용 한도 축소</span>
+      </a>
+    
+      <a href="/tech/ai/google-io-2026-agentic-gemini/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">2</span>
+        <span class="sidebar-article-title">구글 I/O 2026, '에이전트 제미나이'로 다시 그린 검색·앱·데스크톱</span>
+      </a>
+    
+      <a href="/tech/ai/musk-openai-jury-verdict-dismissed/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">3</span>
+        <span class="sidebar-article-title">머스크 OpenAI 소송 만장일치 기각 — 공소시효 만료로 1,500억 달러 청구 무산</span>
+      </a>
+    
+      <a href="/tech/ai/nvidia-q1-fy27-ai-rally-test/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">4</span>
+        <span class="sidebar-article-title">엔비디아 20일 1분기 실적 발표…AI 랠리 분수령</span>
+      </a>
+    
+      <a href="/tech/ai/gemini-io-2026-rumor-roundup-d2/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">5</span>
+        <span class="sidebar-article-title">공개 D-2, 구글 I/O 제미나이 루머 총정리 — Spark·Omni·Cappuccino</span>
+      </a>
+    
+      <a href="/tech/ai/gpt55-opus47-degradation-admission/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">6</span>
+        <span class="sidebar-article-title">GPT-5.5·오퍼스 4.7 성능 저하, OpenAI·앤트로픽 양사 결국 시인</span>
+      </a>
+    
+      <a href="/tech/ai/google-gemini-3-2-3-5-imminent/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">7</span>
+        <span class="sidebar-article-title">구글 제미나이 차기 모델 임박 — 3.2일까 3.5일까, 반등의 분기점</span>
+      </a>
+    
+      <a href="/tech/ai/altman-musk-openai-trial-mudslinging/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">8</span>
+        <span class="sidebar-article-title">알트만 vs 머스크, OpenAI 법정이 진흙탕 폭로전으로</span>
+      </a>
+    
+      <a href="/tech/ai/openai-8000-anthropic-rivalry/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">9</span>
+        <span class="sidebar-article-title">오픈AI, 연말까지 직원 8천 명으로 두 배 확대: 앤트로픽 급부상에 전면전</span>
+      </a>
+    
+      <a href="/tech/ai/supermicro-ai-chip-china-smuggling/" class="sidebar-article-item">
+        <span class="sidebar-article-rank">10</span>
+        <span class="sidebar-article-title">슈퍼마이크로 공동창업자, 25억 달러 규모 엔비디아 AI 칩 중국 밀반출로 기소</span>
+      </a>
+    </div>
+        </div>
+      </div>
+    
+          </div>
+        </aside>
+      </div>
+    </section>
+  
+    
+  <script>
+    (function() {
+      var initialized = false;
+      var init = function() {
+        if (initialized) return;
+        initialized = true;
+        if (!window.GSUtils || typeof window.GSUtils.initCardFeedPager !== 'function') return;
+        window.GSUtils.initCardFeedPager({
+          grid: "#techGrid",
+          pagination: "#techPagination",
+          itemSelector: ".home-trend-card",
+          pageSize: 15,
+          hydrateLazyImages: true,
+          mobileAds: true,
+          adInterval: 4,
+          mobileDomWindowPages: 5,
+          prevSelector: ".home-page-prev, .home-prev",
+          nextSelector: ".home-page-next, .home-next",
+          infoSelector: ".home-page-info, .home-page-index",
+          adSlots: ["6662567459","9737299266","9204970318","3171890915","8232645901"],
+          initialRenderCount: 9,
+          idleFillFirstPage: true,
+          idleFillDelay: 120,
+        deferredJson: "#techCategoryGridDeferredData"
+        });
+      window.GSUtils.toggleSidebarArticleTab("sidebarArticleTab");
+      };
+      if (window.GSUtils && window.GSUtils.__ready === true && typeof window.GSUtils.initCardFeedPager === 'function') {
+        init();
+        return;
+      }
+      if (typeof window.__gsOnReady === 'function') {
+        window.__gsOnReady(init);
+        return;
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init, { once: true });
+      } else {
+        init();
+      }
+    })();
+  </script>
+  </main>
+  
+    <div class="mobile-side-overlay" id="mobileSideOverlay"></div>
+    <div class="mobile-side-panel" id="mobileSidePanel">
+      <div class="mobile-side-panel-header">
+        <span class="mobile-side-panel-title">메뉴</span>
+        <button class="mobile-side-panel-close" id="mobileSidePanelClose" aria-label="닫기">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-side-panel-body">
+        
+    <div class="home-card" id="sidebar-categories">
+      <div class="sidebar-category-group">
+        <div class="home-card-header"><a href="/magazine/issue/" class="home-card-title-link"><h2 class="home-card-title">리포트</h2></a></div>
+        <div class="sidebar-category-list">
+          <a href="/magazine/issue/" class="sidebar-category-item"><span class="sidebar-category-name">이슈 (103)</span></a>
+          <a href="/magazine/insight/" class="sidebar-category-item"><span class="sidebar-category-name">인사이트 (2)</span></a>
+          <a href="/magazine/hotpick/" class="sidebar-category-item"><span class="sidebar-category-name">핫픽 (8)</span></a>
+          <a href="/magazine/ranking/" class="sidebar-category-item"><span class="sidebar-category-name">순위 분석 (9)</span></a>
+        </div>
+      </div>
+      <div class="sidebar-category-group">
+        <div class="home-card-header"><a href="/wiki/" class="home-card-title-link"><h2 class="home-card-title">위키</h2></a></div>
+        <div class="sidebar-category-list">
+          <a href="/wiki/history/" class="sidebar-category-item"><span class="sidebar-category-name">히스토리 (12)</span></a>
+          <a href="/wiki/knowledge/" class="sidebar-category-item"><span class="sidebar-category-name">지식 (13)</span></a>
+          <a href="/wiki/business/" class="sidebar-category-item"><span class="sidebar-category-name">비즈니스 (10)</span></a>
+        </div>
+      </div>
+      <div class="sidebar-category-group">
+        <div class="home-card-header"><a href="/tech/" class="home-card-title-link"><h2 class="home-card-title">테크</h2></a></div>
+        <div class="sidebar-category-list">
+          <a href="/tech/normal/" class="sidebar-category-item"><span class="sidebar-category-name">일반 (12)</span></a>
+          <a href="/tech/ai/" class="sidebar-category-item"><span class="sidebar-category-name">AI (104)</span></a>
+          <a href="/tech/vibecoding/" class="sidebar-category-item"><span class="sidebar-category-name">바이브코딩 (12)</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="home-card" id="sidebar-articles">
+      <div class="home-card-header">
+        <div class="home-chart-toggle sidebar-full-toggle" id="panelSidebarTab">
+          <button class="tab-btn small active" data-sidebar-tab="popular">인기</button>
+          <button class="tab-btn small" data-sidebar-tab="latest">최신</button>
+        </div>
+      </div>
+      <div class="home-card-body">
+        <div class="sidebar-article-list active" id="panel-sidebar-popular">
+    <a href="/tech/ai/claude-code-vs-codex-coding-agent/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">1</span>
+      <span class="sidebar-article-title">코딩 에이전트 양대산맥: 클로드 코드와 코덱스의 장단점 비교</span>
+    </a>
+  
+    <a href="/tech/ai/musk-openai-jury-verdict-dismissed/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">2</span>
+      <span class="sidebar-article-title">머스크 OpenAI 소송 만장일치 기각 — 공소시효 만료로 1,500억 달러 청구 무산</span>
+    </a>
+  
+    <a href="/tech/ai/google-gemini-3-2-3-5-imminent/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">3</span>
+      <span class="sidebar-article-title">구글 제미나이 차기 모델 임박 — 3.2일까 3.5일까, 반등의 분기점</span>
+    </a>
+  
+    <a href="/tech/ai/china-ai-video-kling3-seedance2/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">4</span>
+      <span class="sidebar-article-title">이제는 중국 영상 모델이 최고? : 클링 3.0, 시댄스 2.0 동시 출시</span>
+    </a>
+  
+    <a href="/tech/ai/antigravity-usage-rollback-gemini-partial-revert/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">5</span>
+      <span class="sidebar-article-title">안티그래비티, 유저 반발에 사용량 제한 정책 일부 롤백: 제미나이만 복원, 클로드는 제외</span>
+    </a>
+  
+    <a href="/tech/ai/nvidia-q1-fy27-ai-rally-test/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">6</span>
+      <span class="sidebar-article-title">엔비디아 20일 1분기 실적 발표…AI 랠리 분수령</span>
+    </a>
+  
+    <a href="/tech/ai/applovin-ai-ad-gaming-revenue/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">7</span>
+      <span class="sidebar-article-title">앱러빈 AXON 엔진, AI 광고가 모바일 게임 수익모델을 바꾸는 법</span>
+    </a>
+  
+    <a href="/tech/ai/gpt55-opus47-degradation-admission/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">8</span>
+      <span class="sidebar-article-title">GPT-5.5·오퍼스 4.7 성능 저하, OpenAI·앤트로픽 양사 결국 시인</span>
+    </a>
+  
+    <a href="/tech/ai/nvidia-ai-chip-monopoly-cracking/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">9</span>
+      <span class="sidebar-article-title">엔비디아 AI 칩 독점에 균열? 빅테크 탈 엔비디아 러시</span>
+    </a>
+  
+    <a href="/tech/ai/claude-sonnet-46-release/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">10</span>
+      <span class="sidebar-article-title">클로드 소넷 4.6 출시, 오퍼스급 성능을 소넷 가격에</span>
+    </a>
+  </div>
+        <div class="sidebar-article-list" id="panel-sidebar-latest">
+    <a href="/tech/ai/gemini-pricing-overhaul-compute-limits-backlash/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">1</span>
+      <span class="sidebar-article-title">제미나이 요금제 개편: 겉만 할인, 실제로는 사용 한도 축소</span>
+    </a>
+  
+    <a href="/tech/ai/google-io-2026-agentic-gemini/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">2</span>
+      <span class="sidebar-article-title">구글 I/O 2026, '에이전트 제미나이'로 다시 그린 검색·앱·데스크톱</span>
+    </a>
+  
+    <a href="/tech/ai/musk-openai-jury-verdict-dismissed/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">3</span>
+      <span class="sidebar-article-title">머스크 OpenAI 소송 만장일치 기각 — 공소시효 만료로 1,500억 달러 청구 무산</span>
+    </a>
+  
+    <a href="/tech/ai/nvidia-q1-fy27-ai-rally-test/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">4</span>
+      <span class="sidebar-article-title">엔비디아 20일 1분기 실적 발표…AI 랠리 분수령</span>
+    </a>
+  
+    <a href="/tech/ai/gemini-io-2026-rumor-roundup-d2/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">5</span>
+      <span class="sidebar-article-title">공개 D-2, 구글 I/O 제미나이 루머 총정리 — Spark·Omni·Cappuccino</span>
+    </a>
+  
+    <a href="/tech/ai/gpt55-opus47-degradation-admission/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">6</span>
+      <span class="sidebar-article-title">GPT-5.5·오퍼스 4.7 성능 저하, OpenAI·앤트로픽 양사 결국 시인</span>
+    </a>
+  
+    <a href="/tech/ai/google-gemini-3-2-3-5-imminent/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">7</span>
+      <span class="sidebar-article-title">구글 제미나이 차기 모델 임박 — 3.2일까 3.5일까, 반등의 분기점</span>
+    </a>
+  
+    <a href="/tech/ai/altman-musk-openai-trial-mudslinging/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">8</span>
+      <span class="sidebar-article-title">알트만 vs 머스크, OpenAI 법정이 진흙탕 폭로전으로</span>
+    </a>
+  
+    <a href="/tech/ai/openai-8000-anthropic-rivalry/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">9</span>
+      <span class="sidebar-article-title">오픈AI, 연말까지 직원 8천 명으로 두 배 확대: 앤트로픽 급부상에 전면전</span>
+    </a>
+  
+    <a href="/tech/ai/supermicro-ai-chip-china-smuggling/" class="sidebar-article-item">
+      <span class="sidebar-article-rank">10</span>
+      <span class="sidebar-article-title">슈퍼마이크로 공동창업자, 25억 달러 규모 엔비디아 AI 칩 중국 밀반출로 기소</span>
+    </a>
+  </div>
+      </div>
+    </div>
+  
+      </div>
+    </div>
+    <button class="mobile-fab" id="mobileFab" aria-label="메뉴 열기">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  
+  
+	  <!-- Footer -->
+	  <footer class="site-footer">
+	    <span>© 2026 게이머스크롤</span>
+	    <span class="footer-divider">|</span>
+	    <a href="/privacy/" class="footer-privacy-link" data-modal-open="privacy-modal">개인정보처리방침</a>
+	  </footer>
+
+	  <!-- Privacy Modal (content loaded dynamically) -->
+	  <div id="privacy-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+	    <div class="modal-content">
+	      <button class="modal-close" type="button" data-modal-close="privacy-modal" aria-label="닫기">&times;</button>
+	      <div class="privacy-modal-body"></div>
+	    </div>
+	  </div>
+
+  <script defer src="/assets/layout-runtime.js?v=1c887d57"></script>
+  
+  
+  <script>
+    (function() {
+      if (!('serviceWorker' in navigator)) return;
+      if (location.protocol !== 'https:') return;
+      var host = location.hostname;
+      if (host !== 'gamerscroll.com' && host !== 'www.gamerscroll.com') return;
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js').catch(function() {});
+      });
+    })();
+  </script>
+  <script>(function(){if(document.body.classList.contains('search-hidden'))window.scrollTo(0,64);var n=window.innerWidth<=768?document.querySelector('.nav-inner'):null;if(n){n.style.transition='none';n.offsetHeight;n.style.visibility='visible';n.classList.add('nav-ready');}if(n)setTimeout(function(){n.style.transition='';},50);})();</script>
+  <script>(function(){document.addEventListener('click',function(e){var a=e.target.closest('a[href]');if(!a||a.target==='_blank')return;try{if(document.body.classList.contains('search-hidden'))sessionStorage.setItem('gs-search-hidden','1');else sessionStorage.removeItem('gs-search-hidden');}catch(ex){}},true);})();</script>
+</body>
+</html>

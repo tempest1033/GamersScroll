@@ -1,0 +1,180 @@
+﻿/* ========================================
+   실시간 인기 띠 배너
+   ======================================== */
+.popular-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.popular-banner-label {
+  font-size: var(--font-title-size);
+  font-weight: var(--font-card-title-weight);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.popular-banner-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.popular-banner-items::-webkit-scrollbar {
+  display: none;
+}
+
+.popular-banner-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.popular-banner-item:hover {
+  background: var(--hover-bg);
+}
+
+.popular-banner-rank {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-meta-size);
+  font-weight: var(--font-badge-weight);
+  color: var(--text-muted);
+  background: var(--hover-bg);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.popular-banner-rank.top1 {
+  background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
+  color: #fff;
+}
+
+.popular-banner-rank.top2 {
+  background: linear-gradient(135deg, #d1d5db 0%, #9ca3af 100%);
+  color: #fff;
+}
+
+.popular-banner-rank.top3 {
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  color: #fff;
+}
+
+.popular-banner-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.popular-banner-name {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-card-title-weight);
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popular-banner-more {
+  font-size: var(--font-meta-size);
+  font-weight: var(--font-badge-weight);
+  color: var(--primary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity var(--transition-fast);
+}
+
+.popular-banner-more:hover {
+  opacity: 0.7;
+}
+
+/* 다크모드 - 실시간 인기 배너 */
+@media (prefers-color-scheme: dark) {
+  .popular-banner {
+    background: var(--card);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .popular-banner-item {
+    background: var(--card-hover);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .popular-banner-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* 모바일 띠 배너 - 숨김 */
+@media (max-width: 768px) {
+  .popular-banner {
+    display: none;
+  }
+
+  .popular-banner-label {
+    font-size: var(--font-title-size);
+    font-weight: var(--font-card-title-weight);
+    min-width: 55px;
+    flex-shrink: 0;
+  }
+
+  .popular-banner-items {
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .popular-banner-item:last-child {
+    margin-right: 8px;
+  }
+
+  .popular-banner-item {
+    padding: 6px;
+    gap: 4px;
+  }
+
+  .popular-banner-rank {
+    width: 24px;
+    height: 24px;
+    font-size: var(--font-meta-size);
+  }
+
+  .popular-banner-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .popular-banner-name {
+    display: none;
+  }
+
+  .popular-banner-more {
+    font-size: var(--font-meta-size);
+    font-weight: var(--font-badge-weight);
+    color: var(--primary);
+    min-width: 45px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+}
+

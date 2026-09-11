@@ -1,0 +1,58 @@
+﻿/* 커뮤니티 반응 (말풍선 스타일) */
+.weekly-section-community {
+  background: var(--section-gradient);
+}
+
+.weekly-section-community .weekly-section-title-wrap .weekly-icon {
+  background: var(--section-icon-bg);
+  color: var(--insight-icon);
+}
+
+.weekly-section-alt {
+  background: var(--section-gradient);
+}
+
+.weekly-community-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.weekly-community-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.weekly-community-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.weekly-community-game {
+  display: block;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-badge-weight);
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.weekly-community-title {
+  font-size: 1rem;
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  margin: 0 0 10px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.45;
+}
+
+.weekly-community-desc {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-desc-weight);
+  color: var(--text-secondary);
+  line-height: var(--font-desc-line-height);
+  margin: 0;
+}

@@ -1,0 +1,212 @@
+﻿/* 트렌드 리포트 (mentions) */
+.gm-container {
+  padding: 0;
+}
+
+.gm-container-wide {
+  padding: 0;
+}
+
+.gm-container .game-empty,
+.gm-container-wide .game-empty {
+  min-height: 450px;
+}
+
+.gm-tab-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.gm-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gm-page-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+  font-size: var(--font-title-size);
+  font-weight: var(--font-card-title-weight);
+}
+
+.gm-page-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.gm-page-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.gm-page-index {
+  font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
+  color: rgba(255, 255, 255, 0.8);
+  min-width: 48px;
+  text-align: center;
+}
+
+.gm-period-content {
+  display: none;
+}
+
+.gm-period-content.active {
+  display: block;
+}
+
+.gm-items {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gm-items-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+  min-height: 450px;
+}
+
+.gm-item {
+  padding: 16px;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s, background 0.15s;
+}
+
+/* 다크모드 - 호버 스타일 */
+@media (prefers-color-scheme: dark) {
+  .gm-item {
+    background: var(--card);
+  }
+  .gm-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.gm-item-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.gm-item-type {
+  padding: 3px 8px;
+  font-size: var(--font-badge-size);
+  font-weight: var(--font-title-weight);
+  border-radius: 4px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.gm-type-ranking { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
+.gm-type-community { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+.gm-type-issue { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+.gm-type-metric { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+.gm-type-streaming { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+.gm-type-mvp { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+.gm-type-stock { background: rgba(236, 72, 153, 0.15); color: #ec4899; }
+.gm-type-industry { background: rgba(20, 184, 166, 0.15); color: #14b8a6; }
+.gm-type-global { background: rgba(99, 102, 241, 0.15); color: #6366f1; }
+.gm-type-release { background: rgba(249, 115, 22, 0.15); color: #f97316; }
+/* 트렌드 리포트 허브 - AM/PM 타입 */
+.gm-type-am { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+.gm-type-pm { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
+
+/* 트렌드 허브 링크 아이템 스타일 (a 태그용) */
+a.gm-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+@media (prefers-color-scheme: dark) {
+  a.gm-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* 트렌드 허브 헤더 내 제목 스타일 */
+.gm-item-header .gm-item-title {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.gm-rank-badge {
+  font-size: var(--font-meta-size);
+  font-weight: var(--font-tab-weight);
+  color: var(--text-secondary);
+}
+
+.gm-rank-badge.up { color: #22c55e; }
+.gm-rank-badge.down { color: #ef4444; }
+
+.gm-item-date {
+  margin-left: auto;
+  font-size: var(--font-meta-size);
+  color: var(--text-tertiary);
+}
+
+.gm-item-title {
+  font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.gm-item-desc {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-desc-weight);
+  color: var(--text-secondary);
+  line-height: var(--font-desc-line-height);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .gm-item-title {
+    color: var(--text);
+  }
+  .gm-item-desc {
+    color: var(--text-secondary);
+  }
+}
+
+@media (max-width: 768px) {
+  .gm-item-desc {
+    font-size: var(--font-desc-size);
+  }
+}

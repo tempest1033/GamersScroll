@@ -1,0 +1,268 @@
+/* ========== Dark Mode Overrides ========== */
+
+@media (prefers-color-scheme: dark) {
+  /* 다크모드 lazy 이미지 플레이스홀더 */
+  img[loading="lazy"] {
+    background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+  }
+
+  /* iOS/AOS stat-label: light-mode dark colors (#0050B3 / #1F8F4D) lose
+     contrast on dark bg. Restore brighter platform colors for dark mode. */
+  .ranking-card-stat.stat-ios .stat-label {
+    color: #4DA6FF;
+  }
+  .ranking-card-stat.stat-aos .stat-label {
+    color: #5EE69D;
+  }
+
+  /* === Dark Mode Variables === */
+  :root {
+    /* Primary Colors - 다크 BG에서 잘 보이는 라이트 블루 */
+    --primary: #60A5FA;
+    --primary-light: #93C5FD;
+    --primary-dark: #3B82F6;
+    --accent: #60A5FA;
+
+    /* Background & Surface - 검정 계열 (청색 배제) */
+    --bg: #0A0A0A;
+    --bg-elevated: #161616;
+    --card: #161616;
+    --card-hover: #1F1F1F;
+
+    /* Border - 검정 계열 */
+    --border: #272727;
+    --border-subtle: #1F1F1F;
+    --border-hover: var(--primary); /* 호버 시 보더 색상 */
+
+    /* Text - WCAG AA 준수 */
+    --text: rgba(255, 255, 255, 0.92);
+    --text-primary: rgba(255, 255, 255, 0.92);
+    --text-secondary: rgba(255, 255, 255, 0.65);
+    --text-muted: #8A8A8A;
+    --text-tertiary: #A1A1AA;
+
+    /* 호환성 변수 (별칭) - 다크모드 */
+    --bg-secondary: #1C1C1C;
+    --bg-tertiary: #161616;
+    --border-color: #272727;
+    --bg-hover: #1F1F1F;
+    --accent-color: var(--primary);
+
+    /* Shadows - 다크모드 최적화 + 미세 글로우 */
+    --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.4), 0 0 1px rgb(255 255 255 / 0.03);
+    --shadow: 0 2px 4px rgb(0 0 0 / 0.4), 0 4px 12px rgb(0 0 0 / 0.3), 0 0 1px rgb(255 255 255 / 0.05);
+    --shadow-lg: 0 4px 8px rgb(0 0 0 / 0.4), 0 12px 24px rgb(0 0 0 / 0.35), 0 0 1px rgb(255 255 255 / 0.05);
+    --shadow-xl: 0 8px 16px rgb(0 0 0 / 0.4), 0 24px 48px rgb(0 0 0 / 0.35), 0 0 1px rgb(255 255 255 / 0.06);
+
+    /* Glass Effect - 검정 계열 */
+    --glass-bg: rgba(30, 30, 30, 0.75);
+    --glass-bg-solid: rgba(30, 30, 30, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.08);
+
+    /* Interactive States - 검정 계열 */
+    --hover-bg: #1F1F1F;
+
+    /* Semantic Colors - 다크모드 */
+    --success: #4ade80;
+    --active-bg: rgba(88, 166, 255, 0.15);
+    --item-bg: #161616;
+
+    /* Glow Effects - 톤 통일 */
+    --glow-primary: 0 0 20px rgba(88, 166, 255, 0.25);
+    --glow-accent: 0 0 20px rgba(121, 184, 255, 0.20);
+
+    /* === 다크모드 전용 Insight/Accent Colors (블루 톤) === */
+    --insight-border: rgba(88, 166, 255, 0.25);
+    --insight-header-border: rgba(88, 166, 255, 0.2);
+    --insight-icon: #58A6FF;
+    --metric-color: #58A6FF;
+    --gradient-progress: linear-gradient(90deg, #79B8FF, #388BFD);
+    --gradient-accent: linear-gradient(135deg, #79B8FF 0%, #388BFD 100%);
+
+    /* === 다크모드 전용 Icon Backgrounds (블루 통일) === */
+    --icon-bg-hot: rgba(88, 166, 255, 0.20);
+    --icon-bg-industry: rgba(88, 166, 255, 0.20);
+    --icon-bg-metrics: rgba(88, 166, 255, 0.20);
+    --icon-bg-rankings: rgba(88, 166, 255, 0.20);
+    --icon-bg-community: rgba(88, 166, 255, 0.20);
+    --icon-bg-streaming: rgba(88, 166, 255, 0.20);
+    --icon-bg-stocks: rgba(88, 166, 255, 0.20);
+
+    /* === 다크모드 전용 Tag Base Colors (블루) === */
+    --tag-bg: rgba(88, 166, 255, 0.18);
+    --tag-color: #79B8FF;
+
+    /* === 다크모드 전용 Section Colors (미니멀 - 투명/단색) === */
+    --section-gradient: transparent;
+    --section-gradient-strong: rgba(255, 255, 255, 0.02);
+    --section-icon-bg: rgba(255, 107, 53, 0.15);
+    --section-accent-bg: rgba(255, 255, 255, 0.05);
+    --section-border: rgba(255, 255, 255, 0.1);
+
+    /* === Modal Colors (Phase C 보존형 토큰화 - 동일 값 유지) === */
+    --modal-bg: #1a1a1a;
+    --modal-text: #ddd;
+    --modal-title: #fff;
+    --modal-section-title: #aaa;
+    --modal-close: #888;
+    --modal-close-hover: #fff;
+    --modal-effective-date: #666;
+
+    /* === Stat Colors === */
+    --stat-ios-color: #4fc3f7;
+    --stat-aos-color: #ffb74d;
+    --stat-success: #81c784;
+
+    /* === Badge Colors === */
+    --badge-danger: #f87171;
+    --badge-success: #4ade80;
+    --badge-warning: #fbbf24;
+    --badge-info: #38bdf8;
+
+    /* === Rank Badge Colors === */
+    --rank-purple: #8b5cf6;
+    --rank-green: #22c55e;
+    --rank-red: #ef4444;
+
+    /* === Link Hover === */
+    --link-hover-accent: #34d399;
+  }
+
+  /* 다크모드 메인탭 - 흰색 톤 */
+  .nav-item {
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+  .nav-item:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+  /* 스와이프 중 하이라이트 비활성화 (다크모드) */
+  .nav-item.swiping,
+  .nav-item.swiping:hover,
+  .nav-item.swiping:active,
+  .nav-item.swiping:focus {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .nav-item.active {
+    color: #fff !important;
+    background: transparent !important;
+  }
+  .nav-item svg {
+    stroke: rgba(255, 255, 255, 0.85) !important;
+    opacity: 1 !important;
+  }
+  .nav-item:hover svg {
+    stroke: #fff !important;
+  }
+  .nav-item.active svg {
+    stroke: #fff !important;
+  }
+
+  /* 다크모드 서브탭 - 흰색 톤 */
+  .tab-btn {
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+  .tab-btn:hover {
+    color: #fff !important;
+  }
+  .tab-btn.active {
+    color: #fff !important;
+  }
+  /* 스와이프 중 탭버튼 하이라이트 비활성화 (다크모드) */
+  .tab-btn.swiping,
+  .tab-btn.swiping:hover,
+  .tab-btn.swiping:active,
+  .tab-btn.swiping:focus {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .tab-btn .news-favicon {
+    filter: brightness(1.5) contrast(0.9) !important;
+  }
+
+  /* 다크모드 홈 서브탭 - 밝은 색상 */
+  .home-news-tab,
+  .home-community-tab,
+  .home-video-tab {
+    color: rgba(255, 255, 255, 0.85) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .home-news-tab:hover,
+  .home-community-tab:hover,
+  .home-video-tab:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+  }
+  .home-news-tab.active,
+  .home-community-tab.active,
+  .home-video-tab.active {
+    background: var(--primary) !important;
+    color: #fff !important;
+  }
+
+  /* 다크모드 - 인사이트 페이지 탭 */
+  .insight-tab {
+    color: rgba(255, 255, 255, 0.85) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+  .insight-tab:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+  }
+  .insight-tab.active {
+    background: var(--primary) !important;
+    color: #fff !important;
+    border-color: var(--primary) !important;
+  }
+
+  /* 다크모드 - 모든 본문/설명 텍스트 회색 계열 */
+  .home-insight-desc,
+  .insight-item-desc,
+  .report-section-desc,
+  .stock-comment,
+  .stock-desc {
+    color: var(--text-secondary) !important;
+  }
+
+  /* 다크모드 - 모든 제목 텍스트 순백색 */
+  .home-insight-title,
+  .insight-item-title,
+  .report-section-title,
+  .stock-name,
+  .stock-title {
+    color: #fff !important;
+  }
+
+  /* 다크모드 - 에디터스 노트 */
+  .insight-summary {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  /* 다크모드 - 인포그래픽 텍스트 */
+  .insight-info-label,
+  .insight-info-value,
+  .insight-info-sub {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* 다크모드 - 주식 정보 텍스트 */
+  .stock-item-name,
+  .stock-item-comment,
+  .stock-item-desc {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* 다크모드 - 인사이트 페이지 전체 텍스트 */
+  #insight .page-container p,
+  #insight .page-container span:not(.home-insight-tag):not([class*="badge"]):not([class*="rank"]) {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}

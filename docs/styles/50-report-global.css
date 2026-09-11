@@ -1,0 +1,160 @@
+﻿/* 글로벌 트렌드 */
+.weekly-section-global {
+  background: var(--section-gradient);
+}
+
+.weekly-section-global .weekly-section-title-wrap .weekly-icon {
+  background: var(--section-icon-bg);
+  color: var(--insight-icon);
+}
+
+.weekly-global-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.weekly-global-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.weekly-global-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.weekly-global-region {
+  display: inline-block;
+  font-size: var(--font-meta-size);
+  font-weight: var(--font-badge-weight);
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.18);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.weekly-global-title {
+  font-size: var(--font-section-size);
+  font-weight: var(--font-badge-weight);
+  color: var(--text);
+  margin: 0 0 10px 0;
+  line-height: 1.45;
+}
+
+.weekly-global-desc {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-desc-weight);
+  color: var(--text-secondary);
+  line-height: var(--font-desc-line-height);
+  margin: 0;
+}
+
+/* 글로벌 트렌드 카드 (썸네일 포함, 2열) */
+.global-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.global-grid .global-card {
+  height: 100%;
+  min-height: 120px;
+}
+
+.global-grid .global-thumb {
+  width: 100px;
+  height: 100%;
+  min-height: 80px;
+}
+
+.global-card {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.global-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.global-thumb {
+  width: 100px;
+  height: 70px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--border);
+}
+
+.global-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.global-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.global-tag {
+  display: inline-block;
+  font-size: var(--font-meta-size);
+  font-weight: var(--font-badge-weight);
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.18);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.global-title {
+  font-size: var(--font-section-size);
+  font-weight: var(--font-card-title-weight);
+  color: var(--text);
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.global-desc {
+  font-size: var(--font-desc-size);
+  color: var(--text-secondary);
+  line-height: var(--font-desc-line-height);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .global-grid,
+  .industry-grid {
+    grid-template-columns: 1fr;
+  }
+  .global-grid .global-card,
+  .global-card {
+    flex-direction: column;
+    padding: 0;
+  }
+	  .global-grid .global-thumb,
+	  .global-thumb {
+	    width: 100%;
+	    height: auto;
+	    aspect-ratio: 16 / 9;
+	    max-height: 180px;
+	    border-radius: var(--radius) var(--radius) 0 0;
+	    min-height: auto;
+	  }
+  .global-content {
+    padding: 14px 16px 16px;
+  }
+}

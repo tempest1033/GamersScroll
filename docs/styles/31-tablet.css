@@ -1,0 +1,21 @@
+/* ========== 태블릿 구간 (769~1024px) ==========
+   기존 브레이크포인트가 768px 하나뿐이라 태블릿은 PC 레이아웃을 그대로 받아
+   카드가 지나치게 좁아졌다. 사이드바를 본문 아래로 내리고 카드 그리드를 2열로 맞춘다. */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* 사이드바가 본문 아래로 내려가므로 sticky 해제 */
+  .home-sidebar-sticky {
+    position: static;
+  }
+
+  .home-latest-grid,
+  .category-detail .home-trend-grid,
+  .wiki-feed-grid,
+  .trend-feed-grid,
+  .youtube-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

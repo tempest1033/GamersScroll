@@ -1,0 +1,20 @@
+/* 월간 요약 */
+.rk .rk-month-summary { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: stretch; gap: 40px; }
+.rk .rk-month-summary > * { min-width: 0; }
+.rk .rk-month-summary h2 { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+.rk .rk-month-publishers td { height: 54px; }
+.rk .rk-publisher-cell { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.rk .rk-publisher-cell > span:last-child { overflow-wrap: anywhere; }
+.rk .rk-publisher-cell img, .rk .rk-publisher-initial { width: 32px; height: 32px; flex: 0 0 32px; border-radius: 6px; object-fit: contain; background: #fff; }
+.rk .rk-publisher-initial { display: grid; place-items: center; background: var(--rk-bg2); color: var(--rk-muted); font-weight: 700; }
+.rk .rk-month-brief { display: flex; flex-direction: column; }
+.rk .rk-month-brief dl { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); flex: 1; margin: 0; }
+.rk .rk-month-brief dl > div { padding: 20px 0; border-bottom: 1px solid var(--rk-line); }
+.rk .rk-month-brief dt { color: var(--rk-muted); font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+.rk .rk-month-brief dd { margin: 0; line-height: 1.8; overflow-wrap: anywhere; }
+.rk .rk-month-brief dd strong { font-size: 17px; }
+.rk .rk-month-brief dd span { display: block; color: var(--rk-text2); font-size: 13px; }
+@media (max-width: 768px) {
+  .rk .rk-month-summary { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .rk .rk-month-brief dl { grid-template-rows: none; }
+}

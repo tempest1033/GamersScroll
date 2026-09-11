@@ -1,0 +1,198 @@
+/* ============================================================
+   홈 피드 모바일 패딩 통합 (최종)
+   - 모든 요소가 동일한 좌우 여백으로 정렬
+   - 768/480/360: 12px 통일
+   ============================================================ */
+
+/* === 모바일 (768px 이하) === */
+@media (max-width: 768px) {
+  /* 컨테이너 - 상단 패딩 유지 (광고 배너 여백) */
+  .home-container {
+    padding: var(--space-block-gap, 16px) 0 var(--space-block-y) 0 !important;
+  }
+
+  /* 카드 헤더 */
+  .home-card-header {
+    padding: 8px !important;
+  }
+
+  /* 카드 바디 */
+  .home-card-body {
+    padding: 6px 0 !important;
+  }
+
+  /* 탭 그룹 */
+  .home-rank-tabs {
+    margin: 0 8px 6px 8px !important;
+    padding: 0 !important;
+  }
+
+  /* 커뮤니티 탭 텍스트 축약 */
+  .tab-text-dcinside {
+    font-size: 0;
+  }
+  .tab-text-dcinside::after {
+    content: '디시';
+    font-size: var(--font-tab-size);
+  }
+  .tab-text-arca {
+    font-size: 0;
+  }
+  .tab-text-arca::after {
+    content: '아카';
+    font-size: var(--font-tab-size);
+  }
+
+  /* 인사이트 페이지 탭 - 모바일 */
+  .insight-tabs {
+    margin: 0 0 10px 0 !important;
+    padding: 4px !important;
+  }
+
+  /* Split 컨테이너 - 좌우 패딩 없음 */
+  .home-news-split,
+  .home-video-split {
+    padding: 0 !important;
+  }
+
+  /* 카드 컨테이너 - 좌우 패딩 없음 */
+  .home-news-cards,
+  .home-video-cards {
+    padding: 0 !important;
+  }
+
+  /* 뉴스/영상 카드 */
+  .home-news-card,
+  .home-video-card {
+    margin: 0 8px 8px 8px !important;
+    border-radius: 8px;
+  }
+
+  /* 리스트 컨테이너 */
+  .home-news-list,
+  .home-video-list {
+    padding: 0 8px !important;
+  }
+
+  /* 뉴스/영상 아이템 */
+  .home-news-item,
+  .home-video-item {
+    padding: 8px !important;
+    margin: 0 !important;
+  }
+
+  /* 뉴스/영상 아이템 구분선 (모바일) */
+  .home-news-item:not(:last-child),
+  .home-video-item:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* 트렌드/최신 카드 구분선 (모바일) */
+  .home-trend-grid .home-trend-card:not(:last-child),
+  .home-latest-grid .home-trend-card:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* 일반 아이템 */
+  .home-item {
+    padding: 8px !important;
+  }
+
+  /* 순위/스팀/출시예정 행 */
+  .home-steam-row,
+  .home-upcoming-row,
+  .home-rank-row {
+    padding: 8px !important;
+  }
+
+  /* 탭 그룹 (카드 바디 내) */
+  .home-card-body .tab-group {
+    margin: 0 8px 6px 8px !important;
+  }
+
+  /* 인사이트 그리드 - 1열로 변경 */
+  .home-insight-grid {
+    flex-direction: column;
+    gap: 12px;
+    padding: 6px 8px !important;
+  }
+
+  /* 인사이트 스크롤 - 헤더와 정렬 */
+  .home-insight-scroll {
+    padding: 6px 8px !important;
+    gap: 12px !important;
+  }
+
+  /* 인사이트 split - 1열로 변경 */
+  .home-insight-split {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 6px 8px !important;
+  }
+
+  .home-insight-column {
+    width: 100% !important;
+  }
+
+  .home-insight-item {
+    padding: 12px;
+  }
+}
+
+/* ===========================
+   인사이트 페이지 스타일
+   =========================== */
+
+.insight-panel {
+  display: none;
+}
+
+.insight-panel.active {
+  display: block;
+}
+.insight-panel.active > * {
+  margin-bottom: var(--space-block-y);
+}
+.insight-panel.active > *:last-child {
+  margin-bottom: 0;
+}
+
+/* 다크모드 - 블루/인디고→오렌지 복원 */
+@media (prefers-color-scheme: dark) {
+  /* 네비 active - 밑줄은 텍스트색과 동일 (리뉴얼: 주황 강조 제거) */
+  .nav-item.active::after {
+    background: currentColor;
+  }
+  /* 홈 트렌드 카드 다크모드 */
+  .home-trend-card {
+    background: var(--card-bg);
+    border-color: var(--border);
+  }
+  /* 로고 배지/텍스트 */
+  .logo-badge {
+    background: linear-gradient(135deg, #ff6b35 0%, #ffc107 100%);
+  }
+  .header-title .logo-game {
+    background: linear-gradient(135deg, #ff6b35 0%, #ffc107 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  /* === 트렌드 페이지 전체 오버라이드 === */
+  /* 급상승/급하락 뱃지 */
+  .rank-badge {
+    background: rgba(255, 107, 53, 0.15) !important;
+    color: #ff6b35 !important;
+  }
+}
+
+.demo-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: var(--font-badge-size);
+  font-weight: var(--font-badge-weight);
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.15);
+  border-radius: 20px;
+}

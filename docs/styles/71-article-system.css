@@ -1,0 +1,85 @@
+/* 기사 유형과 관계없이 제목·본문·데이터·미디어를 같은 위계로 표시한다. */
+body .site-container .blog-title { font-size: 36px !important; font-weight: 650; line-height: 1.35 !important; letter-spacing: -.035em; word-break: keep-all; overflow-wrap: anywhere; }
+body .site-container .blog-meta { font-size: 13px; line-height: 1.6; color: var(--text-muted); gap: 8px 16px; flex-wrap: wrap; }
+body .site-container .blog-content { color: #333336; font-size: 17px; line-height: 1.85; }
+body .site-container .blog-content .blog-paragraph,
+body .site-container .blog-content > p,
+body .site-container .blog-content li { font-size: 17px; line-height: 1.85; word-break: normal; overflow-wrap: anywhere; }
+body .site-container .blog-content .blog-paragraph,
+body .site-container .blog-content > p { margin-top: 0; margin-bottom: 24px; }
+body .site-container .blog-content .blog-heading { font-size: 26px !important; font-weight: 600; line-height: 1.45 !important; margin-top: 40px !important; margin-bottom: 20px !important; padding-bottom: 0 !important; border: 0; word-break: keep-all; overflow-wrap: anywhere; }
+body .site-container .blog-content h3 { font-size: 21px; line-height: 1.5; font-weight: 600; }
+body .site-container .blog-summary { font-size: 17px !important; line-height: 1.8 !important; padding: 24px; background: var(--bg-secondary); border: 0; border-radius: 12px; }
+body .site-container .blog-caption,
+body .site-container .blog-note { font-size: 13px; line-height: 1.7; color: var(--text-muted); }
+body .site-container .blog-caption { margin: 10px 0 0; padding: 0; text-align: left; }
+body .site-container .blog-figure { margin-top: 28px; margin-bottom: 28px; min-width: 0; }
+body .site-container .blog-image { display: block; max-width: 100%; height: auto; object-fit: contain; border-radius: 12px; }
+body .site-container .blog-video-wrapper { position: relative; width: 100%; aspect-ratio: 16 / 9; height: auto; padding: 0; overflow: hidden; background: var(--bg-secondary); border-radius: 12px; }
+body .site-container .blog-video-wrapper iframe,
+body .site-container .blog-video-wrapper video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border: 0; }
+body .site-container .blog-content .blog-table-wrapper,
+body .site-container .blog-content .table-scroll { overflow-x: auto; max-width: 100%; border: 1px solid var(--line); border-radius: 12px; }
+/* 표는 바깥 래퍼 프레임 하나만: 안쪽 table의 테두리·모서리·하단 여백(1.5em) 제거 (2026-09-09) */
+body .site-container .blog-content table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.65; border: 0; border-radius: 0; margin: 0; }
+body .site-container .blog-content table th { background: var(--bg-secondary); color: var(--text-secondary); font-weight: 600; }
+body .site-container .blog-content table th,
+body .site-container .blog-content table td { padding: 12px 14px; border: 0; border-bottom: 1px solid var(--line); vertical-align: middle; line-height: 1.65; }
+body .site-container .blog-content table tr:last-child td { border-bottom: 0; }
+body .site-container .blog-content .table-title { font-size: 16px; font-weight: 600; line-height: 1.5; margin-bottom: 12px; }
+body .site-container .ranking-chart-wrapper { box-sizing: border-box; min-width: 0; max-width: 100%; padding: 20px !important; border: 0; border-radius: 12px; background: var(--bg-secondary); box-shadow: none; margin-top: 24px; margin-bottom: 28px; }
+body .site-container .ranking-chart-title { font-size: 17px !important; line-height: 1.5; font-weight: 600; color: var(--text); text-align: left; margin: 0 0 16px; }
+body .site-container .ranking-chart { max-width: 100%; min-width: 0; }
+body .site-container .ranking-chart .apexcharts-text { font-family: inherit !important; }
+
+/* ===== 포맷 정리 (2026-09-09) ===== */
+/* 기사 표의 등락 뱃지: 순위 페이지와 같은 규칙 (상승 빨강, 하락 회색) — 이전엔 초록/빨강으로 반대였다 */
+body .site-container .blog-table-wrapper .rank-up { background: #fdeceb; color: var(--data-up); }
+body .site-container .blog-table-wrapper .rank-down { background: var(--bg-secondary); color: var(--text-muted); }
+/* 모서리 3단계: 미디어 16 / 상자 12 / 칩 8 */
+body .site-container .blog-figure, body .site-container .blog-header + .blog-figure, body .site-container .blog-hero { border-radius: 16px; }
+body .site-container .blog-figure .blog-image { border-radius: 16px; }
+body .site-container .blog-note { border-radius: 8px; }
+/* 관련 문서·정보 출처 제목: 본문 소제목과 같은 600 */
+body .site-container .blog-related-title, body .site-container .blog-sources-title { font-weight: 600; }
+/* 순위 카드: 흰 카드 위 흰 칩이라 안 보이던 통계 칩에 회색 배경, 큰 수치는 검정으로 강조 */
+body .site-container .ranking-card-stat { background: var(--bg-secondary); }
+body .site-container .ranking-card-score { color: var(--text); }
+/* 모바일 표: 행마다 카드로 풀리는 stack 방식(10행 표가 2,900px, caption이 세로로 찍힘)을 걷어내고
+   .table-scroll과 같은 가로 스크롤 표로 통일 */
+@media (max-width: 768px) {
+  body .site-container .blog-content .blog-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; touch-action: pan-x pan-y; }
+  body .site-container .blog-table--stack table, body .site-container .blog-table--stack .wiki-table { display: table; width: max-content; min-width: 100%; border: 0; border-radius: 0; background: transparent; overflow: visible; margin: 0; }
+  body .site-container .blog-table--stack thead { position: static; width: auto; height: auto; overflow: visible; clip: auto; clip-path: none; white-space: nowrap; }
+  body .site-container .blog-table--stack tbody { display: table-row-group; width: auto; }
+  body .site-container .blog-table--stack tr, body .site-container .blog-table--stack tbody tr { display: table-row; width: auto; margin: 0; border: 0; border-radius: 0; overflow: visible; background: transparent; }
+  body .site-container .blog-table--stack td, body .site-container .blog-table--stack th { display: table-cell; padding: 10px 12px; white-space: nowrap; border-bottom: 1px solid var(--line); background: #fff; font-weight: 400; color: var(--text-secondary); }
+  body .site-container .blog-table--stack th { background: var(--bg-secondary); font-weight: 600; }
+  body .site-container .blog-table--stack td::before { content: none; }
+  body .site-container .blog-table--stack tr:last-child td { border-bottom: 0; }
+  body .site-container .blog-table--stack caption { display: table-caption; caption-side: bottom; white-space: normal; padding: 10px 12px 0; }
+}
+body .site-container .ranking-chart .apexcharts-xaxis-label,
+body .site-container .ranking-chart .apexcharts-yaxis-label { fill: var(--text-muted) !important; font-size: 12px; }
+body .site-container .ranking-chart .apexcharts-legend-text { color: var(--text-secondary) !important; font-size: 12px !important; }
+body .site-container .ranking-chart .apexcharts-tooltip { background: #fff !important; color: var(--text) !important; border: 1px solid var(--border); box-shadow: 0 4px 16px #00000010; }
+body .site-container .ranking-chart .apexcharts-tooltip-title { background: var(--bg-secondary) !important; color: var(--text); }
+body .site-container .ranking-chart .apexcharts-gridline { stroke: var(--line); }
+body .site-container .ranking-card { padding: 20px; border: 1px solid var(--line); box-shadow: none; border-radius: 12px; }
+@media (max-width: 768px) {
+  body .site-container .blog-title { font-size: 28px !important; }
+  body .site-container .blog-content .blog-heading { font-size: 23px !important; margin-top: 32px !important; margin-bottom: 16px !important; }
+  body .site-container .blog-content h3 { font-size: 19px; }
+  body .site-container .blog-content,
+  body .site-container .blog-content .blog-paragraph,
+  body .site-container .blog-content > p,
+  body .site-container .blog-content li { font-size: 16px; line-height: 1.8; }
+  body .site-container .blog-summary { font-size: 15px !important; padding: 20px; }
+  body .site-container .blog-caption,
+  body .site-container .blog-note { font-size: 12px; }
+  body .site-container .blog-content table { font-size: 13px; }
+  body .site-container .blog-content table th,
+  body .site-container .blog-content table td { padding: 10px; }
+  body .site-container .ranking-chart-wrapper { padding: 14px !important; }
+  body .site-container .ranking-chart-title { font-size: 16px !important; }
+}

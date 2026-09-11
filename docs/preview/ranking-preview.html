@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[미리보기] 새해 첫번째 오픈월드 대전, 엔드필드 vs 드래곤소드 승자는?</title>
+  <style>
+    :root {
+      --bg: #0a0a0b;
+      --bg-secondary: #18181b;
+      --card: #18181b;
+      --card-hover: #27272a;
+      --border: #3f3f46;
+      --text: #fafafa;
+      --text-secondary: #d4d4d8;
+      --text-muted: #a1a1aa;
+      --primary: #8b5cf6;
+      --hover-bg: #27272a;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #60a5fa; text-decoration: none; }
+    a:hover { color: #34d399; }
+
+    .preview-banner {
+      background: linear-gradient(90deg, #8b5cf6, #6d28d9);
+      color: #fff;
+      padding: 12px 20px;
+      text-align: center;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .preview-banner a { color: #fff; margin-left: 16px; text-decoration: underline; }
+
+    .preview-container { max-width: 1190px; margin: 0 auto; padding: 20px; }
+
+    .preview-meta {
+      background: var(--hover-bg);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      font-size: 0.875rem;
+      border: 1px solid var(--border);
+    }
+    .preview-meta dt { color: var(--text-muted); font-weight: 500; margin-top: 8px; }
+    .preview-meta dt:first-child { margin-top: 0; }
+    .preview-meta dd { margin: 4px 0 0 0; color: var(--text-secondary); }
+    .preview-meta code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; }
+
+    .blog-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .blog-hero { width: 100%; max-height: 280px; overflow: hidden; background: var(--bg-secondary); }
+    .blog-hero-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .blog-header { padding: 24px 24px 8px; }
+    .blog-title { font-size: 1.75rem; font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 16px; }
+    .blog-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .blog-date { font-size: 0.8125rem; color: var(--text-muted); }
+    .blog-summary { font-size: 0.9375rem; line-height: 1.7; color: var(--text-secondary); padding: 16px; background: var(--hover-bg); border-radius: 8px; margin-bottom: 16px; }
+
+    .blog-content { padding: 24px; }
+    .blog-paragraph { font-size: 0.9375rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 20px; }
+    .blog-paragraph:last-child { margin-bottom: 0; }
+
+    .blog-heading { font-size: 1.25rem; font-weight: 600; color: var(--text); margin: 32px 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .blog-heading:first-child { margin-top: 0; }
+
+    .blog-figure { margin: 24px 0; border-radius: 8px; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--border); }
+    .blog-figure.blog-table { width: fit-content; max-width: 100%; }
+    .blog-image { width: 100%; height: auto; max-height: 800px; object-fit: contain; display: block; }
+    .blog-caption { padding: 12px 16px; font-size: 0.8125rem; color: var(--text-muted); text-align: center; background: var(--hover-bg); border-top: 1px solid var(--border); }
+
+    .blog-quote { margin: 24px 0; padding: 16px 20px; background: rgba(245, 158, 11, 0.08); border-left: 3px solid var(--primary); border-radius: 0 8px 8px 0; font-size: 0.9375rem; line-height: 1.7; color: var(--text-secondary); font-style: italic; }
+
+    .blog-video .blog-video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .blog-video .blog-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+    .table-title { padding: 12px 16px; font-size: 1rem; font-weight: 600; color: var(--text); background: var(--hover-bg); border-bottom: 1px solid var(--border); }
+    .blog-table-wrapper, .wiki-table-wrapper { margin: 0; width: fit-content; max-width: 100%; overflow-x: auto; }
+    .wiki-table { width: auto; min-width: 50%; border-collapse: collapse; font-size: 0.9375rem; }
+    .wiki-table th, .wiki-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+    .wiki-table th { background: var(--hover-bg); font-weight: 600; color: var(--text); }
+    .wiki-table td { color: var(--text-secondary); }
+    .wiki-table tbody tr:hover { background: var(--hover-bg); }
+    .wiki-table tbody tr:last-child td { border-bottom: none; }
+    .wiki-table a { color: #60a5fa; font-weight: 500; }
+    .wiki-table a:hover { color: #34d399; }
+
+    .blog-sources { padding: 24px; border-top: 1px solid var(--border); }
+    .blog-sources-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+    .blog-sources-list { list-style: disc; padding-left: 20px; margin: 0; }
+    .blog-sources-list li { font-size: 0.75rem; line-height: 1.5; margin-bottom: 4px; }
+    .blog-sources-list a { color: var(--text-secondary); }
+    .blog-sources-list a:hover { color: var(--primary); text-decoration: underline; }
+
+    .blog-related-games { padding: 24px; border-top: 1px solid var(--border); }
+    .blog-related-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 16px; }
+    .blog-related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .blog-related-card { display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--hover-bg); border-radius: 8px; text-decoration: none; border: 1px solid transparent; transition: all 0.2s; }
+    .blog-related-card:hover { background: var(--card-hover); border-color: var(--border); }
+    .blog-related-icon { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
+    .blog-related-name { font-size: 0.875rem; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .blog-list { margin: 16px 0; padding-left: 24px; }
+    .blog-list li { margin-bottom: 8px; color: var(--text-secondary); }
+
+    .preview-ad-placeholder { background: rgba(255,255,255,0.05); border: 2px dashed rgba(255,255,255,0.2); padding: 40px; text-align: center; color: rgba(255,255,255,0.4); margin: 24px 0; border-radius: 8px; }
+
+    .game-ranking-list { margin: 24px 0; }
+    .game-ranking-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+    .game-ranking-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--hover-bg); border-radius: 8px; margin-bottom: 8px; }
+    .game-ranking-rank { font-size: 1.25rem; font-weight: 700; color: var(--primary); width: 32px; text-align: center; }
+    .game-ranking-thumb { width: 48px; height: 48px; border-radius: 8px; overflow: hidden; }
+    .game-ranking-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .game-ranking-info { flex: 1; }
+    .game-ranking-name { font-weight: 500; color: var(--text); }
+    .game-ranking-price { color: var(--text-muted); font-size: 0.875rem; }
+    .game-ranking-desc { font-size: 0.8125rem; color: var(--text-muted); margin-top: 4px; }
+
+    .blog-link-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0; }
+    .blog-link-button { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: var(--hover-bg); border-radius: 12px; border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; }
+    .blog-link-button:hover { background: var(--card-hover); border-color: var(--primary); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+    .blog-link-icon { width: 64px; height: 64px; border-radius: 14px; object-fit: cover; flex-shrink: 0; }
+    .blog-link-content { flex: 1; min-width: 0; }
+    .blog-link-text { display: block; font-weight: 600; color: var(--text); font-size: 1rem; }
+    .blog-link-subtext { display: block; font-size: 0.8125rem; color: var(--text-muted); margin-top: 3px; }
+    .blog-link-arrow { font-size: 1.25rem; color: var(--text-muted); flex-shrink: 0; }
+
+    .preview-chart-placeholder { background: var(--hover-bg); border: 2px dashed var(--border); border-radius: 12px; padding: 32px; margin: 24px 0; text-align: center; }
+    .chart-placeholder-icon { font-size: 3rem; margin-bottom: 12px; }
+    .chart-placeholder-title { font-size: 1.125rem; font-weight: 600; color: var(--text); margin-bottom: 16px; }
+    .chart-placeholder-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 0.875rem; color: var(--text-muted); margin-bottom: 12px; }
+    .chart-placeholder-note { font-size: 0.75rem; color: var(--text-muted); opacity: 0.7; }
+
+    @media (max-width: 768px) {
+      .blog-link-grid { grid-template-columns: 1fr; }
+      .blog-header, .blog-content, .blog-related-games, .blog-sources { padding: 16px; }
+      .blog-title { font-size: 1.5rem; }
+      .blog-heading { font-size: 1rem; }
+      .blog-figure { margin: 16px -16px; border-radius: 0; border-left: none; border-right: none; }
+      .blog-related-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-figure.blog-table { width: 100%; margin: 16px 0; }
+      .wiki-table { width: 100%; min-width: 400px; }
+      .wiki-table th, .wiki-table td { padding: 10px 12px; font-size: 0.875rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">
+    🏆 순위 분석 미리보기 - 실제 사이트 스타일 적용
+    <a href="javascript:location.reload()">새로고침</a>
+  </div>
+
+  <div class="preview-container">
+    <dl class="preview-meta">
+      <dt>상태</dt>
+      <dd><strong>approved</strong></dd>
+      
+      <dt>Slug</dt>
+      <dd><code>endfield-vs-dragonsword-new-year-2026</code></dd>
+      <dt>키워드</dt>
+      <dd>명일방주 엔드필드, 드래곤소드, 서브컬처 게임, 모바일 RPG 순위, 엔드필드 매출, 드래곤소드 매출, 2026 신작 대결, 하이퍼그리프, 웹젠, 오픈월드 RPG</dd>
+    </dl>
+
+    <article class="blog-card">
+      
+    <div class="blog-hero">
+      <img class="blog-hero-image" src="https://wsrv.nl/?url=https%3A%2F%2Fweb-static.hg-cdn.com%2Fupload%2Fimage%2F20251031%2F74d249bb256c8e8795fbeb76605fbddb.jpg&w=960&output=webp" alt="새해 첫번째 오픈월드 대전, 엔드필드 vs 드래곤소드 승자는? 대표 이미지">
+    </div>
+  
+
+      <header class="blog-header">
+        <h1 class="blog-title">새해 첫번째 오픈월드 대전, 엔드필드 vs 드래곤소드 승자는?</h1>
+        <div class="blog-meta">
+          <time class="blog-date">2026년 1월 28일</time>
+        </div>
+        <p class="blog-summary">2026년 새해 벽두부터 명일방주: 엔드필드와 드래곤소드가 맞붙었다. 글로벌 IP를 등에 업은 엔드필드와 한국 개발사의 자존심 드래곤소드, 출시 1주일간의 순위 데이터로 승자를 가려본다.</p>
+      </header>
+
+      <div class="blog-content">
+        <p class="blog-paragraph">2026년 새해가 밝자마자 모바일 게임 시장에 빅매치가 펼쳐졌다. 1월 21일 웹젠의 드래곤소드가 먼저 출시됐고, 하루 뒤인 22일 하이퍼그리프의 명일방주: 엔드필드가 뒤를 이었다. 두 게임 모두 오픈월드 액션 RPG를 표방하며 비슷한 타깃층을 노린다.</p>
+<p class="blog-paragraph">글로벌 IP의 파워를 앞세운 엔드필드와 한국 개발사의 기술력을 담은 드래곤소드. 출시 첫 주가 지난 지금, 순위 데이터로 둘의 성적표를 비교해본다.</p>
+<div class="blog-link-grid"><a href="/games/명일방주-엔드필드/" class="blog-link-button"><img class="blog-link-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/99/fc/ba/99fcba67-2a34-2873-8350-037cbf55f8ca/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.png" alt="" loading="lazy"><div class="blog-link-content"><span class="blog-link-text">명일방주: 엔드필드</span><span class="blog-link-subtext">실시간 순위 확인하기</span></div><span class="blog-link-arrow">›</span></a><a href="/games/드래곤소드/" class="blog-link-button"><img class="blog-link-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0b/50/7d/0b507da4-3bc2-a800-cc47-56466270a85f/AppIcon-0-0-1x_U007emarketing-0-7-85-220.png/100x100bb.png" alt="" loading="lazy"><div class="blog-link-content"><span class="blog-link-text">드래곤소드</span><span class="blog-link-subtext">실시간 순위 확인하기</span></div><span class="blog-link-arrow">›</span></a></div>
+<h2 class="blog-heading">1. 매출 순위: 엔드필드의 압도적 승리</h2>
+
+          <div class="preview-chart-placeholder">
+            <div class="chart-placeholder-icon">📊</div>
+            <div class="chart-placeholder-title">iOS 매출 순위 비교 (한국)</div>
+            <div class="chart-placeholder-info">
+              <span>게임: 명일방주-엔드필드, 드래곤소드</span>
+              <span>기간: 2026-01-22 ~ 2026-01-28</span>
+              <span>카테고리: grossing / ios</span>
+            </div>
+            <div class="chart-placeholder-note">※ 실제 차트는 빌드 후 확인 가능</div>
+          </div>
+        
+
+          <div class="preview-chart-placeholder">
+            <div class="chart-placeholder-icon">📊</div>
+            <div class="chart-placeholder-title">Android 매출 순위 비교 (한국)</div>
+            <div class="chart-placeholder-info">
+              <span>게임: 명일방주-엔드필드, 드래곤소드</span>
+              <span>기간: 2026-01-22 ~ 2026-01-28</span>
+              <span>카테고리: grossing / android</span>
+            </div>
+            <div class="chart-placeholder-note">※ 실제 차트는 빌드 후 확인 가능</div>
+          </div>
+        
+<p class="blog-paragraph">매출 순위에서는 엔드필드의 압승이다. 출시 직후 한국 iOS 매출 3위까지 치고 올라갔고, 구글플레이에서도 6위권을 유지하며 양대 마켓 상위권에 안착했다.</p>
+<p class="blog-paragraph">반면 드래곤소드는 매출에서 고전하고 있다. iOS 매출 75~100위권을 오가고, 구글플레이는 일주일간의 피크치가 반영됐음에도 97위권에 머물러 있다. 인기 순위는 높았지만 실제 결제로 이어지지 않는 아쉬운 성적이다.</p>
+<p class="blog-paragraph">이러한 결과에는 명일방주라는 글로벌 IP의 힘이 컸다. 기존 아크나이츠 유저들이 대거 유입되며 초반부터 과금이 활발했다. 드래곤소드는 신규 IP라 과금 유도에 더 시간이 필요한 상황이다.</p>
+<h2 class="blog-heading">2. 인기(다운로드) 순위: 드래곤소드 선전</h2>
+
+          <div class="preview-chart-placeholder">
+            <div class="chart-placeholder-icon">📊</div>
+            <div class="chart-placeholder-title">iOS 인기 순위 비교 (한국)</div>
+            <div class="chart-placeholder-info">
+              <span>게임: 명일방주-엔드필드, 드래곤소드</span>
+              <span>기간: 2026-01-22 ~ 2026-01-28</span>
+              <span>카테고리: free / ios</span>
+            </div>
+            <div class="chart-placeholder-note">※ 실제 차트는 빌드 후 확인 가능</div>
+          </div>
+        
+
+          <div class="preview-chart-placeholder">
+            <div class="chart-placeholder-icon">📊</div>
+            <div class="chart-placeholder-title">Android 인기 순위 비교 (한국)</div>
+            <div class="chart-placeholder-info">
+              <span>게임: 명일방주-엔드필드, 드래곤소드</span>
+              <span>기간: 2026-01-22 ~ 2026-01-28</span>
+              <span>카테고리: free / android</span>
+            </div>
+            <div class="chart-placeholder-note">※ 실제 차트는 빌드 후 확인 가능</div>
+          </div>
+        
+<p class="blog-paragraph">다운로드 기반의 인기 순위에서는 드래곤소드가 선전했다. 출시 직후 iOS와 구글플레이 양대 마켓에서 인기 1위를 달성했다.</p>
+<p class="blog-paragraph">하지만 오픈 이후 점진적으로 하락하는 추세다. 드래곤소드 iOS 인기 순위는 1위에서 11위까지 떨어졌고, 엔드필드(6위)보다 하락폭이 크다. 구글플레이는 2위권을 유지하고 있지만 엔드필드가 1위를 지키고 있어 역전에는 실패했다.</p>
+<p class="blog-paragraph">두 게임 모두 출시 초반 대비 순위가 내려가는 건 자연스러운 현상이다. 다만 인기 순위와 매출 순위의 괴리가 큰 점이 드래곤소드의 과제다. 많이 다운로드받았지만 과금은 적다는 의미이기 때문이다.</p>
+<div class="preview-ad-placeholder">[광고 영역]</div>
+<h2 class="blog-heading">3. 글로벌 시장: 엔드필드 독주</h2>
+<p class="blog-paragraph">글로벌 시장에서는 비교 자체가 어렵다. 엔드필드는 전 세계 동시 출시로 일본, 북미, 유럽 등에서 폭발적인 반응을 얻고 있다. 특히 일본에서의 인기가 압도적이다.</p>
+<p class="blog-paragraph">드래곤소드는 한국 시장에 집중된 상태다. 글로벌 출시 계획은 있지만 아직 구체화되지 않았다. 한국 내에서만 놓고 보면 선전하고 있지만, 글로벌 무대에서는 엔드필드와 격차가 크다.</p>
+<p class="blog-paragraph">하이퍼그리프는 아크나이츠로 쌓은 글로벌 팬덤을 그대로 엔드필드로 이어왔다. 이미 검증된 IP라는 점이 글로벌 시장에서 큰 힘을 발휘했다.</p>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fweb-static.hg-cdn.com%2Fupload%2Fimage%2F20251031%2F3ee1ec45230aec1268735c479c878096.jpg&w=960&output=webp" alt="엔드필드의 넓은 오픈월드 환경" loading="lazy">
+            <figcaption class="blog-caption">엔드필드의 넓은 오픈월드 환경</figcaption>
+          </figure>
+        
+<h2 class="blog-heading">4. 유저 반응: 각자의 장단점</h2>
+<p class="blog-paragraph">커뮤니티 반응을 종합하면, 두 게임 모두 호불호가 갈리는 지점이 있다.</p>
+<p class="blog-paragraph"><strong>엔드필드 장점:</strong> 명일방주 세계관 연계와 뛰어난 그래픽 퀄리티가 호평받고 있다. 기존 아크나이츠 유저들의 세계관 확장 만족도가 높다.</p>
+<p class="blog-paragraph"><strong>엔드필드 단점:</strong> 초반 진행이 느리고 원신과 유사하다는 비판이 있다. PC 클라이언트 최적화 이슈도 지적된다.</p>
+<p class="blog-paragraph"><strong>드래곤소드 장점:</strong> 정교한 콤보 액션 시스템과 '손맛 좋은' 전투가 강점이다. 캐릭터별 차별화된 액션과 탐험 재미도 호평 요소다.</p>
+<p class="blog-paragraph"><strong>드래곤소드 단점:</strong> 일부 버그와 웹젠 운영에 대한 우려가 있다. 출시 초반 컨텐츠 볼륨 부족도 아쉬운 점이다.</p>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fmimage.webzen.kr%2Fdragon-sword%2Fbrand%2F_nuxt%2Fbg-3.jpg&w=960&output=webp" alt="드래곤소드 전투 시스템" loading="lazy">
+            <figcaption class="blog-caption">드래곤소드 전투 시스템</figcaption>
+          </figure>
+        
+<div class="preview-ad-placeholder">[광고 영역]</div>
+<h2 class="blog-heading">5. 종합 평가: 엔드필드 압승, 하지만...</h2>
+<p class="blog-paragraph">출시 첫 주 기준으로 보면 엔드필드의 압승이다. 매출, 글로벌 반응, 화제성 모두 엔드필드가 앞선다. 명일방주 IP의 힘이 유감없이 발휘됐다.</p>
+<p class="blog-paragraph">하지만 드래곤소드를 실패작으로 단정짓기는 이르다. 인기 순위 상위권을 유지하며 잠재 유저를 확보했고, 액션이라는 핵심 경쟁력도 갖췄다. 웹젠이 유저 피드백에 빠르게 대응한다면 반등 가능성도 있다.</p>
+<p class="blog-paragraph">두 게임 모두 장기전이 관건이다. 모바일 게임 시장에서 출시 첫 주 성적이 전부가 아니다. 꾸준한 업데이트와 운영으로 유저를 붙잡는 게임이 최종 승자가 될 것이다.</p>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fcdn.mobalytics.gg%2Fuploads%2Fimages%2Farknights-endfield%2Fimage14.jpg&w=960&output=webp" alt="엔드필드의 공장 자동화 시스템(AIC)" loading="lazy">
+            <figcaption class="blog-caption">엔드필드의 공장 자동화 시스템(AIC)</figcaption>
+          </figure>
+        
+<h2 class="blog-heading">6. 크로스 플랫폼: 모바일만의 싸움이 아니다</h2>
+<p class="blog-paragraph">엔드필드는 모바일뿐 아니라 PS5에서도 1위를 기록했다. PC 매출도 상당 부분을 차지하며 멀티플랫폼 전략이 성공적이다.</p>
+<p class="blog-paragraph">최근 출시되는 게임들은 대부분 PC 클라이언트를 함께 제공한다. 크로스플레이가 표준이 된 시대에 모바일 순위만으로 전체 성과를 판단하기는 어렵지만, 오픈 시점의 모바일 순위를 비교해 절대 평가는 가능하다.</p>
+<p class="blog-paragraph">드래곤소드도 PC 버전이 있지만, 글로벌 멀티플랫폼 동시 출시한 엔드필드와 비교하면 규모 차이가 크다. 모바일, PC, 콘솔 어느 플랫폼에서든 엔드필드가 앞서 있다.</p>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fwww.gematsu.com%2Fwp-content%2Fuploads%2F2025%2F09%2FArknights-Endfield-Gameplay_09-24-25.jpg&w=960&output=webp" alt="PS5로도 즐길 수 있는 엔드필드" loading="lazy">
+            <figcaption class="blog-caption">PS5로도 즐길 수 있는 엔드필드</figcaption>
+          </figure>
+        
+<h2 class="blog-heading">마치며: 진짜 승부는 지금부터</h2>
+<p class="blog-paragraph">출시 첫 주 기준으로 엔드필드의 압승이다. 하지만 서브컬쳐 게임은 초반 성적보다 운영이 더 중요하다.</p>
+<p class="blog-paragraph">명조: 워더링 웨이브도 출시 초반에는 부진했지만 꾸준한 업데이트로 반등에 성공했다. 반대로 화려하게 시작했다가 운영 실패로 무너진 사례도 많다. 꾸준한 업데이트와 운영으로 유저를 붙잡는 게임이 최종 승자가 될 것이다.</p>
+<p class="blog-paragraph">엔드필드가 명일방주 IP의 저력을 이어가길, 드래곤소드가 국산 게임의 자존심을 지켜내길 응원한다. 게이머스크롤에서 두 게임의 순위 변화를 계속 추적할 예정이다.</p>
+      </div>
+
+      
+      
+    <div class="blog-related-games">
+      <h3 class="blog-related-title">관련 게임</h3>
+      <div class="blog-related-grid">
+        
+          <a href="/games/명일방주-엔드필드/" class="blog-related-card">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/99/fc/ba/99fcba67-2a34-2873-8350-037cbf55f8ca/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.png" alt="명일방주: 엔드필드" class="blog-related-icon">
+            <span class="blog-related-name">명일방주: 엔드필드</span>
+          </a>
+        
+          <a href="/games/드래곤소드/" class="blog-related-card">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0b/50/7d/0b507da4-3bc2-a800-cc47-56466270a85f/AppIcon-0-0-1x_U007emarketing-0-7-85-220.png/100x100bb.png" alt="드래곤소드" class="blog-related-icon">
+            <span class="blog-related-name">드래곤소드</span>
+          </a>
+        
+          <a href="/games/명조워더링-웨이브/" class="blog-related-card">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7b/eb/fc/7bebfc6e-01d0-579a-23c2-7738d09d4edd/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/100x100bb.png" alt="명조:워더링 웨이브" class="blog-related-icon">
+            <span class="blog-related-name">명조:워더링 웨이브</span>
+          </a>
+        
+          <a href="/games/젠레스-존-제로/" class="blog-related-card">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/60/a2/73/60a27358-3b48-2083-388b-0ad380a58d27/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/100x100bb.png" alt="젠레스 존 제로" class="blog-related-icon">
+            <span class="blog-related-name">젠레스 존 제로</span>
+          </a>
+        
+      </div>
+    </div>
+  
+      
+    <div class="blog-related-games">
+      <h3 class="blog-related-title">관련 문서</h3>
+      <div class="blog-related-grid">
+        
+          <a href="/magazine/ranking/arknights-endfield-launch-success/" class="blog-related-card">
+            
+            <span class="blog-related-name">arknights-endfield-launch-success</span>
+          </a>
+        
+          <a href="/magazine/ranking/dragon-sword-launch-report/" class="blog-related-card">
+            
+            <span class="blog-related-name">dragon-sword-launch-report</span>
+          </a>
+        
+          <a href="/magazine/ranking/2026-subculture-openworld-games/" class="blog-related-card">
+            
+            <span class="blog-related-name">2026-subculture-openworld-games</span>
+          </a>
+        
+      </div>
+    </div>
+  
+    </article>
+  </div>
+</body>
+</html>

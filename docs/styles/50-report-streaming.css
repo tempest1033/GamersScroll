@@ -1,0 +1,142 @@
+﻿/* 스트리밍 트렌드 (플랫폼 카드) */
+.weekly-section-streaming {
+  background: var(--section-gradient);
+}
+
+.weekly-section-streaming .weekly-section-title-wrap .weekly-icon {
+  background: var(--section-icon-bg);
+  color: var(--insight-icon);
+}
+
+.weekly-streaming-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.weekly-streaming-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.weekly-streaming-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.weekly-streaming-platform {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.weekly-streaming-platform-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weekly-streaming-platform-icon.youtube {
+  background: rgba(255, 0, 0, 0.12);
+  color: #ff0000;
+}
+
+.weekly-streaming-platform-icon.chzzk {
+  background: rgba(0, 255, 163, 0.12);
+  color: #00ffa3;
+}
+
+.weekly-streaming-platform-icon.twitch {
+  background: rgba(145, 70, 255, 0.12);
+  color: #9146ff;
+}
+
+.weekly-streaming-platform svg {
+  width: 20px;
+  height: 20px;
+}
+
+.weekly-streaming-platform span {
+  font-size: var(--font-body-size);
+  font-weight: var(--font-badge-weight);
+  color: var(--text);
+}
+
+.weekly-streaming-title {
+  font-size: 1rem;
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  margin: 0 0 10px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.45;
+}
+
+.weekly-streaming-desc {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-desc-weight);
+  color: var(--text-secondary);
+  line-height: var(--font-desc-line-height);
+  margin: 0;
+}
+
+.weekly-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.weekly-highlight-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.weekly-highlight-subtitle {
+  font-size: var(--font-body-size);
+  font-weight: var(--font-meta-weight);
+  color: var(--text);
+  margin: 0 0 8px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.weekly-highlight-item {
+  background: var(--hover-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.weekly-highlight-tag {
+  display: inline-block;
+  font-size: var(--font-meta-size);
+  font-weight: var(--font-badge-weight);
+  color: var(--primary);
+  background: rgba(99, 102, 241, 0.15);
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.weekly-highlight-title {
+  font-size: var(--font-body-size);
+  font-weight: var(--font-meta-weight);
+  color: var(--text);
+}
+
+.weekly-highlight-desc {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-desc-weight);
+  color: var(--text-secondary);
+  line-height: var(--font-desc-line-height);
+  margin: 8px 0 0 0;
+}

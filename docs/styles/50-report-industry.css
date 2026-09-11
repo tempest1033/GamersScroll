@@ -1,0 +1,81 @@
+﻿/* 업계 동향 타임라인 */
+.weekly-section-industry {
+  background: var(--section-gradient);
+}
+
+.weekly-section-industry .weekly-section-title-wrap .weekly-icon {
+  background: var(--section-icon-bg);
+  color: var(--insight-icon);
+}
+
+.weekly-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 28px;
+}
+
+.weekly-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: linear-gradient(180deg, #a855f7, #ec4899);
+  border-radius: 1px;
+}
+
+.weekly-timeline-item {
+  position: relative;
+  padding: 14px 0;
+}
+
+.weekly-timeline-item:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+.weekly-timeline-marker {
+  position: absolute;
+  left: -28px;
+  top: 24px;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  border-radius: 50%;
+  border: 3px solid var(--card-bg);
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(168, 85, 247, 0.3);
+}
+
+.weekly-timeline-content {
+  padding-left: 12px;
+}
+
+.weekly-timeline-tag {
+  display: inline-block;
+  font-size: var(--font-meta-size);
+  font-weight: var(--font-badge-weight);
+  color: #a78bfa;
+  background: rgba(139, 92, 246, 0.15);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.weekly-timeline-title {
+  font-size: var(--font-title-size);
+  font-weight: var(--font-title-weight);
+  color: var(--text);
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.weekly-timeline-desc {
+  font-size: var(--font-desc-size);
+  font-weight: var(--font-desc-weight);
+  color: var(--text-secondary);
+  line-height: var(--font-desc-line-height);
+  margin: 0;
+}

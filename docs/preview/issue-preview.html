@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[미리보기] 클로드 소넷 4.7 &quot;페넥&quot; 출시 임박? 앤트로픽의 다음 수는</title>
+  <style>
+    :root {
+      --bg: #0a0a0b;
+      --bg-secondary: #18181b;
+      --card: #18181b;
+      --card-hover: #27272a;
+      --border: #3f3f46;
+      --text: #fafafa;
+      --text-secondary: #d4d4d8;
+      --text-muted: #a1a1aa;
+      --primary: #10b981;
+      --hover-bg: #27272a;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #60a5fa; text-decoration: none; }
+    a:hover { color: #34d399; }
+
+    .preview-banner {
+      background: linear-gradient(90deg, #10b981, #059669);
+      color: #fff;
+      padding: 12px 20px;
+      text-align: center;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .preview-banner a { color: #fff; margin-left: 16px; text-decoration: underline; }
+
+    .preview-container { max-width: 1190px; margin: 0 auto; padding: 20px; }
+
+    .preview-meta {
+      background: var(--hover-bg);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      font-size: 0.875rem;
+      border: 1px solid var(--border);
+    }
+    .preview-meta dt { color: var(--text-muted); font-weight: 500; margin-top: 8px; }
+    .preview-meta dt:first-child { margin-top: 0; }
+    .preview-meta dd { margin: 4px 0 0 0; color: var(--text-secondary); }
+    .preview-meta code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; }
+
+    .blog-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .blog-hero { width: 100%; max-height: 280px; overflow: hidden; background: var(--bg-secondary); }
+    .blog-hero-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .blog-header { padding: 24px 24px 8px; }
+    .blog-title { font-size: 1.75rem; font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 16px; }
+    .blog-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .blog-date { font-size: 0.8125rem; color: var(--text-muted); }
+    .blog-summary { font-size: 0.9375rem; line-height: 1.7; color: var(--text-secondary); padding: 16px; background: var(--hover-bg); border-radius: 8px; margin-bottom: 16px; }
+
+    .blog-content { padding: 24px; }
+    .blog-paragraph { font-size: 0.9375rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 20px; }
+    .blog-paragraph:last-child { margin-bottom: 0; }
+
+    .blog-heading { font-size: 1.25rem; font-weight: 600; color: var(--text); margin: 32px 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .blog-heading:first-child { margin-top: 0; }
+
+    .blog-figure { margin: 24px 0; border-radius: 8px; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--border); }
+    .blog-figure.blog-table { width: fit-content; max-width: 100%; }
+    .blog-image { width: 100%; height: auto; max-height: 800px; object-fit: contain; display: block; }
+    .blog-caption { padding: 12px 16px; font-size: 0.8125rem; color: var(--text-muted); text-align: center; background: var(--hover-bg); border-top: 1px solid var(--border); }
+
+    .blog-quote { margin: 24px 0; padding: 16px 20px; background: rgba(16, 185, 129, 0.08); border-left: 3px solid var(--primary); border-radius: 0 8px 8px 0; font-size: 0.9375rem; line-height: 1.7; color: var(--text-secondary); font-style: italic; }
+
+    .blog-video .blog-video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .blog-video .blog-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+    .table-title { padding: 12px 16px; font-size: 1rem; font-weight: 600; color: var(--text); background: var(--hover-bg); border-bottom: 1px solid var(--border); }
+    .blog-table-wrapper, .wiki-table-wrapper { margin: 0; width: fit-content; max-width: 100%; overflow-x: auto; }
+    .wiki-table { width: auto; min-width: 50%; border-collapse: collapse; font-size: 0.9375rem; }
+    .wiki-table th, .wiki-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+    .wiki-table th { background: var(--hover-bg); font-weight: 600; color: var(--text); }
+    .wiki-table td { color: var(--text-secondary); }
+    .wiki-table tbody tr:hover { background: var(--hover-bg); }
+    .wiki-table tbody tr:last-child td { border-bottom: none; }
+    .wiki-table a { color: #60a5fa; font-weight: 500; }
+    .wiki-table a:hover { color: #34d399; }
+
+    .blog-sources { padding: 24px; border-top: 1px solid var(--border); }
+    .blog-sources-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+    .blog-sources-list { list-style: disc; padding-left: 20px; margin: 0; }
+    .blog-sources-list li { font-size: 0.75rem; line-height: 1.5; margin-bottom: 4px; }
+    .blog-sources-list a { color: var(--text-secondary); }
+    .blog-sources-list a:hover { color: var(--primary); text-decoration: underline; }
+
+    .blog-related-games { padding: 24px; border-top: 1px solid var(--border); }
+    .blog-related-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 16px; }
+    .blog-related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .blog-related-card { display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--hover-bg); border-radius: 8px; text-decoration: none; border: 1px solid transparent; transition: all 0.2s; }
+    .blog-related-card:hover { background: var(--card-hover); border-color: var(--border); }
+    .blog-related-icon { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
+    .blog-related-name { font-size: 0.875rem; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .blog-list { margin: 16px 0; padding-left: 24px; }
+    .blog-list li { margin-bottom: 8px; color: var(--text-secondary); }
+
+    .preview-ad-placeholder { background: rgba(255,255,255,0.05); border: 2px dashed rgba(255,255,255,0.2); padding: 40px; text-align: center; color: rgba(255,255,255,0.4); margin: 24px 0; border-radius: 8px; }
+
+    .game-ranking-list { margin: 24px 0; }
+    .game-ranking-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+    .game-ranking-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--hover-bg); border-radius: 8px; margin-bottom: 8px; }
+    .game-ranking-rank { font-size: 1.25rem; font-weight: 700; color: var(--primary); width: 32px; text-align: center; }
+    .game-ranking-thumb { width: 48px; height: 48px; border-radius: 8px; overflow: hidden; }
+    .game-ranking-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .game-ranking-info { flex: 1; }
+    .game-ranking-name { font-weight: 500; color: var(--text); }
+    .game-ranking-price { color: var(--text-muted); font-size: 0.875rem; }
+    .game-ranking-desc { font-size: 0.8125rem; color: var(--text-muted); margin-top: 4px; }
+
+    .blog-link-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0; }
+    .blog-link-button { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: var(--hover-bg); border-radius: 12px; border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; }
+    .blog-link-button:hover { background: var(--card-hover); border-color: var(--primary); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+    .blog-link-icon { width: 64px; height: 64px; border-radius: 14px; object-fit: cover; flex-shrink: 0; }
+    .blog-link-content { flex: 1; min-width: 0; }
+    .blog-link-text { display: block; font-weight: 600; color: var(--text); font-size: 1rem; }
+    .blog-link-subtext { display: block; font-size: 0.8125rem; color: var(--text-muted); margin-top: 3px; }
+    .blog-link-arrow { font-size: 1.25rem; color: var(--text-muted); flex-shrink: 0; }
+
+    .preview-chart-placeholder { background: var(--hover-bg); border: 2px dashed var(--border); border-radius: 12px; padding: 32px; margin: 24px 0; text-align: center; }
+    .chart-placeholder-icon { font-size: 3rem; margin-bottom: 12px; }
+    .chart-placeholder-title { font-size: 1.125rem; font-weight: 600; color: var(--text); margin-bottom: 16px; }
+    .chart-placeholder-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 0.875rem; color: var(--text-muted); margin-bottom: 12px; }
+    .chart-placeholder-note { font-size: 0.75rem; color: var(--text-muted); opacity: 0.7; }
+
+    @media (max-width: 768px) {
+      .blog-link-grid { grid-template-columns: 1fr; }
+      .blog-header, .blog-content, .blog-related-games, .blog-sources { padding: 16px; }
+      .blog-title { font-size: 1.5rem; }
+      .blog-heading { font-size: 1rem; }
+      .blog-figure { margin: 16px -16px; border-radius: 0; border-left: none; border-right: none; }
+      .blog-related-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-figure.blog-table { width: 100%; margin: 16px 0; }
+      .wiki-table { width: 100%; min-width: 400px; }
+      .wiki-table th, .wiki-table td { padding: 10px 12px; font-size: 0.875rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">
+    📰 이슈 미리보기 - 실제 사이트 스타일 적용
+    <a href="javascript:location.reload()">새로고침</a>
+  </div>
+
+  <div class="preview-container">
+    <dl class="preview-meta">
+      <dt>상태</dt>
+      <dd><strong>draft</strong></dd>
+      
+      <dt>Slug</dt>
+      <dd><code>claude-sonnet-47-fennec-release-rumor</code></dd>
+      <dt>키워드</dt>
+      <dd>클로드 소넷 4.7, Claude Sonnet 4.7, 페넥, Fennec, 앤트로픽, Anthropic, 다리오 아모데이, GPT 5.3, 제미나이 3.0, AI 경쟁, 클로드 코드, Claude Code, 오푸스 4.5, LLM, AI 코딩</dd>
+    </dl>
+
+    <article class="blog-card">
+      
+    <div class="blog-hero">
+      <img class="blog-hero-image" src="https://wsrv.nl/?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F6421e7049ff8b2c4591497ec92dc4157b2ac1b30-3840x2160.png&w=960&output=webp" alt="클로드 소넷 4.7 &quot;페넥&quot; 출시 임박? 앤트로픽의 다음 수는 대표 이미지">
+    </div>
+  
+
+      <header class="blog-header">
+        <h1 class="blog-title">클로드 소넷 4.7 &quot;페넥&quot; 출시 임박? 앤트로픽의 다음 수는</h1>
+        <div class="blog-meta">
+          <time class="blog-date">2026년 1월 30일</time>
+        </div>
+        <p class="blog-summary">앤트로픽의 차세대 모델 클로드 소넷 4.7 "페넥"이 오푸스 4.5를 압도하고 제미나이 3.0까지 넘어선다는 루머가 확산 중이다. 2월 중 OpenAI, 구글, 앤트로픽 3사가 다시 맞붙을 전망이다.</p>
+      </header>
+
+      <div class="blog-content">
+        <p class="blog-paragraph">OpenAI가 GPT 5.3 "갈릭"을 준비하는 사이, 앤트로픽도 조용히 움직이고 있다. 차세대 모델 클로드 소넷 4.7에 대한 루머가 빠르게 확산되고 있다. 내부 코드명 "페넥(Fennec)", 10분간 노출된 내부 모델, 제미나이 3.0을 넘어서는 성능까지—현재까지 알려진 단서들을 정리했다.</p>
+<h2 class="blog-heading">1. 내부 코드명 "페넥(Fennec)"</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fa683fdcfe3e2c7c6532342a0fa4ff789c3fd4852-1000x1000.svg&w=960&output=webp" alt="클로드 소넷 앤트로픽 공식 이미지, 소넷 4.7 페넥 루머" loading="lazy">
+            <figcaption class="blog-caption">클로드 소넷 4.5 공식 이미지. 차세대 소넷 4.7의 내부 코드명이 "페넥(Fennec)"이라는 루머가 확산 중이다.</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">X(구 트위터)에서 흥미로운 정보가 올라왔다. LLM 사전 테스터로 알려진 @chetaslua에 따르면, 앤트로픽 내부에서 여러 모델이 테스트 중이며 그중 "페넥(Fennec)"이 소넷 업데이트의 핵심 코드명이라는 것이다.</p>
+<p class="blog-paragraph">주목할 점은 이 모델이 오푸스 4.5를 압도하는 성능을 보인다는 루머다. 소넷이 오푸스를 넘어서는 건 이제 익숙한 패턴이 됐지만, 이번엔 스케일이 다르다. @chetaslua는 병렬 테스트 결과 출시를 준비 중인 제미나이 3.0 정식 버전보다도 뛰어난 성능을 보인다는 의견을 피력했다.</p>
+<h2 class="blog-heading">2. 10분간 노출된 내부 모델</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F67081be1ea2752e2a554e49a6aab2731b265d11b-2600x2288.png&w=960&output=webp" alt="클로드 소넷 4.5 벤치마크 성능 비교, 앤트로픽 AI 모델" loading="lazy">
+            <figcaption class="blog-caption">클로드 소넷 4.5 벤치마크 비교표. 앤트로픽 내부 모델이 10분간 외부에 노출됐다는 주장이 제기됐다.</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">1월 중순, Reddit r/ClaudeAI 커뮤니티에서 화제가 된 사건이 있다. Sam Pullara라는 인물이 "앤트로픽 내부 모델이 약 10분간 외부에 노출됐다"고 주장한 것이다.</p>
+<p class="blog-paragraph">해당 게시물에 따르면, 이 모델은 소넷 4.7로 추정되며 API 엔드포인트에서 잠깐 접근 가능했다고 한다. 공식 확인은 없고 진위 여부는 불분명하다. 하지만 이 사건 이후 "소넷 4.7 임박" 루머가 본격적으로 퍼지기 시작했다. 유튜브에서도 "Claude Sonnet 4.7 Leaked – Release Next Week?"라는 분석 영상이 올라오며 관심을 끌었다.</p>
+<div class="preview-ad-placeholder">[광고 영역]</div>
+<h2 class="blog-heading">3. GPT 5.3과의 경쟁 구도</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F33efc283321feeff94dd80973dbcd38409806cf5-3840x2160.png&w=960&output=webp" alt="클로드 AI 모델 정렬 평가, 앤트로픽 AI 안전성" loading="lazy">
+            <figcaption class="blog-caption">클로드 모델의 정렬(Alignment) 평가 차트. AI 업계 경쟁이 심화되면서 출시 주기가 빨라지고 있다.</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">Reddit r/Anthropic에서는 또 다른 루머가 나왔다. "GPT 출시 이후 소넷 4.7 개발이 가속화됐다"는 주장이다.</p>
+<p class="blog-paragraph">게시물에 따르면 원래 2026년 상반기 예정이던 출시가 1월 말~2월 초로 앞당겨졌다고 한다. OpenAI가 GPT-5.1을 2025년 8월에, GPT-5.3을 최근 공개하면서 앤트로픽도 경쟁 압박을 받고 있다는 분석이다. AI 업계의 치열한 경쟁을 감안하면 충분히 있을 법한 시나리오다.</p>
+<h2 class="blog-heading">4. 2월, 3사가 다시 맞붙는다</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F4zrzovbb%2Fwebsite%2Fc07f638082c569e8ce1e89ae95ee6f332a98ec08-2400x1260.jpg&w=960&output=webp" alt="앤트로픽 로고, AI 경쟁 2026년 2월" loading="lazy">
+            <figcaption class="blog-caption">앤트로픽 공식 로고. 2월 중 OpenAI, 구글, 앤트로픽 3사가 다시 맞붙을 전망이다.</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">루머들을 종합하면, 앤트로픽이 상당한 성능 향상을 가진 모델을 준비 중인 것으로 보인다. GPT 5.3 "갈릭"이나 제미나이 3.0 정식(GA) 버전과 유사한 시점에 출시할 가능성이 높아보인다.</p>
+<p class="blog-paragraph">2월 중으로 OpenAI, 구글, 앤트로픽—3사가 다시 한번 맞붙을 가능성이 굉장히 커보인다. 경쟁 심화로 출시 주기가 빠르게 당겨지고 있다. 특히 앤트로픽과 OpenAI가 상장에 대한 논의가 이루어지고 있는 만큼, 경쟁에 뒤쳐지지 않기 위해 양사가 모든 힘을 쏟고 있는 것으로 보인다.</p>
+<div class="preview-ad-placeholder">[광고 영역]</div>
+<h2 class="blog-heading">마치며: 2026년, 코딩 에이전트의 해가 될까</h2>
+
+          <figure class="blog-figure">
+            <img class="blog-image" src="https://wsrv.nl/?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F7175bc18c46562f1228280a7abda751219a2aae1-3840x2160.png&w=960&output=webp" alt="클로드 AI 금융 분야 성능, 다리오 아모데이 코딩 자동화 발언" loading="lazy">
+            <figcaption class="blog-caption">클로드의 금융 분야 성능 평가. 다리오 아모데이 CEO는 "2026년 말까지 100% 코딩이 AI로 이루어질 것"이라고 전망했다.</figcaption>
+          </figure>
+        
+<p class="blog-paragraph">다리오 아모데이 앤트로픽 CEO는 최근 다보스 포럼에서 "소프트웨어 엔지니어링은 6~12개월 내 자동화될 것"이라고 발언해 화제가 됐다. 또한 "2026년 말까지 100% 코딩이 AI로 이루어질 것"이라는 전망도 내놨다.</p>
+<p class="blog-paragraph">실제로 앤트로픽은 이미 행동으로 보여주고 있다. 클로드 코드(Claude Code) 개발을 이끄는 보리스 체르니(Boris Cherny)는 "현재 자신이 작성하는 코드의 100%가 AI로 작성된다"고 밝혔다. OpenAI 측에서도 비슷한 발언이 나왔다. 구글 순다르 피차이가 "구글 코딩의 25%가 AI"라고 한 것과 비교하면, 앤트로픽의 AI 활용 수준은 이미 다른 차원에 있다.</p>
+<p class="blog-paragraph">본인들 말처럼 2026년이 정말 코딩 에이전트의 해가 될 수 있을지, 페넥이 그 시작점이 될 수 있을지가 관전 포인트다.</p>
+      </div>
+
+      
+    <div class="blog-sources">
+      <h3 class="blog-sources-title">정보 출처</h3>
+      <ul class="blog-sources-list">
+        
+          <li><a href="https://x.com/chetaslua/status/2016538256708645330" target="_blank" rel="nofollow noopener">X - @chetaslua - Fennec 내부 테스트</a></li>
+        
+          <li><a href="https://www.reddit.com/r/ClaudeAI/comments/1q76xft/sonnet_47_leak/" target="_blank" rel="nofollow noopener">Reddit - r/ClaudeAI - Sonnet 4.7 leak?</a></li>
+        
+          <li><a href="https://www.reddit.com/r/Anthropic/comments/1pnrgcg/leak_sonnet_47_release_will_be_accelerated_during/" target="_blank" rel="nofollow noopener">Reddit - r/Anthropic - Sonnet 4.7 release accelerated</a></li>
+        
+          <li><a href="https://www.youtube.com/watch?v=MQTkPeQV7mk" target="_blank" rel="nofollow noopener">YouTube - Claude Sonnet 4.7 Leaked – Release Next Week?</a></li>
+        
+          <li><a href="https://fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/" target="_blank" rel="nofollow noopener">Fortune - 100% of code at Anthropic is AI-written</a></li>
+        
+          <li><a href="https://www.entrepreneur.com/business-news/ai-ceo-says-software-engineers-could-be-replaced-in-months/502087" target="_blank" rel="nofollow noopener">Entrepreneur - AI CEO Says Software Engineers Could Be Replaced</a></li>
+        
+      </ul>
+    </div>
+  
+      
+      
+    <div class="blog-related-games">
+      <h3 class="blog-related-title">관련 문서</h3>
+      <div class="blog-related-grid">
+        
+          <a href="/trends/claude-code-vs-codex-coding-agent/" class="blog-related-card">
+            
+            <span class="blog-related-name">claude-code-vs-codex-coding-agent</span>
+          </a>
+        
+      </div>
+    </div>
+  
+    </article>
+  </div>
+</body>
+</html>

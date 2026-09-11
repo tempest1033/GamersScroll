@@ -1,0 +1,293 @@
+﻿    /* Rankings Section */
+    /* 모바일 순위 탭 행 */
+    .rankings-tabs-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      padding: 8px 20px;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .rankings-tabs-row::-webkit-scrollbar {
+      display: none;
+    }
+    .rankings-tabs-row .tab-group {
+      flex-shrink: 0;
+      padding: 0;
+      gap: 4px;
+      background: transparent;
+      border: none;
+    }
+    .rankings-card .home-card-header .tab-group,
+    .steam-card .home-card-header .tab-group {
+      background: transparent;
+      border: none;
+      padding: 0;
+      gap: 4px;
+    }
+    .rankings-card .home-card-header .tab-btn,
+    .steam-card .home-card-header .tab-btn {
+      padding: 6px 14px;
+      font-size: var(--font-tab-size);
+    }
+    @media (max-width: 768px) {
+      .rankings-card .home-card-header .tab-btn,
+      .steam-card .home-card-header .tab-btn {
+        padding: 6px 12px;
+        font-size: var(--font-tab-size);
+      }
+    }
+    .rankings-tabs-row .tab-btn {
+      padding: 6px 12px;
+      font-size: var(--font-tab-size);
+      background: var(--hover-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+    .rankings-tabs-row .tab-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    /* 터치 시 스타일 유지 (모바일 깜빡임 방지) */
+    .rankings-tabs-row .tab-btn:active:not(.active) {
+      background: var(--hover-bg);
+      border-color: var(--border);
+    }
+    .rankings-tabs-row .tab-btn.active:active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .rankings-tabs-row .news-favicon {
+      width: 14px;
+      height: 14px;
+    }
+    @media (max-width: 768px) {
+      .rankings-tabs-row {
+        padding: 8px 12px;
+        gap: 8px;
+      }
+      .rankings-tabs-row .tab-group {
+        padding: 0;
+        gap: 4px;
+        background: transparent;
+        border: none;
+      }
+      .rankings-tabs-row .tab-btn {
+        padding: 6px 12px;
+        font-size: var(--font-tab-size);
+        gap: 6px;
+        background: var(--hover-bg);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+      }
+      .rankings-tabs-row .tab-btn .news-favicon {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    /* Rankings Table */
+    .rankings-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .chart-section:not(.active) {
+      display: none;
+    }
+
+    .chart-scroll {
+      overflow-x: auto;
+    }
+
+    .columns-grid {
+      display: grid;
+      grid-template-columns: 50px repeat(5, 1fr);
+      width: 100%;
+    }
+
+    .country-column {
+      min-width: 0;
+      border-right: 1px solid var(--border);
+    }
+
+    .country-column:last-child {
+      border-right: none;
+    }
+
+    .column-header {
+      padding: 6px 12px;
+      height: 36px;
+      box-sizing: border-box;
+      background: transparent;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(4px);
+    }
+
+    .flag {
+      font-size: var(--font-body-size);
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+    }
+
+    .country-name {
+      font-size: var(--font-small-size);
+      font-weight: var(--font-badge-weight);
+      color: var(--text);
+    }
+
+    .rank-list {
+      padding: 4px 0;
+    }
+
+	    .rank-row {
+	      display: flex;
+	      align-items: center;
+	      gap: 12px;
+	      padding: 6px 12px;
+	      min-height: 48px;
+	      height: 48px;
+	      box-sizing: border-box;
+	      border-bottom: 1px solid var(--border-subtle);
+	      transition: background var(--transition-fast), box-shadow var(--transition-fast);
+	    }
+
+	    .rank-row:hover {
+	      background: var(--card-hover);
+	      box-shadow: var(--shadow-sm);
+	    }
+
+    .rank-row:last-child {
+      border-bottom: none;
+    }
+
+    .rank-num {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-badge-size);
+      font-weight: var(--font-badge-weight);
+      color: var(--text-muted);
+      flex-shrink: 0;
+      border-radius: 6px;
+      background: var(--hover-bg);
+    }
+
+    .rank-num-simple {
+      width: 24px;
+      font-size: var(--font-badge-size);
+      font-weight: var(--font-meta-weight);
+      color: var(--text-muted);
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    /* 순위 전용 컬럼 */
+    .rank-column {
+      background: var(--card);
+    }
+
+    .rank-column .column-header {
+      padding: 6px 8px;
+    }
+
+    .rank-column .rank-row {
+      justify-content: center;
+      padding: 6px 12px;
+      min-height: 48px;
+      height: 48px;
+      box-sizing: border-box;
+    }
+
+    .rank-row.rank-only {
+      min-height: 48px;
+      height: 48px;
+      box-sizing: border-box;
+    }
+
+    .rank-num.top1 {
+      background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+      color: #92400e;
+    }
+
+    .rank-num.top2 {
+      background: linear-gradient(135deg, #c0c0c0 0%, #e5e5e5 100%);
+      color: #374151;
+    }
+
+    .rank-num.top3 {
+      background: linear-gradient(135deg, #cd7f32 0%, #daa06d 100%);
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 6px rgba(249, 115, 22, 0.3);
+    }
+
+    .app-icon {
+      width: 40px;
+      height: 40px;
+      aspect-ratio: 1 / 1;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--hover-bg);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .app-info {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .app-name {
+      font-size: var(--font-rank-name-size);
+      font-weight: var(--font-rank-name-weight);
+      color: var(--font-rank-name-color);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 4px;
+    }
+
+    /* rank-row 링크 스타일 - 전체 행 클릭 가능 */
+    .rank-row-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .rank-row-link:hover {
+      color: inherit;
+    }
+
+    .app-dev {
+      font-size: var(--font-rank-dev-size);
+      font-weight: var(--font-rank-dev-weight);
+      color: var(--font-rank-dev-color);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .no-data, .no-service {
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: var(--font-body-size);
+    }

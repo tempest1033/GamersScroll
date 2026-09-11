@@ -1,0 +1,159 @@
+/* ===== Tabs (공통) ===== */
+
+:root {
+  /* tab-group */
+  --tab-group-gap: 4px;
+  --tab-group-justify: flex-start;
+
+  /* tab-btn (in tab-group) */
+  --tab-btn-flex: 1 1 0;
+  --tab-btn-min-width: 0;
+  --tab-btn-min-height: 44px;
+  --tab-btn-padding: 12px 8px;
+  --tab-btn-gap: 6px;
+  --tab-btn-overflow: hidden;
+
+  /* tab-btn icon */
+  --tab-btn-icon-size: 18px;
+  --tab-btn-icon-display: inline-block;
+}
+
+/* PC: 버튼은 자동폭, 그룹은 가운데 정렬 */
+@media (min-width: 769px) {
+  :root {
+    --tab-group-gap: 8px;
+    --tab-group-justify: center;
+
+    --tab-btn-flex: 0 0 auto;
+    --tab-btn-min-width: auto;
+    --tab-btn-min-height: 38px;
+    --tab-btn-padding: 9px 20px;
+    --tab-btn-gap: 6px;
+    --tab-btn-overflow: visible;
+
+    --tab-btn-icon-size: 16px;
+    --tab-btn-icon-display: inline-block;
+  }
+}
+
+/* 모바일(768px 이하): 컴팩트 */
+@media (max-width: 768px) {
+  :root {
+    --tab-btn-padding: 10px 8px;
+    --tab-btn-min-height: 40px;
+    --tab-btn-gap: 4px;
+    --tab-btn-icon-size: 12px;
+  }
+}
+
+/* 페이지 탭 그룹: width 100% 유지 */
+#storeTab,
+#chartTab,
+#steamTab,
+#upcomingTab {
+  width: 100%;
+}
+
+/* 탭 그룹 - 알약형 세그먼트 컨트롤 */
+:is(.tab-group, .insight-tabs) {
+  display: flex;
+  justify-content: var(--tab-group-justify);
+  background: var(--bg-secondary);
+  border: none;
+  border-radius: 999px;
+  padding: 4px;
+  gap: var(--tab-group-gap);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+:is(.tab-group, .insight-tabs)::-webkit-scrollbar {
+  display: none;
+}
+
+/* 탭 버튼 기본 스타일 - 알약형 */
+:is(.tab-btn, .insight-tab) {
+  font-size: var(--font-tab-size);
+  font-weight: var(--font-tab-weight);
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+/* PC에서만 hover 적용 (모바일 터치 문제 방지) */
+@media (hover: hover) {
+  :is(.tab-btn, .insight-tab):hover {
+    color: var(--text);
+    background: var(--hover-bg);
+  }
+}
+
+/* 터치/클릭 중 스타일 */
+:is(.tab-btn, .insight-tab):active:not(.active) {
+  background: var(--hover-bg);
+  transform: scale(0.98);
+}
+
+:is(.tab-btn, .insight-tab).active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+  font-weight: var(--font-badge-weight);
+}
+
+/* 탭 그룹 내부 버튼 레이아웃 */
+:is(.tab-group .tab-btn, .insight-tabs .insight-tab) {
+  flex: var(--tab-btn-flex);
+  min-width: var(--tab-btn-min-width);
+  min-height: var(--tab-btn-min-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tab-btn-gap);
+  padding: var(--tab-btn-padding);
+  line-height: 1.2;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: var(--tab-btn-overflow);
+  text-overflow: ellipsis;
+}
+
+/* 탭 버튼 내부 아이콘(파비콘 등) */
+.tab-btn .news-favicon {
+  display: var(--tab-btn-icon-display);
+  width: var(--tab-btn-icon-size);
+  height: var(--tab-btn-icon-size);
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+}
+
+/* ===========================
+   Insight Tabs
+   =========================== */
+
+.insight-tabs {
+  margin: 0 0 16px 0;
+}
+
+/* PC 인사이트 탭 스타일 - .tab-btn과 동일한 크기/정렬 */
+@media (min-width: 769px) {
+  .insight-tabs {
+    width: auto;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+  }
+}

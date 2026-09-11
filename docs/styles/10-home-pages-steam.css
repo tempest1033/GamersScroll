@@ -1,0 +1,188 @@
+﻿    /* Steam Section */
+
+    .steam-section:not(.active) {
+      display: none;
+    }
+
+    .steam-table {
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .steam-table-header {
+      display: grid;
+      grid-template-columns: 50px 1fr 100px;
+      padding: 6px 16px;
+      height: 36px;
+      box-sizing: border-box;
+      background: transparent;
+      border-bottom: 1px solid var(--border);
+      font-size: var(--font-tab-size);
+      font-weight: var(--font-badge-weight);
+      color: var(--text);
+      letter-spacing: 0.02em;
+      align-items: center;
+    }
+
+    .steam-table-header > div:nth-child(1) {
+      text-align: center;
+    }
+
+    .steam-table-header > div:nth-child(2) {
+      text-align: center;
+    }
+
+    .steam-table-header > div:nth-child(3) {
+      text-align: right;
+    }
+
+	    .steam-table-row {
+	      display: grid;
+	      grid-template-columns: 50px 1fr 100px;
+	      padding: 10px 16px;
+	      border-bottom: 1px solid var(--border-subtle);
+	      align-items: center;
+	      transition: all var(--transition-normal);
+	    }
+
+	    .steam-table-row:hover {
+	      background: var(--hover-bg);
+	    }
+
+    .steam-table-row:last-child {
+      border-bottom: none;
+    }
+
+    .steam-col-rank {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .steam-col-game {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .steam-img {
+      width: 140px;
+      height: 52px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #1b2838 0%, #2a475e 100%);
+      flex-shrink: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .steam-img-placeholder {
+      width: 140px;
+      height: 52px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1b2838 0%, #2a475e 100%);
+      flex-shrink: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .steam-img-placeholder svg {
+      width: 24px;
+      height: 24px;
+      fill: #66c0f4;
+      opacity: 0.6;
+    }
+
+    .steam-game-info {
+      min-width: 0;
+    }
+
+    .steam-game-name {
+      font-size: var(--font-rank-name-size);
+      font-weight: var(--font-rank-name-weight);
+      color: var(--font-rank-name-color);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .steam-game-dev {
+      font-size: var(--font-rank-dev-size);
+      font-weight: var(--font-rank-dev-weight);
+      color: var(--font-rank-dev-color);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 2px;
+    }
+
+    .steam-col-players {
+      text-align: right;
+      font-size: var(--font-body-size);
+      font-weight: var(--font-meta-weight);
+      color: var(--success);
+    }
+
+    .steam-price-info {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .steam-discount {
+      background: #22c55e;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: var(--font-badge-size);
+      font-weight: var(--font-logo-weight);
+      box-shadow: 0 2px 4px rgba(34, 197, 94, 0.2);
+    }
+
+    .steam-price {
+      color: var(--text);
+      font-weight: var(--font-meta-weight);
+    }
+
+    .steam-rank {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-badge-size);
+      font-weight: var(--font-badge-weight);
+      color: var(--text-secondary);
+      background: var(--hover-bg);
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .steam-rank.top1 {
+      background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+      color: #92400e;
+    }
+
+    .steam-rank.top2 {
+      background: linear-gradient(135deg, #c0c0c0 0%, #e5e5e5 100%);
+      color: #374151;
+    }
+
+    .steam-rank.top3 {
+      background: linear-gradient(135deg, #cd7f32 0%, #daa06d 100%);
+      color: #fff;
+    }
+
+    .steam-col-game {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .steam-game-info {
+      min-width: 0;
+      flex: 1;
+    }
